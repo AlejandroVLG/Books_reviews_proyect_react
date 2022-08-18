@@ -4,11 +4,9 @@ import "./Home.css"
 
 const Home = props => {
     return (
-        <div className="mainBox">
-            <div className="headerBox">HEADER</div>
-            <div className="menuBox">MENU</div>
-            <div className="contentBox">CONTENT</div>
-            <div className="footerBox">FOOTER</div>
+        <div className="homeMainBox">
+            <div className="homeContentBox">Content</div>
+            <div className="homeFooterBox">Footer</div>
         </div>
     )
 }
