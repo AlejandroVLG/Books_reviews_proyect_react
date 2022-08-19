@@ -1,0 +1,21 @@
+.mainRegisterBox{
+    height: 74vh;
+    width: 100vw;  
+    background-color: rgb(158, 158, 32);
+}
+
+.registerForm{
+    display: flex;
+    margin: 1em;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.registerInput {
+    margin: 0.2em;
+    width: 20em;
+    height: 1.5em;
+    border: 0.15em solid black;
+    border-radius: 0.2em;
+}

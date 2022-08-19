@@ -4,10 +4,9 @@ import NavigationBar from './components/NavigationBar/NavigationBar'
 import Home from './containers/Home/Home'
 import Book from './containers/Book/Book'
 import MyProfile from './containers/MyProfile/MyProfile'
-import Register from './containers/Register/Register'
-import Login from './containers/Login/Login'
-import { Route, Routes } from 'react-router'
-import { BrowserRouter } from 'react-router-dom'
+import Register from './containers/User/Register/Register'
+import Login from './containers/User/Login/Login'
+import { Route, Routes, BrowserRouter } from 'react-router-dom'
 
 import './App.css'
 
@@ -17,7 +16,7 @@ function App() {
 
     <div className="App">
       <BrowserRouter>
-      
+
         <Header />
         <NavigationBar />
 
@@ -28,6 +27,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
         </Routes>
+
       </BrowserRouter>
     </div>
   )
