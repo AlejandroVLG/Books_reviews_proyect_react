@@ -27,7 +27,7 @@ const Register = props => {
     currently_reading: "",
     facebook_account: "",
     twitter_account: "",
-    instagram_account: "",
+    instagram_account: ""
   })
 
   useEffect(() => {
@@ -36,11 +36,11 @@ const Register = props => {
     }
   }, [])
 
-  const handleInput = (e) => {
+  const handleInput = (event) => {
     setRegister(
       {
         ...register,
-        [e.target.value]: e.target.value
+        [event.target.name]: event.target.value
       }
     )
   }
@@ -49,51 +49,40 @@ const Register = props => {
     event.preventDefault()
 
     //Esta expresión regular ayuda a validar un email
-   /*  if (! /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/.test(register.email)) {
-      setRegister(
-        {
+/*     if (! /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/.test(register.email)) {
+      setRegister({
+        ...register,
+        isError: true,
+        message: 'Wrong e-mail'
+      });
+      return;
+    }
+
+    if (register.password.length > 6) {
+      if (! /[\d()+-]/g.test(register.password)) {
+        setRegister({
           ...register,
           isError: true,
-          message: "Wrong e-mail"
-        }
-      );
-      return;
-    } */
-
-   /*  if (register.password.length >= 6) {
-
-      //Esta expresión regular ayuda a validar un password (número + letras en este caso)
-      if (! /[\d()+-]/g.test(register.password)) {
-
-        setRegister(
-          {
-            ...register,
-            isError: true,
-            message: "Wrong password"
-          }
-        );
+          message: 'Wrong password'
+        });
         return;
       };
 
     } else {
-
-      setRegister(
-        {
-          ...register,
-          isError: true,
-          message: "Password must be at least 6 characters long"
-        }
-      );
+      setRegister({
+        ...register,
+        isError: true,
+        message: 'Password must be at least 6 characters long'
+      });
       return;
     } */
 
-    setRegister(
-      {
-        ...register,
-        isError: false,
-        errorMsg: ""
-      }
-    )
+    setRegister({
+      ...register,
+      isError: false,
+      errorMsg: ''
+    });
+
 
     dispatch(registerUser
       (
@@ -117,23 +106,114 @@ const Register = props => {
   }
 
   return (
+
+
     <div className='mainRegisterBox'>
+
       <form className='registerForm' onSubmit={userRegister}>
-        <input className='registerInput' type="text" id='name' placeholder='name' onChange={handleInput} />
-        <input className='registerInput' type="text" id='lastName' placeholder='Last name' onChange={handleInput} />
-        <input className='registerInput' type="text" id='nickName' placeholder='Nick name' onChange={handleInput} />
-        <input className='registerInput' type="text" id='email' placeholder='Email' onChange={handleInput} />
-        <input className='registerInput' type="text" id='password' placeholder='Password' onChange={handleInput} />
-        <input className='registerInput' type="text" id='genre' placeholder='Genre' onChange={handleInput} />
-        <input className='registerInput' type="text" id='age' placeholder='Age' onChange={handleInput} />
-        <input className='registerInput' type="text" id='country' placeholder='Country' onChange={handleInput} />
-        <input className='registerInput' type="text" id='favouriteAuthor' placeholder='Favourite author' onChange={handleInput} />
-        <input className='registerInput' type="text" id='favouriteGenre' placeholder='Favourite genre' onChange={handleInput} />
-        <input className='registerInput' type="text" id='currentlyReading' placeholder='Currently reading' onChange={handleInput} />
-        <input className='registerInput' type="text" id='facebookAccount' placeholder='Facebook account' onChange={handleInput} />
-        <input className='registerInput' type="text" id='twitterAccount' placeholder='Twitter account' onChange={handleInput} />
-        <input className='registerInput' type="text" id='instagramAccount' placeholder='Instagram account' onChange={handleInput} />
-        <input className='sendButtom' type="submit" id='save' value="register" />
+
+        <div className="inputLabelBox">
+          <label>
+            Name
+          </label>
+          <input className='registerInput' type="text" id='name' placeholder='Name' onChange={handleInput} />
+        </div>
+
+        <div className="inputLabelBox">
+          <label>
+            Lastname
+          </label>
+          <input className='registerInput' type="text" id='lastname' placeholder='Lastname' onChange={handleInput} />
+        </div>
+
+        <div className="inputLabelBox">
+          <label>
+            Nickname
+          </label>
+          <input className='registerInput' type="text" id='nickname' placeholder='Nickname' onChange={handleInput} />
+        </div>
+
+        <div className="inputLabelBox">
+          <label>
+            Email
+          </label>
+          <input className='registerInput' type="text" id='email' placeholder='Email' onChange={handleInput} />
+        </div>
+
+        <div className="inputLabelBox">
+          <label>
+            Password
+          </label>
+          <input className='registerInput' type="password" id='password' placeholder='Password' onChange={handleInput} />
+        </div>
+
+        <div className="inputLabelBox">
+          <label>
+            Genre
+          </label>
+          <input className='registerInput' type="text" id='genre' placeholder='Genre' onChange={handleInput} />
+        </div>
+
+        <div className="inputLabelBox">
+          <label>
+            Age
+          </label>
+          <input className='registerInput' type="text" id='age' placeholder='Age' onChange={handleInput} />
+        </div>
+
+        <div className="inputLabelBox">
+          <label>
+            Country
+          </label>
+          <input className='registerInput' type="text" id='country' placeholder='Country' onChange={handleInput} />
+        </div>
+
+        <div className="inputLabelBox">
+          <label>
+            Favourite author
+          </label>
+          <input className='registerInput' type="text" id='favouriteAuthor' placeholder='Favourite author' onChange={handleInput} />
+        </div>
+
+        <div className="inputLabelBox">
+          <label>
+            Favourite genre
+          </label>
+          <input className='registerInput' type="text" id='favouriteGenre' placeholder='Favourite genre' onChange={handleInput} />
+        </div>
+
+        <div className="inputLabelBox">
+          <label>
+            Currently reading
+          </label>
+          <input className='registerInput' type="text" id='currentlyReading' placeholder='Currently reading' onChange={handleInput} />
+        </div>
+
+        <div className="inputLabelBox">
+          <label>
+            Facebook account
+          </label>
+          <input className='registerInput' type="text" id='facebookAccount' placeholder='Facebook account' onChange={handleInput} />
+        </div>
+
+        <div className="inputLabelBox">
+          <label>
+            Twitter account
+          </label>
+          <input className='registerInput' type="text" id='twitterAccount' placeholder='Twitter account' onChange={handleInput} />
+        </div>
+
+        <div className="inputLabelBox">
+          <label>
+            Twitter account
+          </label>
+          <input className='registerInput' type="text" id='instagramAccount' placeholder='Instagram account' onChange={handleInput} />
+        </div>
+
+        <div className="inputLabelBox">
+          <input className='sendButtom' type="submit" id='save' value="Register" />
+        </div>
+
       </form>
 
       <p>{register.isError ? register.message : ''}</p>
