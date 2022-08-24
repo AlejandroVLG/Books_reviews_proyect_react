@@ -1,16 +1,48 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
+import ProfileCard from '../../components/ProfileCard/ProfileCard';
 import { userData } from '../User/userSlice';
 
 import "./MyProfile.css";
 
 const MyProfile = props => {
 
-  const identification = useSelector(userData)
+  const [profileData, setProfileData] = useState({
+    profile: []
+  })
+
+  const identification = useSelector(userData);
+
+  try {
+    let requirements = {
+      headers: {
+        "Authorization": `Bearer ${identification.token}`
+
+      }
+    }
+    useEffect(() => {
+      axios.get('https://books-reviews-app-proyect.herokuapp.com/api/user/myProfile', requirements)
+        .then(resp => {
+          setProfileData({
+            profile: resp.data
+          })
+
+        })
+
+    }, [])
+    console.log(profileData)
+
+  } catch (error) {
+    console.log(error)
+  }
 
   return (
     <div className='MyProfile'>
-      <p>Mi perfil</p>
+      {profileData.length === 0 && <p>Cargando...</p>}
+      {
+        <ProfileCard data={profileData.profile} />
+      }
     </div>
   )
 }

@@ -6,7 +6,7 @@ import BooksCard from "../../components/BooksCard/BooksCard";
 import "./Book.css"
 
 function Book() {
-
+    
     const [booksData, setbooksData] = useState({
         books: []
     })
@@ -21,6 +21,7 @@ function Book() {
             })
 
     }, [])
+    console.log(booksData)
 
     return (
         <div className="bookMainBox">

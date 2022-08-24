@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Card, ListGroup, Modal } from "react-bootstrap";
+import { Button, Card, ListGroup } from "react-bootstrap";
 import './BooksCard.css'
 
 const BooksCard = props => {
