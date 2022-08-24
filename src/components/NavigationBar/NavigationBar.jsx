@@ -33,7 +33,8 @@ const NavigationBar = () => {
             <nav className="navigationBar">
                 <div className="homeButon" onClick={() => travel("/")}>Home</div>
                 <div className="bookButon" onClick={() => travel("/books")}>Book</div>
-                <div className="myProfileButon" onClick={() => travel("/myProfile")}>MyProfile</div>
+                <div className="myProfileButon" onClick={() => travel("/myProfile")}>My profile</div>
+                <div className="newBook" onClick={() => travel("/newBook")}>Add new book</div>
                 <div className="logoutButon" onClick={() => dispatch(logOut())}>Logout</div>
             </nav>
         )

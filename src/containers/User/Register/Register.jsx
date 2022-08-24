@@ -205,7 +205,7 @@ const Register = props => {
 
         <div className="inputLabelBox">
           <label>
-            Twitter account
+            Instagram account
           </label>
           <input className='registerInput' type="text" id='instagramAccount' placeholder='Instagram account' onChange={handleInput} />
         </div>

@@ -1,5 +1,5 @@
 .bookMainBox {
-    height: 74vh;
+    height: 100%;
     width: 100%;
     background-color: rgb(52, 53, 54);
     display: flex;
@@ -8,14 +8,11 @@
 }
 
 .bookContentBox {
-    height: 68vh;
+    height: 100%;
     width: 100%;
     background-color: bisque;
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: center;
-
 }
 
 .bookDataBox{
@@ -25,7 +22,6 @@
 }
 
 .bookSearchBox{
-    height: 100%;
     width: 25%;
     background-color: rgb(50, 25, 150);
 }
