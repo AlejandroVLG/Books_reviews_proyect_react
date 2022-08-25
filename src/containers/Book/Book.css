@@ -4,6 +4,8 @@
     background-color: rgb(52, 53, 54);
     display: flex;
     flex-direction: column;
+    align-items: center;
+    background-color: bisque;
 
 }
 
@@ -15,19 +17,16 @@
     flex-direction: row;
 }
 
-.bookDataBox{
-    height: 100%;
-    width: 75%;
-    background-color: rgb(196, 126, 199);
-}
-
-.bookSearchBox{
-    width: 25%;
-    background-color: rgb(50, 25, 150);
-}
-
 .bookFooterBox {
     height: 6vh;
     width: 100%;
     background-color: lightseagreen;
+}
+
+.searchBar{
+    width: 30em;
+}
+
+.searchButton{
+    width: 10em;
 }

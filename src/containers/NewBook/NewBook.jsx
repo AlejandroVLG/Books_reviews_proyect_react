@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import "./NewBook.css";
 
 const NewBook = props => {
-
+/* 
     const componentTitle = 'Añadir libro'
 
     const [bookState, setBookState] = useState({
@@ -51,27 +51,23 @@ const NewBook = props => {
         }
         setBookState(book)
 
-        const sendBook = () => {
-            axios.post("https://books-reviews-app-proyect.herokuapp.com/api/book/createBook", body)
-                .then(resp => resp.json())
-                .then(final_result => {
-    
-                    setBookState(final_result.data)
-                },
-                    error => {
-                        console.log(error)
-                    }
-                )
-        }
-        useEffect(() => {
-            sendBook()
-        }, [])
     }
+    useEffect(() => {
+        axios.post("https://books-reviews-app-proyect.herokuapp.com/api/book/createBook", body)
+        .then(resp => {
+            setBookState({
+                ...register,
+                [resp.target.name]: resp.target.value
+            })
+            
+        })
+    }, []) */
+
 
     return (
         <div className='MyProfile'>
 
-            <h3>{componentTitle}</h3><hr />
+         {/*    <h3>{componentTitle}</h3><hr />
 
             <strong>
                 {(title && author) && "You've added: " + title}
@@ -88,7 +84,7 @@ const NewBook = props => {
                 <input type="text" placeholder='Author wiki url' name='authorWikiUrl' />
                 <input type="text" placeholder='shop url' name='shopUrl' />
                 <input type="submit" value="Send" />
-            </form>
+            </form> */}
         </div>
     )
 }

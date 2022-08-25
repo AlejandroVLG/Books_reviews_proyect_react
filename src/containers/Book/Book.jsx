@@ -1,47 +1,75 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { Button } from "react-bootstrap";
 
 import BooksCard from "../../components/BooksCard/BooksCard";
 
 import "./Book.css"
 
 function Book() {
-    
+
     const [booksData, setbooksData] = useState({
         books: []
     })
+    const [search, setSearch] = useState("")
+
+
+    const showBooks = async () => {
+
+        const response = await axios.get('https://books-reviews-app-proyect.herokuapp.com/api/book/showAllBooks')
+
+        setbooksData({
+            books: response.data.data
+        })
+    }
+
+
+    const handleChange = e => {
+        setSearch(e.target.value)
+        console.log("Busqueda: " + e.target.value)
+    }
+
+    let results = []
+
+    if (!search) {
+        results = booksData.books
+    } else {
+        results = booksData.books.filter((data) =>
+
+            data.title.toLowerCase().includes(search.toLocaleLowerCase()) ||
+            data.author.toLowerCase().includes(search.toLocaleLowerCase()) ||
+            data.genre.toLowerCase().includes(search.toLocaleLowerCase()) ||
+            data.year.toLowerCase().includes(search.toLocaleLowerCase()) 
+        )
+    }
 
     useEffect(() => {
-        axios.get('https://books-reviews-app-proyect.herokuapp.com/api/book/showAllBooks')
-            .then(resp => {
-                setbooksData({
-                    books: resp.data.data
-                })
-                
-            })
-
+        showBooks()
     }, [])
-    console.log(booksData)
+
 
     return (
         <div className="bookMainBox">
+
+            <input
+                className="form-control"
+                type="text"
+                value={search}
+                placeholder="Insert search"
+                onChange={handleChange}
+            />
             <div className="bookContentBox">
-                <div className="bookDataBox">
-                    <h1>Libros</h1>
-                    <div className="bookCard">
-                        {booksData.length === 0 && <p>Cargando...</p>}
-                        {
-                            booksData.books.map((books, i) =>
-                            (
-                                <li key={i}>
-                                    <BooksCard data={books} key={i}/>
-                                </li>
-                            )
-                            )
-                        }
-                    </div>
-                </div>
-                <div className="bookSearchBox">Search</div>
+
+                {results.length === 0 && <p>Cargando...</p>}
+                {
+                    results.map((books, i) =>
+                    (
+                        <div key={i}>
+                            <BooksCard data={books} key={i} />
+                        </div>
+                    )
+                    )
+                }
             </div>
             <div className="bookFooterBox">Footer</div>
         </div>

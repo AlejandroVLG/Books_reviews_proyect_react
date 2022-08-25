@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 import { registerUser, userData } from '../userSlice';
 
 import "./Register.css";
@@ -49,39 +49,40 @@ const Register = props => {
     event.preventDefault()
 
     //Esta expresión regular ayuda a validar un email
-/*     if (! /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/.test(register.email)) {
-      setRegister({
-        ...register,
-        isError: true,
-        message: 'Wrong e-mail'
-      });
-      return;
-    }
-
-    if (register.password.length > 6) {
-      if (! /[\d()+-]/g.test(register.password)) {
-        setRegister({
-          ...register,
-          isError: true,
-          message: 'Wrong password'
-        });
-        return;
-      };
-
-    } else {
-      setRegister({
-        ...register,
-        isError: true,
-        message: 'Password must be at least 6 characters long'
-      });
-      return;
-    } */
+    /*     if (! /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/.test(register.email)) {
+          setRegister({
+            ...register,
+            isError: true,
+            message: 'Wrong e-mail'
+          });
+          return;
+        }
+    
+        if (register.password.length > 6) {
+          if (! /[\d()+-]/g.test(register.password)) {
+            setRegister({
+              ...register,
+              isError: true,
+              message: 'Wrong password'
+            });
+            return;
+          };
+    
+        } else {
+          setRegister({
+            ...register,
+            isError: true,
+            message: 'Password must be at least 6 characters long'
+          });
+          return;
+        } */
 
     setRegister({
       ...register,
       isError: false,
       errorMsg: ''
     });
+    
 
 
     dispatch(registerUser
@@ -211,13 +212,13 @@ const Register = props => {
         </div>
 
         <div className="inputLabelBox">
-          <input className='sendButtom' type="submit" id='save' value="Register" />
+          <button className='sendButtom' type="submit" >Register</button >
         </div>
 
       </form>
 
-      <p>{register.isError ? register.message : ''}</p>
-      <p>{identification.isError ? identification.errorMessage : identification.successMessage}</p>
+{/*       <p>{register.isError ? register.message : ''}</p>
+      <p>{identification.isError ? identification.errorMessage : identification.successMessage}</p> */}
 
     </div>
   )

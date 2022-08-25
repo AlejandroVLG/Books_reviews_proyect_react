@@ -21,9 +21,9 @@ const NavigationBar = () => {
 
         return (
             <nav className="navigationBar">
-                <div className="homeButon" onClick={() => travel("/")}>Home</div>
-                <div className="bookButon" onClick={() => travel("/books")}>Book</div>
-                <div className="registerButon" onClick={() => travel("/register")}>Register</div>
+                <div className="homeButon" onClick={() => travel("/")}>Portada</div>
+                <div className="bookButon" onClick={() => travel("/books")}>Libros</div>
+                <div className="registerButon" onClick={() => travel("/register")}>Registrarse</div>
                 <div className="loginButon" onClick={() => travel("/login")}>Login</div>
             </nav>
         )
@@ -31,10 +31,10 @@ const NavigationBar = () => {
 
         return (
             <nav className="navigationBar">
-                <div className="homeButon" onClick={() => travel("/")}>Home</div>
-                <div className="bookButon" onClick={() => travel("/books")}>Book</div>
-                <div className="myProfileButon" onClick={() => travel("/myProfile")}>My profile</div>
-                <div className="newBook" onClick={() => travel("/newBook")}>Add new book</div>
+                <div className="homeButon" onClick={() => travel("/")}>Portada</div>
+                <div className="bookButon" onClick={() => travel("/books")}>Libros</div>
+                <div className="myProfileButon" onClick={() => travel("/myProfile")}>Mi cuenta</div>
+                <div className="newBook" onClick={() => travel("/newBook")}>Añadir libro</div>
                 <div className="logoutButon" onClick={() => dispatch(logOut())}>Logout</div>
             </nav>
         )
