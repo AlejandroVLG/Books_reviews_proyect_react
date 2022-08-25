@@ -1,8 +1,16 @@
 import React from "react";
 import { Button, Card, ListGroup } from "react-bootstrap";
-import './BooksCard.css'
+import { useNavigate } from "react-router";
+import './BookCard.css'
 
-const BooksCard = props => {
+const BookCard = props => {
+
+    let navigate = useNavigate()
+
+    const travel = (destiny) => {
+
+        navigate(destiny)
+    }
 
     return (
 
@@ -21,7 +29,7 @@ const BooksCard = props => {
                 <Card.Link href={props.data.author_wiki_url}>Wikipedia del autor</Card.Link>
                 <Card.Link href={props.data.shop_url}>Cómpralo</Card.Link><br /><br />
                 <div className="d-grid gap-2">
-                    <Button variant="primary" size="lg">
+                    <Button variant="primary" size="lg" onClick={() => travel("/reviews")}>
                         Ver reseñas
                     </Button>
                 </div>
@@ -30,4 +38,4 @@ const BooksCard = props => {
     )
 }
 
-export default BooksCard
+export default BookCard

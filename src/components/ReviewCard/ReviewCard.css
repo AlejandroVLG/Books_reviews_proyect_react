@@ -1,0 +1,18 @@
+.reviewsBox {
+    display: flex;
+    flex-direction: column;
+}
+
+.reviewCardBox {
+    display: flex;
+    flex-direction: row;
+}
+
+.reviewCardImg {
+    height: 20em;
+}
+
+.reviewCardData {
+    display: flex;
+    flex-direction: column;
+}

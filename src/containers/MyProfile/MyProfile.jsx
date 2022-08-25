@@ -31,20 +31,18 @@ const MyProfile = props => {
         })
 
     }, [])
-    console.log(profileData)
 
+    return (
+      <div className='MyProfile'>
+        {profileData.length === 0 && <p>Cargando...</p>}
+        {
+          <ProfileCard data={profileData.profile} />
+        }
+      </div>
+    )
   } catch (error) {
     console.log(error)
   }
-
-  return (
-    <div className='MyProfile'>
-      {profileData.length === 0 && <p>Cargando...</p>}
-      {
-        <ProfileCard data={profileData.profile} />
-      }
-    </div>
-  )
 }
 
 export default MyProfile; 

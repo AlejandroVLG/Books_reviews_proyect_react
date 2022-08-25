@@ -3,6 +3,7 @@ import Header from './components/Header/Header'
 import NavigationBar from './components/NavigationBar/NavigationBar'
 import Home from './containers/Home/Home'
 import Book from './containers/Book/Book'
+import Review from './containers/Review/Review'
 import NewBook from './containers/NewBook/NewBook'
 import MyProfile from './containers/MyProfile/MyProfile'
 import Register from './containers/User/Register/Register'
@@ -24,6 +25,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/books" element={<Book />} />
+          <Route path="/reviews" element={<Review />} />
           <Route path="/newBook" element={<NewBook />} />
           <Route path="/myProfile" element={<MyProfile />} />
           <Route path="/register" element={<Register />} />
