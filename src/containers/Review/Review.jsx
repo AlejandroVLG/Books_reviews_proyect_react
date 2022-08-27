@@ -1,14 +1,15 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
 import ReviewCard from "../../components/ReviewCard/ReviewCard";
 import { userData } from "../User/userSlice";
+import { useSelector } from "react-redux";
 
 import "./Review.css"
 
-function Review() {
-
+const Review = props => {
+    
     try {
+
         const [reviewData, setReviewsData] = useState({
             reviews: []
         })
@@ -18,13 +19,12 @@ function Review() {
         let requirements = {
             headers: {
                 "Authorization": `Bearer ${identification.token}`
-
             }
         }
-
+        
         const showReviews = async () => {
 
-            const response = await axios.get('https://books-reviews-app-proyect.herokuapp.com/api/review/showAllReviews', requirements)
+            const response = await axios.get(`https://books-reviews-app-proyect.herokuapp.com/api/review/showAllReviews/`, requirements)
 
             setReviewsData({
                 reviews: response.data.data

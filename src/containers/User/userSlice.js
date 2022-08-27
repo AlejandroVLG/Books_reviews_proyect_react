@@ -1,34 +1,41 @@
 import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-import jwt from 'jwt-decode';
 
 export const userSlice = createSlice({
 
     name: 'user',
     initialState: {
         token: "",
+        isRegister: false,
+        successMessage: ""
     },
     reducers: {
         register: (state, action) => {
             return {
                 ...state,
                 isRegister: true,
-                successMessage: "You've registered successfully"
+                successMessage: "Te has registrado correctamente"
             }
         },
         login: (state, action) => {
             return {
                 ...state,
                 ...action.payload,
-                successMessage: "You've logged successfully"
+                successMessage: "Te has identificado correctamente"
             }
         },
         logout: (state, action) => {
             return {
                 ...state.initialState,
-                token: ""
+                token: "",
             }
-        },
+        }/* ,
+        info: (state, action) => {
+            return {
+                ...state,
+                ...action.payload
+            }
+        }, */
     }
 })
 
@@ -68,11 +75,14 @@ export const loginUser = (body) => async (dispatch) => {
 
         const user = await axios.post("https://books-reviews-app-proyect.herokuapp.com/api/login", body);
 
-        let decodeToken = jwt(user.data.token);
 
         if (user.status === 200) {
 
-            dispatch(login({ ...decodeToken, token: user.data.token }))
+            dispatch(login(
+                {
+                    token: user.data.token,
+                }
+            ))
         }
 
     } catch (error) {
@@ -85,6 +95,26 @@ export const logOut = () => (dispatch) => {
 
 };
 
+/* export const infoUser = () => async (dispatch) => {
+
+    try {
+        const identification = state.user;
+
+        let requirements = {
+            headers: {
+                "Authorization": `Bearer ${identification.token}`
+            }
+        }
+        const user = await axios.get('https://books-reviews-app-proyect.herokuapp.com/api/user/myProfile', requirements)
+
+        if (user.status === 200) {
+
+            dispatch(info(user.data))
+        }
+    } catch (error) {
+        console.log(error)
+    }
+} */
 
 export const { register, login, logout } = userSlice.actions
 

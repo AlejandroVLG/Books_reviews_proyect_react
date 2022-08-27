@@ -43,7 +43,6 @@ const Book = props => {
             showBooks()
         }, [])
 
-
         return (
             <div className="bookMainBox">
 

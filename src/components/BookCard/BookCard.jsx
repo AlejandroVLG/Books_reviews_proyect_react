@@ -29,7 +29,7 @@ const BookCard = props => {
                 <Card.Link href={props.data.author_wiki_url}>Wikipedia del autor</Card.Link>
                 <Card.Link href={props.data.shop_url}>Cómpralo</Card.Link><br /><br />
                 <div className="d-grid gap-2">
-                    <Button variant="primary" size="lg" onClick={() => travel("/reviews")}>
+                    <Button variant="primary" size="lg" onClick={() => travel("/reviews/" + props.data.title)}>
                         Ver reseñas
                     </Button>
                 </div>
@@ -37,5 +37,4 @@ const BookCard = props => {
         </Card>
     )
 }
-
 export default BookCard

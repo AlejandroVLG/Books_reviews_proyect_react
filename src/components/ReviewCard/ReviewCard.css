@@ -3,7 +3,7 @@
     flex-direction: column;
 }
 
-.reviewCardBox {
+#reviewCardBox {
     display: flex;
     flex-direction: row;
 }
@@ -15,4 +15,16 @@
 .reviewCardData {
     display: flex;
     flex-direction: column;
+}
+
+#scoreBox {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.buttonsBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }

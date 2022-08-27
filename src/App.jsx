@@ -1,3 +1,4 @@
+import { Route, Routes, BrowserRouter } from 'react-router-dom'
 import { useState } from 'react'
 import Header from './components/Header/Header'
 import NavigationBar from './components/NavigationBar/NavigationBar'
@@ -8,7 +9,6 @@ import NewBook from './containers/NewBook/NewBook'
 import MyProfile from './containers/MyProfile/MyProfile'
 import Register from './containers/User/Register/Register'
 import Login from './containers/User/Login/Login'
-import { Route, Routes, BrowserRouter } from 'react-router-dom'
 
 import './App.css'
 

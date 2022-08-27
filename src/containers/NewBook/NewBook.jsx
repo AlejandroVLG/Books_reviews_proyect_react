@@ -1,10 +1,12 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+import { userData } from '../User/userSlice';
 
 import "./NewBook.css";
 
 const NewBook = props => {
-/* 
+
     const componentTitle = 'Añadir libro'
 
     const [bookState, setBookState] = useState({
@@ -50,30 +52,37 @@ const NewBook = props => {
             shopUrl: shopUrl
         }
         setBookState(book)
-
     }
-    useEffect(() => {
-        axios.post("https://books-reviews-app-proyect.herokuapp.com/api/book/createBook", body)
-        .then(resp => {
-            setBookState({
-                ...register,
-                [resp.target.name]: resp.target.value
+    const identification = useSelector(userData);
+
+    let requirements = {
+        headers: {
+            "Authorization": `Bearer ${identification.token}`
+        }
+    }
+
+    useEffect((body) => {
+        axios.post("https://books-reviews-app-proyect.herokuapp.com/api/book/createBook", body, requirements)
+            .then(resp => {
+                setBookState({
+                    ...bookState,
+                    [resp.target.name]: resp.target.value
+                })
+
             })
-            
-        })
-    }, []) */
+    }, [])
 
 
     return (
         <div className='MyProfile'>
 
-         {/*    <h3>{componentTitle}</h3><hr />
+            <h3>{componentTitle}</h3><hr />
 
             <strong>
                 {(title && author) && "You've added: " + title}
             </strong>
 
-            <form className='newBookForm' onSubmit={getFormData}>
+            <form className='newBookForm' >
                 <input type="text" placeholder='Title' name='title' />
                 <textarea type="text" placeholder='Synopsis' name='synopsis' />
                 <input type="text" placeholder='Series' name='series' />
@@ -83,8 +92,8 @@ const NewBook = props => {
                 <input type="text" placeholder='Book cover' name='bookCover' />
                 <input type="text" placeholder='Author wiki url' name='authorWikiUrl' />
                 <input type="text" placeholder='shop url' name='shopUrl' />
-                <input type="submit" value="Send" />
-            </form> */}
+                <input type="submit" value="Send" onSubmit={getFormData}/>
+            </form>
         </div>
     )
 }

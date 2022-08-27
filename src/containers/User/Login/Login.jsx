@@ -17,7 +17,6 @@ const Login = () => {
 
   let navigate = useNavigate()
 
-
   const updateCredentials = (e) => {
     setCredentials(
       {
