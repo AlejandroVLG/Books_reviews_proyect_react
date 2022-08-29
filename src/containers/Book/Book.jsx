@@ -73,7 +73,6 @@ const Book = props => {
     } catch (error) {
         console.log(error)
     }
-
 }
 
 export default Book;
