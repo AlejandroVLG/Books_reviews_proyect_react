@@ -9,51 +9,25 @@ const NewBook = props => {
 
     const componentTitle = 'Añadir libro'
 
+    const identification = useSelector(userData);
+
     const [bookState, setBookState] = useState({
         title: '',
         series: '',
         author: '',
         genre: '',
         year: '',
-        bookCover: '',
-        authorWikiUrl: '',
-        shopUrl: '',
+        book_cover: '',
+        author_wiki_url: '',
+        shop_url: '',
 
     })
-
-    const { title, author } = bookState
-
-    const getFormData = e => {
-
-        e.preventDefault()
-
-        let target = e.target
-
-        let title = target.title.value
-        let synopsis = target.synopsis.value
-        let series = target.series.value
-        let author = target.author.value
-        let genre = target.genre.value
-        let year = target.year.value
-        let bookCover = target.bookCover.value
-        let authorWikiUrl = target.authorWikiUrl.value
-        let shopUrl = target.shopUrl.value
-
-        let book = {
-            id: new Date().getTime(),
-            title: title,
-            synopsis: synopsis,
-            series: series,
-            author: author,
-            genre: genre,
-            year: year,
-            bookCover: bookCover,
-            authorWikiUrl: authorWikiUrl,
-            shopUrl: shopUrl
-        }
-        setBookState(book)
+    const handleChange = (e) => {
+        setBookState({
+            ...bookState,
+            [e.target.name]: e.target.value
+        })
     }
-    const identification = useSelector(userData);
 
     let requirements = {
         headers: {
@@ -61,38 +35,27 @@ const NewBook = props => {
         }
     }
 
-    useEffect((body) => {
-        axios.post("https://books-reviews-app-proyect.herokuapp.com/api/book/createBook", body, requirements)
-            .then(resp => {
-                setBookState({
-                    ...bookState,
-                    [resp.target.name]: resp.target.value
-                })
-
-            })
-    }, [])
-
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        await axios.post("https://books-reviews-app-proyect.herokuapp.com/api/book/createBook", bookState, requirements);
+    }
 
     return (
         <div className='MyProfile'>
 
             <h3>{componentTitle}</h3><hr />
 
-            <strong>
-                {(title && author) && "You've added: " + title}
-            </strong>
-
-            <form className='newBookForm' >
-                <input type="text" placeholder='Title' name='title' />
-                <textarea type="text" placeholder='Synopsis' name='synopsis' />
-                <input type="text" placeholder='Series' name='series' />
-                <input type="text" placeholder='Author' name='author' />
-                <input type="text" placeholder='Genre' name='genre' />
-                <input type="text" placeholder='Year' name='year' />
-                <input type="text" placeholder='Book cover' name='bookCover' />
-                <input type="text" placeholder='Author wiki url' name='authorWikiUrl' />
-                <input type="text" placeholder='shop url' name='shopUrl' />
-                <input type="submit" value="Send" onSubmit={getFormData}/>
+            <form className='newBookForm' onSubmit={handleSubmit}>
+                <input type="text" placeholder='Title' name='title' onChange={handleChange} />
+                <textarea type="text" placeholder='Synopsis' name='synopsis' onChange={handleChange} />
+                <input type="text" placeholder='Series' name='series' onChange={handleChange} />
+                <input type="text" placeholder='Author' name='author' onChange={handleChange} />
+                <input type="text" placeholder='Genre' name='genre' onChange={handleChange} />
+                <input type="text" placeholder='Year' name='year' onChange={handleChange} />
+                <input type="text" placeholder='Book cover' name='book_cover' onChange={handleChange} />
+                <input type="text" placeholder='Author wiki url' name='author_wiki_url' onChange={handleChange} />
+                <input type="text" placeholder='shop url' name='shop_url' onChange={handleChange} />
+                <input type="submit" value="Send" />
             </form>
         </div>
     )
