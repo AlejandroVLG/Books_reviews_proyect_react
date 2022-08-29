@@ -5,8 +5,6 @@ import './ReviewCard.css'
 
 const ReviewCard = props => {
 
-    
-
     return (
         <div className="reviewsBox">
             <Card id="reviewCardBox">

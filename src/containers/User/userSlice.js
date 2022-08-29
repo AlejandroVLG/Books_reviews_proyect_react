@@ -39,24 +39,14 @@ export const userSlice = createSlice({
     }
 })
 
-export const registerUser = (name, last_name, nick_name, email, password, gender, age, country, favourite_author, favourite_genre, currently_reading, facebook_account, twitter_account, instagram_account) => async (dispatch) => {
+export const registerUser = (name, nick_name, email, password) => async (dispatch) => {
     try {
         const user = await axios.post('https://books-reviews-app-proyect.herokuapp.com/api/register',
             {
                 name: name,
-                last_name: last_name,
                 nick_name: nick_name,
                 email: email,
-                password: password,
-                gender: gender,
-                age: age,
-                country: country,
-                favourite_author: favourite_author,
-                favourite_genre: favourite_genre,
-                currently_reading: currently_reading,
-                facebook_account: facebook_account,
-                twitter_account: twitter_account,
-                instagram_account: instagram_account
+                password: password
             }
         )
         let response = user

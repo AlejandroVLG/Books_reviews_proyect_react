@@ -1,8 +1,10 @@
+import { Formulary, BoxButtonCentered, RegisterButton, SuccessMsg, ErrorMsg } from '../../../styledComponents/styledComponents';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheckCircle, faExclamationTriangle } from '@fortawesome/free-solid-svg-icons'
+import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons'
+import InputStyledComponent from '../../../components/InputStyledComponent/InputStyledComponent';
 import React, { useEffect, useState } from 'react';
-import { registerUser, userData } from '../userSlice';
-import { useDispatch, useSelector } from 'react-redux';
+import { registerUser } from '../userSlice';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 import "./Register.css";
@@ -13,25 +15,24 @@ const Register = props => {
 
   let navigate = useNavigate()
 
-  const [errorMessage, setErrorMessage] = useState("");
+  const regularExpression = {
+    name: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+    nickname: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, números, guión y guión bajo.
+    password: /^.{4,12}$/, // Min 4 max 12.
+    email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/, // Email structure.
+  }
 
-  const identification = useSelector(userData)
-
+  const [nameData, setNameData] = useState({ field: '', valid: null })
+  const [nicknameData, setNicknameData] = useState({ field: '', valid: null })
+  const [emailData, setEmailData] = useState({ field: '', valid: null })
+  const [passwordData, setPasswordData] = useState({ field: '', valid: null })
+  const [passwordData2, setPasswordData2] = useState({ field: '', valid: null })
+  const [formularyValid, setFormularyValid] = useState(null);
   const [register, setRegister] = useState({
     name: "",
-    last_name: "",
     nick_name: "",
     email: "",
-    password: "",
-    gender: "",
-    age: "",
-    country: "",
-    favourite_author: "",
-    favourite_genre: "",
-    currently_reading: "",
-    facebook_account: "",
-    twitter_account: "",
-    instagram_account: ""
+    password: ""
   })
 
   useEffect(() => {
@@ -40,7 +41,7 @@ const Register = props => {
     }
   }, [])
 
-  const handleInput = (event) => {
+  const handleInputRegister = (event) => {
     setRegister(
       {
         ...register,
@@ -49,54 +50,24 @@ const Register = props => {
     )
   }
 
+  // VALIDATIONS
+
+  const password2Validation = () => {
+    if (passwordData2.field.length > 0) {
+      if (passwordData.field !== passwordData2.field) {
+        setPasswordData2((prevState) => {
+          return { ...prevState, valid: 'false' }
+        });
+      } else {
+        setPasswordData2((prevState) => {
+          return { ...prevState, valid: 'true' }
+        });
+      }
+    }
+  }
+
   const userRegister = (event) => {
     event.preventDefault()
-
-    if (! /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/.test(register.email)) {
-      setRegister({
-        ...register,
-        isError: true,
-        msgIsError: 'Introduce un e-mail válido'
-      });
-      setTimeout(() => {
-        setRegister({
-          ...register,
-          msgIsError: ""
-        });
-      }, 1500)
-      return;
-    }
-
-    if (register.password.length >= 6) {
-      if (! /[\d()+-]/g.test(register.password)) {
-        setRegister({
-          ...register,
-          isError: true,
-          msgIsError: 'Introduce un password válido'
-        });
-        setTimeout(() => {
-          setRegister({
-            ...register,
-            msgIsError: ""
-          });
-        }, 1500)
-        return;
-      };
-
-    } else {
-      setRegister({
-        ...register,
-        isError: true,
-        msgIsError: 'El password ha de contener al menos 6 carácteres'
-      });
-      setTimeout(() => {
-        setRegister({
-          ...register,
-          msgIsError: ""
-        });
-      }, 1500)
-      return;
-    }
 
     setRegister({
       ...register,
@@ -104,207 +75,113 @@ const Register = props => {
       msgIsError: ''
     });
 
-    if (register.name == "") {
-      setErrorMessage('Es obligatorio rellenar este campo');
-      setTimeout(() => {
-        setErrorMessage('');
-      }, 1500)
-      return;
-    } else if (register.nick_name == "") {
-      setErrorMessage('Es obligatorio rellenar este campo');
-      setTimeout(() => {
-        setErrorMessage('');
-      }, 1500)
-      return;
-    } else if (register.email == "") {
-      setErrorMessage('Es obligatorio rellenar este campo');
-      setTimeout(() => {
-        setErrorMessage('');
-      }, 1500)
-      return;
-    } else if (register.password == "") {
-      setErrorMessage('Es obligatorio rellenar este campo');
-      setTimeout(() => {
-        setErrorMessage('');
-      }, 1500)
-      return;
-    };
-    console.log(typeof (register.email));
-
-    setErrorMessage('Registro completado');
-
     dispatch(registerUser
       (
         register.name,
-        register.last_name,
         register.nick_name,
         register.email,
-        register.password,
-        register.gender,
-        register.age,
-        register.country,
-        register.favourite_author,
-        register.favourite_genre,
-        register.currently_reading,
-        register.facebook_account,
-        register.twitter_account,
-        register.instagram_account
+        register.password
       )
     )
+  }
+  const onSubmit = (e) => {
+    e.preventDefault();
 
+    if (
+      nameData.valid === 'true' &&
+      nicknameData.valid === 'true' &&
+      emailData.valid === 'true' &&
+      passwordData.valid === 'true' &&
+      passwordData2.valid === 'true'
+
+    ) {
+      setFormularyValid(true);
+      setNameData({ field: '', valid: null });
+      setNicknameData({ field: '', valid: '' });
+      setEmailData({ field: '', valid: null });
+      setPasswordData({ field: '', valid: null });
+      setPasswordData2({ field: '', valid: 'null' });
+
+    } else {
+      setFormularyValid(false);
+    }
   }
 
   return (
 
+    <div className='mainBox'>
+      <div className='mainRegisterBox'>
 
-    <div className='mainRegisterBox'>
+        <Formulary className='registerForm' onSubmit={userRegister}>
 
-      <form className='registerForm' onSubmit={userRegister}>
+          <InputStyledComponent
+            state={nameData}
+            changeState={setNameData}
+            onChange={handleInputRegister}            
+            type="text"
+            label="Nombre"
+            placeholder="Escribe aquí"
+            name="name"
+            errorLeyend="El nombre solo puede contener letras y espacios."
+            regularExpression={regularExpression.name}
+          />
+          <InputStyledComponent
+            state={nicknameData}
+            changeState={setNicknameData}
+            onChange={handleInputRegister}            
+            type="text"
+            label="Apodo"
+            placeholder="Escribe aquí"
+            name="nick_name"
+            errorLeyend="El usuario tiene que tener entre 4 y 16 dígitos y únicamente puede contener números, letras o guión bajo."
+            regularExpression={regularExpression.nickname}
+          />
+          <InputStyledComponent
+            state={emailData}
+            changeState={setEmailData}
+            onChange={handleInputRegister}            
+            type="email"
+            label="Email"
+            placeholder="Escribe aquí"
+            name="emailData"
+            errorLeyend="El correo solo puede contener letras, numeros, puntos, guiones y guion bajo."
+            regularExpression={regularExpression.email}
+          />
+          <InputStyledComponent
+            state={passwordData}
+            changeState={setPasswordData}
+            onChange={handleInputRegister}            
+            type="password"
+            label="Contraseña"
+            placeholder="Escribe aquí"
+            name="password"
+            errorLeyend="La contraseña tiene que ser de 4 a 12 dígitos."
+            regularExpression={regularExpression.password}
+          />
+          <InputStyledComponent
+            state={passwordData2}
+            changeState={setPasswordData2}
+            type="password"
+            label="Repetir contraseña"
+            placeholder="Escribe aquí"
+            name="password2"
+            errorLeyend="Ambas contraseñas deben ser iguales."
+            functionData={password2Validation}
+          />
+          {formularyValid === false && <ErrorMsg>
+            <p>
+              <FontAwesomeIcon icon={faExclamationTriangle} />
+              <b>Error:</b> Por favor rellena el formulario correctamente.
+            </p>
+          </ErrorMsg>}
+          <BoxButtonCentered>
+            <RegisterButton type="submit">Registrarse</RegisterButton>
+            {formularyValid === true && <SuccessMsg>Formulario enviado exitosamente!</SuccessMsg>}
+          </BoxButtonCentered>
 
-        <div className="inputLabelBox">
-          <label className='labelStyle' htmlFor='name'>Nombre</label>
-          <div className='inputBox'>
-            <input className='registerInput' type="text" id='name' placeholder='Name' name='name' onChange={handleInput} />
-            <FontAwesomeIcon className='fontAwesomeIcon' icon={faCheckCircle} />
-          </div>
-          <p className='infoTextBox'>asdasdads</p>
-        </div>
+        </Formulary>
 
-        <div className="inputLabelBox">
-          <label className='labelStyle' htmlFor='lastname'>Apellidos</label>
-          <div className='inputBox'>
-            <input className='registerInput' type="text" id='lastname' placeholder='Lastname' name="last_name" onChange={handleInput} />
-            <FontAwesomeIcon className='fontAwesomeIcon' icon={faCheckCircle} />
-          </div>
-          <p className='infoTextBox'>asdasdads</p>
-        </div>
-
-        <div className="inputLabelBox">
-          <label className='labelStyle' htmlFor='nickname'>Nick</label>
-          <div className='inputBox'>
-            <input className='registerInput' type="text" id='nickname' placeholder='Nickname' name="nick_name" onChange={handleInput} />
-            <FontAwesomeIcon className='fontAwesomeIcon' icon={faCheckCircle} />
-          </div>
-          <p className='infoTextBox'>asdasdads</p>
-        </div>
-
-        <div className="inputLabelBox">
-          <label className='labelStyle' htmlFor='email'>E-mail</label>
-          <div className='inputBox'>
-            <input className='registerInput' type="text" id='email' placeholder='Email' name="email" onChange={handleInput} />
-            <FontAwesomeIcon className='fontAwesomeIcon' icon={faCheckCircle} />
-          </div>
-          <p className='infoTextBox'>asdasdads</p>
-        </div>
-
-        <div className="inputLabelBox">
-          <label className='labelStyle' htmlFor='password'>Contraseña</label>
-          <div className='inputBox'>
-            <input className='registerInput' type="password" id='password' placeholder='Password' name="password" onChange={handleInput} />
-            <FontAwesomeIcon className='fontAwesomeIcon' icon={faCheckCircle} />
-          </div>
-          <p className='infoTextBox'>asdasdads</p>
-        </div>
-
-        <div className="inputLabelBox">
-          <label className='labelStyle' htmlFor='genre'>Género</label>
-          <div className='inputBox'>
-            <input className='registerInput' type="text" id='genre' placeholder='Genre' name="genre" onChange={handleInput} />
-            <FontAwesomeIcon className='fontAwesomeIcon' icon={faCheckCircle} />
-          </div>
-          <p className='infoTextBox'>asdasdads</p>
-        </div>
-
-        <div className="inputLabelBox">
-          <label className='labelStyle' htmlFor='age'>Edad</label>
-          <div className='inputBox'>
-            <input className='registerInput' type="text" id='age' placeholder='Age' name="age" onChange={handleInput} />
-            <FontAwesomeIcon className='fontAwesomeIcon' icon={faCheckCircle} />
-          </div>
-          <p className='infoTextBox'>asdasdads</p>
-        </div>
-
-        <div className="inputLabelBox">
-          <label className='labelStyle' htmlFor='country'>País</label>
-          <div className='inputBox'>
-            <input className='registerInput' type="text" id='country' placeholder='Country' name="country" onChange={handleInput} />
-            <FontAwesomeIcon className='fontAwesomeIcon' icon={faCheckCircle} />
-          </div>
-          <p className='infoTextBox'>asdasdads</p>
-        </div>
-
-        <div className="inputLabelBox">
-          <label className='labelStyle' htmlFor='favouriteAuthor'>Autor favorito</label>
-          <div className='inputBox'>
-            <input className='registerInput' type="text" id='favouriteAuthor' placeholder='Favourite author' name="favourite_author" onChange={handleInput} />
-            <FontAwesomeIcon className='fontAwesomeIcon' icon={faCheckCircle} />
-          </div>
-          <p className='infoTextBox'>asdasdads</p>
-        </div>
-
-        <div className="inputLabelBox">
-          <label className='labelStyle' htmlFor='favouriteGenre'>Género favorito</label>
-          <div className='inputBox'>
-            <input className='registerInput' type="text" id='favouriteGenre' placeholder='Favourite genre' name="favourite_genre" onChange={handleInput} />
-            <FontAwesomeIcon className='fontAwesomeIcon' icon={faCheckCircle} />
-          </div>
-          <p className='infoTextBox'>asdasdads</p>
-        </div>
-
-        <div className="inputLabelBox">
-          <label className='labelStyle' htmlFor='currentlyReading'>Actualmente leyendo</label>
-          <div className='inputBox'>
-            <input className='registerInput' type="text" id='currentlyReading' placeholder='Currently reading' name="currently_reading" onChange={handleInput} />
-            <FontAwesomeIcon className='fontAwesomeIcon' icon={faCheckCircle} />
-          </div>
-          <p className='infoTextBox'>asdasdads</p>
-        </div>
-
-        <div className="inputLabelBox">
-          <label className='labelStyle' htmlFor='facebookAccount'>Cuenta de Facebook</label>
-          <div className='inputBox'>
-            <input className='registerInput' type="text" id='facebookAccount' placeholder='Facebook account' name="facebook_account" onChange={handleInput} />
-            <FontAwesomeIcon className='fontAwesomeIcon' icon={faCheckCircle} />
-          </div>
-          <p className='infoTextBox'>asdasdads</p>
-        </div>
-
-        <div className="inputLabelBox">
-          <label className='labelStyle' htmlFor='twitterAccount'>Cuenta de Twitter</label>
-          <div className='inputBox'>
-            <input className='registerInput' type="text" id='twitterAccount' placeholder='Twitter account' name="twitter_account" onChange={handleInput} />
-            <FontAwesomeIcon className='fontAwesomeIcon' icon={faCheckCircle} />
-          </div>
-          <p className='infoTextBox'>asdasdads</p>
-        </div>
-
-        <div className="inputLabelBox">
-          <label className='labelStyle' htmlFor='instagramAccount'>Cuenta de Instagram</label>
-          <div className='inputBox'>
-            <input className='registerInput' type="text" id='instagramAccount' placeholder='Instagram account' name="instagram_account" onChange={handleInput} />
-            <FontAwesomeIcon className='fontAwesomeIcon' icon={faCheckCircle} />
-          </div>
-          <p className='infoTextBox'>asdasdads</p>
-        </div>
-
-        <div className='errorMsgBox'>
-          <p className='errorMsg'>
-            <FontAwesomeIcon icon={faExclamationTriangle} />
-            <b className='errorBoldBox'>Error:</b> Por favor rellena el formulario correctamente.
-          </p>
-        </div>
-
-        <div className="buttonBox">
-          <button className='sendButton' type="submit" >Register</button >
-          <p className='successMsg'>Formulario enviado correctamente</p>
-        </div>
-
-      </form>
-
-
-      <p>{register.isError ? register.message : ''}</p>
-      <p>{identification.isError ? identification.errorMessage : identification.successMessage}</p>
-
+      </div>
     </div>
   )
 }
