@@ -3,9 +3,10 @@ import { Input, Label, InputGroup, ErrorLeyend, ValidationIcon } from '../../sty
 import { faCheckCircle, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 
 const InputStyledComponent = (
-    { 
+    {
         state,
-        changeState,
+        changeValidation,
+        changeRegister,
         type,
         label,
         placeholder,
@@ -15,16 +16,28 @@ const InputStyledComponent = (
         functionData
     }
 ) => {
-    const onChange = (e) => {
-        changeState({ ...state, field: e.target.value });
+
+    const onChangeData = (e) => {
+        changeValidation(
+            {
+                ...state,
+                field: e.target.value
+            }
+        );
+        changeRegister(
+            {
+                ...state,
+                [e.target.state]: e.target.value
+            }
+        );
     }
 
     const validation = () => {
         if (regularExpression) {
             if (regularExpression.test(state.field)) {
-                changeState({ ...state, valid: 'true' });
+                changeValidation({ ...state, valid: 'true' });
             } else {
-                changeState({ ...state, valid: 'false' });
+                changeValidation({ ...state, valid: 'false' });
             }
         }
 
@@ -41,8 +54,9 @@ const InputStyledComponent = (
                     type={type}
                     placeholder={placeholder}
                     id={name}
+                    name={name}
                     value={state.field}
-                    onChange={onChange}
+                    onChange={onChangeData}
                     onKeyUp={validation}
                     onBlur={validation}
                     valid={state.valid}

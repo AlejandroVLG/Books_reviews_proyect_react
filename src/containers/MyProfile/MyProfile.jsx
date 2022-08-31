@@ -8,13 +8,13 @@ import "./MyProfile.css";
 
 const MyProfile = props => {
 
-  const [profileData, setProfileData] = useState({
-    profile: []
-  })
-
-  const identification = useSelector(userData);
-
   try {
+
+    const [profileData, setProfileData] = useState({
+      profile: []
+    })
+
+    const identification = useSelector(userData);
     let requirements = {
       headers: {
         "Authorization": `Bearer ${identification.token}`
@@ -34,6 +34,7 @@ const MyProfile = props => {
 
     return (
       <div className='MyProfile'>
+        
         {profileData.length === 0 && <p>Cargando...</p>}
         {
           <ProfileCard data={profileData.profile} />

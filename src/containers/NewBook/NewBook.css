@@ -1,4 +1,6 @@
-.MyProfile{
+.newBookBox{
+    height: auto;
+    width: 100%;
     display: flex;
     flex-direction: column;
 }

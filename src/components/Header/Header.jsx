@@ -4,7 +4,9 @@ import "./Header.css";
 
 const Header = props => {
   return (
-    <div className='header'>Header</div>
+    <div className='header'>
+      <img className='headerImg' src="../../../public/Img/Vector1.jpg" alt="" />
+    </div>
   )
 }
 

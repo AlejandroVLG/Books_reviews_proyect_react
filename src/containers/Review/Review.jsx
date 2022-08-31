@@ -3,12 +3,15 @@ import React, { useEffect, useState } from "react";
 import ReviewCard from "../../components/ReviewCard/ReviewCard";
 import { userData } from "../User/userSlice";
 import { useSelector } from "react-redux";
+import { useParams } from "react-router";
 
 import "./Review.css"
 
 const Review = props => {
     
     try {
+
+        const {title} = useParams()
 
         const [reviewData, setReviewsData] = useState({
             reviews: []
@@ -24,7 +27,7 @@ const Review = props => {
         
         const showReviews = async () => {
 
-            const response = await axios.get(`https://books-reviews-app-proyect.herokuapp.com/api/review/showAllReviews`, requirements)
+            const response = await axios.get(`https://books-reviews-app-proyect.herokuapp.com/api/review/searchReviewByBookTitle/${id}`, requirements)
 
             setReviewsData({
                 reviews: response.data.data

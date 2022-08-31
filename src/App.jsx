@@ -1,5 +1,4 @@
 import { Route, Routes, BrowserRouter } from 'react-router-dom'
-import { useState } from 'react'
 import Header from './components/Header/Header'
 import NavigationBar from './components/NavigationBar/NavigationBar'
 import Home from './containers/Home/Home'
@@ -25,7 +24,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/books" element={<Book />} />
-          <Route path="/reviews" element={<Review />} />
+          <Route path="/reviews/:id" element={<Review />} />
           <Route path="/newBook" element={<NewBook />} />
           <Route path="/myProfile" element={<MyProfile />} />
           <Route path="/register" element={<Register />} />
