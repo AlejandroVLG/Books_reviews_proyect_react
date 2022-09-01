@@ -27,7 +27,7 @@ const Review = props => {
         
         const showReviews = async () => {
 
-            const response = await axios.get(`https://books-reviews-app-proyect.herokuapp.com/api/review/searchReviewByBookTitle/${id}`, requirements)
+            const response = await axios.get(`https://books-reviews-app-proyect.herokuapp.com/api/review/searchReviewByBookId/${id}`, requirements)
 
             setReviewsData({
                 reviews: response.data.data

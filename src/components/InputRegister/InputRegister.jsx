@@ -18,16 +18,19 @@ const InputRegister = (
 ) => {
 
     const onChangeData = (e) => {
-        changeValidation(
-            {
-                ...state,
-                field: e.target.value
-            }
-        );
         changeRegister(
             {
                 ...state,
                 [e.target.state]: e.target.value
+            }
+        )
+    }
+    
+    const onChangeValidation = (e) => {
+        changeValidation(
+            {
+                ...state,
+                field: e.target.value
             }
         );
     }
@@ -56,7 +59,7 @@ const InputRegister = (
                     id={name}
                     name={name}
                     value={state.field}
-                    onChange={onChangeData}
+                    onChange={() => { onChangeValidation; onChangeData; }}
                     onKeyUp={validation}
                     onBlur={validation}
                     valid={state.valid}

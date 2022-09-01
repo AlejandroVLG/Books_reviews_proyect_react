@@ -60,7 +60,7 @@ const InputNewBook = (
                     id={name}
                     name={name}
                     value={state.field}
-                    onChange={{onChangeData, onChangeValidation}}
+                    onChange={() => { onChangeValidation }}
                     onKeyUp={validation}
                     onBlur={validation}
                     valid={state.valid}
