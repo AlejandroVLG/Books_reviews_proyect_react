@@ -1,19 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useSelector, useDispatch } from "react-redux";
-import { loginUser, userData, } from "../userSlice";
+import React, { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { useSelector, useDispatch } from "react-redux"
+import { loginUser, userData, } from "../userSlice"
 
-import "./Login.css";
+import "./Login.css"
 
 const Login = () => {
 
-  const [credentials, setCredentials] = useState({ email: '', password: '' });
+  const [credentials, setCredentials] = useState({ email: '', password: '' })
 
-  const [msgError, setMsgError] = useState("");
+  const [msgError, setMsgError] = useState("")
 
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
 
-  const identification = useSelector(userData);
+  const identification = useSelector(userData)
 
   let navigate = useNavigate()
 
@@ -30,34 +30,34 @@ const Login = () => {
 
     if (identification?.token !== '') {
       setTimeout(() => {
-        navigate("/");
+        navigate("/")
 
       }, 200)
-    };
-  });
+    }
+  })
 
   const log = () => {
 
     if (credentials.password.length > 6) {
 
       if (! /[\d()+-]/g.test(credentials.password)) {
-        setMsgError('Wrong password');
+        setMsgError('Wrong password')
         return;
-      };
+      }
 
     } else {
-      setMsgError('Password must be at least 6 characters long');
-      return;
+      setMsgError('Password must be at least 6 characters long')
+      return
     }
 
-    setMsgError("");
+    setMsgError("")
 
     dispatch(loginUser({
       email: credentials.email,
       password: credentials.password
     }
-    ));
-  };
+    ))
+  }
 
   return (
     <div className='loginDesign'>

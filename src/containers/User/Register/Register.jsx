@@ -1,13 +1,13 @@
-import { Formulary, BoxButtonCentered, RegisterButton, SuccessMsg, ErrorMsg } from '../../../styledComponents/styledComponents';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Formulary, BoxButtonCentered, RegisterButton, SuccessMsg, ErrorMsg } from '../../../styledComponents/styledComponents'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons'
-import InputStyledComponent from '../../../components/InputStyledComponent/InputStyledComponent';
-import React, { useEffect, useState } from 'react';
-import { registerUser } from '../userSlice';
-import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import InputRegister from '../../../components/InputRegister/InputRegister'
+import React, { useEffect, useState } from 'react'
+import { registerUser } from '../userSlice'
+import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 
-import "./Register.css";
+import "./Register.css"
 
 const Register = props => {
 
@@ -28,7 +28,7 @@ const Register = props => {
     const [emailData, setEmailData] = useState({ field: '', valid: null })
     const [passwordData, setPasswordData] = useState({ field: '', valid: null })
     const [passwordData2, setPasswordData2] = useState({ field: '', valid: null })
-    const [formularyValid, setFormularyValid] = useState(null);
+    const [formularyValid, setFormularyValid] = useState(null)
 
     const [register, setRegister] = useState({
       name: "",
@@ -68,7 +68,7 @@ const Register = props => {
       }
     }
 
-    const onSubmitValidations = (e) => {
+    const onSubmitDataAndValidations = (e) => {
       e.preventDefault();
 
       if (
@@ -80,11 +80,11 @@ const Register = props => {
 
       ) {
         setFormularyValid(true);
-        setNameData({ field: '', valid: null });
-        setNicknameData({ field: '', valid: '' });
-        setEmailData({ field: '', valid: null });
-        setPasswordData({ field: '', valid: null });
-        setPasswordData2({ field: '', valid: 'null' });
+        setNameData({ field: '', valid: null })
+        setNicknameData({ field: '', valid: '' })
+        setEmailData({ field: '', valid: null })
+        setPasswordData({ field: '', valid: null })
+        setPasswordData2({ field: '', valid: 'null' })
         setRegister({
           ...register,
         });
@@ -108,9 +108,9 @@ const Register = props => {
       <div className='mainBox'>
         <div className='mainRegisterBox' >
 
-          <Formulary className='registerForm' onSubmit={onSubmitValidations}>
+          <Formulary className='registerForm' onSubmit={onSubmitDataAndValidations}>
 
-            <InputStyledComponent
+            <InputRegister
               state={nameData}
               changeValidation={setNameData}
               changeRegister={handleInputRegister}
@@ -121,7 +121,7 @@ const Register = props => {
               errorLeyend="El nombre solo puede contener letras y espacios."
               regularExpression={regularExpression.name}
             />
-            <InputStyledComponent
+            <InputRegister
               state={nicknameData}
               changeValidation={setNicknameData}
               changeRegister={handleInputRegister}
@@ -132,7 +132,7 @@ const Register = props => {
               errorLeyend="El apodo puede constar de números letras o guión bajo y con una longitud de entre 4 y 16 carácteres"
               regularExpression={regularExpression.nickname}
             />
-            <InputStyledComponent
+            <InputRegister
               state={emailData}
               changeValidation={setEmailData}
               changeRegister={handleInputRegister}
@@ -143,7 +143,7 @@ const Register = props => {
               errorLeyend="El correo solo puede contener letras, numeros, puntos, guiones y guion bajo."
               regularExpression={regularExpression.email}
             />
-            <InputStyledComponent
+            <InputRegister
               state={passwordData}
               changeValidation={setPasswordData}
               changeRegister={handleInputRegister}
@@ -154,7 +154,7 @@ const Register = props => {
               errorLeyend="La contraseña tiene que ser de 4 a 12 dígitos."
               regularExpression={regularExpression.password}
             />
-            <InputStyledComponent
+            <InputRegister
               state={passwordData2}
               changeValidation={setPasswordData2}
               type="password"

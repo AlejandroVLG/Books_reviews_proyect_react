@@ -1,7 +1,7 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from 'react-redux';
-import { logOut, userData } from '../../containers/User/userSlice';
+import React from "react"
+import { useNavigate } from "react-router-dom"
+import { useDispatch, useSelector } from 'react-redux'
+import { logOut, userData } from '../../containers/User/userSlice'
 
 import "./NavigationBar.css"
 

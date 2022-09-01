@@ -1,5 +1,5 @@
-import React from "react";
-import { Button, Card, ListGroup } from "react-bootstrap";
+import React from "react"
+import { Button, Card, ListGroup } from "react-bootstrap"
 import './ProfileCard.css'
 
 const ProfileCard = props => {

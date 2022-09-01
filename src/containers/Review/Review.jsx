@@ -1,9 +1,9 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
-import ReviewCard from "../../components/ReviewCard/ReviewCard";
-import { userData } from "../User/userSlice";
-import { useSelector } from "react-redux";
-import { useParams } from "react-router";
+import axios from "axios"
+import React, { useEffect, useState } from "react"
+import ReviewCard from "../../components/ReviewCard/ReviewCard"
+import { userData } from "../User/userSlice"
+import { useSelector } from "react-redux"
+import { useParams } from "react-router"
 
 import "./Review.css"
 

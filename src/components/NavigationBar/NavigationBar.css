@@ -15,7 +15,8 @@
 }
 
 .hrLine{
-    height: 2em;
-    border-right: 0.2em solid white;
+    height: 1.3em;
+    border-right: 0.2em solid rgb(255, 255, 255);
     border-radius: 0.2em 0.2em 0.2em 0.2em;
 }
+

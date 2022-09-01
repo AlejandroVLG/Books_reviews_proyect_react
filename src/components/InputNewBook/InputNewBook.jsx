@@ -1,12 +1,12 @@
-import React from 'react';
-import { Input, Label, InputGroup, ErrorLeyend, ValidationIcon } from '../../styledComponents/styledComponents';
-import { faCheckCircle, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
+import React from 'react'
+import { Input, Label, InputGroup, ErrorLeyend, ValidationIcon } from '../../styledComponents/styledComponents'
+import { faCheckCircle, faTimesCircle } from '@fortawesome/free-solid-svg-icons'
 
-const InputStyledComponent = (
+const InputNewBook = (
     {
         state,
         changeValidation,
-        changeRegister,
+        changeNewBook,
         type,
         label,
         placeholder,
@@ -17,14 +17,18 @@ const InputStyledComponent = (
     }
 ) => {
 
-    const onChangeData = (e) => {
+    const onChangeValidation = (e) => {
+
         changeValidation(
             {
                 ...state,
                 field: e.target.value
             }
         );
-        changeRegister(
+    }
+    const onChangeData = (e) => {
+
+        changeNewBook(
             {
                 ...state,
                 [e.target.state]: e.target.value
@@ -35,9 +39,9 @@ const InputStyledComponent = (
     const validation = () => {
         if (regularExpression) {
             if (regularExpression.test(state.field)) {
-                changeValidation({ ...state, valid: 'true' });
+                changeValidation({ ...state, valid: 'true' })
             } else {
-                changeValidation({ ...state, valid: 'false' });
+                changeValidation({ ...state, valid: 'false' })
             }
         }
 
@@ -56,7 +60,7 @@ const InputStyledComponent = (
                     id={name}
                     name={name}
                     value={state.field}
-                    onChange={onChangeData}
+                    onChange={{onChangeData, onChangeValidation}}
                     onKeyUp={validation}
                     onBlur={validation}
                     valid={state.valid}
@@ -71,4 +75,4 @@ const InputStyledComponent = (
     );
 }
 
-export default InputStyledComponent;
+export default InputNewBook

@@ -1,8 +1,8 @@
-import React from "react";
-import { Button, Card, ListGroup } from "react-bootstrap";
-import { useSelector } from "react-redux";
-import { useNavigate } from "react-router";
-import { userData } from "../../containers/User/userSlice";
+import React from "react"
+import { Button, Card, ListGroup } from "react-bootstrap"
+import { useSelector } from "react-redux"
+import { useNavigate } from "react-router"
+import { userData } from "../../containers/User/userSlice"
 import './BookCard.css'
 
 
@@ -10,7 +10,7 @@ const BookCard = props => {
 
     let navigate = useNavigate()
 
-    const identification = useSelector(userData);
+    const identification = useSelector(userData)
 
     let requirements = {
         headers: {
@@ -80,7 +80,7 @@ const BookCard = props => {
                     <Card.Link href={props.data.author_wiki_url}>Wikipedia del autor</Card.Link>
                     <Card.Link href={props.data.shop_url}>Cómpralo</Card.Link><br /><br />
                     <div className="d-grid gap-2">
-                        <Button variant="primary" size="lg" onClick={() => travel("/reviews")}>
+                        <Button variant="primary" size="lg" onClick={() => travel(`/reviews/${id}`)}>
                             Ver reseñas
                         </Button>
                     </div>
