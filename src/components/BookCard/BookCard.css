@@ -1,13 +1,9 @@
-
 .mainBox {
+    min-height: 74vh;
+    width: 100%;
+    height: auto;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    background-color: rgb(9, 74, 136);
-
 }
+

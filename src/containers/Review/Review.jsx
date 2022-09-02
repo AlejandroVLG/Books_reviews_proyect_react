@@ -11,7 +11,7 @@ const Review = props => {
     
     try {
 
-        const {title} = useParams()
+        const {id} = useParams()
 
         const [reviewData, setReviewsData] = useState({
             reviews: []

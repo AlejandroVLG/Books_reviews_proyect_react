@@ -144,81 +144,6 @@ const ErrorMsg = styled.div`
 	}
 `;
 
-const bookCard = styled.div`
-	position: relative;
-	width: 300px;
-	height: 350px;
-`;
-
-const faceFrontCard = styled.div`
-	transform: perspective(600px) rotateY(0deg);
-	box-shadow: 0 5px 10px #000;
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	backface-visibility: hidden;
-	border-radius: 10px;
-	overflow: hidden;
-	transform: 0.5s ;
-`;
-
-const frontImgCard = styled.img`
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-`;
-
-const frontH3Card = styled.h3`
-	position: absolute;
-	bottom: 0;
-	width: 100%;
-	height: 45px;
-	line-height: 45px;
-	color: #fff;
-	background: rgba(0, 0, 0, .4);
-	text-align: center;
-
-	&:hover {
-		transform: perspective(600px) rotateY(180deg);
-	}
-`;
-const faceBackCard = styled.div`
-	transform: perspective(600px) rotateY(0deg);
-	background-color: rgb(3, 35, 54);
-	padding: 15px;
-	color: #f3f3f3;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	text-align: center;
-	box-shadow: 0 5px 10px #000;
-
-	&:hover {
-		transform: perspective(600px) rotateY(360deg);
-	}
-`;
-
-const backH3Card = styled.h3`
-	font-size: 30px;
-	margin-top: 20px;
-	letter-spacing: 2px;
-`;
-
-const textBackCard = styled.p`
-	letter-spacing: 1px;
-`;
-
-const linkDivCard = styled.div`
-	border-top: solid 1px #f3f3f3;
-	height: 50px;
-	line-height: 50px;
-`;
-
-const linkCard = styled.a`
-	color: #f3f3f3;
-`;
-
 export {
 	Formulary,
 	Label,
@@ -230,13 +155,4 @@ export {
 	RegisterButton,
 	SuccessMsg,
 	ErrorMsg,
-	bookCard,
-	faceFrontCard,
-	frontImgCard,
-	frontH3Card,
-	faceBackCard,
-	backH3Card,
-	textBackCard,
-	linkDivCard,
-	linkCard
 };
