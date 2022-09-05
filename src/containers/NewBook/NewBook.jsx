@@ -47,7 +47,7 @@ const NewBook = props => {
 
             <div className='mainNewBookBox'>
 
-                <div className='mainNewBookFormBox'>
+                <div className='newBookFormBox'>
 
                     <Form className='newBookForm' onSubmit={handleSubmit}>
 

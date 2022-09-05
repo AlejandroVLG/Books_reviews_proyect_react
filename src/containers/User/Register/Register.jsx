@@ -113,13 +113,13 @@ const Register = props => {
             <Form.Label className='registerLabel'>Apodo</Form.Label>
             <Form.Control className='registerInput' type="text" name='nick_name' placeholder='Introduce un apodo' onChange={handleInput} />
             <Form.Text className="text-muted">
-              blabla.
+            Introduce un apodo
             </Form.Text>
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label className='registerLabel'>Correo electrónico</Form.Label>
-            <Form.Control className='registerInput' type="text" name='email' placeholder='Introduce un email de contacto' onChange={handleInput} />
+            <Form.Control className='registerInput' type="email" name='email' placeholder='Introduce un email de contacto' onChange={handleInput} />
             <Form.Text className="text-muted">
               Formato de E-mail válido obligatorio.
             </Form.Text>
