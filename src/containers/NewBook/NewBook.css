@@ -1,13 +1,74 @@
-.newBookBox{
-    height: auto;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+.mainNewBookBox {
+	width: 100%;
+	height: auto;
+	box-sizing: border-box;
+	background: #e5e5e5;
+	font-family: 'Playfair Display', serif;
 }
 
-.newBookForm{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+.mainNewBookFormBox {
+	max-width: 50em;
+	width: 90%;
+	margin: auto;
+	padding: 2.5em;
+}
+
+.newBookForm {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1.25em;
+}
+
+.newBookLabel {
+	display: block;
+	font-weight: 700;
+	padding: 0.6em;
+	min-height: 2.5em;
+	cursor: pointer;
+}
+
+.newBookInput {
+	width: 100%;
+	background: #fff;
+	border-radius: 0.2em;
+	height: 2.80em;
+	line-height: 2.80em;
+	padding: 0 2.5em 0 0.6em;
+	transition: .3s ease all;
+	border: 0.2em solid transparent;
+}
+
+.newBookInput:focus {
+	border: 0.2em solid #0075FF;
+	outline: none;
+	box-shadow: 0.2em 0em 1.9em 0.3em rgba(163, 163, 163, 0.4);
+}
+
+.newBookBoxButton{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	grid-column: span 2;
+}
+
+.newBookSendButtom {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 2.8em;
+	line-height: 2.8em;
+	width: 30%;
+	background: #000;
+	color: #fff;
+	font-weight: bold;
+	border: none;
+	border-radius: 0.2em;
+	cursor: pointer;
+	transition: .1s ease all;
+}
+
+.newBookSendButtom:hover {
+	box-shadow: 0.2em 0em 1.9em 0.3em rgba(163,163,163, 1);
 }

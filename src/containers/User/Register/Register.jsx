@@ -95,53 +95,58 @@ const Register = props => {
 
 
   return (
+    <div className='mainBox'>
 
-    <Form className='registerForm' onSubmit={userRegister}>
+      <div className='mainRegisterBox'>
 
-      <Form.Group className="mb-3" controlId="formBasicName">
-        <Form.Label className='registerLabel'>Nombre</Form.Label>
-        <Form.Control className='registerInput' type="text" name='name' placeholder='Introduce tu nombre' onChange={handleInput} />
-        <Form.Text className="text-muted">
-          blabla.
-        </Form.Text>
+        <Form className='registerForm' onSubmit={userRegister}>
 
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicNickname">
-        <Form.Label className='registerLabel'>Apodo</Form.Label>
-        <Form.Control className='registerInput' type="text" name='nick_name' placeholder='Introduce un apodo' onChange={handleInput} />
-        <Form.Text className="text-muted">
-          blabla.
-        </Form.Text>
+          <Form.Group className="mb-3" controlId="formBasicName">
+            <Form.Label className='registerLabel'>Nombre</Form.Label>
+            <Form.Control className='registerInput' type="text" name='name' placeholder='Introduce tu nombre' onChange={handleInput} />
+            <Form.Text className="text-muted">
+              blabla.
+            </Form.Text>
+          </Form.Group>
 
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label className='registerLabel'>Correo electrónico</Form.Label>
-        <Form.Control className='registerInput' type="text" name='email' placeholder='Introduce un email de contacto' onChange={handleInput} />
-        <Form.Text className="text-muted">
-          Formato de E-mail válido obligatorio.
-        </Form.Text>
+          <Form.Group className="mb-3" controlId="formBasicNickname">
+            <Form.Label className='registerLabel'>Apodo</Form.Label>
+            <Form.Control className='registerInput' type="text" name='nick_name' placeholder='Introduce un apodo' onChange={handleInput} />
+            <Form.Text className="text-muted">
+              blabla.
+            </Form.Text>
+          </Form.Group>
 
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label className='registerLabel'>Contraseña</Form.Label>
-        <Form.Control className='registerInput' type="password" name='password' placeholder='Password' onChange={handleInput} />
-        <Form.Text className="text-muted">
-          Debe ser mínimo de 6 carácteer.
-        </Form.Text>
-      </Form.Group>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label className='registerLabel'>Correo electrónico</Form.Label>
+            <Form.Control className='registerInput' type="text" name='email' placeholder='Introduce un email de contacto' onChange={handleInput} />
+            <Form.Text className="text-muted">
+              Formato de E-mail válido obligatorio.
+            </Form.Text>
+          </Form.Group>
 
-      <Form.Group className="mb-3 boxButton">
-        <button className='sendButtom' variant="primary" type="submit">
-          Registrarse
-        </button>
+          <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Label className='registerLabel'>Contraseña</Form.Label>
+            <Form.Control className='registerInput' type="password" name='password' placeholder='Password' onChange={handleInput} />
+            <Form.Text className="text-muted">
+              Debe ser mínimo de 6 carácteer.
+            </Form.Text>
+          </Form.Group>
 
-        <p className='message'>{register.isError ? register.message : ''}</p>
-        <p>{identification.isError ? identification.errorMessage : identification.successMessage}</p>
-      </Form.Group>
+          <Form.Group className="mb-3 boxButton">
+            <button className='sendButtom' variant="primary" type="submit">
+              Registrarse
+            </button>
 
+            <p className='message'>{register.isError ? register.message : ''}</p>
+            <p>{identification.isError ? identification.errorMessage : identification.successMessage}</p>
+          </Form.Group>
 
+        </Form>
 
-    </Form>
+      </div>
+
+    </div>
   )
 }
 
