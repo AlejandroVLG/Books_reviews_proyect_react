@@ -7,7 +7,8 @@ export const userSlice = createSlice({
     initialState: {
         token: "",
         isRegister: false,
-        successMessage: ""
+        successMessage: "",
+        infoData: {}
     },
     reducers: {
         register: (state, action) => {
@@ -29,13 +30,13 @@ export const userSlice = createSlice({
                 ...state.initialState,
                 token: "",
             }
-        }/* ,
+        },
         info: (state, action) => {
             return {
                 ...state,
-                ...action.payload
+                infoData : action.payload
             }
-        }, */
+        },
     }
 })
 
@@ -72,6 +73,8 @@ export const loginUser = (body) => async (dispatch) => {
                     token: user.data.token,
                 }
             ))
+
+            infoUser()
         }
 
     } catch (error) {
@@ -84,7 +87,7 @@ export const logOut = () => (dispatch) => {
 
 };
 
-/* export const infoUser = () => async (dispatch) => {
+export const infoUser = () => async (dispatch) => {
 
     try {
         const identification = state.user;
@@ -103,7 +106,7 @@ export const logOut = () => (dispatch) => {
     } catch (error) {
         console.log(error)
     }
-} */
+}
 
 export const { register, login, logout } = userSlice.actions
 

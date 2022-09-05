@@ -34,6 +34,15 @@ const Review = props => {
             })
         }
 
+        const deleteReview = async () => {
+
+            const response = await axios.get(`https://books-reviews-app-proyect.herokuapp.com/api/review/searchReviewByBookId/${id}`, requirements)
+
+            setReviewsData({
+                reviews: response.data.data
+            })
+        }
+
         useEffect(() => {
             showReviews()
         }, [])

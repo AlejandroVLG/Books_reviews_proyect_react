@@ -1,7 +1,7 @@
 import React from "react"
 import { Button, Card, ListGroup } from "react-bootstrap"
 import { useSelector } from "react-redux"
-import { useNavigate } from "react-router"
+import { useNavigate, useParams } from "react-router"
 import { userData } from "../../containers/User/userSlice"
 import './BookCard.css'
 
@@ -10,6 +10,8 @@ const BookCard = props => {
     let navigate = useNavigate()
 
     const identification = useSelector(userData)
+
+    const deleteId = useParams(props.data.id)
 
     let requirements = {
         headers: {
@@ -24,7 +26,7 @@ const BookCard = props => {
 
     const handleDelete = async () => {
 
-        await axios.delete('https://books-reviews-app-proyect.herokuapp.com/api/book/deleteBook', requirements)
+       const deleteReview = await axios.delete(`https://books-reviews-app-proyect.herokuapp.com/api/book/deleteBook/${deleteId}`, requirements)
 
     }
     if (props.data.name == "") {
@@ -53,7 +55,7 @@ const BookCard = props => {
                         <button onClick={() => travel("/reviews")}>
                             Editar libro
                         </button>
-                        <button onClick={() => travel("/reviews")}>
+                        <button onClick={handleDelete}>
                             Eliminar libro
                         </button>
                     </div>

@@ -1,188 +1,148 @@
-import { Formulary, BoxButtonCentered, RegisterButton, SuccessMsg, ErrorMsg } from '../../../styledComponents/styledComponents'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons'
-import InputRegister from '../../../components/InputRegister/InputRegister'
-import React, { useEffect, useState } from 'react'
-import { registerUser } from '../userSlice'
-import { useDispatch } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
+import React, { useEffect, useState } from 'react';
+import { Button, Col, Form, Row } from 'react-bootstrap';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { registerUser, userData } from '../userSlice';
 
-import "./Register.css"
+import "./Register.css";
 
 const Register = props => {
 
-  try {
-    const dispatch = useDispatch()
+  const dispatch = useDispatch()
 
-    let navigate = useNavigate()
+  let navigate = useNavigate()
 
-    const regularExpression = {
-      name: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letters, spacing between words and accentuation allowed.
-      nickname: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letters, numbers, " - " and " _ " allowed.
-      password: /^.{4,12}$/, // Mín characters 4, max 12.
-      email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/, // E-mail format required.
+  const identification = useSelector(userData)
+
+  const [register, setRegister] = useState({
+    name: "",
+    nick_name: "",
+    email: "",
+    password: ""
+  })
+
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      navigate('/')
     }
+  }, [])
 
-    const [nameData, setNameData] = useState({ field: '', valid: null })
-    const [nicknameData, setNicknameData] = useState({ field: '', valid: null })
-    const [emailData, setEmailData] = useState({ field: '', valid: null })
-    const [passwordData, setPasswordData] = useState({ field: '', valid: null })
-    const [passwordData2, setPasswordData2] = useState({ field: '', valid: null })
-    const [formularyValid, setFormularyValid] = useState(null)
-
-    const [register, setRegister] = useState({
-      name: "",
-      nick_name: "",
-      email: "",
-      password: ""
-    })
-
-    useEffect(() => {
-      if (localStorage.getItem("token")) {
-        navigate('/')
+  const handleInput = (e) => {
+    setRegister(
+      {
+        ...register,
+        [e.target.name]: e.target.value
       }
-    }, [])
+    )
+  }
 
-    const handleInputRegister = (event) => {
+  const userRegister = (event) => {
+    event.preventDefault()
+
+    //Esta expresión regular ayuda a validar un email
+    if (! /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/.test(register.email)) {
       setRegister(
         {
           ...register,
-          [event.target.state]: event.target.value
+          isError: true,
+          message: "E-mail incorrecto"
         }
-      )
+      );
+      return;
     }
 
-    // VALIDATIONS
-
-    const password2Validation = () => {
-      if (passwordData2.field.length > 0) {
-        if (passwordData.field !== passwordData2.field) {
-          setPasswordData2((prevState) => {
-            return { ...prevState, valid: 'false' }
-          });
-        } else {
-          setPasswordData2((prevState) => {
-            return { ...prevState, valid: 'true' }
-          });
-        }
-      }
-    }
-
-    const onSubmitDataAndValidations = (e) => {
-      e.preventDefault();
-
-      if (
-        nameData.valid === 'true' &&
-        nicknameData.valid === 'true' &&
-        emailData.valid === 'true' &&
-        passwordData.valid === 'true' &&
-        passwordData2.valid === 'true'
-
-      ) {
-        setFormularyValid(true);
-        setNameData({ field: '', valid: null })
-        setNicknameData({ field: '', valid: '' })
-        setEmailData({ field: '', valid: null })
-        setPasswordData({ field: '', valid: null })
-        setPasswordData2({ field: '', valid: 'null' })
-        setRegister({
+    if (register.password.length >= 6) {
+      //Esta expresión regular ayuda a validar un password (número + letras en este caso)
+      if (! /[\d()+-]/g.test(register.password)) {
+        setRegister(
+          {
+            ...register,
+            isError: true,
+            message: "Contraseña incorrecta"
+          }
+        );
+        return;
+      };
+    } else {
+      setRegister(
+        {
           ...register,
-        });
-        
-        dispatch(registerUser
-          (
-            register.name,
-            register.nick_name,
-            register.email,
-            register.password
-          )
-        )
-
-      } else {
-        setFormularyValid(false);
-      }
+          isError: true,
+          message: "La contraseña debe tener al menos 6 carácteres"
+        }
+      );
+      return;
     }
 
-    return (
-
-      <div className='mainBox'>
-        <div className='mainRegisterBox' >
-
-          <Formulary className='registerForm' onSubmit={onSubmitDataAndValidations}>
-
-            <InputRegister
-              state={nameData}
-              changeValidation={setNameData}
-              changeRegister={handleInputRegister}
-              type="text"
-              label="Nombre"
-              placeholder="Introduzca su nombre"
-              name="name"
-              errorLeyend="El nombre solo puede contener letras y espacios."
-              regularExpression={regularExpression.name}
-            />
-            <InputRegister
-              state={nicknameData}
-              changeValidation={setNicknameData}
-              changeRegister={handleInputRegister}
-              type="text"
-              label="Apodo"
-              placeholder="Introduzca su apodo"
-              name="nick_name"
-              errorLeyend="El apodo puede constar de números letras o guión bajo y con una longitud de entre 4 y 16 carácteres"
-              regularExpression={regularExpression.nickname}
-            />
-            <InputRegister
-              state={emailData}
-              changeValidation={setEmailData}
-              changeRegister={handleInputRegister}
-              type="email"
-              label="Email"
-              placeholder="Introduzca su email"
-              name="email"
-              errorLeyend="El correo solo puede contener letras, numeros, puntos, guiones y guion bajo."
-              regularExpression={regularExpression.email}
-            />
-            <InputRegister
-              state={passwordData}
-              changeValidation={setPasswordData}
-              changeRegister={handleInputRegister}
-              type="password"
-              label="Contraseña"
-              placeholder="Introduzca su contraseña"
-              name="password"
-              errorLeyend="La contraseña tiene que ser de 4 a 12 dígitos."
-              regularExpression={regularExpression.password}
-            />
-            <InputRegister
-              state={passwordData2}
-              changeValidation={setPasswordData2}
-              type="password"
-              label="Repetir contraseña"
-              placeholder="Introduzca otra vez su contraseña"
-              name="password2"
-              errorLeyend="Ambas contraseñas deben ser iguales."
-              functionData={password2Validation}
-            />
-            {formularyValid === false && <ErrorMsg>
-              <p>
-                <FontAwesomeIcon icon={faExclamationTriangle} />
-                <b>Error:</b> Por favor rellena el formulario correctamente.
-              </p>
-            </ErrorMsg>}
-            <BoxButtonCentered>
-              <RegisterButton type="submit">Registrarse</RegisterButton>
-              {formularyValid === true && <SuccessMsg>Formulario enviado exitosamente!</SuccessMsg>}
-            </BoxButtonCentered>
-
-          </Formulary>
-
-        </div>
-      </div>
+    setRegister(
+      {
+        ...register,
+        isError: false,
+        errorMsg: ""
+      }
     )
-  } catch (error) {
-    console.log(error)
+
+    dispatch(registerUser
+      (
+        register.name,
+        register.nick_name,
+        register.email,
+        register.password
+      )
+    )
+
   }
+
+
+  return (
+
+    <Form className='registerForm' onSubmit={userRegister}>
+
+      <Form.Group className="mb-3" controlId="formBasicName">
+        <Form.Label className='registerLabel'>Nombre</Form.Label>
+        <Form.Control className='registerInput' type="text" name='name' placeholder='Introduce tu nombre' onChange={handleInput} />
+        <Form.Text className="text-muted">
+          blabla.
+        </Form.Text>
+
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="formBasicNickname">
+        <Form.Label className='registerLabel'>Apodo</Form.Label>
+        <Form.Control className='registerInput' type="text" name='nick_name' placeholder='Introduce un apodo' onChange={handleInput} />
+        <Form.Text className="text-muted">
+          blabla.
+        </Form.Text>
+
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Label className='registerLabel'>Correo electrónico</Form.Label>
+        <Form.Control className='registerInput' type="text" name='email' placeholder='Introduce un email de contacto' onChange={handleInput} />
+        <Form.Text className="text-muted">
+          Formato de E-mail válido obligatorio.
+        </Form.Text>
+
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="formBasicPassword">
+        <Form.Label className='registerLabel'>Contraseña</Form.Label>
+        <Form.Control className='registerInput' type="password" name='password' placeholder='Password' onChange={handleInput} />
+        <Form.Text className="text-muted">
+          Debe ser mínimo de 6 carácteer.
+        </Form.Text>
+      </Form.Group>
+
+      <Form.Group className="mb-3 boxButton">
+        <button className='sendButtom' variant="primary" type="submit">
+          Registrarse
+        </button>
+
+        <p className='message'>{register.isError ? register.message : ''}</p>
+        <p>{identification.isError ? identification.errorMessage : identification.successMessage}</p>
+      </Form.Group>
+
+
+
+    </Form>
+  )
 }
 
 export default Register

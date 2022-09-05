@@ -101,7 +101,7 @@ const NewBook = props => {
                             label="Título"
                             placeholder="Introduzca el título del libro"
                             name="title"
-                            errorLeyend="Este campo solo puede contener letras, numeros y espacios"
+                            errorLeyend="Este campo solo puede contener letras, números y espacios"
                             regularExpression={regularExpression.text}
                         />
                         <InputNewBook
@@ -110,9 +110,9 @@ const NewBook = props => {
                             changeRegister={handleNewBookState}
                             type="text"
                             label="Saga literaria"
-                            placeholder="Introduzca la saga, de no existir añadir el título"
+                            placeholder="Introduzca la saga, de no existir introduzca el título"
                             name="series"
-                            errorLeyend="Este campo solo puede contener letras, numeros y espacios"
+                            errorLeyend="Este campo solo puede contener letras, números y espacios"
                             regularExpression={regularExpression.text}
                         />
                         <InputNewBook
@@ -123,7 +123,7 @@ const NewBook = props => {
                             label="Autor"
                             placeholder="Introduzca el autor de la obra"
                             name="author"
-                            errorLeyend="Este campo solo puede contener letras, numeros y espacios"
+                            errorLeyend="Este campo solo puede contener letras, números y espacios"
                             regularExpression={regularExpression.text}
                         />
                         <InputNewBook
@@ -134,7 +134,7 @@ const NewBook = props => {
                             label="Género"
                             placeholder="Introduzca el género litearario"
                             name="genre"
-                            errorLeyend="Este campo solo puede contener letras, numeros y espacios"
+                            errorLeyend="Este campo solo puede contener letras, números y espacios"
                             regularExpression={regularExpression.text}
                         />
                         <InputNewBook
@@ -145,7 +145,7 @@ const NewBook = props => {
                             label="Año"
                             placeholder="Introduzca el año de cración"
                             name="year"
-                            errorLeyend="Este campo solo puede contener letras, numeros y espacios"
+                            errorLeyend="Este campo solo puede contener letras, números y espacios"
                             regularExpression={regularExpression.date}
                         />
                         <InputNewBook
@@ -188,7 +188,7 @@ const NewBook = props => {
                             </p>
                         </ErrorMsg>}
                         <BoxButtonCentered>
-                            <RegisterButton type="submit">Nuevo libro</RegisterButton>
+                            <RegisterButton type="submit">Añadir nuevo libro</RegisterButton>
                             {formularyValid === true && <SuccessMsg>Formulario enviado exitosamente!</SuccessMsg>}
                         </BoxButtonCentered>
 

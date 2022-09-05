@@ -26,6 +26,7 @@ const InputNewBook = (
             }
         );
     }
+    
     const onChangeData = (e) => {
 
         changeNewBook(

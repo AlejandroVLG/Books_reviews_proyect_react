@@ -1,12 +1,6 @@
 import styled, { css } from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-const colors = {
-	border: "#0075FF",
-	error: "#bb2929",
-	success: "#1ed12d"
-}
-
 const Formulary = styled.form`
 	display: grid;
 	grid-template-columns: 1fr 1fr;
@@ -25,7 +19,7 @@ const Label = styled.label`
 	cursor: pointer;
 
 	${props => props.valid === 'false' && css`
-		color: ${colors.error};
+		color: "#bb2929";
 	`}
 `;
 
@@ -45,7 +39,7 @@ const Input = styled.input`
 	border: 3px solid transparent;
 
 	&:focus {
-		border: 3px solid ${colors.border};
+		border: 3px solid #0075FF;
 		outline: none;
 		box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);
 	}
@@ -62,7 +56,7 @@ const Input = styled.input`
 const ErrorLeyend = styled.p`
 	font-size: 12px;
 	margin-bottom: 0;
-	color: ${colors.error};
+	color: "#bb2929";
 	display: none;
 
 	${props => props.valid === 'true' && css`
@@ -84,12 +78,12 @@ const ValidationIcon = styled(FontAwesomeIcon)`
 
 	${props => props.valid === 'false' && css`
 		opacity: 1;
-		color: ${colors.error};
+		color: "#bb2929";
 	`}
 
 	${props => props.valid === 'true' && css`
 		opacity: 1;
-		color: ${colors.success};
+		color: "#1ed12d";
 	`}
 `;
 
@@ -126,7 +120,7 @@ const RegisterButton = styled.button`
 
 const SuccessMsg = styled.p`
 	font-size: 14px;
-	color: ${colors.success};
+	color: "#1ed12d";
 `;
 
 const ErrorMsg = styled.div`
