@@ -53,73 +53,90 @@ const NewBook = props => {
 
                         <Form.Group className="mb-3" controlId="formBasicTitle">
                             <Form.Label className='newBookLabel'>Título</Form.Label>
-                            <Form.Control className='newBookInput' type="text" name='title' placeholder='Título del libro' onChange={handleChange} />
+                            <Form.Control className='newBookInput' type="text" name='title' placeholder='Escribe aquí' onChange={handleChange} />
                             <Form.Text className="text-muted">
-                                blabla.
+                                Título oficial del libro en España
                             </Form.Text>
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="formBasicTitle">
                             <Form.Label className='newBookLabel'>Sinopsis</Form.Label>
-                            <Form.Control as="textarea" rows={3} className='newBookInput' type="text" name='synopsis' placeholder='Resumen del libro' onChange={handleChange} />
+                            <Form.Control as="textarea" rows={3} className='newBookInput' type="text" name='synopsis' placeholder='Escribe aquí' onChange={handleChange} />
                             <Form.Text className="text-muted">
-                                blabla.
+                                Resumen del libro en Español
                             </Form.Text>
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="formBasicNickname">
                             <Form.Label className='newBookLabel'>Saga</Form.Label>
-                            <Form.Control className='newBookInput' type="text" name='series' placeholder='Saga a la que pertenece' onChange={handleChange} />
+                            <Form.Control className='newBookInput' type="text" name='series' placeholder='Escribe aquí' onChange={handleChange} />
                             <Form.Text className="text-muted">
-                                blabla.
+                                Indica la saga a la que pertenece
                             </Form.Text>
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label className='newBookLabel'>Autor</Form.Label>
-                            <Form.Control className='newBookInput' type="text" name='author' placeholder='Autor de la obra' onChange={handleChange} />
+                            <Form.Control className='newBookInput' type="text" name='author' placeholder='Escribe aquí' onChange={handleChange} />
                             <Form.Text className="text-muted">
-                                Formato de E-mail válido obligatorio.
+                                Autor del libro
                             </Form.Text>
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="formBasicPassword">
                             <Form.Label className='newBookLabel'>Género literario</Form.Label>
-                            <Form.Control className='newBookInput' type="text" name='genre' placeholder='Género literario al que pertenece' onChange={handleChange} />
+                            <select className='newBookInput'
+                                name='genre'
+                                placeholder='Escribe aquí'
+                                onChange={handleChange}>
+                                <option value="Autobiografía">Autobiografía</option>
+                                <option value="Aventuras">Aventuras</option>
+                                <option value="Ciencia ficción">Ciencia ficción</option>
+                                <option value="Policíaca">Policíaca</option>
+                                <option value="Educativa">Educativa</option>
+                                <option value="Fantasía">Fantasía</option>
+                                <option value="Histórica">Histórica</option>
+                                <option value="Humor">Humor</option>
+                                <option value="Infantil">Infantil</option>
+                                <option value="Misterio">Misterio</option>
+                                <option value="Novela negra">Novela negra</option>
+                                <option value="Romance">Romance</option>
+                                <option value="Terror">Terror</option>
+                            </select>
                             <Form.Text className="text-muted">
-                                Debe ser mínimo de 6 carácteer.
+                                Selecciona uno de entre los géneros indicados
                             </Form.Text>
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="formBasicPassword">
-                            <Form.Label className='newBookLabel'>Año de publicación</Form.Label>
-                            <Form.Control className='newBookInput' type="text" name='year' placeholder='Año en el que se publicó' onChange={handleChange} />
+                            <Form.Label className='newBookLabel'>Fecha de publicación</Form.Label>
+                            <Form.Control className='newBookInput' type="date" min="01-01-1800" max="31-12-2050" name='year' placeholder='Escribe aquí' onChange={handleChange} />
                             <Form.Text className="text-muted">
-                                Debe ser mínimo de 6 carácteer.
+                                Fecha de publicación de la edición Española
                             </Form.Text>
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="formBasicPassword">
-                            <Form.Label className='newBookLabel'>Imagen de la cubierta</Form.Label>
-                            <Form.Control className='newBookInput' type="text" name='book_cover' placeholder='Añadir una imagen de portada' onChange={handleChange} />
+                            <Form.Label className='newBookLabel'>Portada</Form.Label>
+                            <Form.Control className='newBookInput' type="text" name='book_cover' placeholder='Escribe aquí' onChange={handleChange} />
                             <Form.Text className="text-muted">
-                                Debe ser mínimo de 6 carácteer.
+                                Imagen oficial de la cubierta
                             </Form.Text>
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="formBasicPassword">
                             <Form.Label className='newBookLabel'>Wikipedia del autor</Form.Label>
-                            <Form.Control className='newBookInput' type="text" name='author_wiki_url' placeholder='Enlace a la wiki del autor' onChange={handleChange} />
+                            <Form.Control className='newBookInput' type="text" name='author_wiki_url' placeholder='Escribe aquí' onChange={handleChange} />
                             <Form.Text className="text-muted">
-                                Debe ser mínimo de 6 carácteer.
+                                Enlace de la wikipidia oficial del autor
                             </Form.Text>
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="formBasicPassword">
                             <Form.Label className='newBookLabel'>A la venta en</Form.Label>
-                            <Form.Control className='newBookInput' type="text" name='shop_url' placeholder='Enlace a una tienda que lo venda' onChange={handleChange} />
+                            <Form.Control className='newBookInput' type="text" name='shop_url' placeholder='Escribe aquí' onChange={handleChange} />
                             <Form.Text className="text-muted">
-                                Debe ser mínimo de 6 carácteer.
+                                Enlace de compra a una web
                             </Form.Text>
                         </Form.Group>
 
