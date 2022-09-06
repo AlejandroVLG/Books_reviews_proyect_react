@@ -11,8 +11,6 @@ const NavigationBar = () => {
 
     const identification = useSelector(userData)
 
-    console.log(identification)
-
     const dispatch = useDispatch()
 
     const travel = (destiny) => {

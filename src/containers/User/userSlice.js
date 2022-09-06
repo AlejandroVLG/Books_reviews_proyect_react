@@ -93,29 +93,6 @@ export const logOut = () => (dispatch) => {
 
 };
 
-export const userInfo = () => async (dispatch) => {
-
-    try {
-        const identification = state.user;
-
-        let requirements = {
-            headers: {
-                "Authorization": `Bearer ${identification.token}`
-            }
-        }
-        const userInfoData = await axios.get('https://books-reviews-app-proyect.herokuapp.com/api/user/myProfile', requirements)
-
-        console.log(userInfoData)
-
-        if (userInfoData.status === 200) {
-
-            dispatch(info(userInfoData.data))
-        }
-    } catch (error) {
-        console.log(error)
-    }
-}
-
 export const { register, login, logout } = userSlice.actions
 
 export const userData = (state) => state.user

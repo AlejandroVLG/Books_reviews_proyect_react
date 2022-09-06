@@ -1,3 +1,4 @@
+import axios from "axios"
 import React from "react"
 import { Button, Card, ListGroup } from "react-bootstrap"
 import { useSelector } from "react-redux"
@@ -11,9 +12,7 @@ const BookCard = props => {
 
     const identification = useSelector(userData)
 
-    console.log(identification)
-
-    const deleteId = useParams(props.data.id)
+    const deleteId = props.data.id
 
     let requirements = {
         headers: {
@@ -26,13 +25,13 @@ const BookCard = props => {
         navigate(destiny)
     }
 
-    const handleDelete = async (deleteId) => {
+    const handleDelete = async () => {
 
         await axios.delete(`https://books-reviews-app-proyect.herokuapp.com/api/book/deleteBook/${deleteId}`, requirements)
 
     }
 
-    //Only an Admin can delete a book
+    //Only the SuperAdmin/Admin can delete a book
     
     if (identification.infoData.id == 1) {
         return (
@@ -60,7 +59,7 @@ const BookCard = props => {
                         <button onClick={() => travel("/reviews")}>
                             Editar libro
                         </button>
-                        <button onClick={handleDelete(props.data.id)}>
+                        <button onClick={handleDelete}>
                             Eliminar libro
                         </button>
                     </div>
