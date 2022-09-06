@@ -15,13 +15,15 @@ const MyProfile = props => {
     const myProfile = credentials.infoData
 
     return (
-      <div className='MyProfile'>
-        
+      <div className='myProfile'>
+
         {myProfile.length === 0 && <p>Cargando...</p>}
         {
           <ProfileCard data={myProfile} />
         }
+        <div className="myProfileFooterBox">Footer</div>
       </div>
+
     )
   } catch (error) {
     console.log(error)

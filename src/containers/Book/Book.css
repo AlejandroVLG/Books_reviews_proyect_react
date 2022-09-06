@@ -1,6 +1,7 @@
 .bookMainBox {
     height: auto;
     width: 100%;
+    min-height: 70vh;
     background-color: rgb(52, 53, 54);
     background-color: bisque;
     box-sizing: border-box;
