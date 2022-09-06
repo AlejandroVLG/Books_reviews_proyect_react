@@ -11,6 +11,8 @@ const NavigationBar = () => {
 
     const identification = useSelector(userData)
 
+    console.log(identification)
+
     const dispatch = useDispatch()
 
     const travel = (destiny) => {
@@ -41,9 +43,9 @@ const NavigationBar = () => {
                 <hr className="hrLine" />
                 <div className="bookButon" onClick={() => travel("/books")}>Biblioteca</div>
                 <hr className="hrLine" />
-                <div className="myProfileButon" onClick={() => travel("/myProfile")}>Mi cuenta</div>
-                <hr className="hrLine" />
                 <div className="newBook" onClick={() => travel("/newBook")}>Añadir libro</div>
+                <hr className="hrLine" />
+                <div className="myProfileButon" onClick={() => travel("/myProfile")}>{identification.infoData.name}</div>
                 <hr className="hrLine" />
                 <div className="logoutButon" onClick={() => dispatch(logOut())}>Logout</div>
                 <hr className="hrLine" />

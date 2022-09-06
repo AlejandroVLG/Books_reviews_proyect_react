@@ -24,9 +24,9 @@ const BookCard = props => {
         navigate(destiny)
     }
 
-    const handleDelete = async () => {
+    const handleDelete = async (deleteId) => {
 
-       const deleteReview = await axios.delete(`https://books-reviews-app-proyect.herokuapp.com/api/book/deleteBook/${deleteId}`, requirements)
+        await axios.delete(`https://books-reviews-app-proyect.herokuapp.com/api/book/deleteBook/${deleteId}`, requirements)
 
     }
     if (props.data.name == "") {
@@ -55,7 +55,7 @@ const BookCard = props => {
                         <button onClick={() => travel("/reviews")}>
                             Editar libro
                         </button>
-                        <button onClick={handleDelete}>
+                        <button onClick={handleDelete(props.data.id)}>
                             Eliminar libro
                         </button>
                     </div>

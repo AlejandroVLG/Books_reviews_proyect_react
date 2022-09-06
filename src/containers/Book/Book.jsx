@@ -66,7 +66,6 @@ const Book = props => {
                         )
                     }
                 </div>
-                <div className="bookFooterBox">Footer</div>
             </div>
         )
 

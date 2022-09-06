@@ -30,13 +30,7 @@ export const userSlice = createSlice({
                 ...state.initialState,
                 token: "",
             }
-        },
-        info: (state, action) => {
-            return {
-                ...state,
-                infoData : action.payload
-            }
-        },
+        }
     }
 })
 
@@ -64,17 +58,29 @@ export const registerUser = (name, nick_name, email, password) => async (dispatc
 export const loginUser = (body) => async (dispatch) => {
     try {
 
-        const user = await axios.post("https://books-reviews-app-proyect.herokuapp.com/api/login", body);
+        const userToken = await axios.post("https://books-reviews-app-proyect.herokuapp.com/api/login", body);
 
-        if (user.status === 200) {
+        if (userToken.status === 200) {
+
+            const identification = userToken.data;
+
+            let requirements = {
+                headers: {
+                    "Authorization": `Bearer ${identification.token}`
+                }
+            }
+
+            // Using an other EndPoing i've saved the logged user profile data on infoData.
+
+            const userInfoData = await axios.get('https://books-reviews-app-proyect.herokuapp.com/api/user/myProfile', requirements)
 
             dispatch(login(
                 {
-                    token: user.data.token,
+                    token: userToken.data.token,
+                    infoData: userInfoData.data
                 }
             ))
 
-            infoUser()
         }
 
     } catch (error) {
@@ -87,7 +93,7 @@ export const logOut = () => (dispatch) => {
 
 };
 
-export const infoUser = () => async (dispatch) => {
+export const userInfo = () => async (dispatch) => {
 
     try {
         const identification = state.user;
@@ -97,11 +103,13 @@ export const infoUser = () => async (dispatch) => {
                 "Authorization": `Bearer ${identification.token}`
             }
         }
-        const user = await axios.get('https://books-reviews-app-proyect.herokuapp.com/api/user/myProfile', requirements)
+        const userInfoData = await axios.get('https://books-reviews-app-proyect.herokuapp.com/api/user/myProfile', requirements)
 
-        if (user.status === 200) {
+        console.log(userInfoData)
 
-            dispatch(info(user.data))
+        if (userInfoData.status === 200) {
+
+            dispatch(info(userInfoData.data))
         }
     } catch (error) {
         console.log(error)
