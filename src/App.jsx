@@ -8,6 +8,7 @@ import NewBook from './containers/NewBook/NewBook'
 import MyProfile from './containers/MyProfile/MyProfile'
 import Register from './containers/User/Register/Register'
 import Login from './containers/User/Login/Login'
+import EditBook from './containers/EditBook/Editbook'
 
 import './App.css'
 
@@ -29,6 +30,7 @@ function App() {
           <Route path="/myProfile" element={<MyProfile />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/editBook/:id" element={<EditBook />} />
         </Routes>
 
       </BrowserRouter>

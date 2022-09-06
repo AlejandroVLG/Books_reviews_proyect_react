@@ -56,7 +56,7 @@ const BookCard = props => {
                         </Button>
                     </div>
                     <div className="d-grid gap-2 adminBox">
-                        <button onClick={() => travel("/reviews")}>
+                        <button onClick={() => travel(`/editBook/${props.data.id}`)}>
                             Editar libro
                         </button>
                         <button onClick={handleDelete}>
