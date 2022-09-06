@@ -2,30 +2,20 @@
     height: auto;
     width: 100%;
     background-color: rgb(52, 53, 54);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     background-color: bisque;
+    box-sizing: border-box;
 }
 
 .bookContentBox {
     height: 100%;
     width: 100%;
     background-color: bisque;
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
 }
 
-.bookFooterBox {
-    height: 6vh;
+.searchBar {
+    margin-top: 0.3em;
     width: 100%;
-    background-color: lightseagreen;
-}
-
-.searchBar{
-    width: 30em;
-}
-
-.searchButton{
-    width: 10em;
 }

@@ -47,7 +47,7 @@ const Book = props => {
             <div className="bookMainBox">
 
                 <input
-                    className="form-control"
+                    className="form-control searchBar"
                     type="text"
                     value={search}
                     placeholder="Insert search"

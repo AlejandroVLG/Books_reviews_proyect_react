@@ -11,6 +11,8 @@ const BookCard = props => {
 
     const identification = useSelector(userData)
 
+    console.log(identification)
+
     const deleteId = useParams(props.data.id)
 
     let requirements = {
@@ -29,7 +31,10 @@ const BookCard = props => {
         await axios.delete(`https://books-reviews-app-proyect.herokuapp.com/api/book/deleteBook/${deleteId}`, requirements)
 
     }
-    if (props.data.name == "") {
+
+    //Only an Admin can delete a book
+    
+    if (identification.infoData.id == 1) {
         return (
 
             <Card className="mainCardBox" style={{ width: '18rem' }}>
