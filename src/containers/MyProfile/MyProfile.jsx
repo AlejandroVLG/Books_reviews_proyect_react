@@ -10,34 +10,16 @@ const MyProfile = props => {
 
   try {
 
-    const [profileData, setProfileData] = useState({
-      profile: []
-    })
+    const credentials = useSelector(userData)
 
-    const identification = useSelector(userData);
-    let requirements = {
-      headers: {
-        "Authorization": `Bearer ${identification.token}`
-
-      }
-    }
-    useEffect(() => {
-      axios.get('https://books-reviews-app-proyect.herokuapp.com/api/user/myProfile', requirements)
-        .then(resp => {
-          setProfileData({
-            profile: resp.data
-          })
-
-        })
-
-    }, [])
+    const myProfile = credentials.infoData
 
     return (
       <div className='MyProfile'>
         
-        {profileData.length === 0 && <p>Cargando...</p>}
+        {myProfile.length === 0 && <p>Cargando...</p>}
         {
-          <ProfileCard data={profileData.profile} />
+          <ProfileCard data={myProfile} />
         }
       </div>
     )
