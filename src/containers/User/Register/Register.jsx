@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { Button, Col, Form, Row } from 'react-bootstrap'
-import { useDispatch, useSelector } from 'react-redux'
+import { Form } from 'react-bootstrap'
+import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { registerUser, userData } from '../userSlice'
+import { registerUser } from '../userSlice'
 import "./Register.css"
 
 const Register = props => {
@@ -37,7 +37,6 @@ const Register = props => {
 
   const userRegister = (event) => {
     event.preventDefault()
-
 
     if (! /^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(register.name)) {
 
@@ -163,7 +162,7 @@ const Register = props => {
               Registrarse
             </button>
 
-            <div className='message'>{register.isError ? (<p style={{color:"red"}}>{register.message}</p>) : (<p style={{color:"green"}}>{register.successMsg}</p>)}</div>
+            <div className='registerMessage'>{register.isError ? (<p style={{ color: "red" }}>{register.message}</p>) : (<p style={{ color: "green" }}>{register.successMsg}</p>)}</div>
           </Form.Group>
 
         </Form>

@@ -7,9 +7,12 @@ import "./Login.css"
 
 const Login = () => {
 
-  const [credentials, setCredentials] = useState({ email: '', password: '' })
-
-  const [msgError, setMsgError] = useState("")
+  const [credentials, setCredentials] = useState(
+    {
+      email: '',
+      password: ''
+    }
+  )
 
   const dispatch = useDispatch()
 
@@ -29,10 +32,11 @@ const Login = () => {
   useEffect(() => {
 
     if (identification?.token !== '') {
+
       setTimeout(() => {
         navigate("/")
 
-      }, 200)
+      }, 1200)
     }
   })
 
@@ -42,17 +46,35 @@ const Login = () => {
 
       if (! /[\d()+-]/g.test(credentials.password)) {
 
-        setMsgError('Contraseña incorrecta')
-        return;
+        setCredentials(
+          {
+            ...credentials,
+            isError: true,
+            message: "Contraseña incorrecta"
+          }
+        )
+        return
       }
 
     } else {
 
-      setMsgError('La contraseña debe tener al menos 6 carácteres')
+      setCredentials(
+        {
+          ...credentials,
+          isError: true,
+          message: "La contraseña debe tener al menos 6 carácteres"
+        }
+      )
       return
     }
 
-    setMsgError("")
+    setCredentials(
+      {
+        ...credentials,
+        isError: false,
+        successMsg: "Te has identificado correctamente"
+      }
+    )
 
     dispatch(loginUser(
       {
@@ -88,7 +110,7 @@ const Login = () => {
             <button className='loginButton' variant="primary" onClick={() => log()}>
               Iniciar sesión
             </button>
-            <p>{identification.msgError ? identification.errorMessage : identification.successMessage}</p>
+            <div className='loginMessage'>{credentials.isError ? (<p style={{ color: "red" }}>{credentials.message}</p>) : (<p style={{ color: "green" }}>{credentials.successMsg}</p>)}</div>
           </Form.Group>
 
         </div>
@@ -97,4 +119,5 @@ const Login = () => {
   )
 }
 
-export default Login; 
+
+export default Login
