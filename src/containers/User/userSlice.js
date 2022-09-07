@@ -58,7 +58,7 @@ export const registerUser = (name, nick_name, email, password) => async (dispatc
 export const loginUser = (body) => async (dispatch) => {
     try {
 
-        const userToken = await axios.post("https://books-reviews-app-proyect.herokuapp.com/api/login", body);
+        const userToken = await axios.post("https://books-reviews-app-proyect.herokuapp.com/api/login", body)
 
         if (userToken.status === 200) {
 

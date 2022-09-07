@@ -1,7 +1,6 @@
 import axios from "axios"
 import React, { useEffect, useState } from "react"
 import BookCard from "../../components/BookCard/BookCard"
-
 import "./Book.css"
 
 const Book = props => {
@@ -10,6 +9,7 @@ const Book = props => {
         const [booksData, setbooksData] = useState({
             books: []
         })
+
         const [search, setSearch] = useState("")
 
         const showBooks = async () => {
@@ -29,6 +29,7 @@ const Book = props => {
 
         if (!search) {
             results = booksData.books
+
         } else {
             results = booksData.books.filter((data) =>
 

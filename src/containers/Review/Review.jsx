@@ -4,13 +4,11 @@ import ReviewCard from "../../components/ReviewCard/ReviewCard"
 import { userData } from "../User/userSlice"
 import { useSelector } from "react-redux"
 import { useParams } from "react-router"
-
 import "./Review.css"
 
 const Review = props => {
     
     try {
-
         const {id} = useParams()
 
         const [reviewData, setReviewsData] = useState({
@@ -34,20 +32,12 @@ const Review = props => {
             })
         }
 
-        const deleteReview = async () => {
-
-            const response = await axios.get(`https://books-reviews-app-proyect.herokuapp.com/api/review/searchReviewByBookId/${id}`, requirements)
-
-            setReviewsData({
-                reviews: response.data.data
-            })
-        }
-
         useEffect(() => {
             showReviews()
         }, [])
 
         return (
+
             <div className="reviewsBox">
 
                 {reviewData.reviews.length === 0 && <p>Cargando...</p>}
@@ -62,6 +52,7 @@ const Review = props => {
                 }
             </div>
         )
+
     } catch (error) {
         console.log(error)
     }

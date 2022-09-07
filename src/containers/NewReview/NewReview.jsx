@@ -4,7 +4,6 @@ import { Form } from "react-bootstrap"
 import { useSelector } from "react-redux";
 import { useParams } from "react-router";
 import { userData } from "../User/userSlice";
-
 import "./NewReview.css"
 
 const NewReview = props => {
@@ -12,7 +11,7 @@ const NewReview = props => {
     try {
         const identification = useSelector(userData);
 
-        const {id} = useParams()
+        const { id } = useParams()
 
         const [reviewState, setReviewState] = useState({
             book_id: id,
@@ -20,6 +19,7 @@ const NewReview = props => {
             score: '',
             message: ''
         })
+
         const handleChange = (e) => {
             setReviewState({
                 ...reviewState,
@@ -29,8 +29,8 @@ const NewReview = props => {
 
         let requirements = {
             headers: {
-                "Authorization": `Bearer ${identification.token}`
-            }
+                "Authorization": `Bearer ${identification.token}`,
+            },
         }
 
         const handleSubmit = async (e) => {
@@ -41,7 +41,6 @@ const NewReview = props => {
         return (
 
             <div className='mainNewReviewBox'>
-
                 <div className='newReviewBox'>
 
                     <Form className="newReviewFormBox" onSubmit={handleSubmit}>
@@ -54,18 +53,11 @@ const NewReview = props => {
                             </Form.Text>
                         </Form.Group>
 
-                        <Form.Group className="mb-3" controlId="formBasicMessage">
-                            <Form.Label className='newReviewLabel'>Reseña</Form.Label>
-                            <Form.Control as="textarea" rows={3} className='newReviewInput' type="text" name='message' placeholder='Escribe aquí' onChange={handleChange} />
-                            <Form.Text className="text-muted">
-                                Redacta una reseña con tú valoración
-                            </Form.Text>
-                        </Form.Group>
-
                         <Form.Group className="mb-3" controlId="formBasicScore">
                             <Form.Label className='newReviewLabel'>Puntuación</Form.Label>
-                            <Form.Select className='newReviewInput'
+                            <Form.Select
                                 aria-label="Default select example"
+                                className='newReviewInput'
                                 name='score'
                                 onChange={handleChange}>
                                 <option>Abrir el desplegable</option>
@@ -85,6 +77,14 @@ const NewReview = props => {
                             </Form.Text>
                         </Form.Group>
 
+                        <Form.Group className="mb-3" controlId="formBasicMessage">
+                            <Form.Label className='newReviewLabel'>Reseña</Form.Label>
+                            <Form.Control as="textarea" rows={3} className='newReviewInput' type="text" name='message' placeholder='Escribe aquí' onChange={handleChange} />
+                            <Form.Text className="text-muted">
+                                Redacta una reseña con tú valoración
+                            </Form.Text>
+                        </Form.Group>
+
                         <Form.Group className="mb-3 newReviewBoxButton">
                             <button className='newReviewSendButtom' variant="primary" type="submit">
                                 Publicar resela
@@ -94,9 +94,9 @@ const NewReview = props => {
                     </Form>
 
                 </div>
-
             </div>
         )
+
     } catch (error) {
         console.log(error)
     }

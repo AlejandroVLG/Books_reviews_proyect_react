@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 
-.mainNewReviewBox {
+.mainEditReviewBox {
 	width: 100%;
 	height: auto;
 	box-sizing: border-box;
@@ -8,20 +8,20 @@
 	font-family: 'Playfair Display', serif;
 }
 
-.newReviewFormBox {
+.editReviewFormBox {
 	max-width: 50em;
 	width: 90%;
 	margin: auto;
 	padding: 2.5em;
 }
 
-.newReviewForm {
+.editReviewForm {
 	display: grid;
 	grid-template-columns: 1fr;
 	gap: 1.25em;
 }
 
-.newReviewLabel {
+.editReviewLabel {
 	display: block;
 	font-weight: 700;
 	padding: 0.6em;
@@ -29,7 +29,7 @@
 	cursor: pointer;
 }
 
-.newReviewInput {
+.editReviewInput {
 	width: 100%;
 	background: #fff;
 	border-radius: 0.2em;
@@ -40,20 +40,20 @@
 	border: 0.2em solid transparent;
 }
 
-.newReviewInput:focus {
+.editReviewInput:focus {
 	border: 0.2em solid #0075FF;
 	outline: none;
 	box-shadow: 0.2em 0em 1.9em 0.3em rgba(163, 163, 163, 0.4);
 }
 
-.newReviewBoxButton{
+.editReviewBoxButton{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	grid-column: span 2;
+	grid-column: span 1;
 }
 
-.newReviewSendButtom {
+.editReviewSendButtom {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -69,6 +69,11 @@
 	transition: .1s ease all;
 }
 
-.newReviewSendButtom:hover {
+.editReviewSendButtom:hover {
 	box-shadow: 0.2em 0em 1.9em 0.3em rgba(163,163,163, 1);
+}
+
+.textArea{
+	display: flex;
+	grid-row: span 2;
 }

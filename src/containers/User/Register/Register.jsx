@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import { Button, Col, Form, Row } from 'react-bootstrap';
-import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import { registerUser, userData } from '../userSlice';
-
-import "./Register.css";
+import React, { useEffect, useState } from 'react'
+import { Button, Col, Form, Row } from 'react-bootstrap'
+import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
+import { registerUser, userData } from '../userSlice'
+import "./Register.css"
 
 const Register = props => {
 
@@ -14,12 +13,14 @@ const Register = props => {
 
   const identification = useSelector(userData)
 
-  const [register, setRegister] = useState({
-    name: "",
-    nick_name: "",
-    email: "",
-    password: ""
-  })
+  const [register, setRegister] = useState(
+    {
+      name: "",
+      nick_name: "",
+      email: "",
+      password: ""
+    }
+  )
 
   useEffect(() => {
     if (localStorage.getItem("token")) {
@@ -62,7 +63,7 @@ const Register = props => {
           }
         );
         return;
-      };
+      }
     } else {
       setRegister(
         {
@@ -70,7 +71,7 @@ const Register = props => {
           isError: true,
           message: "La contraseña debe tener al menos 6 carácteres"
         }
-      );
+      )
       return;
     }
 
@@ -95,8 +96,8 @@ const Register = props => {
 
 
   return (
-    <div className='mainBox'>
 
+    <div className='mainBox'>
       <div className='mainRegisterBox'>
 
         <Form className='registerForm' onSubmit={userRegister}>
@@ -113,7 +114,7 @@ const Register = props => {
             <Form.Label className='registerLabel'>Apodo</Form.Label>
             <Form.Control className='registerInput' type="text" name='nick_name' placeholder='Introduce un apodo' onChange={handleInput} />
             <Form.Text className="text-muted">
-            Introduce un apodo
+              Introduce un apodo
             </Form.Text>
           </Form.Group>
 
@@ -145,7 +146,6 @@ const Register = props => {
         </Form>
 
       </div>
-
     </div>
   )
 }

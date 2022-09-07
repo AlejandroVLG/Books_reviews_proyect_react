@@ -4,7 +4,6 @@ import { Form } from 'react-bootstrap'
 import { useSelector } from 'react-redux'
 import { useParams } from 'react-router'
 import { userData } from '../User/userSlice'
-
 import "./EditBook.css"
 
 const EditBook = props => {
@@ -36,7 +35,7 @@ const EditBook = props => {
 
         let requirements = {
             headers: {
-                "Authorization": `Bearer ${identification.token}`
+                "Authorization": `Bearer ${identification.token}`,
             }
         }
 
@@ -47,10 +46,9 @@ const EditBook = props => {
 
         return (
             <div className='mainEditBookBox'>
-
                 <div className='editBookFormBox'>
-
                     <div className='editBookForm' >
+
                         <Form onSubmit={handleSubmit}>
                             <Form.Group className="mb-3" controlId="formBasicTitle">
                                 <Form.Label className='editBookLabel'>Título</Form.Label>
@@ -99,7 +97,8 @@ const EditBook = props => {
                         <Form onSubmit={handleSubmit}>
                             <Form.Group className="mb-3" controlId="formBasicPassword">
                                 <Form.Label className='editBookLabel'>Género literario</Form.Label>
-                                <Form.Select className='editBookInput'
+                                <Form.Select
+                                    className='editBookInput'
                                     name='genre'
                                     placeholder='Escribe aquí'
                                     onChange={handleChange}>
@@ -171,15 +170,13 @@ const EditBook = props => {
                         </Form.Group>
 
                     </div>
-
                 </div>
-
             </div >
         )
+
     } catch (error) {
         console.log(error)
     }
-
 }
 
 export default EditBook

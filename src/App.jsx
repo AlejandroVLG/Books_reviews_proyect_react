@@ -10,7 +10,7 @@ import Register from './containers/User/Register/Register'
 import Login from './containers/User/Login/Login'
 import EditBook from './containers/EditBook/Editbook'
 import NewReview from './containers/NewReview/NewReview'
-
+import EditReview from './containers/EditReview/EditReview'
 import './App.css'
 
 function App() {
@@ -33,6 +33,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/editBook/:id" element={<EditBook />} />
           <Route path="/newReview/:id" element={<NewReview />} />
+          <Route path="/editReview/:id" element={<EditReview />} />
         </Routes>
 
       </BrowserRouter>

@@ -3,7 +3,6 @@ import React, { useState } from 'react'
 import { Form } from 'react-bootstrap'
 import { useSelector } from 'react-redux'
 import { userData } from '../User/userSlice'
-
 import "./NewBook.css"
 
 const NewBook = props => {
@@ -23,6 +22,7 @@ const NewBook = props => {
             shop_url: '',
 
         })
+
         const handleChange = (e) => {
             setBookState({
                 ...bookState,
@@ -44,7 +44,6 @@ const NewBook = props => {
         return (
 
             <div className='mainNewBookBox'>
-
                 <div className='newBookFormBox'>
 
                     <Form className='newBookForm' onSubmit={handleSubmit}>
@@ -149,9 +148,9 @@ const NewBook = props => {
                     </Form>
 
                 </div>
-
             </div>
         )
+        
     } catch (error) {
         console.log(error)
     }

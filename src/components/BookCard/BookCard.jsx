@@ -2,7 +2,7 @@ import axios from "axios"
 import React from "react"
 import { Button, Card, ListGroup } from "react-bootstrap"
 import { useSelector } from "react-redux"
-import { useNavigate, useParams } from "react-router"
+import { useNavigate } from "react-router"
 import { userData } from "../../containers/User/userSlice"
 import './BookCard.css'
 
@@ -34,6 +34,7 @@ const BookCard = props => {
     //Only the SuperAdmin/Admin can delete a book
     
     if (identification.infoData.id == 1) {
+
         return (
 
             <Card className="mainCardBox" style={{ width: '18rem' }}>
@@ -70,6 +71,7 @@ const BookCard = props => {
             </Card>
         )
     } else {
+
         return (
 
             <Card className="mainCardBox" style={{ width: '18rem' }}>
