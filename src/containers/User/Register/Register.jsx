@@ -11,8 +11,6 @@ const Register = props => {
 
   let navigate = useNavigate()
 
-  const identification = useSelector(userData)
-
   const [register, setRegister] = useState(
     {
       name: "",
@@ -40,7 +38,31 @@ const Register = props => {
   const userRegister = (event) => {
     event.preventDefault()
 
-    //Esta expresión regular ayuda a validar un email
+
+    if (! /^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(register.name)) {
+
+      setRegister(
+        {
+          ...register,
+          isError: true,
+          message: "Nombre incorrecto"
+        }
+      )
+      return
+    }
+
+    if (! /^[a-zA-Z0-9\_\-]{4,16}$/.test(register.nick_name)) {
+
+      setRegister(
+        {
+          ...register,
+          isError: true,
+          message: "Nickname incorrecto"
+        }
+      )
+      return
+    }
+
     if (! /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/.test(register.email)) {
       setRegister(
         {
@@ -48,23 +70,25 @@ const Register = props => {
           isError: true,
           message: "E-mail incorrecto"
         }
-      );
-      return;
+      )
+      return
     }
 
     if (register.password.length >= 6) {
-      //Esta expresión regular ayuda a validar un password (número + letras en este caso)
-      if (! /[\d()+-]/g.test(register.password)) {
+
+      if (! /^.{4,12}$/g.test(register.password)) {
+
         setRegister(
           {
             ...register,
             isError: true,
-            message: "Contraseña incorrecta"
+            message: "Contraseña no permitida"
           }
-        );
-        return;
+        )
+        return
       }
     } else {
+
       setRegister(
         {
           ...register,
@@ -72,14 +96,14 @@ const Register = props => {
           message: "La contraseña debe tener al menos 6 carácteres"
         }
       )
-      return;
+      return
     }
 
     setRegister(
       {
         ...register,
         isError: false,
-        errorMsg: ""
+        successMsg: "Registro completado correctamente"
       }
     )
 
@@ -106,15 +130,15 @@ const Register = props => {
             <Form.Label className='registerLabel'>Nombre</Form.Label>
             <Form.Control className='registerInput' type="text" name='name' placeholder='Introduce tu nombre' onChange={handleInput} />
             <Form.Text className="text-muted">
-              blabla.
+              Puede contener letras, espacios y signos de acentuación.
             </Form.Text>
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="formBasicNickname">
-            <Form.Label className='registerLabel'>Apodo</Form.Label>
+            <Form.Label className='registerLabel'>Nickname</Form.Label>
             <Form.Control className='registerInput' type="text" name='nick_name' placeholder='Introduce un apodo' onChange={handleInput} />
             <Form.Text className="text-muted">
-              Introduce un apodo
+              De 4 a 16 carácteres con letras, números, guión o guión bajo.
             </Form.Text>
           </Form.Group>
 
@@ -130,7 +154,7 @@ const Register = props => {
             <Form.Label className='registerLabel'>Contraseña</Form.Label>
             <Form.Control className='registerInput' type="password" name='password' placeholder='Password' onChange={handleInput} />
             <Form.Text className="text-muted">
-              Debe ser mínimo de 6 carácteer.
+              Debe contener mínimo de 6 carácteres.
             </Form.Text>
           </Form.Group>
 
@@ -139,8 +163,7 @@ const Register = props => {
               Registrarse
             </button>
 
-            <p className='message'>{register.isError ? register.message : ''}</p>
-            <p>{identification.isError ? identification.errorMessage : identification.successMessage}</p>
+            <div className='message'>{register.isError ? (<p style={{color:"red"}}>{register.message}</p>) : (<p style={{color:"green"}}>{register.successMsg}</p>)}</div>
           </Form.Group>
 
         </Form>

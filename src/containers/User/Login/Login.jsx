@@ -88,7 +88,7 @@ const Login = () => {
             <button className='loginButton' variant="primary" onClick={() => log()}>
               Iniciar sesión
             </button>
-            <div className='error'>{msgError}</div>
+            <p>{identification.msgError ? identification.errorMessage : identification.successMessage}</p>
           </Form.Group>
 
         </div>
