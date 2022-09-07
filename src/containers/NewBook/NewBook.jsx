@@ -10,8 +10,6 @@ const NewBook = props => {
 
     try {
 
-        const componentTitle = 'Añadir libro'
-
         const identification = useSelector(userData);
 
         const [bookState, setBookState] = useState({
@@ -59,7 +57,7 @@ const NewBook = props => {
                             </Form.Text>
                         </Form.Group>
 
-                        <Form.Group className="mb-3" controlId="formBasicTitle">
+                        <Form.Group className="mb-3" controlId="formBasicSynopsis">
                             <Form.Label className='newBookLabel'>Sinopsis</Form.Label>
                             <Form.Control as="textarea" rows={3} className='newBookInput' type="text" name='synopsis' placeholder='Escribe aquí' onChange={handleChange} />
                             <Form.Text className="text-muted">
@@ -67,7 +65,7 @@ const NewBook = props => {
                             </Form.Text>
                         </Form.Group>
 
-                        <Form.Group className="mb-3" controlId="formBasicNickname">
+                        <Form.Group className="mb-3" controlId="formBasicSeries">
                             <Form.Label className='newBookLabel'>Saga</Form.Label>
                             <Form.Control className='newBookInput' type="text" name='series' placeholder='Escribe aquí' onChange={handleChange} />
                             <Form.Text className="text-muted">
@@ -75,7 +73,7 @@ const NewBook = props => {
                             </Form.Text>
                         </Form.Group>
 
-                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form.Group className="mb-3" controlId="formBasicAuthor">
                             <Form.Label className='newBookLabel'>Autor</Form.Label>
                             <Form.Control className='newBookInput' type="text" name='author' placeholder='Escribe aquí' onChange={handleChange} />
                             <Form.Text className="text-muted">
@@ -83,12 +81,14 @@ const NewBook = props => {
                             </Form.Text>
                         </Form.Group>
 
-                        <Form.Group className="mb-3" controlId="formBasicPassword">
+                        <Form.Group className="mb-3" controlId="formBasicGenre">
                             <Form.Label className='newBookLabel'>Género literario</Form.Label>
-                            <select className='newBookInput'
+                            <Form.Select
+                                aria-label="Default select example"
+                                className='newBookInput'
                                 name='genre'
-                                placeholder='Escribe aquí'
                                 onChange={handleChange}>
+                                <option>Abrir el desplegable</option>
                                 <option value="Autobiografía">Autobiografía</option>
                                 <option value="Aventuras">Aventuras</option>
                                 <option value="Ciencia ficción">Ciencia ficción</option>
@@ -102,13 +102,13 @@ const NewBook = props => {
                                 <option value="Novela negra">Novela negra</option>
                                 <option value="Romance">Romance</option>
                                 <option value="Terror">Terror</option>
-                            </select>
+                            </Form.Select>
                             <Form.Text className="text-muted">
                                 Selecciona uno de entre los géneros indicados
                             </Form.Text>
                         </Form.Group>
 
-                        <Form.Group className="mb-3" controlId="formBasicPassword">
+                        <Form.Group className="mb-3" controlId="formBasicYear">
                             <Form.Label className='newBookLabel'>Fecha de publicación</Form.Label>
                             <Form.Control className='newBookInput' type="date" min="01-01-1800" max="31-12-2050" name='year' placeholder='Escribe aquí' onChange={handleChange} />
                             <Form.Text className="text-muted">
@@ -116,7 +116,7 @@ const NewBook = props => {
                             </Form.Text>
                         </Form.Group>
 
-                        <Form.Group className="mb-3" controlId="formBasicPassword">
+                        <Form.Group className="mb-3" controlId="formBasicBookCover">
                             <Form.Label className='newBookLabel'>Portada</Form.Label>
                             <Form.Control className='newBookInput' type="text" name='book_cover' placeholder='Escribe aquí' onChange={handleChange} />
                             <Form.Text className="text-muted">
@@ -124,7 +124,7 @@ const NewBook = props => {
                             </Form.Text>
                         </Form.Group>
 
-                        <Form.Group className="mb-3" controlId="formBasicPassword">
+                        <Form.Group className="mb-3" controlId="formBasicAuthorWikiUrl">
                             <Form.Label className='newBookLabel'>Wikipedia del autor</Form.Label>
                             <Form.Control className='newBookInput' type="text" name='author_wiki_url' placeholder='Escribe aquí' onChange={handleChange} />
                             <Form.Text className="text-muted">
@@ -132,7 +132,7 @@ const NewBook = props => {
                             </Form.Text>
                         </Form.Group>
 
-                        <Form.Group className="mb-3" controlId="formBasicPassword">
+                        <Form.Group className="mb-3" controlId="formBasicShopUrl">
                             <Form.Label className='newBookLabel'>A la venta en</Form.Label>
                             <Form.Control className='newBookInput' type="text" name='shop_url' placeholder='Escribe aquí' onChange={handleChange} />
                             <Form.Text className="text-muted">

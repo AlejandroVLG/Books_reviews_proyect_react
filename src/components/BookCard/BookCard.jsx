@@ -54,6 +54,9 @@ const BookCard = props => {
                         <Button variant="primary" size="lg" onClick={() => travel(`/reviews/${props.data.id}`)}>
                             Ver reseñas
                         </Button>
+                        <Button variant="primary" size="lg" onClick={() => travel(`/newReview/${props.data.id}`)}>
+                            Añadir reseña
+                        </Button>
                     </div>
                     <div className="d-grid gap-2 adminBox">
                         <button onClick={() => travel(`/editBook/${props.data.id}`)}>

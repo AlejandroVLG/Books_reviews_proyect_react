@@ -9,6 +9,7 @@ import MyProfile from './containers/MyProfile/MyProfile'
 import Register from './containers/User/Register/Register'
 import Login from './containers/User/Login/Login'
 import EditBook from './containers/EditBook/Editbook'
+import NewReview from './containers/NewReview/NewReview'
 
 import './App.css'
 
@@ -31,6 +32,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/editBook/:id" element={<EditBook />} />
+          <Route path="/newReview/:id" element={<NewReview />} />
         </Routes>
 
       </BrowserRouter>
