@@ -1,5 +1,12 @@
 .myProfile {
-    height: 64vh;
-    width: 100vw;
-    background-color: lightgreen;
+    margin: 0em;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    background: #e5e5e5;
+    font-family: 'Playfair Display', serif;
+    min-height: 70vh;
+    display: flex;
+    justify-items: center;
+    align-items: center;
 }

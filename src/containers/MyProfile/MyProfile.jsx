@@ -20,11 +20,10 @@ const MyProfile = props => {
         {
           <ProfileCard data={myProfile} />
         }
-        <div className="myProfileFooterBox">Footer</div>
       </div>
 
     )
-    
+
   } catch (error) {
     console.log(error)
   }
