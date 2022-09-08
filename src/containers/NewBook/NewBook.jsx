@@ -49,24 +49,23 @@ const NewBook = props => {
                     isError: false,
                     successMsg: 'Libro añadido correctamente'
                 })
-            }
-            if (response.status === 401) {
-
-                setBookState({
-                    ...bookState,
-                    isError: true,
-                    message: 'Inicia sesión para añadir un nuevo libro'
-                })
-            }
-            if (response.status === 400) {
+            } else if (response.status === 400) {
 
                 setBookState({
                     ...bookState,
                     isError: true,
                     message: 'Ha habido un error, revisa los campos'
                 })
+            } else if (response.status === 401) {
+
+                setBookState({
+                    ...bookState,
+                    isError: true,
+                    message: 'Inicia sesión para continuar'
+                })
             }
         }
+
 
         return (
 

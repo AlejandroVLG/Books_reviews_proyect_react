@@ -36,7 +36,27 @@ const NewReview = props => {
         const handleSubmit = async (e) => {
             e.preventDefault()
 
-            const newRevireCall = await axios.post("https://books-reviews-app-proyect.herokuapp.com/api/review/createReview", reviewState, requirements)
+            await axios.post("https://books-reviews-app-proyect.herokuapp.com/api/review/createReview", reviewState, requirements)
+        }
+
+        const validation = () => {
+
+            if (reviewState.review_title || reviewState.score || reviewState.message === '') {
+
+                setReviewState({
+                    ...reviewState,
+                    isError: true,
+                    errorMessage: 'Ha habido un error'
+                })
+            }
+
+            setReviewState({
+                ...reviewState,
+                isError: false,
+                successMsg: 'Reseña añadida correctamente'
+            })
+
+
         }
 
         return (
@@ -87,9 +107,10 @@ const NewReview = props => {
                         </Form.Group>
 
                         <Form.Group className="mb-3 newReviewBoxButton">
-                            <button className='newReviewSendButtom' variant="primary" type="submit">
+                            <button className='newReviewSendButtom' variant="primary" type="submit" onClick={validation}>
                                 Publicar resela
                             </button>
+                            <div className='newBookMessage'>{reviewState.isError ? (<p style={{ color: "red" }}>{reviewState.errorMessage}</p>) : (<p style={{ color: "green" }}>{reviewState.successMsg}</p>)}</div>
                         </Form.Group>
 
                     </Form>
