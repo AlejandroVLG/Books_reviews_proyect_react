@@ -19,8 +19,7 @@ const NewBook = props => {
             year: '',
             book_cover: '',
             author_wiki_url: '',
-            shop_url: '',
-
+            shop_url: ''
         })
 
         const handleChange = (e) => {
@@ -37,8 +36,36 @@ const NewBook = props => {
         }
 
         const handleSubmit = async (e) => {
-            e.preventDefault();
-            await axios.post("https://books-reviews-app-proyect.herokuapp.com/api/book/createBook", bookState, requirements);
+            e.preventDefault()
+
+            const NewBookCall = await axios.post("https://books-reviews-app-proyect.herokuapp.com/api/book/createBook", bookState, requirements)
+
+            let response = NewBookCall
+
+            if (response.status === 200 || response.status === 201) {
+
+                setBookState({
+                    ...bookState,
+                    isError: false,
+                    successMsg: 'Libro añadido correctamente'
+                })
+            }
+            if (response.status === 401) {
+
+                setBookState({
+                    ...bookState,
+                    isError: true,
+                    message: 'Inicia sesión para añadir un nuevo libro'
+                })
+            }
+            if (response.status === 400) {
+
+                setBookState({
+                    ...bookState,
+                    isError: true,
+                    message: 'Ha habido un error, revisa los campos'
+                })
+            }
         }
 
         return (
@@ -53,14 +80,6 @@ const NewBook = props => {
                             <Form.Control className='newBookInput' type="text" name='title' placeholder='Escribe aquí' onChange={handleChange} />
                             <Form.Text className="text-muted">
                                 Título oficial del libro en España
-                            </Form.Text>
-                        </Form.Group>
-
-                        <Form.Group className="mb-3" controlId="formBasicSynopsis">
-                            <Form.Label className='newBookLabel'>Sinopsis</Form.Label>
-                            <Form.Control as="textarea" rows={3} className='newBookInput' type="text" name='synopsis' placeholder='Escribe aquí' onChange={handleChange} />
-                            <Form.Text className="text-muted">
-                                Resumen del libro en Español
                             </Form.Text>
                         </Form.Group>
 
@@ -139,10 +158,19 @@ const NewBook = props => {
                             </Form.Text>
                         </Form.Group>
 
+                        <Form.Group className="mb-3" controlId="formBasicSynopsis">
+                            <Form.Label className='newBookLabel'>Sinopsis</Form.Label>
+                            <Form.Control as="textarea" rows={3} className='newBookInput' type="text" name='synopsis' placeholder='Escribe aquí' onChange={handleChange} />
+                            <Form.Text className="text-muted">
+                                Resumen del libro en Español
+                            </Form.Text>
+                        </Form.Group>
+
                         <Form.Group className="mb-3 newBookBoxButton">
                             <button className='newBookSendButtom' variant="primary" type="submit">
                                 Añadir libro
                             </button>
+                            <div className='newBookMessage'>{bookState.isError ? (<p style={{ color: "red" }}>{bookState.message}</p>) : (<p style={{ color: "green" }}>{bookState.successMsg}</p>)}</div>
                         </Form.Group>
 
                     </Form>
@@ -150,7 +178,6 @@ const NewBook = props => {
                 </div>
             </div>
         )
-        
     } catch (error) {
         console.log(error)
     }

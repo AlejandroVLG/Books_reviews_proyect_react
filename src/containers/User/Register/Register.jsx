@@ -21,6 +21,7 @@ const Register = props => {
   )
 
   useEffect(() => {
+
     if (localStorage.getItem("token")) {
       navigate('/')
     }
@@ -114,9 +115,7 @@ const Register = props => {
         register.password
       )
     )
-
   }
-
 
   return (
 

@@ -1,9 +1,9 @@
-import axios from "axios";
+import axios from "axios"
 import React, { useState } from "react"
 import { Form } from "react-bootstrap"
-import { useSelector } from "react-redux";
-import { useParams } from "react-router";
-import { userData } from "../User/userSlice";
+import { useSelector } from "react-redux"
+import { useParams } from "react-router"
+import { userData } from "../User/userSlice"
 import "./NewReview.css"
 
 const NewReview = props => {
@@ -34,8 +34,9 @@ const NewReview = props => {
         }
 
         const handleSubmit = async (e) => {
-            e.preventDefault();
-            await axios.post("https://books-reviews-app-proyect.herokuapp.com/api/review/createReview", reviewState, requirements);
+            e.preventDefault()
+
+            const newRevireCall = await axios.post("https://books-reviews-app-proyect.herokuapp.com/api/review/createReview", reviewState, requirements)
         }
 
         return (
