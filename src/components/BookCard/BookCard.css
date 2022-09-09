@@ -1,13 +1,21 @@
-.mainCardBox{
-    box-sizing: border-box;
-    min-height: 74vh;
-    height: auto;
-    width: 100%;
-    margin: 1em;
-    padding: 0;
+.card {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.cover{
+.card p{
+    padding-top: 1em;
+    line-height: 150%;
+    text-overflow: ellipsis;
+}
+
+.cardImg{
     height: 25em;
+    width: 15em;
 }
 
+.expand{
+    width: 15em;
+}

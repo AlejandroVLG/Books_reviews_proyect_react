@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import {
     MDBCol,
     MDBContainer,
@@ -16,7 +17,14 @@ const ProfileCard = props => {
 
     return (
 
-        <div className="vh-100 mainBox" style={{ backgroundColor: '#f4f5f7' }}>
+        <motion.div
+            className="vh-100 mainBox"
+            style={{ background: 'linear-gradient(109.6deg, rgb(36, 45, 57) 11.2%, rgb(16, 37, 60) 51.2%, rgb(0, 0, 0) 98.6%)'
+            }}
+            initial={{ y: 500, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0, type: 'spring', stiffness: 30 }}
+        >
             <MDBContainer className="py-5 h-100">
                 <MDBRow className="justify-content-center align-items-center h-100">
                     <MDBCol lg="6" className="mb-4 mb-lg-0">
@@ -85,7 +93,7 @@ const ProfileCard = props => {
                     </MDBCol>
                 </MDBRow>
             </MDBContainer>
-        </div>
+        </motion.div>
     )
 }
 

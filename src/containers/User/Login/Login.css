@@ -4,9 +4,10 @@
 	width: 100%;
 	height: auto;
 	box-sizing: border-box;
-	background: #e5e5e5;
+	background: linear-gradient(109.6deg, rgb(36, 45, 57) 11.2%, rgb(16, 37, 60) 51.2%, rgb(0, 0, 0) 98.6%);	
 	font-family: 'Playfair Display', serif;
     min-height: 70vh;
+	color: white;
 }
 
 .loginBox {
@@ -61,8 +62,8 @@
 	height: 2.8em;
 	line-height: 2.8em;
 	width: 30%;
-	background: #000;
-	color: #fff;
+	background: #fff;
+	color: rgb(0, 0, 0);
 	font-weight: bold;
 	border: none;
 	border-radius: 0.2em;
@@ -71,7 +72,7 @@
 }
 
 .loginButton:hover {
-	box-shadow: 0.2em 0em 1.9em 0.3em rgba(163,163,163, 1);
+	box-shadow: 0.2em 0em 1.9em 0.3em rgba(218, 218, 218, 0.274);
 }
 
 .loginMessage {

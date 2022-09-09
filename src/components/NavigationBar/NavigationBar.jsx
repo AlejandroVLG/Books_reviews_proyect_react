@@ -28,7 +28,7 @@ const NavigationBar = () => {
                 <hr className="hrLine" />
                 <div className="registerButon" onClick={() => travel("/register")}>Registrarse</div>
                 <hr className="hrLine" />
-                <div className="loginButon" onClick={() => travel("/login")}>Login</div>
+                <div className="loginButon" onClick={() => travel("/login")}>Iniciar sesión</div>
                 <hr className="hrLine" />
             </nav>
         )
@@ -45,7 +45,7 @@ const NavigationBar = () => {
                 <hr className="hrLine" />
                 <div className="myProfileButon" onClick={() => travel("/myProfile")}>{identification.infoData.name}</div>
                 <hr className="hrLine" />
-                <div className="logoutButon" onClick={() => dispatch(logOut())}>Logout</div>
+                <div className="logoutButon" onClick={() => dispatch(logOut())}>Cerrar sesión</div>
                 <hr className="hrLine" />
             </nav>
         )
