@@ -77,23 +77,24 @@ const BookCard = props => {
                         <MDBCardBody className="p-4">
                             <br />
                             <MDBTypography className='dataHead' tag="h6">Información </MDBTypography>
+                            <br />
                             <hr className="mt-0 mb-4 bodyHr" />
                             <MDBRow className="pt-1">
 
                                 <MDBCol size="6" className="mb-3">
-                                    <MDBTypography tag="h6">Autor</MDBTypography>
+                                    <MDBTypography tag="h5">Autor</MDBTypography>
                                     <MDBCardText className="text-muted">{props.data.author}</MDBCardText>
                                 </MDBCol>
                                 <MDBCol size="6" className="mb-3">
-                                    <MDBTypography tag="h6">Saga</MDBTypography>
+                                    <MDBTypography tag="h5">Saga</MDBTypography>
                                     <MDBCardText className="text-muted">{props.data.series}</MDBCardText>
                                 </MDBCol>
                                 <MDBCol size="6" className="mb-3">
-                                    <MDBTypography tag="h6">Género</MDBTypography>
+                                    <MDBTypography tag="h5">Género</MDBTypography>
                                     <MDBCardText className="text-muted">{props.data.genre}</MDBCardText>
                                 </MDBCol>
                                 <MDBCol size="6" className="mb-3">
-                                    <MDBTypography tag="h6">Fecha de publicación</MDBTypography>
+                                    <MDBTypography tag="h5">Fecha de publicación</MDBTypography>
                                     <MDBCardText className="text-muted">{props.data.year}</MDBCardText>
                                 </MDBCol>
                                 <hr className="mt-0 mb-4 bodyHr" />
@@ -114,6 +115,7 @@ const BookCard = props => {
 
                             <br />
                             <MDBTypography className='dataHead' tag="h6">Sinopsis</MDBTypography>
+                            <br />
                             <hr className="mt-0 mb-4 bodyHr" />
 
                             <MDBRow className="pt-1">
@@ -169,23 +171,24 @@ const BookCard = props => {
                         <MDBCardBody className="p-4">
                             <br />
                             <MDBTypography className='dataHead' tag="h6">Información </MDBTypography>
+                            <br />
                             <hr className="mt-0 mb-4 bodyHr" />
                             <MDBRow className="pt-1">
 
                                 <MDBCol size="6" className="mb-3">
-                                    <MDBTypography tag="h6">Autor</MDBTypography>
+                                    <MDBTypography tag="h5">Autor</MDBTypography>
                                     <MDBCardText className="text-muted">{props.data.author}</MDBCardText>
                                 </MDBCol>
                                 <MDBCol size="6" className="mb-3">
-                                    <MDBTypography tag="h6">Saga</MDBTypography>
+                                    <MDBTypography tag="h5">Saga</MDBTypography>
                                     <MDBCardText className="text-muted">{props.data.series}</MDBCardText>
                                 </MDBCol>
                                 <MDBCol size="6" className="mb-3">
-                                    <MDBTypography tag="h6">Género</MDBTypography>
+                                    <MDBTypography tag="h5">Género</MDBTypography>
                                     <MDBCardText className="text-muted">{props.data.genre}</MDBCardText>
                                 </MDBCol>
                                 <MDBCol size="6" className="mb-3">
-                                    <MDBTypography tag="h6">Fecha de publicación</MDBTypography>
+                                    <MDBTypography tag="h5">Fecha de publicación</MDBTypography>
                                     <MDBCardText className="text-muted">{props.data.year}</MDBCardText>
                                 </MDBCol>
                                 <hr className="mt-0 mb-4 bodyHr" />
@@ -206,6 +209,7 @@ const BookCard = props => {
 
                             <br />
                             <MDBTypography className='dataHead' tag="h6">Sinopsis</MDBTypography>
+                            <br />
                             <hr className="mt-0 mb-4 bodyHr" />
 
                             <MDBRow className="pt-1">
