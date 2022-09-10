@@ -11,7 +11,7 @@ import {
     MDBIcon
 } from 'mdb-react-ui-kit';
 import React from "react"
-import './ProfileCard.css'
+import './ProfileCard.scss'
 
 const ProfileCard = props => {
 
@@ -19,21 +19,22 @@ const ProfileCard = props => {
 
         <motion.div
             className="vh-100 mainBox"
-            style={{ background: 'linear-gradient(109.6deg, rgb(36, 45, 57) 11.2%, rgb(16, 37, 60) 51.2%, rgb(0, 0, 0) 98.6%)'
+            style={{
+                background: 'linear-gradient(109.6deg, rgb(36, 45, 57) 11.2%, rgb(16, 37, 60) 51.2%, rgb(0, 0, 0) 98.6%)'
             }}
             initial={{ y: 500, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0, type: 'spring', stiffness: 30 }}
         >
-            <MDBContainer className="py-5 h-100">
+            <MDBContainer className="py-5 h-100 cardContainer">
                 <MDBRow className="justify-content-center align-items-center h-100">
                     <MDBCol lg="6" className="mb-4 mb-lg-0">
-                        <MDBCard className="mb-3" style={{ borderRadius: '.5rem' }}>
+                        <MDBCard className="mb-3" style={{ borderRadius: '.5em' }}>
                             <MDBRow className="g-0">
                                 <MDBCol md="4" className="gradient-custom text-center text-white"
-                                    style={{ borderTopLeftRadius: '.5rem', borderBottomLeftRadius: '.5rem' }}>
+                                    style={{ borderTopLeftRadius: '.5em', borderBottomLeftRadius: '.5em' }}>
                                     <MDBCardImage src={props.data.profile_img}
-                                        alt="Avatar" className="my-5" style={{ width: '80px' }} fluid />
+                                        alt="Avatar" className="my-5" style={{ width: '8em' }} fluid />
                                     <br />
                                     <hr className="mt-0 mb-4" />
                                     <MDBTypography tag="h5">{props.data.name}</MDBTypography>
@@ -48,8 +49,8 @@ const ProfileCard = props => {
                                 </MDBCol>
                                 <MDBCol md="8">
                                     <MDBCardBody className="p-4">
-                                        <MDBTypography tag="h6">Datos personales</MDBTypography>
-                                        <hr className="mt-0 mb-4" />
+                                        <MDBTypography className='dataHead' tag="h6">Datos personales</MDBTypography>
+                                        <hr className="mt-0 mb-4 bodyHr" />
                                         <MDBRow className="pt-1">
                                             <MDBCol size="6" className="mb-3">
                                                 <MDBTypography tag="h6">Apodo</MDBTypography>
@@ -64,8 +65,8 @@ const ProfileCard = props => {
                                             <MDBTypography tag="h6">Correo electrónico</MDBTypography>
                                             <MDBCardText className="text-muted">{props.data.email}</MDBCardText>
                                         </MDBCol>
-                                        <MDBTypography tag="h6">Gustos</MDBTypography>
-                                        <hr className="mt-0 mb-4" />
+                                        <MDBTypography className='dataHead' tag="h6">Información adicional</MDBTypography>
+                                        <hr className="mt-0 mb-4 bodyHr" />
                                         <MDBRow className="pt-1">
                                             <MDBCol size="6" className="mb-3">
                                                 <MDBTypography tag="h6">Género favorito</MDBTypography>

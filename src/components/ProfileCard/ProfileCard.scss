@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 
 .gradient-custom {
     /* fallback for old browsers */
@@ -8,4 +9,14 @@
 
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background: linear-gradient(to right bottom, rgb(246, 164, 101), rgb(116, 32, 9))
+}
+
+.cardContainer{
+    color: black;
+    font-family: 'Playfair Display', serif;
+}
+
+.dataHead{
+    font-size: x-large;
+    font-weight: 900;
 }

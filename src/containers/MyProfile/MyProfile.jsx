@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import ProfileCard from '../../components/ProfileCard/ProfileCard'
 import { userData } from '../User/userSlice'
-import "./MyProfile.css"
+import "./MyProfile.scss"
 
 const MyProfile = props => {
 

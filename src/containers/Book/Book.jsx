@@ -1,7 +1,8 @@
 import axios from "axios"
+import { MDBCol, MDBContainer, MDBRow } from "mdb-react-ui-kit"
 import React, { useEffect, useState } from "react"
 import BookCard from "../../components/BookCard/BookCard"
-import "./Book.css"
+import "./Book.scss"
 
 const Book = props => {
 
@@ -51,7 +52,7 @@ const Book = props => {
                     className="form-control searchBar"
                     type="text"
                     value={search}
-                    placeholder="Insert search"
+                    placeholder="Datos de la búsqueda"
                     onChange={handleChange}
                 />
                 <div className="bookContentBox">
@@ -61,12 +62,20 @@ const Book = props => {
                         results.map((books, i) =>
                         (
                             <div key={i}>
-                                <BookCard data={books} key={i} />
+                                <MDBContainer className="py-1 h-100 bookCardContainer">
+                                    <MDBRow className="justify-content-center align-items-center h-100">
+                                        <MDBCol lg="12" className="mb-2 mb-lg-0 colCard" >
+                                            <BookCard data={books} key={i} />
+                                        </MDBCol>
+                                    </MDBRow>
+                                </MDBContainer>
                             </div>
                         )
                         )
                     }
+
                 </div>
+
             </div>
         )
 
