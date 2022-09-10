@@ -33,8 +33,13 @@ const ProfileCard = props => {
                     <MDBRow className="g-0">
                         <MDBCol md="4" className="gradient-custom text-center text-white"
                             style={{ borderTopLeftRadius: '.5em', borderBottomLeftRadius: '.5em' }}>
-                            <MDBCardImage src={props.data.profile_img}
-                                alt="Avatar" className="my-5" style={{ width: '10em' }} fluid />
+                            <MDBCardImage
+                                src={props.data.profile_img}
+                                alt="Avatar"
+                                className="my-5 profileImg"
+                                style={{ width: '10em' }}
+                                fluid
+                            />
                             <br />
                             <hr className="mt-0 mb-4" />
                             <MDBTypography tag="h5">{props.data.name}</MDBTypography>
