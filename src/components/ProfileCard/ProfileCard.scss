@@ -1,22 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 
 .gradient-custom {
+    background: #093028;
     /* fallback for old browsers */
-    background: #f6a465;
-
+    background: -webkit-linear-gradient(to right, #237A57, #093028);
     /* Chrome 10-25, Safari 5.1-6 */
-    background: -webkit-linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1));
-
+    background: linear-gradient(to right, #237A57, #093028);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background: linear-gradient(to right bottom, rgb(246, 164, 101), rgb(116, 32, 9))
+
 }
 
-.cardContainer{
+.cardContainer {
     color: black;
     font-family: 'Playfair Display', serif;
 }
 
-.dataHead{
+.cardProfile {
+    box-shadow: 0em 0em 0.01em 0.3em rgb(255, 255, 255);
+}
+
+.dataHead {
     font-size: x-large;
     font-weight: 900;
+}
+
+.socialIconsBox {
+    height: 3em;
+    width: 33%;
+}
+
+.socialIcon {
+    height: 4em;
+    width: 1.5em;
 }
