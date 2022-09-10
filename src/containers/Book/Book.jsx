@@ -37,7 +37,8 @@ const Book = props => {
                 data.title.toLowerCase().includes(search.toLocaleLowerCase()) ||
                 data.author.toLowerCase().includes(search.toLocaleLowerCase()) ||
                 data.genre.toLowerCase().includes(search.toLocaleLowerCase()) ||
-                data.year.toLowerCase().includes(search.toLocaleLowerCase())
+                data.year.toLowerCase().includes(search.toLocaleLowerCase()) ||
+                data.series.toLowerCase().includes(search.toLocaleLowerCase())
             )
         }
 
