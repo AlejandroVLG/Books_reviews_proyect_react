@@ -1,5 +1,5 @@
-import axios from 'axios'
 import React, { useState } from 'react'
+import axios from 'axios'
 import { Form } from 'react-bootstrap'
 import { useSelector } from 'react-redux'
 import { useParams } from 'react-router'
@@ -22,8 +22,7 @@ const EditBook = props => {
             year: '',
             book_cover: '',
             author_wiki_url: '',
-            shop_url: '',
-
+            shop_url: ''
         })
 
         const handleChange = (e) => {
@@ -52,7 +51,12 @@ const EditBook = props => {
                         <Form onSubmit={handleSubmit}>
                             <Form.Group className="mb-3" controlId="formBasicTitle">
                                 <Form.Label className='editBookLabel'>Título</Form.Label>
-                                <Form.Control className='editBookInput' type="text" name='title' placeholder='Escribe aquí' onChange={handleChange} />
+                                <Form.Control
+                                    className='editBookInput'
+                                    type="text" name='title'
+                                    placeholder='Escribe aquí'
+                                    onChange={handleChange}
+                                />
                                 <Form.Text className="text-muted">
                                     Título oficial del libro en España
                                 </Form.Text>
@@ -67,7 +71,14 @@ const EditBook = props => {
                         <Form onSubmit={handleSubmit}>
                             <Form.Group className="mb-3" controlId="formBasicTitle">
                                 <Form.Label className='editBookLabel'>Sinopsis</Form.Label>
-                                <Form.Control as="textarea" rows={3} className='editBookInput' type="text" name='synopsis' placeholder='Escribe aquí' onChange={handleChange} />
+                                <Form.Control
+                                    as="textarea"
+                                    rows={3}
+                                    className='editBookInput'
+                                    type="text" name='synopsis'
+                                    placeholder='Escribe aquí'
+                                    onChange={handleChange}
+                                />
                                 <Form.Text className="text-muted">
                                     Resumen del libro en Español
                                 </Form.Text>
@@ -77,7 +88,13 @@ const EditBook = props => {
                         <Form onSubmit={handleSubmit}>
                             <Form.Group className="mb-3" controlId="formBasicNickname">
                                 <Form.Label className='editBookLabel'>Saga</Form.Label>
-                                <Form.Control className='editBookInput' type="text" name='series' placeholder='Escribe aquí' onChange={handleChange} />
+                                <Form.Control
+                                    className='editBookInput'
+                                    type="text"
+                                    name='series'
+                                    placeholder='Escribe aquí'
+                                    onChange={handleChange}
+                                />
                                 <Form.Text className="text-muted">
                                     Indica la saga a la que pertenece
                                 </Form.Text>
@@ -87,7 +104,13 @@ const EditBook = props => {
                         <Form onSubmit={handleSubmit}>
                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                 <Form.Label className='editBookLabel'>Autor</Form.Label>
-                                <Form.Control className='editBookInput' type="text" name='author' placeholder='Escribe aquí' onChange={handleChange} />
+                                <Form.Control
+                                    className='editBookInput'
+                                    type="text"
+                                    name='author'
+                                    placeholder='Escribe aquí'
+                                    onChange={handleChange}
+                                />
                                 <Form.Text className="text-muted">
                                     Autor del libro
                                 </Form.Text>
@@ -125,7 +148,15 @@ const EditBook = props => {
                         <Form onSubmit={handleSubmit}>
                             <Form.Group className="mb-3" controlId="formBasicPassword">
                                 <Form.Label className='editBookLabel'>Fecha de publicación</Form.Label>
-                                <Form.Control className='editBookInput' type="date" min="01-01-1800" max="31-12-2050" name='year' placeholder='Escribe aquí' onChange={handleChange} />
+                                <Form.Control
+                                    className='editBookInput'
+                                    type="date"
+                                    min="01-01-1800"
+                                    max="31-12-2050"
+                                    name='year'
+                                    placeholder='Escribe aquí'
+                                    onChange={handleChange}
+                                />
                                 <Form.Text className="text-muted">
                                     Fecha de publicación de la edición Española
                                 </Form.Text>
@@ -135,7 +166,13 @@ const EditBook = props => {
                         <Form onSubmit={handleSubmit}>
                             <Form.Group className="mb-3" controlId="formBasicPassword">
                                 <Form.Label className='editBookLabel'>Portada</Form.Label>
-                                <Form.Control className='editBookInput' type="text" name='book_cover' placeholder='Escribe aquí' onChange={handleChange} />
+                                <Form.Control
+                                    className='editBookInput'
+                                    type="text"
+                                    name='book_cover'
+                                    placeholder='Escribe aquí'
+                                    onChange={handleChange}
+                                />
                                 <Form.Text className="text-muted">
                                     Imagen oficial de la cubierta
                                 </Form.Text>
@@ -145,7 +182,13 @@ const EditBook = props => {
                         <Form onSubmit={handleSubmit}>
                             <Form.Group className="mb-3" controlId="formBasicPassword">
                                 <Form.Label className='editBookLabel'>Wikipedia del autor</Form.Label>
-                                <Form.Control className='editBookInput' type="text" name='author_wiki_url' placeholder='Escribe aquí' onChange={handleChange} />
+                                <Form.Control
+                                    className='editBookInput'
+                                    type="text"
+                                    çname='author_wiki_url'
+                                    placeholder='Escribe aquí'
+                                    onChange={handleChange}
+                                />
                                 <Form.Text className="text-muted">
                                     Enlace de la wikipidia oficial del autor
                                 </Form.Text>
@@ -155,7 +198,12 @@ const EditBook = props => {
                         <Form onSubmit={handleSubmit}>
                             <Form.Group className="mb-3" controlId="formBasicPassword">
                                 <Form.Label className='editBookLabel'>A la venta en</Form.Label>
-                                <Form.Control className='editBookInput' type="text" name='shop_url' placeholder='Escribe aquí' onChange={handleChange} />
+                                <Form.Control
+                                    className='editBookInput'
+                                    type="text" name='shop_url'
+                                    placeholder='Escribe aquí'
+                                    onChange={handleChange}
+                                />
                                 <Form.Text className="text-muted">
                                     Enlace de compra a una web
                                 </Form.Text>
@@ -173,7 +221,6 @@ const EditBook = props => {
                 </div>
             </div >
         )
-
     } catch (error) {
         console.log(error)
     }

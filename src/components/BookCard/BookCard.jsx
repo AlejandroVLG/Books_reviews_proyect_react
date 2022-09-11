@@ -1,7 +1,5 @@
 import axios from "axios"
-import { AnimatePresence, motion } from "framer-motion"
 import React from "react"
-import { useState } from "react"
 import {
     MDBCol,
     MDBRow,
@@ -11,10 +9,11 @@ import {
     MDBCardImage,
     MDBTypography,
     MDBBtn
-} from 'mdb-react-ui-kit'; import { useSelector } from "react-redux"
+} from 'mdb-react-ui-kit'
+import { useSelector } from "react-redux"
 import { useNavigate } from "react-router"
 import { userData } from "../../containers/User/userSlice"
-import { Icon } from '@iconify/react';
+import { Icon } from '@iconify/react'
 import './BookCard.scss'
 
 const BookCard = props => {
@@ -140,7 +139,7 @@ const BookCard = props => {
 
         return (
 
-            <MDBCard className="mb-10" style={{ borderRadius: '.5em' }}>
+            <MDBCard className="mb-10 mainBookCard" style={{ borderRadius: '.5em' }}>
                 <MDBRow className="g-0">
 
                     <MDBCol md="3" className="gradient-custom text-center text-white bookColData"

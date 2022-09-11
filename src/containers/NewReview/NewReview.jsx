@@ -1,5 +1,5 @@
-import axios from "axios"
 import React, { useState } from "react"
+import axios from "axios"
 import { Form } from "react-bootstrap"
 import { useSelector } from "react-redux"
 import { useParams } from "react-router"
@@ -9,7 +9,7 @@ import "./NewReview.scss"
 const NewReview = props => {
 
     try {
-        const identification = useSelector(userData);
+        const identification = useSelector(userData)
 
         const { id } = useParams()
 
@@ -55,8 +55,6 @@ const NewReview = props => {
                 isError: false,
                 successMsg: 'Reseña añadida correctamente'
             })
-
-
         }
 
         return (
@@ -68,7 +66,13 @@ const NewReview = props => {
 
                         <Form.Group className="mb-3" controlId="formBasicReviewTitle">
                             <Form.Label className='newReviewLabel'>Título</Form.Label>
-                            <Form.Control className='newReviewInput' type="text" name='review_title' placeholder='Escribe aquí' onChange={handleChange} />
+                            <Form.Control
+                                className='newReviewInput'
+                                type="text"
+                                name='review_title'
+                                placeholder='Escribe aquí'
+                                onChange={handleChange}
+                            />
                             <Form.Text className="text-muted">
                                 Elige un título para tu reseña
                             </Form.Text>
@@ -100,7 +104,15 @@ const NewReview = props => {
 
                         <Form.Group className="mb-3" controlId="formBasicMessage">
                             <Form.Label className='newReviewLabel'>Reseña</Form.Label>
-                            <Form.Control as="textarea" rows={3} className='newReviewInput' type="text" name='message' placeholder='Escribe aquí' onChange={handleChange} />
+                            <Form.Control
+                                as="textarea"
+                                rows={3}
+                                className='newReviewInput'
+                                type="text"
+                                name='message'
+                                placeholder='Escribe aquí'
+                                onChange={handleChange}
+                            />
                             <Form.Text className="text-muted">
                                 Redacta una reseña con tú valoración
                             </Form.Text>
@@ -110,11 +122,16 @@ const NewReview = props => {
                             <button className='newReviewSendButtom' variant="primary" type="submit" onClick={validation}>
                                 Publicar resela
                             </button>
-                            <div className='newBookMessage'>{reviewState.isError ? (<p style={{ color: "red" }}>{reviewState.errorMessage}</p>) : (<p style={{ color: "green" }}>{reviewState.successMsg}</p>)}</div>
+                            <div className='newBookMessage'>
+                                {
+                                    reviewState.isError ?
+                                        (<p style={{ color: "red" }}>{reviewState.errorMessage}</p>)
+                                        :
+                                        (<p style={{ color: "green" }}>{reviewState.successMsg}</p>)
+                                }
+                            </div>
                         </Form.Group>
-
                     </Form>
-
                 </div>
             </div>
         )

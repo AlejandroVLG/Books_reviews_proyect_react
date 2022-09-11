@@ -1,5 +1,6 @@
-import { Icon } from '@iconify/react';
-import { motion } from 'framer-motion';
+import React from "react"
+import { Icon } from '@iconify/react'
+import { motion } from 'framer-motion'
 import {
     MDBCol,
     MDBContainer,
@@ -9,10 +10,8 @@ import {
     MDBCardBody,
     MDBCardImage,
     MDBTypography,
-    MDBIcon,
-    MDBBtn
-} from 'mdb-react-ui-kit';
-import React from "react"
+    MDBIcon
+} from 'mdb-react-ui-kit'
 import './ProfileCard.scss'
 
 const ProfileCard = props => {
@@ -31,6 +30,7 @@ const ProfileCard = props => {
             <MDBContainer className="py-5 h-100 cardContainer">
                 <MDBCard className="mb-3 cardProfile " style={{ borderRadius: '.5em' }}>
                     <MDBRow className="g-0">
+
                         <MDBCol md="4" className="gradient-custom text-center text-white"
                             style={{ borderTopLeftRadius: '.5em', borderBottomLeftRadius: '.5em' }}>
                             <MDBCardImage
@@ -52,7 +52,9 @@ const ProfileCard = props => {
                             <MDBCardText>{props.data.country}</MDBCardText>
                             <MDBIcon far icon="edit mb-5" />
                         </MDBCol>
+
                         <MDBCol md="8">
+
                             <MDBCardBody className="p-4">
                                 <MDBTypography className='dataHead' tag="h6">Datos personales</MDBTypography>
                                 <hr className="mt-0 mb-4 bodyHr" />
@@ -89,9 +91,15 @@ const ProfileCard = props => {
 
                                 <div className="d-flex justify-content-start">
 
-                                    <a className='socialIconsBox' target='_blank' href={props.data.twitter_account}><Icon className='socialIcon' icon="ant-design:twitter-outlined" /></a>
-                                    <a className='socialIconsBox' target='_blank' href={props.data.facebook_account}><Icon className='socialIcon' icon="akar-icons:facebook-fill" /></a>
-                                    <a className='socialIconsBox' target='_blank' href={props.data.instagram_account}><Icon className='socialIcon' icon="ant-design:instagram-outlined" /></a>
+                                    <a className='socialIconsBox' target='_blank' href={props.data.twitter_account}>
+                                        <Icon className='socialIcon' icon="ant-design:twitter-outlined" />
+                                    </a>
+                                    <a className='socialIconsBox' target='_blank' href={props.data.facebook_account} >
+                                        <Icon className='socialIcon' icon="akar-icons:facebook-fill" />
+                                    </a>
+                                    <a className='socialIconsBox' target='_blank' href={props.data.instagram_account}>
+                                        <Icon className='socialIcon' icon="ant-design:instagram-outlined" />
+                                    </a>
 
                                 </div>
                             </MDBCardBody>

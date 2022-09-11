@@ -7,117 +7,139 @@ import "./Login.scss"
 
 const Login = () => {
 
-  const [credentials, setCredentials] = useState(
-    {
-      email: '',
-      password: ''
-    }
-  )
-
-  const dispatch = useDispatch()
-
-  const identification = useSelector(userData)
-
-  let navigate = useNavigate()
-
-  const updateCredentials = (e) => {
-    setCredentials(
+  try {
+    const [credentials, setCredentials] = useState(
       {
-        ...credentials,
-        [e.target.name]: e.target.value
+        email: '',
+        password: ''
       }
     )
-  }
 
-  useEffect(() => {
+    const dispatch = useDispatch()
 
-    if (identification?.token !== '') {
+    const identification = useSelector(userData)
 
-      setTimeout(() => {
-        navigate("/books")
+    let navigate = useNavigate()
 
-      }, 500)
+    const updateCredentials = (e) => {
+      setCredentials(
+        {
+          ...credentials,
+          [e.target.name]: e.target.value
+        }
+      )
     }
-  })
 
-  const log = () => {
+    useEffect(() => {
 
-    if (credentials.password.length > 6) {
+      if (identification.token !== '') {
 
-      if (! /[\d()+-]/g.test(credentials.password)) {
+        setTimeout(() => {
+          navigate("/books")
+
+        }, 500)
+      }
+    })
+
+    const log = () => {
+
+      if (credentials.password.length > 6) {
+
+        if (! /[\d()+-]/g.test(credentials.password)) {
+
+          setCredentials(
+            {
+              ...credentials,
+              isError: true,
+              message: "Contraseña incorrecta"
+            }
+          )
+          return
+        }
+
+      } else {
 
         setCredentials(
           {
             ...credentials,
             isError: true,
-            message: "Contraseña incorrecta"
+            message: "La contraseña debe tener al menos 6 carácteres"
           }
         )
         return
       }
 
-    } else {
-
       setCredentials(
         {
           ...credentials,
-          isError: true,
-          message: "La contraseña debe tener al menos 6 carácteres"
+          isError: false,
+          successMsg: "Te has identificado correctamente"
         }
       )
-      return
+
+      dispatch(loginUser(
+        {
+          email: credentials.email,
+          password: credentials.password
+        }
+      ))
     }
 
-    setCredentials(
-      {
-        ...credentials,
-        isError: false,
-        successMsg: "Te has identificado correctamente"
-      }
-    )
+    return (
 
-    dispatch(loginUser(
-      {
-        email: credentials.email,
-        password: credentials.password
-      }
-    ))
-  }
+      <div className='mainLoginBox'>
+        <div className='loginBox'>
+          <div className='login'>
 
-  return (
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label className='loginLabel'>Correo electrónico</Form.Label>
+              <Form.Control
+                className='loginInput'
+                type="email"
+                name='email'
+                placeholder='Escribe aquí'
+                onChange={updateCredentials}
+              />
+              <Form.Text className="text-muted">
+                Introduce tu E-mail
+              </Form.Text>
+            </Form.Group>
 
-    <div className='mainLoginBox'>
-      <div className='loginBox'>
-        <div className='login'>
+            <Form.Group className="mb-3" controlId="formBasicPassword">
+              <Form.Label className='loginLabel'>Contraseña</Form.Label>
+              <Form.Control
+                className='loginInput'
+                type="password"
+                name='password'
+                placeholder='Escribe aquí'
+                onChange={updateCredentials}
+              />
+              <Form.Text className="text-muted">
+                Introduce tu contraseña
+              </Form.Text>
+            </Form.Group>
 
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label className='loginLabel'>Correo electrónico</Form.Label>
-            <Form.Control className='loginInput' type="email" name='email' placeholder='Escribe aquí' onChange={updateCredentials} />
-            <Form.Text className="text-muted">
-              Introduce tu E-mail
-            </Form.Text>
-          </Form.Group>
+            <Form.Group className="mb-3 boxLoginButton">
+              <button className='loginButton' variant="primary" onClick={() => log()}>
+                Iniciar sesión
+              </button>
+              <div className='loginMessage'>
+                {
+                  credentials.isError ?
+                    (<p style={{ color: "red" }}>{credentials.message}</p>)
+                    :
+                    (<p style={{ color: "green" }}>{credentials.successMsg}</p>)
+                }
+              </div>
+            </Form.Group>
 
-          <Form.Group className="mb-3" controlId="formBasicPassword">
-            <Form.Label className='loginLabel'>Contraseña</Form.Label>
-            <Form.Control className='loginInput' type="password" name='password' placeholder='Escribe aquí' onChange={updateCredentials} />
-            <Form.Text className="text-muted">
-              Introduce tu contraseña
-            </Form.Text>
-          </Form.Group>
-
-          <Form.Group className="mb-3 boxLoginButton">
-            <button className='loginButton' variant="primary" onClick={() => log()}>
-              Iniciar sesión
-            </button>
-            <div className='loginMessage'>{credentials.isError ? (<p style={{ color: "red" }}>{credentials.message}</p>) : (<p style={{ color: "green" }}>{credentials.successMsg}</p>)}</div>
-          </Form.Group>
-
+          </div>
         </div>
       </div>
-    </div>
-  )
+    )
+  } catch (error) {
+    console.log(error)
+  }
 }
-
 
 export default Login

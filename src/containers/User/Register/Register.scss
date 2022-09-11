@@ -4,7 +4,7 @@
 	width: 100%;
 	height: auto;
 	box-sizing: border-box;
-	background: linear-gradient(109.6deg, rgb(36, 45, 57) 11.2%, rgb(16, 37, 60) 51.2%, rgb(0, 0, 0) 98.6%);	
+	background: linear-gradient(109.6deg, rgb(36, 45, 57) 11.2%, rgb(16, 37, 60) 51.2%, rgb(0, 0, 0) 98.6%);
 	font-family: 'Playfair Display', serif;
 	color: white;
 }
@@ -47,7 +47,7 @@
 	box-shadow: 0.2em 0em 1.9em 0.3em rgba(163, 163, 163, 0.4);
 }
 
-.boxButton{
+.boxButton {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -74,6 +74,6 @@
 	box-shadow: 0.2em 0em 1.9em 0.3em rgba(218, 218, 218, 0.274);
 }
 
-.registerMessage{
+.registerMessage {
 	font-weight: bold;
 }

@@ -1,8 +1,16 @@
-import { Icon } from "@iconify/react"
-import axios from "axios"
-import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardText, MDBCol, MDBRow, MDBTypography } from "mdb-react-ui-kit"
 import React from "react"
-import { Button, Card } from "react-bootstrap"
+import axios from "axios"
+import {
+    MDBBtn,
+    MDBCard,
+    MDBCardBody,
+    MDBCardImage,
+    MDBCardText,
+    MDBCol,
+    MDBRow,
+    MDBTypography
+} from "mdb-react-ui-kit"
+import { Card } from "react-bootstrap"
 import { useSelector } from "react-redux"
 import { useNavigate } from "react-router"
 import { userData } from "../../containers/User/userSlice"
@@ -78,7 +86,6 @@ const ReviewCard = props => {
                                     <MDBTypography tag="h5">Puntuación</MDBTypography>
                                     <MDBCardText className="text-muted">{props.data.score}</MDBCardText>
                                 </MDBCol>
-                                
 
                             </MDBRow>
 
@@ -95,11 +102,8 @@ const ReviewCard = props => {
                         </MDBCardBody>
 
                     </MDBCol>
-
                 </MDBRow>
-        
             </MDBCard>
-
         )
     } else {
         return (
@@ -122,13 +126,9 @@ const ReviewCard = props => {
                         </div>
                     </Card.Footer>
                 </Card>
-
             </div>
-
         )
     }
-
-
 }
 
 export default ReviewCard

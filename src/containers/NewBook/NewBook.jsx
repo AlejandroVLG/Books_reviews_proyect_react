@@ -1,5 +1,5 @@
-import axios from 'axios'
 import React, { useState } from 'react'
+import axios from 'axios'
 import { Form } from 'react-bootstrap'
 import { useSelector } from 'react-redux'
 import { userData } from '../User/userSlice'
@@ -9,7 +9,7 @@ const NewBook = props => {
 
     try {
 
-        const identification = useSelector(userData);
+        const identification = useSelector(userData)
 
         const [bookState, setBookState] = useState({
             title: '',
@@ -76,7 +76,12 @@ const NewBook = props => {
 
                         <Form.Group className="mb-3" controlId="formBasicTitle">
                             <Form.Label className='newBookLabel'>Título</Form.Label>
-                            <Form.Control className='newBookInput' type="text" name='title' placeholder='Escribe aquí' onChange={handleChange} />
+                            <Form.Control
+                                className='newBookInput'
+                                type="text" name='title'
+                                placeholder='Escribe aquí'
+                                onChange={handleChange}
+                            />
                             <Form.Text className="text-muted">
                                 Título oficial del libro en España
                             </Form.Text>
@@ -84,7 +89,13 @@ const NewBook = props => {
 
                         <Form.Group className="mb-3" controlId="formBasicSeries">
                             <Form.Label className='newBookLabel'>Saga</Form.Label>
-                            <Form.Control className='newBookInput' type="text" name='series' placeholder='Escribe aquí' onChange={handleChange} />
+                            <Form.Control
+                                className='newBookInput'
+                                type="text"
+                                name='series'
+                                placeholder='Escribe aquí'
+                                onChange={handleChange}
+                            />
                             <Form.Text className="text-muted">
                                 Indica la saga a la que pertenece
                             </Form.Text>
@@ -92,7 +103,12 @@ const NewBook = props => {
 
                         <Form.Group className="mb-3" controlId="formBasicAuthor">
                             <Form.Label className='newBookLabel'>Autor</Form.Label>
-                            <Form.Control className='newBookInput' type="text" name='author' placeholder='Escribe aquí' onChange={handleChange} />
+                            <Form.Control
+                                className='newBookInput'
+                                type="text" name='author'
+                                placeholder='Escribe aquí'
+                                onChange={handleChange}
+                            />
                             <Form.Text className="text-muted">
                                 Autor del libro
                             </Form.Text>
@@ -127,7 +143,15 @@ const NewBook = props => {
 
                         <Form.Group className="mb-3" controlId="formBasicYear">
                             <Form.Label className='newBookLabel'>Fecha de publicación</Form.Label>
-                            <Form.Control className='newBookInput' type="date" min="01-01-1800" max="31-12-2050" name='year' placeholder='Escribe aquí' onChange={handleChange} />
+                            <Form.Control
+                                className='newBookInput'
+                                type="date"
+                                min="01-01-1800"
+                                max="31-12-2050"
+                                name='year'
+                                placeholder='Escribe aquí'
+                                onChange={handleChange}
+                            />
                             <Form.Text className="text-muted">
                                 Fecha de publicación de la edición Española
                             </Form.Text>
@@ -135,7 +159,13 @@ const NewBook = props => {
 
                         <Form.Group className="mb-3" controlId="formBasicBookCover">
                             <Form.Label className='newBookLabel'>Portada</Form.Label>
-                            <Form.Control className='newBookInput' type="text" name='book_cover' placeholder='Escribe aquí' onChange={handleChange} />
+                            <Form.Control
+                                className='newBookInput'
+                                type="text"
+                                name='book_cover'
+                                placeholder='Escribe aquí'
+                                onChange={handleChange}
+                            />
                             <Form.Text className="text-muted">
                                 Imagen oficial de la cubierta
                             </Form.Text>
@@ -143,7 +173,13 @@ const NewBook = props => {
 
                         <Form.Group className="mb-3" controlId="formBasicAuthorWikiUrl">
                             <Form.Label className='newBookLabel'>Wikipedia del autor</Form.Label>
-                            <Form.Control className='newBookInput' type="text" name='author_wiki_url' placeholder='Escribe aquí' onChange={handleChange} />
+                            <Form.Control
+                                className='newBookInput'
+                                type="text"
+                                name='author_wiki_url'
+                                placeholder='Escribe aquí'
+                                onChange={handleChange}
+                            />
                             <Form.Text className="text-muted">
                                 Enlace de la wikipidia oficial del autor
                             </Form.Text>
@@ -151,7 +187,13 @@ const NewBook = props => {
 
                         <Form.Group className="mb-3" controlId="formBasicShopUrl">
                             <Form.Label className='newBookLabel'>A la venta en</Form.Label>
-                            <Form.Control className='newBookInput' type="text" name='shop_url' placeholder='Escribe aquí' onChange={handleChange} />
+                            <Form.Control
+                                className='newBookInput'
+                                type="text"
+                                name='shop_url'
+                                placeholder='Escribe aquí'
+                                onChange={handleChange}
+                            />
                             <Form.Text className="text-muted">
                                 Enlace de compra a una web
                             </Form.Text>
@@ -159,7 +201,15 @@ const NewBook = props => {
 
                         <Form.Group className="mb-3" controlId="formBasicSynopsis">
                             <Form.Label className='newBookLabel'>Sinopsis</Form.Label>
-                            <Form.Control as="textarea" rows={3} className='newBookInput' type="text" name='synopsis' placeholder='Escribe aquí' onChange={handleChange} />
+                            <Form.Control
+                                as="textarea"
+                                rows={3}
+                                className='newBookInput'
+                                type="text"
+                                name='synopsis'
+                                placeholder='Escribe aquí'
+                                onChange={handleChange}
+                            />
                             <Form.Text className="text-muted">
                                 Resumen del libro en Español
                             </Form.Text>
@@ -169,11 +219,16 @@ const NewBook = props => {
                             <button className='newBookSendButtom' variant="primary" type="submit">
                                 Añadir libro
                             </button>
-                            <div className='newBookMessage'>{bookState.isError ? (<p style={{ color: "red" }}>{bookState.message}</p>) : (<p style={{ color: "green" }}>{bookState.successMsg}</p>)}</div>
+                            <div className='newBookMessage'>
+                                {
+                                    bookState.isError ?
+                                        (<p style={{ color: "red" }}>{bookState.message}</p>)
+                                        :
+                                        (<p style={{ color: "green" }}>{bookState.successMsg}</p>)
+                                }
+                            </div>
                         </Form.Group>
-
                     </Form>
-
                 </div>
             </div>
         )

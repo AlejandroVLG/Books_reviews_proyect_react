@@ -1,6 +1,6 @@
+import React, { useEffect, useState } from "react"
 import axios from "axios"
 import { MDBCol, MDBContainer, MDBRow } from "mdb-react-ui-kit"
-import React, { useEffect, useState } from "react"
 import BookCard from "../../components/BookCard/BookCard"
 import "./Book.scss"
 
@@ -53,11 +53,10 @@ const Book = props => {
                     className="form-control searchBar"
                     type="text"
                     value={search}
-                    placeholder="Datos de la búsqueda"
+                    placeholder="Búsqueda por título, autor, género, saga o fecha de publicación"
                     onChange={handleChange}
                 />
                 <div className="bookContentBox">
-
                     {results.length === 0 && <p>Cargando...</p>}
                     {
                         results.map((books, i) =>
@@ -74,12 +73,9 @@ const Book = props => {
                         )
                         )
                     }
-
                 </div>
-
             </div>
         )
-
     } catch (error) {
         console.log(error)
     }

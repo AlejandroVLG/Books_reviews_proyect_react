@@ -1,5 +1,4 @@
-import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { useSelector } from 'react-redux'
 import ProfileCard from '../../components/ProfileCard/ProfileCard'
 import { userData } from '../User/userSlice'
@@ -23,7 +22,6 @@ const MyProfile = props => {
       </div>
 
     )
-
   } catch (error) {
     console.log(error)
   }

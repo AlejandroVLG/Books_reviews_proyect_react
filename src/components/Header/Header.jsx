@@ -8,7 +8,6 @@ const Header = props => {
     <div className='header'>
       <img className='headerImg' src="../../../public/Img/Vector1.jpg" alt="" />
     </div>
-
   )
 }
 

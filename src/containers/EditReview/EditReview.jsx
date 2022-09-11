@@ -1,5 +1,5 @@
-import axios from 'axios'
 import React, { useState } from 'react'
+import axios from 'axios'
 import { Form } from 'react-bootstrap'
 import { useSelector } from 'react-redux'
 import { useParams } from 'react-router'
@@ -47,7 +47,13 @@ const EditReview = props => {
                         <Form onSubmit={handleSubmit}>
                             <Form.Group className="mb-3" controlId="formBasicReviewTitle">
                                 <Form.Label className='editReviewLabel'>Título</Form.Label>
-                                <Form.Control className='editReviewInput' type="text" name='review_title' placeholder='Escribe aquí' onChange={handleChange} />
+                                <Form.Control
+                                    className='editReviewInput'
+                                    type="text"
+                                    name='review_title'
+                                    placeholder='Escribe aquí'
+                                    onChange={handleChange}
+                                />
                                 <Form.Text className="text-muted">
                                     Elige un título para tu reseña
                                 </Form.Text>
@@ -79,7 +85,16 @@ const EditReview = props => {
 
                             <Form.Group className="mb-3" controlId="formBasicMessage">
                                 <Form.Label className='editReviewLabel'>Reseña</Form.Label>
-                                <Form.Control as="textarea" rows={3} cols={5} className='editReviewInput textArea' type="text" name='message' placeholder='Escribe aquí' onChange={handleChange} />
+                                <Form.Control
+                                    as="textarea"
+                                    rows={3}
+                                    cols={5}
+                                    className='editReviewInput textArea'
+                                    type="text"
+                                    name='message'
+                                    placeholder='Escribe aquí'
+                                    onChange={handleChange}
+                                />
                                 <Form.Text className="text-muted">
                                     Redacta una reseña con tú valoración
                                 </Form.Text>
@@ -96,7 +111,6 @@ const EditReview = props => {
                 </div>
             </div >
         )
-
     } catch (error) {
         console.log(error)
     }
