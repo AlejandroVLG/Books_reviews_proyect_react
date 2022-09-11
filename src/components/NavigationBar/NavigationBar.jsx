@@ -1,19 +1,8 @@
 import React from "react"
-import {
-    CDBNavbar,
-    CDBNavBrand,
-    CDBNavItem,
-    CDBNavLink,
-    CDBDropDown,
-    CDBDropDownMenu,
-    CDBDropDownToggle,
-    CDBBtn,
-    CDBNavToggle,
-    CDBIcon,
-    CDBCollapse,
-    CDBNavbarNav,
-    CDBContainer,
-} from 'cdbreact'
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 import { useNavigate } from "react-router-dom"
 import { useDispatch, useSelector } from 'react-redux'
 import { logOut, userData } from '../../containers/User/userSlice'
@@ -34,35 +23,67 @@ const NavigationBar = () => {
     }
     if (!identification?.token) {
 
+
         return (
-            <nav className="navigationBar">
-                <hr className="hrLine" />
-                <div className="homeButon" onClick={() => travel("/")}>Portada</div>
-                <hr className="hrLine" />
-                <div className="bookButon" onClick={() => travel("/books")}>Biblioteca</div>
-                <hr className="hrLine" />
-                <div className="registerButon" onClick={() => travel("/register")}>Registrarse</div>
-                <hr className="hrLine" />
-                <div className="loginButon" onClick={() => travel("/login")}>Iniciar sesión</div>
-                <hr className="hrLine" />
-            </nav>
+            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="navBarBox">
+                <Container className="navBarContainer">
+                    <Navbar.Brand className="NavBarIcon">Icono</Navbar.Brand>
+                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                    <Navbar.Collapse id="responsive-navbar-nav">
+                        <Nav className="me-auto">
+                            <Nav.Link className="navBarLink portadaView" onClick={() => travel("/")}>Portada</Nav.Link>
+                            <Nav.Link className="navBarLink" onClick={() => travel("/books")}>Biblioteca</Nav.Link>
+                            <NavDropdown title="Desplegable" id="collasible-nav-dropdown">
+                                <NavDropdown.Item href="#action/3.1">Prueba 1</NavDropdown.Item>
+                                <NavDropdown.Item href="#action/3.2">
+                                    Prueba 2
+                                </NavDropdown.Item>
+                                <NavDropdown.Item href="#action/3.3">Prueba 3</NavDropdown.Item>
+                                <NavDropdown.Divider />
+                                <NavDropdown.Item href="#action/3.4">
+                                    Prueba aparte
+                                </NavDropdown.Item>
+                            </NavDropdown>
+                        </Nav>
+                        <Nav>
+                            <Nav.Link className="navBarLink" onClick={() => travel("/login")}>Iniciar sesión</Nav.Link>
+                            <Nav.Link eventKey={2} onClick={() => travel("/register")}>Registrarse</Nav.Link>
+                        </Nav>
+                    </Navbar.Collapse>
+                </Container>
+            </Navbar>
         )
     } else {
 
         return (
-            <nav className="navigationBar">
-                <hr className="hrLine" />
-                <div className="homeButon" onClick={() => travel("/")}>Portada</div>
-                <hr className="hrLine" />
-                <div className="bookButon" onClick={() => travel("/books")}>Biblioteca</div>
-                <hr className="hrLine" />
-                <div className="newBook" onClick={() => travel("/newBook")}>Añadir libro</div>
-                <hr className="hrLine" />
-                <div className="myProfileButon" onClick={() => travel("/myProfile")}>{identification.infoData.name}</div>
-                <hr className="hrLine" />
-                <div className="logoutButon" onClick={() => dispatch(logOut())}>Cerrar sesión</div>
-                <hr className="hrLine" />
-            </nav>
+            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="navBarBox">
+                <Container className="navBarContainer">
+                    <Navbar.Brand className="NavBarIcon" onClick={() => travel("/")}>Icono</Navbar.Brand>
+                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                    <Navbar.Collapse id="responsive-navbar-nav">
+                        <Nav className="me-auto">
+                            <Nav.Link className="navBarLink navBarLink2 portadaView" onClick={() => travel("/")}>Portada</Nav.Link>
+                            <Nav.Link className="navBarLink navBarLink2" onClick={() => travel("/books")}>Biblioteca</Nav.Link>
+                            <Nav.Link className="navBarLink navBarLink2" onClick={() => travel("/newBook")}>Añadir libro</Nav.Link>
+                            <NavDropdown title="Desplegable" id="collasible-nav-dropdown">
+                                <NavDropdown.Item href="#action/3.1">Prueba 1</NavDropdown.Item>
+                                <NavDropdown.Item href="#action/3.2">
+                                    Prueba 2
+                                </NavDropdown.Item>
+                                <NavDropdown.Item href="#action/3.3">Prueba 3</NavDropdown.Item>
+                                <NavDropdown.Divider />
+                                <NavDropdown.Item href="#action/3.4">
+                                    Prueba aparte
+                                </NavDropdown.Item>
+                            </NavDropdown>
+                        </Nav>
+                        <Nav>
+                            <Nav.Link className="navBarLink navBarLink2" onClick={() => travel("/myProfile")}>{identification.infoData.name}</Nav.Link>
+                            <Nav.Link eventKey={2} className="navBarLink2" onClick={e => { travel("/"); dispatch(logOut()) }}>Cerrar sesión</Nav.Link>
+                        </Nav>
+                    </Navbar.Collapse>
+                </Container>
+            </Navbar>
         )
     }
 }

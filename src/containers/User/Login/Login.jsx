@@ -34,7 +34,7 @@ const Login = () => {
     if (identification?.token !== '') {
 
       setTimeout(() => {
-        navigate("/")
+        navigate("/books")
 
       }, 500)
     }
