@@ -3,7 +3,7 @@ import { Form } from 'react-bootstrap'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { registerUser } from '../userSlice'
-import "./Register.css"
+import "./Register.scss"
 
 const Register = props => {
 

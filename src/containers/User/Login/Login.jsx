@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from "react-redux"
 import { loginUser, userData, } from "../userSlice"
 import { Form } from 'react-bootstrap'
-import "./Login.css"
+import "./Login.scss"
 
 const Login = () => {
 

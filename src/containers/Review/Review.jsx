@@ -4,7 +4,7 @@ import ReviewCard from "../../components/ReviewCard/ReviewCard"
 import { userData } from "../User/userSlice"
 import { useSelector } from "react-redux"
 import { useParams } from "react-router"
-import "./Review.css"
+import "./Review.scss"
 
 const Review = props => {
     

@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { Form } from 'react-bootstrap'
 import { useSelector } from 'react-redux'
 import { userData } from '../User/userSlice'
-import "./NewBook.css"
+import "./NewBook.scss"
 
 const NewBook = props => {
 

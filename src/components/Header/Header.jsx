@@ -1,6 +1,6 @@
 import React from 'react'
 
-import "./Header.css"
+import "./Header.scss"
 
 const Header = props => {
   return (
@@ -8,7 +8,7 @@ const Header = props => {
     <div className='header'>
       <img className='headerImg' src="../../../public/Img/Vector1.jpg" alt="" />
     </div>
-    
+
   )
 }
 

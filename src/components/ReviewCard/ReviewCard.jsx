@@ -6,7 +6,7 @@ import { Button, Card } from "react-bootstrap"
 import { useSelector } from "react-redux"
 import { useNavigate } from "react-router"
 import { userData } from "../../containers/User/userSlice"
-import './ReviewCard.css'
+import './ReviewCard.scss'
 
 
 const ReviewCard = props => {

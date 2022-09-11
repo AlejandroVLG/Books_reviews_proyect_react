@@ -4,7 +4,7 @@ import { Form } from "react-bootstrap"
 import { useSelector } from "react-redux"
 import { useParams } from "react-router"
 import { userData } from "../User/userSlice"
-import "./NewReview.css"
+import "./NewReview.scss"
 
 const NewReview = props => {
 

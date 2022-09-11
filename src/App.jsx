@@ -11,7 +11,7 @@ import Login from './containers/User/Login/Login'
 import EditBook from './containers/EditBook/Editbook'
 import NewReview from './containers/NewReview/NewReview'
 import EditReview from './containers/EditReview/EditReview'
-import './App.css'
+import './App.scss'
 
 function App() {
 

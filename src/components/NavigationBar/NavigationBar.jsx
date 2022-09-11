@@ -1,9 +1,24 @@
 import React from "react"
+import {
+    CDBNavbar,
+    CDBNavBrand,
+    CDBNavItem,
+    CDBNavLink,
+    CDBDropDown,
+    CDBDropDownMenu,
+    CDBDropDownToggle,
+    CDBBtn,
+    CDBNavToggle,
+    CDBIcon,
+    CDBCollapse,
+    CDBNavbarNav,
+    CDBContainer,
+} from 'cdbreact'
 import { useNavigate } from "react-router-dom"
 import { useDispatch, useSelector } from 'react-redux'
 import { logOut, userData } from '../../containers/User/userSlice'
 
-import "./NavigationBar.css"
+import "./NavigationBar.scss"
 
 const NavigationBar = () => {
 
