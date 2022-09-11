@@ -195,7 +195,7 @@ const NewBook = props => {
                                 onChange={handleChange}
                             />
                             <Form.Text className="text-muted">
-                                Enlace de compra a una web
+                                Enlace de compra en amazon
                             </Form.Text>
                         </Form.Group>
 

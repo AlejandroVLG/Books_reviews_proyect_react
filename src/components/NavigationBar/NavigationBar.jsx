@@ -29,7 +29,6 @@ const NavigationBar = () => {
                         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                         <Navbar.Collapse id="responsive-navbar-nav">
                             <Nav className="me-auto">
-                                <Nav.Link className="navBarLink portadaView" onClick={() => travel("/")}>Portada</Nav.Link>
                                 <Nav.Link className="navBarLink" onClick={() => travel("/books")}>Biblioteca</Nav.Link>
                                 <NavDropdown title="Desplegable" id="collasible-nav-dropdown">
                                     <NavDropdown.Item href="#action/3.1">Prueba 1</NavDropdown.Item>
@@ -56,7 +55,6 @@ const NavigationBar = () => {
                         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                         <Navbar.Collapse id="responsive-navbar-nav">
                             <Nav className="me-auto">
-                                <Nav.Link className="navBarLink navBarLink2 portadaView" onClick={() => travel("/")}>Portada</Nav.Link>
                                 <Nav.Link className="navBarLink navBarLink2" onClick={() => travel("/books")}>Biblioteca</Nav.Link>
                                 <Nav.Link className="navBarLink navBarLink2" onClick={() => travel("/newBook")}>Añadir libro</Nav.Link>
                                 <NavDropdown title="Desplegable" id="collasible-nav-dropdown">

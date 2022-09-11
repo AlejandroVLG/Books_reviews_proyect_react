@@ -1,5 +1,5 @@
 .homeMainBox {
-    height: 64vh;
+    height: 100%;
     width: 100%;
     background-color: lightblue;
     display: flex;
@@ -9,11 +9,16 @@
 }
 
 .homeContentBox {
-    height: 68vh;
+    height: 100%;
     width: 100%;
     background-color: bisque;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.homeImg{
+    height: 100%;
+    width: 100%;
 }
