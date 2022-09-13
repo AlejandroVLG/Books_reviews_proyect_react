@@ -120,7 +120,7 @@ const NewReview = props => {
 
                         <Form.Group className="mb-3 newReviewBoxButton">
                             <button className='newReviewSendButtom' variant="primary" type="submit" onClick={validation}>
-                                Publicar resela
+                                Publicar reseña
                             </button>
                             <div className='newBookMessage'>
                                 {
