@@ -29,7 +29,7 @@
 ---
 ---
 ###Vista completa de los libros existentes
-<img src="/public/Img/Libro1.png" style="margin-bottom:-0.76em; border-radius:0.1em;"/>
+<img src="/public/Img/Libro1.png" style="margin-bottom:-1em; border-radius:0.1em;"/>
 <img src="/public/Img/Libro2.png" style="border-radius:0.1em;"/>
 
 >La vista incluye un buscador de libros por título, saga, género, autor o año de publicación.
