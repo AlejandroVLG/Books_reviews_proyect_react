@@ -38,13 +38,13 @@ const Review = props => {
 
         return (
 
-            <div className="reviewsBox">
+            <div >
 
                 {reviewData.reviews.length === 0 && <p>Cargando...</p>}
                 {
                     reviewData.reviews.map((reviews, i) =>
                     (
-                        <div key={i}>
+                        <div className="reviewsBox" key={i}>
                             <ReviewCard key={i} data={reviews} />
                         </div>
                     )

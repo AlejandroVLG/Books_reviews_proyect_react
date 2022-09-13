@@ -18,8 +18,8 @@ function App() {
   return (
 
     <div className="App">
-      <BrowserRouter>
 
+      <BrowserRouter>
         <Header />
         <NavigationBar />
         <Routes>
@@ -34,8 +34,8 @@ function App() {
           <Route path="/newReview/:id" element={<NewReview />} />
           <Route path="/editReview/:id" element={<EditReview />} />
         </Routes>
-
       </BrowserRouter>
+        
     </div>
   )
 }

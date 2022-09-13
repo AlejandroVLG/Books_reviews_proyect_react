@@ -1,18 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
-
 .gradient-custom {
-    background: #093028;
+    background-image: linear-gradient( 109.6deg,  rgba(15,2,2,1) 11.2%, rgba(36,163,190,1) 91.1% );
     /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #237A57, #093028);
+    background-image: linear-gradient( 109.6deg,  rgba(15,2,2,1) 11.2%, rgba(36,163,190,1) 91.1% );
     /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #237A57, #093028);
+    background-image: linear-gradient( 109.6deg,  rgba(15,2,2,1) 11.2%, rgba(36,163,190,1) 91.1% );
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
 
+.mainBox {
+    margin-bottom: 4em;
 }
 
 .cardContainer {
     color: black;
-    font-family: 'Playfair Display', serif;
 }
 
 .cardProfile {
@@ -24,6 +24,11 @@
     width: 13em !important;
     border-radius: 0.4em;
     box-shadow: 0em 0em 0.3em 0.1em rgb(1, 1, 1);
+}
+
+.infoProfileBox {
+    border-radius: 0 0.4em 0.4em 0;
+    background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
 }
 
 .dataHead {

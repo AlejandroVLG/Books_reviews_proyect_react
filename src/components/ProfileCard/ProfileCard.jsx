@@ -42,18 +42,17 @@ const ProfileCard = props => {
                             />
                             <br />
                             <hr className="mt-0 mb-4" />
-                            <MDBTypography tag="h5">{props.data.name}</MDBTypography>
+                            <MDBTypography tag="h4">{props.data.name}</MDBTypography>
                             <br />
                             <hr className="mt-0 mb-4" />
-                            <MDBCardText>{props.data.last_name}</MDBCardText>
-                            <MDBIcon far icon="edit mb-5" />
+                            <MDBTypography tag="h5">{props.data.last_name}</MDBTypography>
                             <br />
                             <hr className="mt-0 mb-4" />
-                            <MDBCardText>{props.data.country}</MDBCardText>
-                            <MDBIcon far icon="edit mb-5" />
+                            <MDBTypography tag="h6">{props.data.country}</MDBTypography>
+                            <br />
                         </MDBCol>
 
-                        <MDBCol md="8">
+                        <MDBCol md="8" className="infoProfileBox">
 
                             <MDBCardBody className="p-4">
                                 <MDBTypography className='dataHead' tag="h6">Datos personales</MDBTypography>

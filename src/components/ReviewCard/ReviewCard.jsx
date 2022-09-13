@@ -44,27 +44,27 @@ const ReviewCard = props => {
 
     if (identification.infoData.name == props.data.name) {
         return (
-            <MDBCard className="mb-10 mainBookCard" style={{ borderRadius: '.5em' }}>
+            <MDBCard className="mb-10 mainReviewCard" style={{ borderRadius: '.5em' }}>
                 <MDBRow className="g-0">
 
-                    <MDBCol md="4" className="gradient-custom text-center text-white bookColData"
+                    <MDBCol md="4" className="text-center text-white reviewColData"
                         style={{ borderTopLeftRadius: '.5em', borderBottomLeftRadius: '.5em' }}>
                         <MDBCardImage src={props.data.book_cover}
-                            alt="Avatar" className="my-5 bookCardImg" style={{ width: '12em' }} fluid />
+                            alt="Avatar" className="my-5 reviewCardImg" style={{ width: '12em' }} fluid />
                         <hr className="mt-0 mb-3" />
                         <br />
-                        <MDBTypography tag="h5">{props.data.title}</MDBTypography>
+                        <MDBTypography className="bookTitleReview" tag="h5">{props.data.title}</MDBTypography>
                         <br />
                         <hr className="mt-0 mb-6" />
                         <br />
-                        <MDBBtn className='mx-2 bookCardBtn' color='dark' onClick={() => travel(`/editReview/${props.data.id}`)}>
+                        <MDBBtn className='mx-2 reviewCardBtn' color='dark' onClick={() => travel(`/editReview/${props.data.id}`)}>
                             Editar reseña
                         </MDBBtn>
 
                         <br /><br />
                         <hr className="mt-0 mb-3" />
                         <br />
-                        <MDBBtn className='mx-2 bookCardBtn' color='dark' onClick={handleDelete}>
+                        <MDBBtn className='mx-2 reviewCardBtn' color='dark' onClick={handleDelete}>
                             Eliminar reseña
                         </MDBBtn>
                         <br /><br />
