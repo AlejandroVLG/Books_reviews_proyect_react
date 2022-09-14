@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Form } from 'react-bootstrap'
+import { Col, Form, Row } from 'react-bootstrap'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { registerUser } from '../userSlice'
@@ -120,11 +120,9 @@ const Register = props => {
 
     return (
 
-      <div className='mainBox'>
-        <div className='mainRegisterBox'>
-
-          <Form className='registerForm' onSubmit={userRegister}>
-
+      <Form fluid className='registerForm' onSubmit={userRegister}>
+        <Row>
+          <Col xs={12} sm={12} md={6} lg={6} xl={6} xxl={6} >
             <Form.Group className="mb-3" controlId="formBasicName">
               <Form.Label className='registerLabel'>Nombre</Form.Label>
               <Form.Control
@@ -138,7 +136,8 @@ const Register = props => {
                 Puede contener letras, espacios y signos de acentuación.
               </Form.Text>
             </Form.Group>
-
+          </Col>
+          <Col xs={12} sm={12} md={6} lg={6} xl={6} xxl={6} >
             <Form.Group className="mb-3" controlId="formBasicNickname">
               <Form.Label className='registerLabel'>Nickname</Form.Label>
               <Form.Control
@@ -152,6 +151,8 @@ const Register = props => {
                 De 4 a 16 carácteres con letras, números, guión o guión bajo.
               </Form.Text>
             </Form.Group>
+          </Col>
+          <Col xs={12} sm={12} md={6} lg={6} xl={6} xxl={6} >
 
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label className='registerLabel'>Correo electrónico</Form.Label>
@@ -166,6 +167,8 @@ const Register = props => {
                 Formato de E-mail válido obligatorio.
               </Form.Text>
             </Form.Group>
+          </Col>
+          <Col xs={12} sm={12} md={6} lg={6} xl={6} xxl={6} >
 
             <Form.Group className="mb-3" controlId="formBasicPassword">
               <Form.Label className='registerLabel'>Contraseña</Form.Label>
@@ -180,7 +183,8 @@ const Register = props => {
                 Debe contener mínimo de 6 carácteres.
               </Form.Text>
             </Form.Group>
-
+          </Col>
+          <Col xs={12} sm={12} md={12} lg={12} xl={12} xxl={12} >
             <Form.Group className="mb-3 boxButton">
               <button className='sendButtom' variant="primary" type="submit">
                 Registrarse
@@ -194,9 +198,9 @@ const Register = props => {
                 }
               </div>
             </Form.Group>
-          </Form>
-        </div>
-      </div>
+          </Col>
+        </Row>
+      </Form>
     )
   } catch (error) {
     console.log(error)
