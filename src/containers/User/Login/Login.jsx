@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from "react-redux"
 import { loginUser, userData, } from "../userSlice"
-import { Form } from 'react-bootstrap'
+import { Col, Container, Form, Row } from 'react-bootstrap'
 import "./Login.scss"
 
 const Login = () => {
@@ -87,10 +87,9 @@ const Login = () => {
 
     return (
 
-      <div className='mainLoginBox'>
-        <div className='loginBox'>
-          <div className='login'>
-
+      <Container fluid className='loginBox'>
+        <Row>
+          <Col xs={12} sm={12} md={6} lg={6} xl={6} xxl={6} >
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label className='loginLabel'>Correo electrónico</Form.Label>
               <Form.Control
@@ -104,7 +103,8 @@ const Login = () => {
                 Introduce tu E-mail
               </Form.Text>
             </Form.Group>
-
+          </Col>
+          <Col xs={12} sm={12} md={6} lg={6} xl={6} xxl={6} >
             <Form.Group className="mb-3" controlId="formBasicPassword">
               <Form.Label className='loginLabel'>Contraseña</Form.Label>
               <Form.Control
@@ -118,7 +118,8 @@ const Login = () => {
                 Introduce tu contraseña
               </Form.Text>
             </Form.Group>
-
+          </Col>
+          <Col xs={12} sm={12} md={12} lg={12} xl={12} xxl={12} >
             <Form.Group className="mb-3 boxLoginButton">
               <button className='loginButton' variant="primary" onClick={() => log()}>
                 Iniciar sesión
@@ -132,10 +133,9 @@ const Login = () => {
                 }
               </div>
             </Form.Group>
-
-          </div>
-        </div>
-      </div>
+          </Col>
+        </Row>
+      </Container>
     )
   } catch (error) {
     console.log(error)
