@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import { Form } from 'react-bootstrap'
+import { Col, Form, Row } from 'react-bootstrap'
 import { useSelector } from 'react-redux'
 import { userData } from '../User/userSlice'
 import "./NewBook.scss"
@@ -69,13 +69,11 @@ const NewBook = props => {
 
         return (
 
-            <div className='mainNewBookBox'>
-                <div className='newBookFormBox'>
-
-                    <Form className='newBookForm' onSubmit={handleSubmit}>
-
-                        <Form.Group className="mb-3" controlId="formBasicTitle">
-                            <Form.Label className='newBookLabel'>Título</Form.Label>
+            <Form className='newBookForm' onSubmit={handleSubmit} >
+                <Row>
+                    <Col xs={12} sm={12} md={6} lg={6} xl={6} xxl={6} >
+                        <Form.Group className="mb-3" controlId="formBasicTitle" >
+                            <Form.Label className='newBookLabel' >Título</Form.Label >
                             <Form.Control
                                 className='newBookInput'
                                 type="text" name='title'
@@ -85,8 +83,9 @@ const NewBook = props => {
                             <Form.Text className="text-muted">
                                 Título oficial del libro en España
                             </Form.Text>
-                        </Form.Group>
-
+                        </Form.Group >
+                    </Col >
+                    <Col xs={12} sm={12} md={6} lg={6} xl={6} xxl={6} >
                         <Form.Group className="mb-3" controlId="formBasicSeries">
                             <Form.Label className='newBookLabel'>Saga</Form.Label>
                             <Form.Control
@@ -100,7 +99,8 @@ const NewBook = props => {
                                 Indica la saga a la que pertenece
                             </Form.Text>
                         </Form.Group>
-
+                    </Col>
+                    <Col xs={12} sm={12} md={6} lg={6} xl={6} xxl={6} >
                         <Form.Group className="mb-3" controlId="formBasicAuthor">
                             <Form.Label className='newBookLabel'>Autor</Form.Label>
                             <Form.Control
@@ -113,7 +113,8 @@ const NewBook = props => {
                                 Autor del libro
                             </Form.Text>
                         </Form.Group>
-
+                    </Col>
+                    <Col xs={12} sm={12} md={6} lg={6} xl={6} xxl={6} >
                         <Form.Group className="mb-3" controlId="formBasicGenre">
                             <Form.Label className='newBookLabel'>Género literario</Form.Label>
                             <Form.Select
@@ -140,7 +141,8 @@ const NewBook = props => {
                                 Selecciona uno de entre los géneros indicados
                             </Form.Text>
                         </Form.Group>
-
+                    </Col>
+                    <Col xs={12} sm={12} md={6} lg={6} xl={6} xxl={6} >
                         <Form.Group className="mb-3" controlId="formBasicYear">
                             <Form.Label className='newBookLabel'>Fecha de publicación</Form.Label>
                             <Form.Control
@@ -156,7 +158,8 @@ const NewBook = props => {
                                 Fecha de publicación de la edición Española
                             </Form.Text>
                         </Form.Group>
-
+                    </Col>
+                    <Col xs={12} sm={12} md={6} lg={6} xl={6} xxl={6} >
                         <Form.Group className="mb-3" controlId="formBasicBookCover">
                             <Form.Label className='newBookLabel'>Portada</Form.Label>
                             <Form.Control
@@ -170,7 +173,8 @@ const NewBook = props => {
                                 Imagen oficial de la cubierta
                             </Form.Text>
                         </Form.Group>
-
+                    </Col>
+                    <Col xs={12} sm={12} md={6} lg={6} xl={6} xxl={6} >
                         <Form.Group className="mb-3" controlId="formBasicAuthorWikiUrl">
                             <Form.Label className='newBookLabel'>Wikipedia del autor</Form.Label>
                             <Form.Control
@@ -184,7 +188,8 @@ const NewBook = props => {
                                 Enlace de la wikipidia oficial del autor
                             </Form.Text>
                         </Form.Group>
-
+                    </Col>
+                    <Col xs={12} sm={12} md={6} lg={6} xl={6} xxl={6} >
                         <Form.Group className="mb-3" controlId="formBasicShopUrl">
                             <Form.Label className='newBookLabel'>A la venta en</Form.Label>
                             <Form.Control
@@ -198,13 +203,13 @@ const NewBook = props => {
                                 Enlace de compra en amazon
                             </Form.Text>
                         </Form.Group>
-
-                        <Form.Group className="mb-3" controlId="formBasicSynopsis">
+                    </Col>
+                    <Col xs={12} sm={12} md={12} lg={12} xl={12} xxl={12} >
+                        <Form.Group className="mb-3 newBookTextAreaBox" controlId="formBasicSynopsis">
                             <Form.Label className='newBookLabel'>Sinopsis</Form.Label>
                             <Form.Control
                                 as="textarea"
-                                rows={3}
-                                className='newBookInput'
+                                className='newBookInput newBookTextArea'
                                 type="text"
                                 name='synopsis'
                                 placeholder='Escribe aquí'
@@ -214,7 +219,8 @@ const NewBook = props => {
                                 Resumen del libro en Español
                             </Form.Text>
                         </Form.Group>
-
+                    </Col>
+                    <Col xs={12} sm={12} md={12} lg={12} xl={12} xxl={12} >
                         <Form.Group className="mb-3 newBookBoxButton">
                             <button className='newBookSendButtom' variant="primary" type="submit">
                                 Añadir libro
@@ -228,9 +234,9 @@ const NewBook = props => {
                                 }
                             </div>
                         </Form.Group>
-                    </Form>
-                </div>
-            </div>
+                    </Col>
+                </Row>
+            </Form >
         )
     } catch (error) {
         console.log(error)

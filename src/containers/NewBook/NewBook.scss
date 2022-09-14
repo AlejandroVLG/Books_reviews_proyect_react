@@ -1,23 +1,8 @@
-.mainNewBookBox {
-	width: 100%;
-	height: auto;
-	box-sizing: border-box;
-	background: linear-gradient(109.6deg, rgb(36, 45, 57) 11.2%, rgb(16, 37, 60) 51.2%, rgb(0, 0, 0) 98.6%);
+.newBookForm {
+	gap: 1.25em;
 	color: white;
-	gap: 1em;
-}
-
-.newBookFormBox {
-	max-width: 50em;
-	width: 90%;
 	margin: auto;
 	padding: 2.5em;
-}
-
-.newBookForm {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	gap: 1.25em;
 }
 
 .newBookLabel {
@@ -43,6 +28,15 @@
 	border: 0.2em solid #0075FF;
 	outline: none;
 	box-shadow: 0.2em 0em 1.9em 0.3em rgba(163, 163, 163, 0.4);
+}
+
+.newBookTextAreaBox {
+	display: grid;
+	grid-column: span 2;
+}
+
+.newBookTextArea {
+	height: 10em;
 }
 
 .newBookBoxButton {
