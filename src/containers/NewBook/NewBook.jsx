@@ -205,11 +205,11 @@ const NewBook = props => {
                         </Form.Group>
                     </Col>
                     <Col xs={12} sm={12} md={12} lg={12} xl={12} xxl={12} >
-                        <Form.Group className="mb-3 newBookTextAreaBox" controlId="formBasicSynopsis">
+                        <Form.Group className="mb-3 " controlId="formBasicSynopsis">
                             <Form.Label className='newBookLabel'>Sinopsis</Form.Label>
                             <Form.Control
                                 as="textarea"
-                                className='newBookInput newBookTextArea'
+                                className='newBookInput synopsis'
                                 type="text"
                                 name='synopsis'
                                 placeholder='Escribe aquí'

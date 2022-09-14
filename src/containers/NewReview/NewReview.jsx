@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import axios from "axios"
-import { Form } from "react-bootstrap"
+import { Col, Form, Row } from "react-bootstrap"
 import { useSelector } from "react-redux"
 import { useParams } from "react-router"
 import { userData } from "../User/userSlice"
@@ -59,11 +59,9 @@ const NewReview = props => {
 
         return (
 
-            <div className='mainNewReviewBox'>
-                <div className='newReviewBox'>
-
-                    <Form className="newReviewFormBox" onSubmit={handleSubmit}>
-
+            <Form className="newReviewFormBox" onSubmit={handleSubmit}>
+                <Row>
+                    <Col xs={12} sm={12} md={6} lg={6} xl={6} xxl={6} >
                         <Form.Group className="mb-3" controlId="formBasicReviewTitle">
                             <Form.Label className='newReviewLabel'>Título</Form.Label>
                             <Form.Control
@@ -77,6 +75,8 @@ const NewReview = props => {
                                 Elige un título para tu reseña
                             </Form.Text>
                         </Form.Group>
+                    </Col>
+                    <Col xs={12} sm={12} md={6} lg={6} xl={6} xxl={6} >
 
                         <Form.Group className="mb-3" controlId="formBasicScore">
                             <Form.Label className='newReviewLabel'>Puntuación</Form.Label>
@@ -101,13 +101,14 @@ const NewReview = props => {
                                 Puntua del 1 al 10 siendo 1 la nota más baja
                             </Form.Text>
                         </Form.Group>
-
-                        <Form.Group className="mb-3" controlId="formBasicMessage">
+                    </Col>
+                    <Col xs={12} sm={12} md={12} lg={12} xl={12} xxl={12} >
+                        <Form.Group className="mb-3 " controlId="formBasicMessage">
                             <Form.Label className='newReviewLabel'>Reseña</Form.Label>
                             <Form.Control
                                 as="textarea"
                                 rows={3}
-                                className='newReviewInput'
+                                className='newReviewInput review'
                                 type="text"
                                 name='message'
                                 placeholder='Escribe aquí'
@@ -117,10 +118,11 @@ const NewReview = props => {
                                 Redacta una reseña con tú valoración
                             </Form.Text>
                         </Form.Group>
-
+                    </Col>
+                    <Col xs={12} sm={12} md={12} lg={12} xl={12} xxl={12} >
                         <Form.Group className="mb-3 newReviewBoxButton">
                             <button className='newReviewSendButtom' variant="primary" type="submit" onClick={validation}>
-                                Publicar reseña
+                                Publicar
                             </button>
                             <div className='newBookMessage'>
                                 {
@@ -131,9 +133,9 @@ const NewReview = props => {
                                 }
                             </div>
                         </Form.Group>
-                    </Form>
-                </div>
-            </div>
+                    </Col>
+                </Row>
+            </Form>
         )
 
     } catch (error) {
