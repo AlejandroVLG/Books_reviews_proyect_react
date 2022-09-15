@@ -43,7 +43,7 @@ const Login = () => {
 
     const log = () => {
 
-      if (credentials.password.length > 6) {
+      if (credentials.password.length >= 6) {
 
         if (! /[\d()+-]/g.test(credentials.password)) {
 

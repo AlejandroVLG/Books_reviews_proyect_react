@@ -27,7 +27,7 @@ const ProfileCard = props => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0, type: 'spring', stiffness: 30 }}
         >
-            <MDBContainer className="py-5 h-100 cardContainer">
+            <MDBContainer fluid className="py-5 h-100 cardContainer">
                 <MDBCard className="mb-3 cardProfile " style={{ borderRadius: '.5em' }}>
                     <MDBRow className="g-0">
 

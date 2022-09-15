@@ -44,7 +44,7 @@ const ReviewCard = props => {
 
     if (identification.infoData.name == props.data.name) {
         return (
-            <MDBCard className="mb-10 mainReviewCard" style={{ borderRadius: '.5em' }}>
+            <MDBCard fluid className="mb-10 mainReviewCard" style={{ borderRadius: '.5em' }}>
                 <MDBRow className="g-0">
 
                     <MDBCol md="4" className="text-center text-white reviewColData"

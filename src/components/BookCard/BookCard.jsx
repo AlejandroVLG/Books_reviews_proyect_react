@@ -45,7 +45,7 @@ const BookCard = props => {
 
         return (
 
-            <MDBCard className="mb-10 mainBookCard" style={{ borderRadius: '.5em' }}>
+            <MDBCard fluid className="mb-10 mainBookCard" style={{ borderRadius: '.5em' }}>
                 <MDBRow className="g-0">
 
                     <MDBCol md="3" className="gradient-custom text-center text-white bookColData"
