@@ -22,30 +22,23 @@ const NavigationBar = () => {
         navigate(destiny)
     }
 
+   
+
     if (!identification.token) {
 
         return (
-            <Navbar sticky="top" collapseOnSelect expand="lg" bg="dark" variant="dark" className="navBarBox">
-                <Container className="navBarContainer">
-                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                    <Navbar.Collapse id="responsive-navbar-nav">
-                        <Nav className="me-auto">
-                            <Nav.Link className="navBarLink" onClick={() => travel("/books")}>Biblioteca</Nav.Link>
-                            <NavDropdown title="Desplegable" id="collasible-nav-dropdown">
-                                <NavDropdown.Item href="#action/3.1">Prueba 1</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.2">
-                                    Prueba 2
-                                </NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.3">Prueba 3</NavDropdown.Item>
-                            </NavDropdown>
-                        </Nav>
-                        <Nav>
-                            <Nav.Link className="navBarLink" onClick={() => travel("/login")}>Iniciar sesión</Nav.Link>
-                            <Nav.Link eventKey={2} onClick={() => travel("/register")}>Registrarse</Nav.Link>
-                        </Nav>
-                    </Navbar.Collapse>
-                </Container>
-            </Navbar>
+            <Navbar sticky="top" bg="dark" expand="lg" className="navBarBox">
+            <Container>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className="me-auto">
+                        <Nav.Link className="navBarLink navBarLink2 navBarLink3" onClick={() => travel("/books")}>Biblioteca</Nav.Link>
+                        <Nav.Link className="navBarLink navBarLink2" onClick={() => travel("/login")}>Iniciar sesión</Nav.Link>
+                        <Nav.Link className="navBarLink2" eventKey={2} onClick={() => travel("/register")}>Registrarse</Nav.Link>
+                    </Nav>
+                </Navbar.Collapse>
+            </Container>
+        </Navbar>
         )
 
     } else {
