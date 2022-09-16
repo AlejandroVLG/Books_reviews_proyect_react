@@ -13,5 +13,6 @@ export default defineConfig({
   server: {
     https: true,
     host: 'localhost',
-  }
+  },
+  base: "/index.html"
 })

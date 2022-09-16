@@ -27,7 +27,7 @@ const MyProfile = props => {
 
         useEffect(() => {
 
-          travel("/")
+          travel("/books")
         }, [])
       )
     } else {
