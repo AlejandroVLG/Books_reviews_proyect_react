@@ -1,9 +1,9 @@
 .homeMainBox {
-    height: 100%;
+    height: 61.8vh;
     width: 100%;
-    background-color: lightblue;
+    background-image: url(../../../public/Img/vector3paisaje.jpeg);
+    background-size: cover;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
 }

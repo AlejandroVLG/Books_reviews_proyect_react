@@ -58,14 +58,22 @@ const BookCard = props => {
                         <br />
                         <hr className="mt-0 mb-6" />
                         <br />
-                        <MDBBtn className='mx-2 bookCardBtn' color='dark' onClick={() => travel(`/reviews/${props.data.id}`)}>
+                        <MDBBtn
+                            className='mx-2 bookCardBtn'
+                            color='dark'
+                            onClick={() => travel(`/reviews/${props.data.id}`)}
+                        >
                             Ver reseñas
                         </MDBBtn>
 
                         <br /><br />
                         <hr className="mt-0 mb-3" />
                         <br />
-                        <MDBBtn className='mx-2 bookCardBtn' color='dark' onClick={() => travel(`/newReview/${props.data.id}`)}>
+                        <MDBBtn
+                            className='mx-2 bookCardBtn'
+                            color='dark'
+                            onClick={() => travel(`/newReview/${props.data.id}`)}
+                        >
                             Añadir reseña
                         </MDBBtn>
                         <br /><br />

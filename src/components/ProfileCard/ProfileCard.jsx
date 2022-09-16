@@ -9,8 +9,7 @@ import {
     MDBCardText,
     MDBCardBody,
     MDBCardImage,
-    MDBTypography,
-    MDBIcon
+    MDBTypography
 } from 'mdb-react-ui-kit'
 import './ProfileCard.scss'
 

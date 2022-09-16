@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import { Form } from 'react-bootstrap'
 import { useSelector } from 'react-redux'
-import { useParams } from 'react-router'
+import { useNavigate, useParams } from 'react-router'
 import { userData } from '../User/userSlice'
 import "./EditBook.scss"
 
@@ -49,13 +49,10 @@ const EditBook = props => {
             e.preventDefault();
             await axios.put(`https://books-reviews-app-proyect.herokuapp.com/api/book/editBookById/${id}`, editedBookState, requirements)
         }
-
         if (identification.token === "") {
 
             return (
-
                 useEffect(() => {
-
                     travel("/books")
                 }, [])
             )

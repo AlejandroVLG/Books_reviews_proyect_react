@@ -2,11 +2,9 @@ import React from "react"
 import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
-import NavDropdown from 'react-bootstrap/NavDropdown'
 import { useNavigate } from "react-router-dom"
 import { useDispatch, useSelector } from 'react-redux'
 import { logOut, userData } from '../../containers/User/userSlice'
-
 import "./NavigationBar.scss"
 
 const NavigationBar = () => {
@@ -22,12 +20,10 @@ const NavigationBar = () => {
         navigate(destiny)
     }
 
-   
-
     if (!identification.token) {
 
         return (
-            <Navbar sticky="top" bg="dark" expand="lg" className="navBarBox">
+            <Navbar bg="dark" expand="lg" className="navBarBox">
             <Container>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
@@ -44,7 +40,7 @@ const NavigationBar = () => {
     } else {
         return (
 
-            <Navbar sticky="top" bg="dark" expand="lg" className="navBarBox">
+            <Navbar bg="dark" expand="lg" className="navBarBox">
                 <Container>
                     <Navbar.Brand onClick={() => travel("/myProfile")}>
                         <img className="navBarImg" src={identification.infoData.profile_img} alt="" />

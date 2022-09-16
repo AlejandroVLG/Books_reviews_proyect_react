@@ -21,13 +21,6 @@ const Register = props => {
       }
     )
 
-    useEffect(() => {
-
-      if (localStorage.getItem("token")) {
-        navigate('/')
-      }
-    }, [])
-
     const handleInput = (e) => {
       setRegister(
         {
@@ -117,7 +110,6 @@ const Register = props => {
         )
       )
     }
-
     return (
 
       <Form fluid className='registerForm' onSubmit={userRegister}>
