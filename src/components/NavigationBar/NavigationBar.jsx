@@ -24,30 +24,30 @@ const NavigationBar = () => {
 
         return (
             <Navbar bg="dark" expand="lg" className="navBarBox">
-            <Container>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="me-auto">
-                        <Nav.Link className="navBarLink navBarLink2 navBarLink3" onClick={() => travel("/books")}>Biblioteca</Nav.Link>
-                        <Nav.Link className="navBarLink navBarLink2" onClick={() => travel("/login")}>Iniciar sesión</Nav.Link>
-                        <Nav.Link className="navBarLink2" eventKey={2} onClick={() => travel("/register")}>Registrarse</Nav.Link>
-                    </Nav>
-                </Navbar.Collapse>
-            </Container>
-        </Navbar>
+                <Container>
+                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                    <Navbar.Collapse id="basic-navbar-nav collapsed">
+                        <Nav className="me-auto interiorNav">
+                            <Nav.Link className="navBarLink navBarLink2 navBarLink3" onClick={() => travel("/books")}>Biblioteca</Nav.Link>
+                            <Nav.Link className="navBarLink2" eventKey={2} onClick={() => travel("/register")}>Registrarse</Nav.Link>
+                            <Nav.Link className="navBarLink navBarLink2" onClick={() => travel("/login")}>Iniciar sesión</Nav.Link>
+                        </Nav>
+                    </Navbar.Collapse>
+                </Container>
+            </Navbar>
         )
 
     } else {
         return (
 
             <Navbar bg="dark" expand="lg" className="navBarBox">
-                <Container>
+                <Container >
                     <Navbar.Brand onClick={() => travel("/myProfile")}>
                         <img className="navBarImg" src={identification.infoData.profile_img} alt="" />
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                    <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="me-auto">
+                    <Navbar.Collapse id="basic-navbar-nav collapsed">
+                        <Nav className="me-auto interiorNav">
                             <Nav.Link
                                 className="navBarLink navBarLink2"
                                 onClick={() => travel("/myProfile")}

@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit"
 import axios from "axios"
+import { useNavigate } from "react-router"
 
 export const userSlice = createSlice({
 
@@ -35,6 +36,7 @@ export const userSlice = createSlice({
 })
 
 export const registerUser = (name, nick_name, email, password) => async (dispatch) => {
+
     try {
         const user = await axios.post('https://books-reviews-app-proyect.herokuapp.com/api/register',
             {
@@ -56,8 +58,8 @@ export const registerUser = (name, nick_name, email, password) => async (dispatc
 }
 
 export const loginUser = (body) => async (dispatch) => {
-    try {
 
+    try {
         const userToken = await axios.post("https://books-reviews-app-proyect.herokuapp.com/api/login", body)
 
         if (userToken.status === 200) {
@@ -70,7 +72,7 @@ export const loginUser = (body) => async (dispatch) => {
                 }
             }
 
-            // Using an other EndPoing i've saved the logged user profile data on infoData.
+            // Using an other EndPoint, i've saved the logged user profile data on infoData.
 
             const userInfoData = await axios.get('https://books-reviews-app-proyect.herokuapp.com/api/user/myProfile', requirements)
 
@@ -80,18 +82,20 @@ export const loginUser = (body) => async (dispatch) => {
                     infoData: userInfoData.data
                 }
             ))
-
         }
 
     } catch (error) {
         console.log(error)
     }
-};
+}
 
 export const logOut = () => (dispatch) => {
+    let navigate = useNavigate()
+
     dispatch(logout());
 
-};
+    navigate("/books")
+}
 
 export const { register, login, logout } = userSlice.actions
 

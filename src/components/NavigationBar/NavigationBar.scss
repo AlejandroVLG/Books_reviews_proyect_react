@@ -1,7 +1,14 @@
-
 .navBarBox {
+    width: 100%;
+    height: auto;
     border: 0.01em solid rgba(0, 0, 0, 0.466);
     box-shadow: 0 0 0.2em 0.1em white;
+}
+
+.interiorNav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
 
 .navBarLink2 {
@@ -10,6 +17,10 @@
 
 .navBarLink2:hover {
     color: red !important;
+}
+
+.collapsed{
+    background-color: white !important;
 }
 
 .navBarImg {

@@ -37,7 +37,7 @@ const Login = () => {
         setTimeout(() => {
           navigate("/books")
 
-        }, 500)
+        }, 100)
       }
     })
 
