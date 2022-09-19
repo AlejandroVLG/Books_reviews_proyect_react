@@ -41,7 +41,7 @@ const BookCard = props => {
         await axios.delete(`https://books-reviews-app-proyect.herokuapp.com/api/book/deleteBook/${deleteId}`, requirements)
     }
 
-    if (identification.infoData.id == 1) {
+    if (identification.infoData.id === 1) {
 
         return (
 

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import axios from "axios"
 import { MDBCol, MDBContainer, MDBRow } from "mdb-react-ui-kit"
 import BookCard from "../../components/BookCard/BookCard"
+import Spinner from "../../components/Spinner/Spinner"
 import "./Book.scss"
 
 const Book = props => {
@@ -46,36 +47,36 @@ const Book = props => {
             showBooks()
         }, [])
 
-        return (
-            <div className="bookMainBox">
+            return (
+                <div className="bookMainBox">
 
-                <input
-                    className="form-control searchBar"
-                    type="text"
-                    value={search}
-                    placeholder="Búsqueda por título, autor, género, saga o fecha de publicación"
-                    onChange={handleChange}
-                />
-                <div className="bookContentBox">
-                    {results.length === 0 && <p>Cargando...</p>}
-                    {
-                        results.map((books, i) =>
-                        (
-                            <div key={i}>
-                                <MDBContainer className="py-1 h-100 bookCardContainer">
-                                    <MDBRow className="justify-content-center align-items-center h-100">
-                                        <MDBCol lg="12" className="mb-2 mb-lg-0 colCard" >
-                                            <BookCard data={books} key={i} />
-                                        </MDBCol>
-                                    </MDBRow>
-                                </MDBContainer>
-                            </div>
-                        )
-                        )
-                    }
+                    <input
+                        className="form-control searchBar"
+                        type="text"
+                        value={search}
+                        placeholder="Búsqueda por título, autor, género, saga o fecha de publicación"
+                        onChange={handleChange}
+                    />
+                    <div className="bookContentBox">
+                        {results.length === 0 && <p><Spinner/></p>}
+                        {
+                            results.map((books, i) =>
+                            (
+                                <div key={i}>
+                                    <MDBContainer className="py-1 h-100 bookCardContainer">
+                                        <MDBRow className="justify-content-center align-items-center h-100">
+                                            <MDBCol lg="12" className="mb-2 mb-lg-0 colCard" >
+                                                <BookCard data={books} key={i} />
+                                            </MDBCol>
+                                        </MDBRow>
+                                    </MDBContainer>
+                                </div>
+                            )
+                            )
+                        }
+                    </div>
                 </div>
-            </div>
-        )
+            )
     } catch (error) {
         console.log(error)
     }

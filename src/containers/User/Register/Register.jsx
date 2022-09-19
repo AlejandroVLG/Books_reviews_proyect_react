@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Col, Form, Row } from 'react-bootstrap'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import Spinner from '../../../components/Spinner/Spinner'
 import { registerUser } from '../userSlice'
 import "./Register.scss"
 
@@ -110,6 +111,18 @@ const Register = props => {
         )
       )
     }
+
+    useEffect(() => {
+
+      if (register.isError !== false) {
+
+        setTimeout(() => {
+          navigate("/login")
+
+        }, 100)
+      }
+    })
+
     return (
 
       <Form fluid className='registerForm' onSubmit={userRegister}>
@@ -188,6 +201,7 @@ const Register = props => {
                     :
                     (<p style={{ color: "green" }}>{register.successMsg}</p>)
                 }
+                {register.isError === "" && <p><Spinner /></p>}
               </div>
             </Form.Group>
           </Col>

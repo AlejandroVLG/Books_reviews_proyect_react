@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from "react-redux"
 import { loginUser, userData, } from "../userSlice"
 import { Col, Container, Form, Row } from 'react-bootstrap'
+import Spinner from '../../../components/Spinner/Spinner'
 import "./Login.scss"
 
 const Login = () => {
@@ -131,6 +132,8 @@ const Login = () => {
                     :
                     (<p style={{ color: "green" }}>{credentials.successMsg}</p>)
                 }
+                {credentials.isError === "" && <p><Spinner /></p>}
+
               </div>
             </Form.Group>
           </Col>

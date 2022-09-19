@@ -4,6 +4,7 @@ import ReviewCard from "../../components/ReviewCard/ReviewCard"
 import { userData } from "../User/userSlice"
 import { useSelector } from "react-redux"
 import { useParams } from "react-router"
+import Spinner from "../../components/Spinner/Spinner"
 import "./Review.scss"
 
 const Review = props => {
@@ -39,8 +40,7 @@ const Review = props => {
         return (
 
             <div >
-
-                {reviewData.reviews.length === 0 && <p>Cargando...</p>}
+                {reviewData.length === 0 && <p><Spinner /></p>}
                 {
                     reviewData.reviews.map((reviews, i) =>
                     (

@@ -90,11 +90,8 @@ export const loginUser = (body) => async (dispatch) => {
 }
 
 export const logOut = () => (dispatch) => {
-    let navigate = useNavigate()
 
     dispatch(logout());
-
-    navigate("/books")
 }
 
 export const { register, login, logout } = userSlice.actions

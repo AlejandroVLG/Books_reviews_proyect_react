@@ -23,7 +23,7 @@ function App() {
         <Header />
         <NavigationBar />
         <Routes>
-          <Route path="/index.html/" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/books" element={<Book />} />
           <Route path="/reviews/:id" element={<Review />} />
           <Route path="/newBook" element={<NewBook />} />
