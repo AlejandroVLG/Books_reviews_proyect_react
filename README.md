@@ -4,7 +4,7 @@
 
 # <center>Aplicación reseñas de libros </center>
 
-Aplicación realizada en HTML, CSS y JS con React y Redux. Para las animaciones he utilizado la dependencia framer motion, para los stylos mdb-react y bootstrap-react. La aplicación también consta de un back-end que es parte de este mismo proyecto (añado el enlace al final).
+Aplicación realizada en HTML, CSS y JS con React y Redux. Para las animaciones he utilizado la dependencia framer motion, para los estilos mdb-react y bootstrap-react. La aplicación también consta de un back-end que es parte de este mismo proyecto (añado el enlace al final).
 
 
 ---
