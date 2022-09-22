@@ -25,3 +25,13 @@
     color: black;
     font-family: 'Playfair Display', serif;
 }
+
+.spinnerBox{
+    display: flex;
+    flex-direction: row;
+}
+
+.loadingText{
+    color: white;
+    font-size: xx-large;
+}

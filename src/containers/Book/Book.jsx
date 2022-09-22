@@ -59,7 +59,12 @@ const Book = props => {
                     />
                 </div>
                 <div className="bookContentBox">
-                    {results.length === 0 && <p><Spinner /></p>}
+                    {results.length === 0 &&
+                        <div>
+                            <Spinner />
+                            <p className="loadingText">Cargando contenido</p>
+                        </div>
+                    }
                     {
                         results.map((books, i) =>
                         (
