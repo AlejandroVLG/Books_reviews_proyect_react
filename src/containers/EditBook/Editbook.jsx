@@ -62,10 +62,11 @@ const EditBook = props => {
                 <div className='mainEditBookBox'>
                     <div className='editBookFormBox'>
                         <div className='editBookForm' >
-
                             <Form onSubmit={handleSubmit}>
                                 <Form.Group className="mb-3" controlId="formBasicTitle">
-                                    <Form.Label className='editBookLabel'>Título</Form.Label>
+                                    <Form.Label className='editBookLabel'>
+                                        Título
+                                    </Form.Label>
                                     <Form.Control
                                         className='editBookInput'
                                         type="text" name='title'
@@ -77,12 +78,15 @@ const EditBook = props => {
                                     </Form.Text>
                                 </Form.Group>
                                 <Form.Group className="mb-3 editBookBoxButton">
-                                    <button className='editBookSendButtom' variant="primary" type="submit">
+                                    <button
+                                        className='editBookSendButtom'
+                                        variant="primary"
+                                        type="submit"
+                                    >
                                         Actualizar
                                     </button>
                                 </Form.Group>
                             </Form>
-
                             <Form onSubmit={handleSubmit}>
                                 <Form.Group className="mb-3" controlId="formBasicTitle">
                                     <Form.Label className='editBookLabel'>Sinopsis</Form.Label>
@@ -99,7 +103,6 @@ const EditBook = props => {
                                     </Form.Text>
                                 </Form.Group>
                             </Form>
-
                             <Form onSubmit={handleSubmit}>
                                 <Form.Group className="mb-3" controlId="formBasicNickname">
                                     <Form.Label className='editBookLabel'>Saga</Form.Label>
@@ -115,10 +118,11 @@ const EditBook = props => {
                                     </Form.Text>
                                 </Form.Group>
                             </Form>
-
                             <Form onSubmit={handleSubmit}>
                                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                                    <Form.Label className='editBookLabel'>Autor</Form.Label>
+                                    <Form.Label className='editBookLabel'>
+                                        Autor
+                                    </Form.Label>
                                     <Form.Control
                                         className='editBookInput'
                                         type="text"
@@ -131,10 +135,11 @@ const EditBook = props => {
                                     </Form.Text>
                                 </Form.Group>
                             </Form>
-
                             <Form onSubmit={handleSubmit}>
                                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                                    <Form.Label className='editBookLabel'>Género literario</Form.Label>
+                                    <Form.Label className='editBookLabel'>
+                                        Género literario
+                                    </Form.Label>
                                     <Form.Select
                                         className='editBookInput'
                                         name='genre'
@@ -159,10 +164,11 @@ const EditBook = props => {
                                     </Form.Text>
                                 </Form.Group>
                             </Form>
-
                             <Form onSubmit={handleSubmit}>
                                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                                    <Form.Label className='editBookLabel'>Fecha de publicación</Form.Label>
+                                    <Form.Label className='editBookLabel'>
+                                        Fecha de publicación
+                                    </Form.Label>
                                     <Form.Control
                                         className='editBookInput'
                                         type="date"
@@ -177,10 +183,11 @@ const EditBook = props => {
                                     </Form.Text>
                                 </Form.Group>
                             </Form>
-
                             <Form onSubmit={handleSubmit}>
                                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                                    <Form.Label className='editBookLabel'>Portada</Form.Label>
+                                    <Form.Label className='editBookLabel'>
+                                        Portada
+                                    </Form.Label>
                                     <Form.Control
                                         className='editBookInput'
                                         type="text"
@@ -193,10 +200,11 @@ const EditBook = props => {
                                     </Form.Text>
                                 </Form.Group>
                             </Form>
-
                             <Form onSubmit={handleSubmit}>
                                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                                    <Form.Label className='editBookLabel'>Wikipedia del autor</Form.Label>
+                                    <Form.Label className='editBookLabel'>
+                                        Wikipedia del autor
+                                    </Form.Label>
                                     <Form.Control
                                         className='editBookInput'
                                         type="text"
@@ -209,10 +217,11 @@ const EditBook = props => {
                                     </Form.Text>
                                 </Form.Group>
                             </Form>
-
                             <Form onSubmit={handleSubmit}>
                                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                                    <Form.Label className='editBookLabel'>A la venta en</Form.Label>
+                                    <Form.Label className='editBookLabel'>
+                                        A la venta en
+                                    </Form.Label>
                                     <Form.Control
                                         className='editBookInput'
                                         type="text" name='shop_url'
@@ -224,14 +233,15 @@ const EditBook = props => {
                                     </Form.Text>
                                 </Form.Group>
                             </Form>
-
-
                             <Form.Group className="mb-3 editBookBoxButton">
-                                <button className='editBookSendButtom' variant="primary" type="submit">
+                                <button
+                                    className='editBookSendButtom'
+                                    variant="primary"
+                                    type="submit"
+                                >
                                     Añadir libro
                                 </button>
                             </Form.Group>
-
                         </div>
                     </div>
                 </div >

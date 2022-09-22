@@ -133,7 +133,6 @@ const Login = () => {
                     (<p style={{ color: "green" }}>{credentials.successMsg}</p>)
                 }
                 {credentials.isError === "" && <p><Spinner /></p>}
-
               </div>
             </Form.Group>
           </Col>

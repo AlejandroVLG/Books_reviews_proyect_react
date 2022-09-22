@@ -28,9 +28,25 @@ const NavigationBar = () => {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav collapsed">
                         <Nav className="me-auto interiorNav">
-                            <Nav.Link className="navBarLink navBarLink2" onClick={() => travel("/login")}>Iniciar sesión</Nav.Link>
-                            <Nav.Link className="navBarLink navBarLink2 navBarLink3" onClick={() => travel("/books")}>Biblioteca</Nav.Link>
-                            <Nav.Link className="navBarLink2" eventKey={2} onClick={() => travel("/register")}>Registrarse</Nav.Link>
+                            <Nav.Link
+                                className="navBarLink navBarLink2"
+                                onClick={() => travel("/login")}
+                            >
+                                Iniciar sesión
+                            </Nav.Link>
+                            <Nav.Link
+                                className="navBarLink navBarLink2 navBarLink3"
+                                onClick={() => travel("/books")}
+                            >
+                                Biblioteca
+                            </Nav.Link>
+                            <Nav.Link
+                                className="navBarLink2"
+                                eventKey={2}
+                                onClick={() => travel("/register")}
+                            >
+                                Registrarse
+                            </Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
@@ -43,7 +59,11 @@ const NavigationBar = () => {
             <Navbar bg="dark" expand="lg" className="navBarBox">
                 <Container >
                     <Navbar.Brand onClick={() => travel("/myProfile")}>
-                        <img className="navBarImg" src={identification.infoData.profile_img} alt="" />
+                        <img
+                            className="navBarImg"
+                            src={identification.infoData.profile_img}
+                            alt="profileImg"
+                        />
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav collapsed">
@@ -54,8 +74,18 @@ const NavigationBar = () => {
                             >
                                 {identification.infoData.name}
                             </Nav.Link>
-                            <Nav.Link className="navBarLink navBarLink2 navBarLink3" onClick={() => travel("/books")}>Biblioteca</Nav.Link>
-                            <Nav.Link className="navBarLink navBarLink2" onClick={() => travel("/newBook")}>Añadir libro</Nav.Link>
+                            <Nav.Link
+                                className="navBarLink navBarLink2 navBarLink3"
+                                onClick={() => travel("/books")}
+                            >
+                                Biblioteca
+                            </Nav.Link>
+                            <Nav.Link
+                                className="navBarLink navBarLink2"
+                                onClick={() => travel("/newBook")}
+                            >
+                                Añadir libro
+                            </Nav.Link>
                             <Nav.Link
                                 eventKey={2}
                                 className="navBarLink2"

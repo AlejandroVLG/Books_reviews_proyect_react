@@ -69,11 +69,13 @@ const NewBook = props => {
 
         return (
 
-            <Form  className='newBookForm' onSubmit={handleSubmit} >
+            <Form className='newBookForm' onSubmit={handleSubmit} >
                 <Row>
                     <Col xs={12} sm={12} md={6} lg={6} xl={6} xxl={6} >
                         <Form.Group className="mb-3" controlId="formBasicTitle" >
-                            <Form.Label className='newBookLabel' >Título</Form.Label >
+                            <Form.Label className='newBookLabel'>
+                                Título
+                            </Form.Label >
                             <Form.Control
                                 className='newBookInput'
                                 type="text" name='title'
@@ -87,7 +89,9 @@ const NewBook = props => {
                     </Col >
                     <Col xs={12} sm={12} md={6} lg={6} xl={6} xxl={6} >
                         <Form.Group className="mb-3" controlId="formBasicSeries">
-                            <Form.Label className='newBookLabel'>Saga</Form.Label>
+                            <Form.Label className='newBookLabel'>
+                                Saga
+                            </Form.Label>
                             <Form.Control
                                 className='newBookInput'
                                 type="text"
@@ -102,7 +106,9 @@ const NewBook = props => {
                     </Col>
                     <Col xs={12} sm={12} md={6} lg={6} xl={6} xxl={6} >
                         <Form.Group className="mb-3" controlId="formBasicAuthor">
-                            <Form.Label className='newBookLabel'>Autor</Form.Label>
+                            <Form.Label className='newBookLabel'>
+                                Autor
+                            </Form.Label>
                             <Form.Control
                                 className='newBookInput'
                                 type="text" name='author'
@@ -116,7 +122,9 @@ const NewBook = props => {
                     </Col>
                     <Col xs={12} sm={12} md={6} lg={6} xl={6} xxl={6} >
                         <Form.Group className="mb-3" controlId="formBasicGenre">
-                            <Form.Label className='newBookLabel'>Género literario</Form.Label>
+                            <Form.Label className='newBookLabel'>
+                                Género literario
+                            </Form.Label>
                             <Form.Select
                                 aria-label="Default select example"
                                 className='newBookInput'
@@ -144,7 +152,9 @@ const NewBook = props => {
                     </Col>
                     <Col xs={12} sm={12} md={6} lg={6} xl={6} xxl={6} >
                         <Form.Group className="mb-3" controlId="formBasicYear">
-                            <Form.Label className='newBookLabel'>Fecha de publicación</Form.Label>
+                            <Form.Label className='newBookLabel'>
+                                Fecha de publicación
+                            </Form.Label>
                             <Form.Control
                                 className='newBookInput'
                                 type="date"
@@ -161,7 +171,9 @@ const NewBook = props => {
                     </Col>
                     <Col xs={12} sm={12} md={6} lg={6} xl={6} xxl={6} >
                         <Form.Group className="mb-3" controlId="formBasicBookCover">
-                            <Form.Label className='newBookLabel'>Portada</Form.Label>
+                            <Form.Label className='newBookLabel'>
+                                Portada
+                            </Form.Label>
                             <Form.Control
                                 className='newBookInput'
                                 type="text"
@@ -176,7 +188,9 @@ const NewBook = props => {
                     </Col>
                     <Col xs={12} sm={12} md={6} lg={6} xl={6} xxl={6} >
                         <Form.Group className="mb-3" controlId="formBasicAuthorWikiUrl">
-                            <Form.Label className='newBookLabel'>Wikipedia del autor</Form.Label>
+                            <Form.Label className='newBookLabel'>
+                                Wikipedia del autor
+                            </Form.Label>
                             <Form.Control
                                 className='newBookInput'
                                 type="text"
@@ -191,7 +205,9 @@ const NewBook = props => {
                     </Col>
                     <Col xs={12} sm={12} md={6} lg={6} xl={6} xxl={6} >
                         <Form.Group className="mb-3" controlId="formBasicShopUrl">
-                            <Form.Label className='newBookLabel'>A la venta en</Form.Label>
+                            <Form.Label className='newBookLabel'>
+                                A la venta en
+                            </Form.Label>
                             <Form.Control
                                 className='newBookInput'
                                 type="text"
@@ -206,7 +222,9 @@ const NewBook = props => {
                     </Col>
                     <Col xs={12} sm={12} md={12} lg={12} xl={12} xxl={12} >
                         <Form.Group className="mb-3 " controlId="formBasicSynopsis">
-                            <Form.Label className='newBookLabel'>Sinopsis</Form.Label>
+                            <Form.Label className='newBookLabel'>
+                                Sinopsis
+                            </Form.Label>
                             <Form.Control
                                 as="textarea"
                                 className='newBookInput synopsis'

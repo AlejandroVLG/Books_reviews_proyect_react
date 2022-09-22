@@ -52,7 +52,6 @@ const Review = props => {
                 }
             </div>
         )
-
     } catch (error) {
         console.log(error)
     }

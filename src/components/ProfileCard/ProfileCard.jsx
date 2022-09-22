@@ -30,8 +30,11 @@ const ProfileCard = props => {
                 <MDBCard className="mb-3 cardProfile " style={{ borderRadius: '.5em' }}>
                     <MDBRow className="g-0">
 
-                        <MDBCol md="4" className="gradient-custom text-center text-white"
-                            style={{ borderTopLeftRadius: '.5em', borderBottomLeftRadius: '.5em' }}>
+                        <MDBCol
+                            md="4"
+                            className="gradient-custom text-center text-white"
+                            style={{ borderTopLeftRadius: '.5em', borderBottomLeftRadius: '.5em' }}
+                        >
                             <MDBCardImage
                                 src={props.data.profile_img}
                                 alt="Avatar"
@@ -54,48 +57,87 @@ const ProfileCard = props => {
                         <MDBCol md="8" className="infoProfileBox">
 
                             <MDBCardBody className="p-4">
-                                <MDBTypography className='dataHead' tag="h6">Datos personales</MDBTypography>
+                                <MDBTypography
+                                    className='dataHead'
+                                    tag="h6"
+                                >
+                                    Datos personales
+                                </MDBTypography>
                                 <hr className="mt-0 mb-4 bodyHr" />
                                 <MDBRow className="pt-1">
                                     <MDBCol size="6" className="mb-3">
                                         <MDBTypography tag="h6">Apodo</MDBTypography>
-                                        <MDBCardText className="text-muted">{props.data.nick_name}</MDBCardText>
+                                        <MDBCardText className="text-muted">
+                                            {props.data.nick_name}
+                                        </MDBCardText>
                                     </MDBCol>
                                     <MDBCol size="6" className="mb-3">
                                         <MDBTypography tag="h6">Edad</MDBTypography>
-                                        <MDBCardText className="text-muted">{props.data.age}</MDBCardText>
+                                        <MDBCardText className="text-muted">
+                                            {props.data.age}
+                                        </MDBCardText>
                                     </MDBCol>
                                 </MDBRow>
                                 <MDBCol size="12" className="mb-3">
-                                    <MDBTypography tag="h6">Correo electrónico</MDBTypography>
-                                    <MDBCardText className="text-muted">{props.data.email}</MDBCardText>
+                                    <MDBTypography tag="h6">
+                                        Correo electrónico
+                                    </MDBTypography>
+                                    <MDBCardText className="text-muted">
+                                        {props.data.email}
+                                    </MDBCardText>
                                 </MDBCol>
-                                <MDBTypography className='dataHead' tag="h6">Información adicional</MDBTypography>
+                                <MDBTypography className='dataHead' tag="h6">
+                                    Información adicional
+                                </MDBTypography>
                                 <hr className="mt-0 mb-4 bodyHr" />
                                 <MDBRow className="pt-1">
                                     <MDBCol size="6" className="mb-3">
-                                        <MDBTypography tag="h6">Género favorito</MDBTypography>
-                                        <MDBCardText className="text-muted">{props.data.favourite_genre}</MDBCardText>
+                                        <MDBTypography tag="h6">
+                                            Género favorito
+                                        </MDBTypography>
+                                        <MDBCardText className="text-muted">
+                                            {props.data.favourite_genre}
+                                        </MDBCardText>
                                     </MDBCol>
                                     <MDBCol size="6" className="mb-3">
-                                        <MDBTypography tag="h6">Autor favorito</MDBTypography>
-                                        <MDBCardText className="text-muted">{props.data.favourite_author}</MDBCardText>
+                                        <MDBTypography tag="h6">
+                                            Autor favorito
+                                        </MDBTypography>
+                                        <MDBCardText className="text-muted">
+                                            {props.data.favourite_author}
+                                        </MDBCardText>
                                     </MDBCol>
                                     <MDBCol size="12" className="mb-3">
-                                        <MDBTypography tag="h6">Leyendo en la actualidad</MDBTypography>
-                                        <MDBCardText className="text-muted">{props.data.currently_reading}</MDBCardText>
+                                        <MDBTypography tag="h6">
+                                            Leyendo en la actualidad
+                                        </MDBTypography>
+                                        <MDBCardText className="text-muted">
+                                            {props.data.currently_reading}
+                                        </MDBCardText>
                                     </MDBCol>
                                 </MDBRow>
 
                                 <div className="d-flex justify-content-start">
 
-                                    <a className='socialIconsBox' target='_blank' href={props.data.twitter_account}>
+                                    <a
+                                        className='socialIconsBox'
+                                        target='_blank'
+                                        href={props.data.twitter_account}
+                                    >
                                         <Icon className='socialIcon' icon="ant-design:twitter-outlined" />
                                     </a>
-                                    <a className='socialIconsBox' target='_blank' href={props.data.facebook_account} >
+                                    <a
+                                        className='socialIconsBox'
+                                        target='_blank'
+                                        href={props.data.facebook_account}
+                                    >
                                         <Icon className='socialIcon' icon="akar-icons:facebook-fill" />
                                     </a>
-                                    <a className='socialIconsBox' target='_blank' href={props.data.instagram_account}>
+                                    <a
+                                        className='socialIconsBox'
+                                        target='_blank'
+                                        href={props.data.instagram_account}
+                                    >
                                         <Icon className='socialIcon' icon="ant-design:instagram-outlined" />
                                     </a>
 

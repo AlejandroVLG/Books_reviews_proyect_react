@@ -43,10 +43,14 @@ const EditReview = props => {
             <div className='mainEditReviewBox'>
                 <div className='editReviewFormBox'>
                     <div className='editReviewForm' >
-
                         <Form onSubmit={handleSubmit}>
-                            <Form.Group className="mb-3" controlId="formBasicReviewTitle">
-                                <Form.Label className='editReviewLabel'>Título</Form.Label>
+                            <Form.Group
+                                className="mb-3"
+                                controlId="formBasicReviewTitle"
+                            >
+                                <Form.Label className='editReviewLabel'>
+                                    Título
+                                </Form.Label>
                                 <Form.Control
                                     className='editReviewInput'
                                     type="text"
@@ -58,9 +62,10 @@ const EditReview = props => {
                                     Elige un título para tu reseña
                                 </Form.Text>
                             </Form.Group>
-
                             <Form.Group className="mb-3" controlId="formBasicScore">
-                                <Form.Label className='editReviewLabel'>Puntuación</Form.Label>
+                                <Form.Label className='editReviewLabel'>
+                                    Puntuación
+                                </Form.Label>
                                 <Form.Select
                                     aria-label="Default select example"
                                     className='editReviewInput'
@@ -82,9 +87,10 @@ const EditReview = props => {
                                     Puntua del 1 al 10 siendo 1 la nota más baja
                                 </Form.Text>
                             </Form.Group>
-
                             <Form.Group className="mb-3" controlId="formBasicMessage">
-                                <Form.Label className='editReviewLabel'>Reseña</Form.Label>
+                                <Form.Label className='editReviewLabel'>
+                                    Reseña
+                                </Form.Label>
                                 <Form.Control
                                     as="textarea"
                                     rows={3}
@@ -99,14 +105,16 @@ const EditReview = props => {
                                     Redacta una reseña con tú valoración
                                 </Form.Text>
                             </Form.Group>
-
                             <Form.Group className="mb-3 editReviewBoxButton">
-                                <button className='editReviewSendButtom' variant="primary" type="submit">
+                                <button
+                                    className='editReviewSendButtom'
+                                    variant="primary"
+                                    type="submit"
+                                >
                                     Editar
                                 </button>
                             </Form.Group>
                         </Form>
-
                     </div>
                 </div>
             </div >

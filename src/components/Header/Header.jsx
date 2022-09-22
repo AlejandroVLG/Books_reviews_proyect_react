@@ -5,7 +5,11 @@ const Header = props => {
   return (
 
     <div className='header'>
-      <img className='headerImg' src="../../../public/Img/Vector1.jpg" alt="" />
+      <img
+        className='headerImg'
+        src="../../../public/Img/Vector1.jpg"
+        alt="headerImage"
+      />
     </div>
   )
 }

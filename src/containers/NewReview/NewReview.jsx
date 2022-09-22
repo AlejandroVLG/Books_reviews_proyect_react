@@ -121,7 +121,12 @@ const NewReview = props => {
                     </Col>
                     <Col xs={12} sm={12} md={12} lg={12} xl={12} xxl={12} >
                         <Form.Group className="mb-3 newReviewBoxButton">
-                            <button className='newReviewSendButtom' variant="primary" type="submit" onClick={validation}>
+                            <button
+                                className='newReviewSendButtom'
+                                variant="primary"
+                                type="submit"
+                                onClick={validation}
+                            >
                                 Publicar
                             </button>
                             <div className='newBookMessage'>
