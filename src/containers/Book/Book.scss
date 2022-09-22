@@ -1,6 +1,6 @@
 .bookMainBox {
     height: auto;
-    width: 100%;
+    width: 100vw;
     min-height: 70vh;
     background: linear-gradient(109.6deg, rgb(36, 45, 57) 11.2%, rgb(16, 37, 60) 51.2%, rgb(0, 0, 0) 98.6%);
     box-sizing: border-box;
@@ -8,9 +8,17 @@
     padding: 0;
 }
 
-.searchBar {
-    margin-top: 0.7em;
+.searchBarDiv{
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchBar {
+    width: 90% !important;
+    margin-top: 0.7em;
+    box-shadow: 0 0 0.4em 0.2em rgba(255, 255, 255, 0.534);
 }
 
 .bookCardContainer {

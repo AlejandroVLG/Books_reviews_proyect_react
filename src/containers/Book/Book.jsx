@@ -49,14 +49,15 @@ const Book = props => {
 
         return (
             <div className="bookMainBox">
-
-                <input
-                    className="form-control searchBar"
-                    type="text"
-                    value={search}
-                    placeholder="Búsqueda por título, autor, género, saga o fecha de publicación"
-                    onChange={handleChange}
-                />
+                <div className="searchBarDiv">
+                    <input
+                        className="form-control searchBar"
+                        type="text"
+                        value={search}
+                        placeholder="Búsqueda por título, autor, género, saga o fecha de publicación"
+                        onChange={handleChange}
+                    />
+                </div>
                 <div className="bookContentBox">
                     {results.length === 0 && <p><Spinner /></p>}
                     {
