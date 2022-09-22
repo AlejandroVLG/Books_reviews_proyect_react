@@ -29,7 +29,6 @@ const ProfileCard = props => {
             <MDBContainer fluid className="py-5 h-100 cardContainer">
                 <MDBCard className="mb-3 cardProfile " style={{ borderRadius: '.5em' }}>
                     <MDBRow className="g-0">
-
                         <MDBCol
                             md="4"
                             className="gradient-custom text-center text-white"
@@ -53,9 +52,7 @@ const ProfileCard = props => {
                             <MDBTypography tag="h6">{props.data.country}</MDBTypography>
                             <br />
                         </MDBCol>
-
                         <MDBCol md="8" className="infoProfileBox">
-
                             <MDBCardBody className="p-4">
                                 <MDBTypography
                                     className='dataHead'
@@ -116,9 +113,7 @@ const ProfileCard = props => {
                                         </MDBCardText>
                                     </MDBCol>
                                 </MDBRow>
-
                                 <div className="d-flex justify-content-start">
-
                                     <a
                                         className='socialIconsBox'
                                         target='_blank'
@@ -140,7 +135,6 @@ const ProfileCard = props => {
                                     >
                                         <Icon className='socialIcon' icon="ant-design:instagram-outlined" />
                                     </a>
-
                                 </div>
                             </MDBCardBody>
                         </MDBCol>

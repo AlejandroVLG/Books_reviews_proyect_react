@@ -9,7 +9,7 @@ Aplicación realizada en HTML, CSS y JS con React y Redux. Para las animaciones 
 
 ---
 
->En esta aplicación podrás encontrar un reseñas de libros, o publicar las tuyas si quisieras, con el tiempo iré aumentando las funcionalidades de la aplicación ya que al ser un proyecto con límite de tiempo, he tenido que limitarme a unas carácteristicas mínimas para cumplir con unos carácteristicas mínimasa.
+>En esta aplicación podrás encontrar un reseñas de libros, o publicar las tuyas si quisieras, con el tiempo iré aumentando las funcionalidades de la aplicación ya que al ser un proyecto con límite de tiempo, he tenido que limitarme a unas carácteristicas mínimas para cumplir con unos carácteristicas mínimas.
 ---
 
 # 💻 Tech Stack:

@@ -94,8 +94,8 @@ const ModalHome = () => {
                                             en un futuro decido que sea púbica, los nuevos usuarios que se registraran
                                             también podrían añadir nuevos libros y sus respectivas reseñas.
                                             <br />
-                                            El proyecto consta de 2 partes, un back-end hecho en PHP/Laravel con su deeploy
-                                            subido a Heroku, y el front-end realizado en react con su deeploy realizado en
+                                            El proyecto consta de 2 partes, un back-end hecho en PHP/Laravel con su deploy
+                                            subido a Heroku, y el front-end realizado en react con su deploy realizado en
                                             github pages.
                                         </MDBCardText>
                                     </MDBCol>
