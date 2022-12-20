@@ -38,7 +38,7 @@ const NewBook = props => {
         const handleSubmit = async (e) => {
             e.preventDefault()
 
-            const NewBookCall = await axios.post("https://books-reviews-app-proyect.herokuapp.com/api/book/createBook", bookState, requirements)
+            const NewBookCall = await axios.post("https://bookapi.up.railway.app/api/book/createBook", bookState, requirements)
 
             let response = NewBookCall
 

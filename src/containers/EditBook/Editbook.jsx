@@ -47,7 +47,7 @@ const EditBook = props => {
 
         const handleSubmit = async (e) => {
             e.preventDefault();
-            await axios.put(`https://books-reviews-app-proyect.herokuapp.com/api/book/editBookById/${id}`, editedBookState, requirements)
+            await axios.put(`https://bookapi.up.railway.app/api/book/editBookById/${id}`, editedBookState, requirements)
         }
         if (identification.token === "") {
 

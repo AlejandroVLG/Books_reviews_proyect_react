@@ -16,7 +16,7 @@ const Book = props => {
 
         const showBooks = async () => {
 
-            const response = await axios.get('https://books-reviews-app-proyect.herokuapp.com/api/book/showAllBooks')
+            const response = await axios.get('https://bookapi.up.railway.app/api/book/showAllBooks')
 
             setbooksData({
                 books: response.data.data

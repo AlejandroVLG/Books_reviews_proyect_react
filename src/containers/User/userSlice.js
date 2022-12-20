@@ -37,7 +37,7 @@ export const userSlice = createSlice({
 export const registerUser = (name, nick_name, email, password) => async (dispatch) => {
 
     try {
-        const user = await axios.post('https://books-reviews-app-proyect.herokuapp.com/api/register',
+        const user = await axios.post('https://bookapi.up.railway.app/api/register',
             {
                 name: name,
                 nick_name: nick_name,
@@ -59,7 +59,7 @@ export const registerUser = (name, nick_name, email, password) => async (dispatc
 export const loginUser = (body) => async (dispatch) => {
 
     try {
-        const userToken = await axios.post("https://books-reviews-app-proyect.herokuapp.com/api/login", body)
+        const userToken = await axios.post("https://bookapi.up.railway.app/api/login", body)
 
         if (userToken.status === 200) {
 
@@ -73,7 +73,7 @@ export const loginUser = (body) => async (dispatch) => {
 
             // Using an other EndPoint, i've saved the logged user profile data on infoData.
 
-            const userInfoData = await axios.get('https://books-reviews-app-proyect.herokuapp.com/api/user/myProfile', requirements)
+            const userInfoData = await axios.get('https://bookapi.up.railway.app/api/user/myProfile', requirements)
 
             dispatch(login(
                 {

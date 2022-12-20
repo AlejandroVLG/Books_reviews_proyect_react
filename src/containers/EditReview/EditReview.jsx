@@ -36,7 +36,7 @@ const EditReview = props => {
 
         const handleSubmit = async (e) => {
             e.preventDefault();
-            await axios.put(`https://Reviews-reviews-app-proyect.herokuapp.com/api/Review/editReviewById/${id}`, editedReviewState, requirements)
+            await axios.put(`https://bookapi.up.railway.app/api/Review/editReviewById/${id}`, editedReviewState, requirements)
         }
 
         return (

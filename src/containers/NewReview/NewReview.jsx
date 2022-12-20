@@ -36,7 +36,7 @@ const NewReview = props => {
         const handleSubmit = async (e) => {
             e.preventDefault()
 
-            await axios.post("https://books-reviews-app-proyect.herokuapp.com/api/review/createReview", reviewState, requirements)
+            await axios.post("https://bookapi.up.railway.app/api/review/createReview", reviewState, requirements)
         }
 
         const validation = () => {

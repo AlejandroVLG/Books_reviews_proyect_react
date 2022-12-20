@@ -38,7 +38,7 @@ const ReviewCard = props => {
 
     const handleDelete = async () => {
 
-        await axios.delete(`https://books-reviews-app-proyect.herokuapp.com/api/review/deleteReview/${deleteId}`, requirements)
+        await axios.delete(`https://bookapi.up.railway.app/api/review/deleteReview/${deleteId}`, requirements)
 
     }
 
