@@ -114,12 +114,18 @@ const Register = props => {
 
     useEffect(() => {
 
-      if (register.isError !== false) {
+      if (register.isError === true) {
+
+        setTimeout(() => {
+          navigate("/register")
+
+        }, 1000)
+      } else if (register.successMsg == "Registro completado correctamente") {
 
         setTimeout(() => {
           navigate("/login")
 
-        }, 100)
+        }, 1000)
       }
     })
 
