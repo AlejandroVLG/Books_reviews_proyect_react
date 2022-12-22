@@ -38,9 +38,19 @@ const ReviewCard = props => {
 
     const handleDelete = async () => {
 
-        await axios.delete(`https://bookapi.up.railway.app/api/review/deleteReview/${deleteId}`, requirements)
+        let response = await axios.delete(`https://bookapi.up.railway.app/api/review/deleteReview/${deleteId}`, requirements)
 
+        console.log(response.data.success)
+        
+        if (response.data.success == true) {
+    
+            setTimeout(() => {
+                navigate("/books")
+    
+            }, 500)
+        }
     }
+
 
     if (identification.infoData.name == props.data.name) {
         return (

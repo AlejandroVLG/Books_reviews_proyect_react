@@ -1,14 +1,17 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import axios from "axios"
 import { Col, Form, Row } from "react-bootstrap"
 import { useSelector } from "react-redux"
-import { useParams } from "react-router"
+import { useNavigate, useParams } from "react-router"
 import { userData } from "../User/userSlice"
 import "./NewReview.scss"
 
 const NewReview = props => {
 
     try {
+
+        let navigate = useNavigate()
+
         const identification = useSelector(userData)
 
         const { id } = useParams()
@@ -18,6 +21,17 @@ const NewReview = props => {
             review_title: '',
             score: '',
             message: ''
+        })
+
+        useEffect(() => {
+
+            if (reviewState.successMsg == 'Reseña añadida correctamente') {
+
+                setTimeout(() => {
+                    navigate("/books")
+
+                }, 500)
+            }
         })
 
         const handleChange = (e) => {
@@ -56,6 +70,7 @@ const NewReview = props => {
                 successMsg: 'Reseña añadida correctamente'
             })
         }
+
 
         return (
 
