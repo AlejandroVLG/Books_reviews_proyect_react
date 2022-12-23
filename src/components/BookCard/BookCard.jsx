@@ -33,11 +33,12 @@ const BookCard = props => {
     //Only the SuperAdmin/Admin can delete a book
     const handleDelete = async () => {
 
-        let response = await axios.delete(`https://bookapi.up.railway.app/api/book/deleteBook/${deleteId}`, requirements)
+        await axios.delete(`https://bookapi.up.railway.app/api/book/deleteBook/${deleteId}`, requirements)
 
-        if (response.data.success === true) {
-            navigate('/books')
-        }
+        setTimeout(() => {
+            navigate("/newBook")
+
+        }, 1500)
     }
 
     if (identification.infoData) {
