@@ -30,15 +30,14 @@ const BookCard = props => {
         }
     }
 
-    const travel = (destiny) => {
-
-        navigate(destiny)
-    }
-
     //Only the SuperAdmin/Admin can delete a book
     const handleDelete = async () => {
 
-        await axios.delete(`https://bookapi.up.railway.app/api/book/deleteBook/${deleteId}`, requirements)
+        let response = await axios.delete(`https://bookapi.up.railway.app/api/book/deleteBook/${deleteId}`, requirements)
+
+        if (response.data.success === true) {
+            navigate('/books')
+        }
     }
 
     if (identification.infoData) {
@@ -73,7 +72,7 @@ const BookCard = props => {
                             <MDBBtn
                                 className='mx-2 bookCardBtn'
                                 color='dark'
-                                onClick={() => travel(`/reviews/${props.data.id}`)}
+                                onClick={() => navigate(`/reviews/${props.data.id}`)}
                             >
                                 Ver reseñas
                             </MDBBtn>
@@ -83,7 +82,7 @@ const BookCard = props => {
                             <MDBBtn
                                 className='mx-2 bookCardBtn'
                                 color='dark'
-                                onClick={() => travel(`/newReview/${props.data.id}`)}
+                                onClick={() => navigate(`/newReview/${props.data.id}`)}
                             >
                                 Añadir reseña
                             </MDBBtn>
@@ -166,7 +165,7 @@ const BookCard = props => {
                     <MDBBtn
                         className='mx-2 bookCardBtn2'
                         color='dark'
-                        onClick={() => travel(`/editBook/${props.data.id}`)}
+                        onClick={() => navigate(`/editBook/${props.data.id}`)}
                     >
                         Editar libro
                     </MDBBtn>
@@ -205,7 +204,7 @@ const BookCard = props => {
                             <MDBBtn
                                 className='mx-2 bookCardBtn'
                                 color='dark'
-                                onClick={() => travel(`/reviews/${props.data.id}`)}
+                                onClick={() => navigate(`/reviews/${props.data.id}`)}
                             >
                                 Ver reseñas
                             </MDBBtn>
@@ -215,7 +214,7 @@ const BookCard = props => {
                             <MDBBtn
                                 className='mx-2 bookCardBtn'
                                 color='dark'
-                                onClick={() => travel(`/newReview/${props.data.id}`)}
+                                onClick={() => navigate(`/newReview/${props.data.id}`)}
                             >
                                 Añadir reseña
                             </MDBBtn>
@@ -316,7 +315,7 @@ const BookCard = props => {
                         <MDBBtn
                             className='mx-2 bookCardBtn'
                             color='dark'
-                            onClick={() => travel(`/reviews/${props.data.id}`)}
+                            onClick={() => navigate(`/reviews/${props.data.id}`)}
                         >
                             Ver reseñas
                         </MDBBtn>
@@ -326,7 +325,7 @@ const BookCard = props => {
                         <MDBBtn
                             className='mx-2 bookCardBtn'
                             color='dark'
-                            onClick={() => travel(`/newReview/${props.data.id}`)}
+                            onClick={() => navigate(`/newReview/${props.data.id}`)}
                         >
                             Añadir reseña
                         </MDBBtn>

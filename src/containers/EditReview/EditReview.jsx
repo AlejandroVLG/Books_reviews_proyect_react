@@ -6,16 +6,16 @@ import { useNavigate, useParams } from 'react-router'
 import { userData } from '../User/userSlice'
 import "./EditReview.scss"
 
-const EditReview = props => {
+const EditReview = () => {
 
     try {
         const navigate = useNavigate()
 
-        let editResponse = ""
-
         const identification = useSelector(userData)
 
         const { id } = useParams()
+
+        let editResponse = ""
 
         const [editedReviewState, setEditedReviewState] = useState({
             book_id: id,
@@ -57,6 +57,7 @@ const EditReview = props => {
                     navigate("/books")
 
                 }, 1500)
+
             } else if (editResponse.status === 400 || editResponse.status === 500) {
 
                 setEditedReviewState({

@@ -6,10 +6,10 @@ import { useNavigate, useParams } from "react-router"
 import { userData } from "../User/userSlice"
 import "./NewReview.scss"
 
-const NewReview = props => {
+const NewReview = () => {
 
     try {
-        let navigate = useNavigate()
+        const navigate = useNavigate()
 
         const identification = useSelector(userData)
 

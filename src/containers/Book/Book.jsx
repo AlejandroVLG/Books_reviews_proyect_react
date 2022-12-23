@@ -5,7 +5,7 @@ import BookCard from "../../components/BookCard/BookCard"
 import Spinner from "../../components/Spinner/Spinner"
 import "./Book.scss"
 
-const Book = props => {
+const Book = () => {
 
     try {
         const [booksData, setbooksData] = useState({
@@ -88,4 +88,4 @@ const Book = props => {
     }
 }
 
-export default Book;
+export default Book

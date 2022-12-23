@@ -20,7 +20,7 @@ const Login = () => {
 
     const identification = useSelector(userData)
 
-    let navigate = useNavigate()
+    const navigate = useNavigate()
 
     const updateCredentials = (e) => {
       setCredentials(

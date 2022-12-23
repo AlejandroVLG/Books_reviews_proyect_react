@@ -90,7 +90,7 @@ export const loginUser = (body) => async (dispatch) => {
 
 export const logOut = () => (dispatch) => {
 
-    dispatch(logout());
+    dispatch(logout())
 }
 
 export const { register, login, logout } = userSlice.actions

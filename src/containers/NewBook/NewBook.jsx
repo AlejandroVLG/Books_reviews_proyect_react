@@ -4,12 +4,15 @@ import { Col, Form, Row } from 'react-bootstrap'
 import { useSelector } from 'react-redux'
 import { userData } from '../User/userSlice'
 import "./NewBook.scss"
+import { useNavigate } from 'react-router'
 
-const NewBook = props => {
+const NewBook = () => {
 
     try {
 
         const identification = useSelector(userData)
+
+        const navigate = useNavigate()
 
         const [bookState, setBookState] = useState({
             title: '',
@@ -36,7 +39,7 @@ const NewBook = props => {
         }
 
         const handleSubmit = async (e) => {
-            
+
             e.preventDefault()
 
             const NewBookCall = await axios.post("https://bookapi.up.railway.app/api/book/createBook", bookState, requirements)
@@ -268,4 +271,4 @@ const NewBook = props => {
     }
 }
 
-export default NewBook; 
+export default NewBook

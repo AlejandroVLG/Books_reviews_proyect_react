@@ -11,7 +11,7 @@ const Register = props => {
   try {
     const dispatch = useDispatch()
 
-    let navigate = useNavigate()
+    const navigate = useNavigate()
 
     const [register, setRegister] = useState(
       {

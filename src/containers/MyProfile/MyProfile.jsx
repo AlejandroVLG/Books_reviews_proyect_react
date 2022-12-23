@@ -7,16 +7,11 @@ import Spinner from '../../components/Spinner/Spinner'
 import { userData } from '../User/userSlice'
 import "./MyProfile.scss"
 
-const MyProfile = props => {
+const MyProfile = () => {
 
   try {
 
-    let navigate = useNavigate()
-
-    const travel = (destiny) => {
-
-      navigate(destiny)
-    }
+    const navigate = useNavigate()
 
     const credentials = useSelector(userData)
 
@@ -28,7 +23,7 @@ const MyProfile = props => {
 
         useEffect(() => {
 
-          travel("/books")
+          navigate("/books")
         }, [])
       )
     } else {
@@ -48,4 +43,4 @@ const MyProfile = props => {
   }
 }
 
-export default MyProfile; 
+export default MyProfile

@@ -15,11 +15,6 @@ const NavigationBar = () => {
 
     const dispatch = useDispatch()
 
-    const travel = (destiny) => {
-
-        navigate(destiny)
-    }
-
     if (!identification.token) {
 
         return (
@@ -30,20 +25,20 @@ const NavigationBar = () => {
                         <Nav className="me-auto interiorNav">
                             <Nav.Link
                                 className="navBarLink navBarLink2"
-                                onClick={() => travel("/login")}
+                                onClick={() => navigate("/login")}
                             >
                                 Iniciar sesión
                             </Nav.Link>
                             <Nav.Link
                                 className="navBarLink navBarLink2 navBarLink3"
-                                onClick={() => travel("/books")}
+                                onClick={() => navigate("/books")}
                             >
                                 Biblioteca
                             </Nav.Link>
                             <Nav.Link
                                 className="navBarLink2"
                                 eventKey={2}
-                                onClick={() => travel("/register")}
+                                onClick={() => navigate("/register")}
                             >
                                 Registrarse
                             </Nav.Link>
@@ -58,7 +53,7 @@ const NavigationBar = () => {
 
             <Navbar bg="dark" expand="lg" className="navBarBox">
                 <Container >
-                    <Navbar.Brand onClick={() => travel("/myProfile")}>
+                    <Navbar.Brand onClick={() => navigate("/myProfile")}>
                         <img
                             className="navBarImg"
                             src={identification.infoData.profile_img}
@@ -70,26 +65,26 @@ const NavigationBar = () => {
                         <Nav className="me-auto interiorNav">
                             <Nav.Link
                                 className="navBarLink navBarLink2"
-                                onClick={() => travel("/myProfile")}
+                                onClick={() => navigate("/myProfile")}
                             >
                                 {identification.infoData.name}
                             </Nav.Link>
                             <Nav.Link
                                 className="navBarLink navBarLink2 navBarLink3"
-                                onClick={() => travel("/books")}
+                                onClick={() => navigate("/books")}
                             >
                                 Biblioteca
                             </Nav.Link>
                             <Nav.Link
                                 className="navBarLink navBarLink2"
-                                onClick={() => travel("/newBook")}
+                                onClick={() => navigate("/newBook")}
                             >
                                 Añadir libro
                             </Nav.Link>
                             <Nav.Link
                                 eventKey={2}
                                 className="navBarLink2"
-                                onClick={e => { travel("/"); dispatch(logOut()) }}
+                                onClick={e => { navigate("/"); dispatch(logOut()) }}
                             >
                                 Cerrar sesión
                             </Nav.Link>

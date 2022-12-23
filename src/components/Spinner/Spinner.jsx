@@ -1,6 +1,5 @@
 import ClipLoader from "react-spinners/ClipLoader"
 import PulseLoader from "react-spinners/PulseLoader"
-import { useState } from "react"
 import { Container } from "react-bootstrap"
 
 export default function Spinner() {

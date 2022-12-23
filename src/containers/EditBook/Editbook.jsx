@@ -6,16 +6,16 @@ import { useNavigate, useParams } from 'react-router'
 import { userData } from '../User/userSlice'
 import "./EditBook.scss"
 
-const EditBook = props => {
+const EditBook = () => {
 
     try {
         const identification = useSelector(userData)
 
-        let editBookResponse = ""
-
         const { id } = useParams()
+        
+        const navigate = useNavigate()
 
-        let navigate = useNavigate()
+        let editBookResponse = ""
 
         const [editedBookState, setEditedBookState] = useState({
             title: '',

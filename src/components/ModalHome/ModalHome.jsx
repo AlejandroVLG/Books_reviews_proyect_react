@@ -18,11 +18,6 @@ const ModalHome = () => {
 
     let navigate = useNavigate()
 
-    const travel = (destiny) => {
-
-        navigate(destiny)
-    }
-
     return (
 
         <div className="modalHome">
@@ -164,7 +159,7 @@ const ModalHome = () => {
                                         <MDBBtn
                                             className='me-2 modalBtn'
                                             active
-                                            onClick={() => travel("/books")}
+                                            onClick={() => navigate("/books")}
                                         >
                                             Entrar
                                         </MDBBtn>

@@ -6,7 +6,7 @@ import { useNavigate, useParams } from 'react-router'
 import { userData } from '../User/userSlice'
 import "./EditUser.scss"
 
-const EditUser = props => {
+const EditUser = () => {
 
     try {
 
@@ -14,12 +14,7 @@ const EditUser = props => {
 
         const { id } = useParams()
 
-        let navigate = useNavigate()
-
-        const travel = (destiny) => {
-
-            navigate(destiny)
-        }
+        const navigate = useNavigate()
 
         const [editedUserState, setEditedUserState] = useState({
             name: '',
@@ -57,7 +52,7 @@ const EditUser = props => {
 
             return (
                 useEffect(() => {
-                    travel("/myProfile")
+                    navigate("/myProfile")
                 }, [])
             )
         } else {

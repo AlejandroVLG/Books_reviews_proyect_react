@@ -12,11 +12,11 @@ const Review = () => {
     try {
         const { id } = useParams()
 
+        const identification = useSelector(userData)
+
         const [reviewData, setReviewsData] = useState({
             reviews: []
         })
-
-        const identification = useSelector(userData);
 
         let requirements = {
             headers: {
@@ -57,4 +57,4 @@ const Review = () => {
     }
 }
 
-export default Review;
+export default Review
