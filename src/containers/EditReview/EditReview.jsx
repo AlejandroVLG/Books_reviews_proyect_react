@@ -11,6 +11,8 @@ const EditReview = props => {
     try {
         const navigate = useNavigate()
 
+        let editResponse = ""
+
         const identification = useSelector(userData)
 
         const { id } = useParams()
@@ -38,12 +40,12 @@ const EditReview = props => {
         const handleSubmit = async (e) => {
             e.preventDefault();
 
-            await axios.put(
+            editResponse = await axios.put(
                 `https://bookapi.up.railway.app/api/review/editReviewById/${id}`,
                 editedReviewState,
                 requirements
             )
-/* 
+
             if (editResponse.status === 200 || editResponse.status === 201) {
 
                 setEditedReviewState({
@@ -54,7 +56,7 @@ const EditReview = props => {
                 setTimeout(() => {
                     navigate("/books")
 
-                }, 500)
+                }, 1500)
             } else if (editResponse.status === 400 || editResponse.status === 500) {
 
                 setEditedReviewState({
@@ -69,7 +71,7 @@ const EditReview = props => {
                     isError: true,
                     message: 'Inicia sesión para continuar'
                 })
-            } */
+            }
         }
 
         return (
@@ -146,14 +148,14 @@ const EditReview = props => {
                                 >
                                     Editar
                                 </button>
-                                {/* <div className='editMessage'>
+                                <div className='editMessage'>
                                     {
                                         editedReviewState.isError ?
                                             (<p style={{ color: "red" }}>{editedReviewState.message}</p>)
                                             :
                                             (<p style={{ color: "green" }}>{editedReviewState.successMsg}</p>)
                                     }
-                                </div> */}
+                                </div>
                             </Form.Group>
                         </Form>
                     </div>
