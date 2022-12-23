@@ -36,6 +36,7 @@ const NewBook = props => {
         }
 
         const handleSubmit = async (e) => {
+            
             e.preventDefault()
 
             const NewBookCall = await axios.post("https://bookapi.up.railway.app/api/book/createBook", bookState, requirements)
@@ -49,6 +50,12 @@ const NewBook = props => {
                     isError: false,
                     successMsg: 'Libro añadido correctamente'
                 })
+
+                setTimeout(() => {
+                    navigate("/books")
+
+                }, 1500)
+
             } else if (response.status === 400) {
 
                 setBookState({

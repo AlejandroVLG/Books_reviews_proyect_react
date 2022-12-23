@@ -1,24 +1,12 @@
-.mainEditBookBox {
-	width: 100%;
-	height: auto;
-	box-sizing: border-box;
-	background: #e5e5e5;
-}
-
-.editBookFormBox {
-	max-width: 50em;
-	width: 90%;
+.editBookForm {
+	color: white;
 	margin: auto;
 	padding: 2.5em;
-}
-
-.editBookForm {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	gap: 1.25em;
+	max-width: 90%;
 }
 
 .editBookLabel {
+	color: rgb(247, 115, 115);
 	display: block;
 	font-weight: 700;
 	padding: 0.6em;
@@ -28,13 +16,13 @@
 
 .editBookInput {
 	width: 100%;
-	background: #fff;
+	background: rgb(194, 159, 138) !important;
 	border-radius: 0.2em;
 	height: 2.80em;
 	line-height: 2.80em;
 	padding: 0 2.5em 0 0.6em;
-	transition: .3s ease all;
-	border: 0.2em solid transparent;
+	border: 0.1em solid black !important;
+	box-shadow: 0em 0em 1em 0.01em rgba(255, 255, 255, 0.363);
 }
 
 .editBookInput:focus {
@@ -43,11 +31,16 @@
 	box-shadow: 0.2em 0em 1.9em 0.3em rgba(163, 163, 163, 0.4);
 }
 
+.synopsis {
+	height: 10em;
+	background: rgb(194, 159, 138) !important;
+}
+
 .editBookBoxButton {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	grid-column: span 1;
+	grid-column: span 2;
 }
 
 .editBookSendButtom {
@@ -56,16 +49,18 @@
 	align-items: center;
 	height: 2.8em;
 	line-height: 2.8em;
-	width: 30%;
+	width: 40%;
 	background: #000;
-	color: #fff;
+	color: rgb(247, 115, 115);
 	font-weight: bold;
 	border: none;
-	border-radius: 0.2em;
+	border-radius: 0.5em;
 	cursor: pointer;
 	transition: .1s ease all;
+	border: 0.1em solid rgba(247, 115, 115, 0.647);
+	box-shadow: 0em 0em 1em 0.01em rgb(247, 115, 115);
 }
 
 .editBookSendButtom:hover {
-	box-shadow: 0.2em 0em 1.9em 0.3em rgba(163, 163, 163, 1);
+	box-shadow: 0.2em 0em 1.9em 0.3em rgba(218, 218, 218, 0.274);
 }
