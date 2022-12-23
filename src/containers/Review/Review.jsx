@@ -7,10 +7,10 @@ import { useParams } from "react-router"
 import Spinner from "../../components/Spinner/Spinner"
 import "./Review.scss"
 
-const Review = props => {
-    
+const Review = () => {
+
     try {
-        const {id} = useParams()
+        const { id } = useParams()
 
         const [reviewData, setReviewsData] = useState({
             reviews: []
@@ -23,7 +23,7 @@ const Review = props => {
                 "Authorization": `Bearer ${identification.token}`
             }
         }
-        
+
         const showReviews = async () => {
 
             const response = await axios.get(`https://bookapi.up.railway.app/api/review/searchReviewByBookId/${id}`, requirements)

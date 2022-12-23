@@ -31,26 +31,18 @@ const ReviewCard = props => {
         }
     }
 
-    const travel = (destiny) => {
-
-        navigate(destiny)
-    }
-
     const handleDelete = async () => {
 
         let response = await axios.delete(`https://bookapi.up.railway.app/api/review/deleteReview/${deleteId}`, requirements)
 
-        console.log(response.data.success)
-        
         if (response.data.success == true) {
-    
+
             setTimeout(() => {
                 navigate("/books")
-    
+
             }, 500)
         }
     }
-
 
     if (identification.infoData.name == props.data.name) {
         return (
@@ -75,7 +67,7 @@ const ReviewCard = props => {
                         />
                         <hr className="mt-0 mb-3" />
                         <br />
-                        <MDBTypography className="bookTitleReview" tag="h5">
+                        <MDBTypography className="bookTitleReview" tag="h3">
                             {props.data.title}
                         </MDBTypography>
                         <br />
@@ -84,7 +76,7 @@ const ReviewCard = props => {
                         <MDBBtn
                             className='mx-2 reviewCardBtn'
                             color='dark'
-                            onClick={() => travel(`/editReview/${props.data.id}`)}
+                            onClick={() => navigate(`/editReview/${props.data.id}`)}
                         >
                             Editar reseña
                         </MDBBtn>
@@ -101,26 +93,27 @@ const ReviewCard = props => {
                         </MDBBtn>
                         <br /><br />
                     </MDBCol>
-
                     <MDBCol md="8">
 
                         <MDBCardBody className="p-4">
                             <br />
-                            <MDBTypography className='dataHead' tag="h6">
-                                Valoración
-                            </MDBTypography>
+                            <MDBCardText className="text-muted">
+                                {props.data.synopsis}
+                            </MDBCardText>
                             <br />
-                            <hr className="mt-0 mb-4 bodyHr" />
                             <MDBRow className="pt-1">
 
                                 <MDBCol size="6" className="mb-3">
+                                    <MDBTypography tag="h5">Título de la reseña</MDBTypography>
+                                    <hr className="mt-0 mb-4 bodyHr" />
                                     <MDBCardText className="text-muted">
                                         {props.data.review_title}
                                     </MDBCardText>
                                 </MDBCol>
                                 <MDBCol size="6" className="mb-3">
                                     <MDBTypography tag="h5">Puntuación</MDBTypography>
-                                    <MDBCardText className="text-muted">
+                                    <hr className="mt-0 mb-4 bodyHr" />
+                                    <MDBCardText tag="h1">
                                         {props.data.score}
                                     </MDBCardText>
                                 </MDBCol>
@@ -142,7 +135,6 @@ const ReviewCard = props => {
                                 </MDBCol>
                             </MDBRow>
                         </MDBCardBody>
-
                     </MDBCol>
                 </MDBRow>
             </MDBCard>
@@ -161,7 +153,6 @@ const ReviewCard = props => {
                         <Card.Title>{props.data.title}</Card.Title>
                         <Card.Title>{props.data.review_title}</Card.Title>
                         <Card.Text>{props.data.message}</Card.Text>
-
                     </Card.Body>
                     <Card.Footer>
                         <div >

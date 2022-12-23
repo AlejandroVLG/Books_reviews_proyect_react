@@ -9,7 +9,6 @@ import "./NewReview.scss"
 const NewReview = props => {
 
     try {
-
         let navigate = useNavigate()
 
         const identification = useSelector(userData)

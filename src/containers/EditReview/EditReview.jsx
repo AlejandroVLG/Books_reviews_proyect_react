@@ -2,13 +2,14 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import { Form } from 'react-bootstrap'
 import { useSelector } from 'react-redux'
-import { useParams } from 'react-router'
+import { useNavigate, useParams } from 'react-router'
 import { userData } from '../User/userSlice'
 import "./EditReview.scss"
 
 const EditReview = props => {
 
     try {
+        const navigate = useNavigate()
 
         const identification = useSelector(userData)
 
@@ -16,9 +17,9 @@ const EditReview = props => {
 
         const [editedReviewState, setEditedReviewState] = useState({
             book_id: id,
-            review_title: '',
-            score: '',
-            message: ''
+            review_title: ' ',
+            score: ' ',
+            message: ' '
         })
 
         const handleChange = (e) => {
@@ -36,7 +37,39 @@ const EditReview = props => {
 
         const handleSubmit = async (e) => {
             e.preventDefault();
-            await axios.put(`https://bookapi.up.railway.app/api/Review/editReviewById/${id}`, editedReviewState, requirements)
+
+            await axios.put(
+                `https://bookapi.up.railway.app/api/review/editReviewById/${id}`,
+                editedReviewState,
+                requirements
+            )
+/* 
+            if (editResponse.status === 200 || editResponse.status === 201) {
+
+                setEditedReviewState({
+                    ...editedReviewState,
+                    isError: false,
+                    successMsg: 'Reseña editada correctamente'
+                })
+                setTimeout(() => {
+                    navigate("/books")
+
+                }, 500)
+            } else if (editResponse.status === 400 || editResponse.status === 500) {
+
+                setEditedReviewState({
+                    ...editedReviewState,
+                    isError: true,
+                    message: 'Ha habido un error, revisa los campos'
+                })
+            } else if (editResponse.status === 401) {
+
+                setEditedReviewState({
+                    ...editedReviewState,
+                    isError: true,
+                    message: 'Inicia sesión para continuar'
+                })
+            } */
         }
 
         return (
@@ -59,7 +92,7 @@ const EditReview = props => {
                                     onChange={handleChange}
                                 />
                                 <Form.Text className="text-muted">
-                                    Elige un título para tu reseña
+                                    Modifica el título de tu reseña
                                 </Form.Text>
                             </Form.Group>
                             <Form.Group className="mb-3" controlId="formBasicScore">
@@ -84,7 +117,7 @@ const EditReview = props => {
                                     <option value="10">10</option>
                                 </Form.Select>
                                 <Form.Text className="text-muted">
-                                    Puntua del 1 al 10 siendo 1 la nota más baja
+                                    Cambia la puntuación
                                 </Form.Text>
                             </Form.Group>
                             <Form.Group className="mb-3" controlId="formBasicMessage">
@@ -102,7 +135,7 @@ const EditReview = props => {
                                     onChange={handleChange}
                                 />
                                 <Form.Text className="text-muted">
-                                    Redacta una reseña con tú valoración
+                                    Redacta una nueva reseña
                                 </Form.Text>
                             </Form.Group>
                             <Form.Group className="mb-3 editReviewBoxButton">
@@ -113,6 +146,14 @@ const EditReview = props => {
                                 >
                                     Editar
                                 </button>
+                                {/* <div className='editMessage'>
+                                    {
+                                        editedReviewState.isError ?
+                                            (<p style={{ color: "red" }}>{editedReviewState.message}</p>)
+                                            :
+                                            (<p style={{ color: "green" }}>{editedReviewState.successMsg}</p>)
+                                    }
+                                </div> */}
                             </Form.Group>
                         </Form>
                     </div>
