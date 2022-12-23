@@ -243,7 +243,7 @@ const EditBook = () => {
                                 </Form.Label>
                                 <Form.Control
                                     as="textarea"
-                                    className='newBookInput synopsis'
+                                    className='newBookInput editBookSynopsis'
                                     type="text"
                                     name='synopsis'
                                     placeholder='Escribe aquí'

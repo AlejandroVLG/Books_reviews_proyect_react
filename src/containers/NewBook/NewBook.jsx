@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import axios from 'axios'
+import axios, { AxiosError } from 'axios'
 import { Col, Form, Row } from 'react-bootstrap'
 import { useSelector } from 'react-redux'
 import { userData } from '../User/userSlice'
@@ -22,7 +22,8 @@ const NewBook = () => {
             year: '',
             book_cover: '',
             author_wiki_url: '',
-            shop_url: ''
+            shop_url: '',
+            isError: false
         })
 
         const handleChange = (e) => {
@@ -42,15 +43,12 @@ const NewBook = () => {
 
             e.preventDefault()
 
-            const NewBookCall = await axios.post("https://bookapi.up.railway.app/api/book/createBook", bookState, requirements)
+            await axios.post("https://bookapi.up.railway.app/api/book/createBook", bookState, requirements)
 
-            let response = NewBookCall
-
-            if (response.status === 200 || response.status === 201) {
+            if (bookState.isError == false) {
 
                 setBookState({
                     ...bookState,
-                    isError: false,
                     successMsg: 'Libro añadido correctamente'
                 })
 
@@ -59,24 +57,15 @@ const NewBook = () => {
 
                 }, 1500)
 
-            } else if (response.status === 400) {
+            } else{
 
                 setBookState({
                     ...bookState,
                     isError: true,
                     message: 'Ha habido un error, revisa los campos'
                 })
-            } else if (response.status === 401) {
-
-                setBookState({
-                    ...bookState,
-                    isError: true,
-                    message: 'Inicia sesión para continuar'
-                })
             }
         }
-
-
         return (
 
             <Form className='newBookForm' onSubmit={handleSubmit} >
@@ -237,7 +226,7 @@ const NewBook = () => {
                             </Form.Label>
                             <Form.Control
                                 as="textarea"
-                                className='newBookInput synopsis'
+                                className='newBookInput newBookSynopsis'
                                 type="text"
                                 name='synopsis'
                                 placeholder='Escribe aquí'
