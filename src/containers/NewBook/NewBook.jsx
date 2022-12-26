@@ -60,7 +60,6 @@ const NewBook = () => {
 
         } catch (err) {
 
-            console.log(err)
             if (bookState.title ||
                 bookState.series ||
                 bookState.author ||
@@ -74,6 +73,7 @@ const NewBook = () => {
                     isError: true,
                     message: 'Rellena todos los campos para continuar'
                 })
+                console.log(err)
             } else {
                 setBookState({
                     ...bookState,

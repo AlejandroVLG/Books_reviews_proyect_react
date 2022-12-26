@@ -15,6 +15,7 @@ import { useNavigate } from "react-router"
 import { userData } from "../../containers/User/userSlice"
 import { Icon } from '@iconify/react'
 import './BookCard.scss'
+import { useState } from "react"
 
 const BookCard = props => {
 
@@ -23,6 +24,8 @@ const BookCard = props => {
     const identification = useSelector(userData)
 
     const deleteId = props.data.id
+
+    const [deleteDataState, setDeleteDataState] = useState({})
 
     let requirements = {
         headers: {
@@ -35,6 +38,18 @@ const BookCard = props => {
 
         await axios.delete(`https://bookapi.up.railway.app/api/book/deleteBook/${deleteId}`, requirements)
 
+        if (!deleteDataState.isError) {
+
+            setDeleteDataState({
+                isError: false,
+                message: `${props.data.title} ha sido eliminado correctamente`
+            })
+        } else {
+            setDeleteDataState({
+                isError: true,
+                message: `Ha habido un error eliminando el libro`
+            })
+        }
         setTimeout(() => {
             navigate("/newBook")
 
@@ -163,6 +178,14 @@ const BookCard = props => {
                             </MDBCardBody>
                         </MDBCol>
                     </MDBRow>
+                    <div className='newBookMessage'>
+                        {
+                            deleteDataState.isError ?
+                                (<p style={{ color: "red" }}>{deleteDataState.message}</p>)
+                                :
+                                (<p style={{ color: "green" }}>{deleteDataState.message}</p>)
+                        }
+                    </div>
                     <MDBBtn
                         className='mx-2 bookCardBtn2'
                         color='dark'
