@@ -20,8 +20,7 @@ const NewBook = () => {
         year: '',
         book_cover: '',
         author_wiki_url: '',
-        shop_url: '',
-        isError: false
+        shop_url: ''
     })
 
     const handleChange = (e) => {
@@ -44,10 +43,11 @@ const NewBook = () => {
         try {
             await axios.post("https://bookapi.up.railway.app/api/book/createBook", bookState, requirements)
 
-            if (bookState.isError == false) {
+            if (!bookState.isError) {
 
                 setBookState({
                     ...bookState,
+                    isError: false,
                     successMsg: 'Libro añadido correctamente'
                 })
 
