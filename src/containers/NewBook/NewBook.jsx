@@ -49,7 +49,7 @@ const NewBook = () => {
                 setBookState({
                     ...bookState,
                     isError: false,
-                    successMsg: 'Libro añadido correctamente'
+                    message: 'Libro añadido correctamente'
                 })
 
                 setTimeout(() => {
@@ -73,37 +73,38 @@ const NewBook = () => {
                     isError: true,
                     message: 'Rellena todos los campos para continuar'
                 })
-                console.log(err)
 
             } else {
                 setBookState({
                     ...bookState,
                     isError: true,
-                    message: err.message
+                    message: "Ha habido un error"
                 })
             }
 
-        } catch (err) {
+        } catch (error) {
 
-            if (bookState.title ||
+            if (
+                bookState.title ||
                 bookState.series ||
                 bookState.author ||
                 bookState.genre ||
                 bookState.year ||
                 bookState.book_cover ||
                 bookState.author_wiki_url ||
-                bookState.shop_url == "") {
+                bookState.shop_url == ""
+            ) {
                 setBookState({
                     ...bookState,
                     isError: true,
                     message: 'Rellena todos los campos para continuar'
                 })
-                console.log(err)
+
             } else {
                 setBookState({
                     ...bookState,
                     isError: true,
-                    message: err.message
+                    message: error.message
                 })
             }
         }
@@ -289,7 +290,7 @@ const NewBook = () => {
                                 bookState.isError ?
                                     (<p style={{ color: "red" }}>{bookState.message}</p>)
                                     :
-                                    (<p style={{ color: "green" }}>{bookState.successMsg}</p>)
+                                    (<p style={{ color: "green" }}>{bookState.message}</p>)
                             }
                         </div>
                     </Form.Group>

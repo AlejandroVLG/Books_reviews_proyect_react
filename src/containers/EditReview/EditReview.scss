@@ -19,6 +19,7 @@
 }
 
 .editReviewLabel {
+	color: rgb(247, 115, 115);
 	display: block;
 	font-weight: 700;
 	padding: 0.6em;
@@ -28,7 +29,7 @@
 
 .editReviewInput {
 	width: 100%;
-	background: #fff;
+	background: rgb(194, 159, 138) !important;
 	border-radius: 0.2em;
 	height: 2.80em;
 	line-height: 2.80em;

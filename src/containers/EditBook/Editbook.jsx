@@ -75,13 +75,12 @@ const EditBook = () => {
                         isError: true,
                         message: 'Rellena todos los campos para continuar'
                     })
-                    console.log(err)
 
                 } else {
                     setEditedBookState({
                         ...editedBookState,
                         isError: true,
-                        message: err.message
+                        message: "Ha habido un error"
                     })
                 }
             } catch (error) {

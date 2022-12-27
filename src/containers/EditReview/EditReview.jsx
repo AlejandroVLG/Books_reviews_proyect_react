@@ -46,7 +46,7 @@ const EditReview = () => {
             )
             if (!editedReviewState.isError) {
 
-                setBookState({
+                setEditedReviewState({
                     ...editedReviewState,
                     isError: false,
                     resultMessage: 'Libro añadido correctamente'
@@ -57,55 +57,43 @@ const EditReview = () => {
 
                 }, 1500)
             } else if (
-                bookState.title ||
-                bookState.series ||
-                bookState.author ||
-                bookState.genre ||
-                bookState.year ||
-                bookState.book_cover ||
-                bookState.author_wiki_url ||
-                bookState.shop_url ||
-                bookState.synopsis == ""
+                editedReviewState.review_title ||
+                editedReviewState.score ||
+                editedReviewState.message == ""
             ) {
 
-                setBookState({
-                    ...bookState,
+                setEditedReviewState({
+                    ...editedReviewState,
                     isError: true,
                     resultMessage: 'Rellena todos los campos para continuar'
                 })
                 console.log(err)
 
             } else {
-                setBookState({
-                    ...bookState,
+                setEditedReviewState({
+                    ...editedReviewState,
                     isError: true,
-                    resultMessage: error.message
+                    resultMessage: "Ha habido un error"
                 })
             }
 
         } catch (error) {
 
             if (
-                bookState.title ||
-                bookState.series ||
-                bookState.author ||
-                bookState.genre ||
-                bookState.year ||
-                bookState.book_cover ||
-                bookState.author_wiki_url ||
-                bookState.shop_url ||
-                bookState.synopsis == ""
+                editedReviewState.review_title ||
+                editedReviewState.score ||
+                editedReviewState.message == ""
             ) {
 
-                setBookState({
-                    ...bookState,
+                setEditedReviewState({
+                    ...editedReviewState,
                     isError: true,
                     resultMessage: 'Rellena todos los campos para continuar'
                 })
 
             } else {
-                setBookState({
-                    ...bookState,
+                setEditedReviewState({
+                    ...editedReviewState,
                     isError: true,
                     resultMessage: error.message
                 })
@@ -185,7 +173,7 @@ const EditReview = () => {
                                 variant="primary"
                                 type="submit"
                             >
-                                Editar
+                                Actualizar datos
                             </button>
                             <div className='editMessage'>
                                 {

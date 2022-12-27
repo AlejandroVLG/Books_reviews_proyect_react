@@ -45,12 +45,12 @@ const NewReview = () => {
                 setReviewState({
                     ...reviewState,
                     isError: false,
-                    successMsg: 'Reseña añadida correctamente'
+                    resultMessage: 'Reseña añadida correctamente'
                 })
                 setTimeout(() => {
                     navigate("/books")
 
-                }, 1000)
+                }, 1500)
 
             } else if (
                 reviewState.review_title ||
@@ -60,14 +60,14 @@ const NewReview = () => {
                 setReviewState({
                     ...reviewState,
                     isError: true,
-                    message: 'Rellena todos los campos para continuar'
+                    resultMessage: 'Rellena todos los campos para continuar'
                 })
             }
             else {
                 setReviewState({
                     ...reviewState,
                     isError: true,
-                    errorMessage: 'Ha habido un error'
+                    resultMessage: 'Ha habido un error'
                 })
             }
         } catch (error) {
@@ -79,13 +79,13 @@ const NewReview = () => {
                 setReviewState({
                     ...reviewState,
                     isError: true,
-                    message: 'Rellena todos los campos para continuar'
+                    resultMessage: 'Rellena todos los campos para continuar'
                 })
             } else {
                 setReviewState({
                     ...reviewState,
                     isError: true,
-                    message: err.message
+                    resultMessage: error.message
                 })
             }
         }
@@ -165,9 +165,9 @@ const NewReview = () => {
                         <div className='newBookMessage'>
                             {
                                 reviewState.isError ?
-                                    (<p style={{ color: "red" }}>{reviewState.errorMessage}</p>)
+                                    (<p style={{ color: "red" }}>{reviewState.resultMessage}</p>)
                                     :
-                                    (<p style={{ color: "green" }}>{reviewState.successMsg}</p>)
+                                    (<p style={{ color: "green" }}>{reviewState.resultMessage}</p>)
                             }
                         </div>
                     </Form.Group>
