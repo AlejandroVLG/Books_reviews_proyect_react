@@ -10,7 +10,7 @@ import {
     MDBRow,
     MDBTypography
 } from "mdb-react-ui-kit"
-import { Card } from "react-bootstrap"
+import { Alert, Card } from "react-bootstrap"
 import { useSelector } from "react-redux"
 import { useNavigate } from "react-router"
 import { userData } from "../../containers/User/userSlice"
@@ -42,12 +42,12 @@ const ReviewCard = props => {
 
                 setReviewErrorState({
                     isError: false,
-                    message: `La reseña ${props.data.review_title} ha sido eliminada`
+                    message: `La reseña ha sido eliminada`
                 })
                 setTimeout(() => {
                     navigate("/books")
 
-                }, 1000)
+                }, 1500)
 
             } else {
 
@@ -66,7 +66,9 @@ const ReviewCard = props => {
     }
 
     if (identification.infoData.name == props.data.name) {
+
         return (
+
             <MDBCard
                 fluid
                 className="mb-10 mainReviewCard"
@@ -86,6 +88,14 @@ const ReviewCard = props => {
                             alt="Avatar"
                             style={{ width: '12em' }}
                         />
+                        <div>
+                            {
+                                reviewErrorState.isError ?
+                                    (<p style={{ color: "red", fonWeight: "bold" }}>{reviewErrorState.message}</p>)
+                                    :
+                                    (<p style={{ color: "rgb(30, 186, 30)", fonWeight: "bold" }}>{reviewErrorState.message}</p>)
+                            }
+                        </div>
                         <hr className="mt-0 mb-3" />
                         <br />
                         <MDBTypography className="bookTitleReview" tag="h3">
@@ -94,14 +104,6 @@ const ReviewCard = props => {
                         <br />
                         <hr className="mt-0 mb-6" />
                         <br />
-                        <div>
-                            {
-                                reviewErrorState.isError ? 
-                                (<p style={{ color: "red" }}>{reviewErrorState.message}</p>)
-                                :
-                                (<p style={{ color: "green" }}>{reviewErrorState.message}</p>)
-                            }
-                        </div>
                         <MDBBtn
                             className='mx-2 reviewCardBtn'
                             color='dark'

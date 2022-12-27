@@ -48,7 +48,7 @@ const NewReview = () => {
                     successMsg: 'Reseña añadida correctamente'
                 })
                 setTimeout(() => {
-                    navigate("/reviews")
+                    navigate("/books")
 
                 }, 1000)
 

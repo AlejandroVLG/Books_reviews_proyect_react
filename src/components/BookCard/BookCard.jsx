@@ -192,7 +192,7 @@ const BookCard = props => {
                             deleteDataState.isError ?
                                 (<p style={{ color: "red" }}>{deleteDataState.message}</p>)
                                 :
-                                (<p style={{ color: "rgb(22, 121, 22)" }}>{deleteDataState.message}</p>)
+                                (<p style={{ color: "green" }}>{deleteDataState.message}</p>)
                         }
                     </div>
                     <MDBBtn
