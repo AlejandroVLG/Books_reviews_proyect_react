@@ -32,28 +32,38 @@ const BookCard = props => {
             "Authorization": `Bearer ${identification.token}`
         }
     }
-
+    
     //Only the SuperAdmin/Admin can delete a book
+
     const handleDelete = async () => {
+        try {
+            await axios.delete(`https://bookapi.up.railway.app/api/book/deleteBook/${deleteId}`, requirements)
 
-        await axios.delete(`https://bookapi.up.railway.app/api/book/deleteBook/${deleteId}`, requirements)
+            if (!deleteDataState.isError) {
 
-        if (!deleteDataState.isError) {
+                setDeleteDataState({
+                    isError: false,
+                    message: `${props.data.title} ha sido eliminado correctamente`
+                })
+            } else {
+                setDeleteDataState({
+                    isError: true,
+                    message: `Ha habido un error eliminando el libro`
+                })
+            }
+            setTimeout(() => {
+                navigate("/newBook")
 
-            setDeleteDataState({
-                isError: false,
-                message: `${props.data.title} ha sido eliminado correctamente`
-            })
-        } else {
+            }, 1500)
+
+        } catch (error) {
+
             setDeleteDataState({
                 isError: true,
                 message: `Ha habido un error eliminando el libro`
             })
         }
-        setTimeout(() => {
-            navigate("/newBook")
 
-        }, 1500)
     }
 
     if (identification.infoData) {
