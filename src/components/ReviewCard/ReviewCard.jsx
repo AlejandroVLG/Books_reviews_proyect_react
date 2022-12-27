@@ -15,6 +15,7 @@ import { useSelector } from "react-redux"
 import { useNavigate } from "react-router"
 import { userData } from "../../containers/User/userSlice"
 import './ReviewCard.scss'
+import { useState } from "react"
 
 
 const ReviewCard = props => {
@@ -22,6 +23,8 @@ const ReviewCard = props => {
     let navigate = useNavigate()
 
     const identification = useSelector(userData)
+
+    const [reviewErrorState, setReviewErrorState] = useState({})
 
     const deleteId = props.data.id
 
@@ -32,15 +35,33 @@ const ReviewCard = props => {
     }
 
     const handleDelete = async () => {
+        try {
+            await axios.delete(`https://bookapi.up.railway.app/api/review/deleteReview/${deleteId}`, requirements)
 
-        let response = await axios.delete(`https://bookapi.up.railway.app/api/review/deleteReview/${deleteId}`, requirements)
+            if (!reviewErrorState.isError) {
 
-        if (response.data.success == true) {
+                setReviewErrorState({
+                    isError: false,
+                    message: `La reseña ${props.data.review_title} ha sido eliminada`
+                })
+                setTimeout(() => {
+                    navigate("/books")
 
-            setTimeout(() => {
-                navigate("/books")
+                }, 1000)
 
-            }, 500)
+            } else {
+
+                setReviewErrorState({
+                    isError: true,
+                    message: `Ha habido un error eliminando la reseña`
+                })
+            }
+        } catch (error) {
+
+            setReviewErrorState({
+                isError: true,
+                message: `Ha habido un error eliminando la reseña`
+            })
         }
     }
 
@@ -73,6 +94,14 @@ const ReviewCard = props => {
                         <br />
                         <hr className="mt-0 mb-6" />
                         <br />
+                        <div>
+                            {
+                                reviewErrorState.isError ? 
+                                (<p style={{ color: "red" }}>{reviewErrorState.message}</p>)
+                                :
+                                (<p style={{ color: "green" }}>{reviewErrorState.message}</p>)
+                            }
+                        </div>
                         <MDBBtn
                             className='mx-2 reviewCardBtn'
                             color='dark'

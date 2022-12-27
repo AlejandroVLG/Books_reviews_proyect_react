@@ -32,7 +32,7 @@ const BookCard = props => {
             "Authorization": `Bearer ${identification.token}`
         }
     }
-    
+
     //Only the SuperAdmin/Admin can delete a book
 
     const handleDelete = async () => {
@@ -43,19 +43,19 @@ const BookCard = props => {
 
                 setDeleteDataState({
                     isError: false,
-                    message: `${props.data.title} ha sido eliminado correctamente`
+                    message: `El libro ${props.data.title} ha sido eliminado`
                 })
+                setTimeout(() => {
+                    navigate("/newBook")
+
+                }, 1000)
+
             } else {
                 setDeleteDataState({
                     isError: true,
                     message: `Ha habido un error eliminando el libro`
                 })
             }
-            setTimeout(() => {
-                navigate("/newBook")
-
-            }, 1500)
-
         } catch (error) {
 
             setDeleteDataState({
@@ -63,7 +63,6 @@ const BookCard = props => {
                 message: `Ha habido un error eliminando el libro`
             })
         }
-
     }
 
     if (identification.infoData) {
@@ -193,7 +192,7 @@ const BookCard = props => {
                             deleteDataState.isError ?
                                 (<p style={{ color: "red" }}>{deleteDataState.message}</p>)
                                 :
-                                (<p style={{ color: "green" }}>{deleteDataState.message}</p>)
+                                (<p style={{ color: "rgb(22, 121, 22)" }}>{deleteDataState.message}</p>)
                         }
                     </div>
                     <MDBBtn

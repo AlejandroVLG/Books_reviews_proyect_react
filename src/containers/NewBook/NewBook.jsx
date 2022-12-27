@@ -55,7 +55,30 @@ const NewBook = () => {
                     navigate("/books")
 
                 }, 1500)
+            } else if (
+                bookState.title ||
+                bookState.series ||
+                bookState.author ||
+                bookState.genre ||
+                bookState.year ||
+                bookState.book_cover ||
+                bookState.author_wiki_url ||
+                bookState.shop_url == ""
+            ) {
 
+                setBookState({
+                    ...bookState,
+                    isError: true,
+                    message: 'Rellena todos los campos para continuar'
+                })
+                console.log(err)
+                
+            } else {
+                setBookState({
+                    ...bookState,
+                    isError: true,
+                    message: err.message
+                })
             }
 
         } catch (err) {
