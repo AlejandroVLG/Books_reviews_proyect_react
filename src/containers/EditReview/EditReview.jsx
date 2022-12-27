@@ -8,164 +8,199 @@ import "./EditReview.scss"
 
 const EditReview = () => {
 
-    try {
-        const navigate = useNavigate()
+    const navigate = useNavigate()
 
-        const identification = useSelector(userData)
+    const identification = useSelector(userData)
 
-        const { id } = useParams()
+    const { id } = useParams()
 
-        let editResponse = ""
+    const [editedReviewState, setEditedReviewState] = useState({
+        book_id: id,
+        review_title: ' ',
+        score: ' ',
+        message: ' '
+    })
 
-        const [editedReviewState, setEditedReviewState] = useState({
-            book_id: id,
-            review_title: ' ',
-            score: ' ',
-            message: ' '
+    const handleChange = (e) => {
+        setEditedReviewState({
+            ...editedReviewState,
+            [e.target.name]: e.target.value
         })
+    }
 
-        const handleChange = (e) => {
-            setEditedReviewState({
-                ...editedReviewState,
-                [e.target.name]: e.target.value
-            })
+    let requirements = {
+        headers: {
+            "Authorization": `Bearer ${identification.token}`,
         }
+    }
 
-        let requirements = {
-            headers: {
-                "Authorization": `Bearer ${identification.token}`,
-            }
-        }
+    const handleSubmit = async (e) => {
 
-        const handleSubmit = async (e) => {
-            e.preventDefault();
+        e.preventDefault();
 
-            editResponse = await axios.put(
+        try {
+            await axios.put(
                 `https://bookapi.up.railway.app/api/review/editReviewById/${id}`,
                 editedReviewState,
                 requirements
             )
+            if (!editedReviewState.isError) {
 
-            if (editResponse.status === 200 || editResponse.status === 201) {
-
-                setEditedReviewState({
+                setBookState({
                     ...editedReviewState,
                     isError: false,
-                    successMsg: 'Reseña editada correctamente'
+                    resultMessage: 'Libro añadido correctamente'
                 })
+
                 setTimeout(() => {
                     navigate("/books")
 
                 }, 1500)
+            } else if (
+                bookState.title ||
+                bookState.series ||
+                bookState.author ||
+                bookState.genre ||
+                bookState.year ||
+                bookState.book_cover ||
+                bookState.author_wiki_url ||
+                bookState.shop_url ||
+                bookState.synopsis == ""
+            ) {
 
-            } else if (editResponse.status === 400 || editResponse.status === 500) {
-
-                setEditedReviewState({
-                    ...editedReviewState,
+                setBookState({
+                    ...bookState,
                     isError: true,
-                    message: 'Ha habido un error, revisa los campos'
+                    resultMessage: 'Rellena todos los campos para continuar'
                 })
-            } else if (editResponse.status === 401) {
+                console.log(err)
 
-                setEditedReviewState({
-                    ...editedReviewState,
+            } else {
+                setBookState({
+                    ...bookState,
                     isError: true,
-                    message: 'Inicia sesión para continuar'
+                    resultMessage: error.message
+                })
+            }
+
+        } catch (error) {
+
+            if (
+                bookState.title ||
+                bookState.series ||
+                bookState.author ||
+                bookState.genre ||
+                bookState.year ||
+                bookState.book_cover ||
+                bookState.author_wiki_url ||
+                bookState.shop_url ||
+                bookState.synopsis == ""
+            ) {
+
+                setBookState({
+                    ...bookState,
+                    isError: true,
+                    resultMessage: 'Rellena todos los campos para continuar'
+                })
+
+            } else {
+                setBookState({
+                    ...bookState,
+                    isError: true,
+                    resultMessage: error.message
                 })
             }
         }
-
-        return (
-            <div className='mainEditReviewBox'>
-                <div className='editReviewFormBox'>
-                    <div className='editReviewForm' >
-                        <Form onSubmit={handleSubmit}>
-                            <Form.Group
-                                className="mb-3"
-                                controlId="formBasicReviewTitle"
-                            >
-                                <Form.Label className='editReviewLabel'>
-                                    Título
-                                </Form.Label>
-                                <Form.Control
-                                    className='editReviewInput'
-                                    type="text"
-                                    name='review_title'
-                                    placeholder='Escribe aquí'
-                                    onChange={handleChange}
-                                />
-                                <Form.Text className="text-muted">
-                                    Modifica el título de tu reseña
-                                </Form.Text>
-                            </Form.Group>
-                            <Form.Group className="mb-3" controlId="formBasicScore">
-                                <Form.Label className='editReviewLabel'>
-                                    Puntuación
-                                </Form.Label>
-                                <Form.Select
-                                    aria-label="Default select example"
-                                    className='editReviewInput'
-                                    name='score'
-                                    onChange={handleChange}>
-                                    <option>Abrir el desplegable</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
-                                    <option value="9">9</option>
-                                    <option value="10">10</option>
-                                </Form.Select>
-                                <Form.Text className="text-muted">
-                                    Cambia la puntuación
-                                </Form.Text>
-                            </Form.Group>
-                            <Form.Group className="mb-3" controlId="formBasicMessage">
-                                <Form.Label className='editReviewLabel'>
-                                    Reseña
-                                </Form.Label>
-                                <Form.Control
-                                    as="textarea"
-                                    rows={3}
-                                    cols={5}
-                                    className='editReviewInput textArea'
-                                    type="text"
-                                    name='message'
-                                    placeholder='Escribe aquí'
-                                    onChange={handleChange}
-                                />
-                                <Form.Text className="text-muted">
-                                    Redacta una nueva reseña
-                                </Form.Text>
-                            </Form.Group>
-                            <Form.Group className="mb-3 editReviewBoxButton">
-                                <button
-                                    className='editReviewSendButtom'
-                                    variant="primary"
-                                    type="submit"
-                                >
-                                    Editar
-                                </button>
-                                <div className='editMessage'>
-                                    {
-                                        editedReviewState.isError ?
-                                            (<p style={{ color: "red" }}>{editedReviewState.message}</p>)
-                                            :
-                                            (<p style={{ color: "green" }}>{editedReviewState.successMsg}</p>)
-                                    }
-                                </div>
-                            </Form.Group>
-                        </Form>
-                    </div>
-                </div>
-            </div >
-        )
-    } catch (error) {
-        console.log(error)
     }
+
+    return (
+        <div className='mainEditReviewBox'>
+            <div className='editReviewFormBox'>
+                <div className='editReviewForm' >
+                    <Form onSubmit={handleSubmit}>
+                        <Form.Group
+                            className="mb-3"
+                            controlId="formBasicReviewTitle"
+                        >
+                            <Form.Label className='editReviewLabel'>
+                                Título
+                            </Form.Label>
+                            <Form.Control
+                                className='editReviewInput'
+                                type="text"
+                                name='review_title'
+                                placeholder='Escribe aquí'
+                                onChange={handleChange}
+                            />
+                            <Form.Text className="text-muted">
+                                Modifica el título de tu reseña
+                            </Form.Text>
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasicScore">
+                            <Form.Label className='editReviewLabel'>
+                                Puntuación
+                            </Form.Label>
+                            <Form.Select
+                                aria-label="Default select example"
+                                className='editReviewInput'
+                                name='score'
+                                onChange={handleChange}>
+                                <option>Abrir el desplegable</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </Form.Select>
+                            <Form.Text className="text-muted">
+                                Cambia la puntuación
+                            </Form.Text>
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasicMessage">
+                            <Form.Label className='editReviewLabel'>
+                                Reseña
+                            </Form.Label>
+                            <Form.Control
+                                as="textarea"
+                                rows={3}
+                                cols={5}
+                                className='editReviewInput textArea'
+                                type="text"
+                                name='message'
+                                placeholder='Escribe aquí'
+                                onChange={handleChange}
+                            />
+                            <Form.Text className="text-muted">
+                                Redacta una nueva reseña
+                            </Form.Text>
+                        </Form.Group>
+                        <Form.Group className="mb-3 editReviewBoxButton">
+                            <button
+                                className='editReviewSendButtom'
+                                variant="primary"
+                                type="submit"
+                            >
+                                Editar
+                            </button>
+                            <div className='editMessage'>
+                                {
+                                    editedReviewState.isError ?
+                                        (<p style={{ color: "red" }}>{editedReviewState.resultMessage}</p>)
+                                        :
+                                        (<p style={{ color: "green" }}>{editedReviewState.resultMessage}</p>)
+                                }
+                            </div>
+                        </Form.Group>
+                    </Form>
+                </div>
+            </div>
+        </div >
+    )
 }
 
 export default EditReview

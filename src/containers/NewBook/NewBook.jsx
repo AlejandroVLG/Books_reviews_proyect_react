@@ -20,7 +20,8 @@ const NewBook = () => {
         year: '',
         book_cover: '',
         author_wiki_url: '',
-        shop_url: ''
+        shop_url: '',
+        synopsis: ''
     })
 
     const handleChange = (e) => {
@@ -63,7 +64,8 @@ const NewBook = () => {
                 bookState.year ||
                 bookState.book_cover ||
                 bookState.author_wiki_url ||
-                bookState.shop_url == ""
+                bookState.shop_url ||
+                bookState.synopsis == ""
             ) {
 
                 setBookState({
@@ -72,7 +74,7 @@ const NewBook = () => {
                     message: 'Rellena todos los campos para continuar'
                 })
                 console.log(err)
-                
+
             } else {
                 setBookState({
                     ...bookState,

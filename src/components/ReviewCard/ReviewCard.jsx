@@ -10,7 +10,7 @@ import {
     MDBRow,
     MDBTypography
 } from "mdb-react-ui-kit"
-import { Alert, Card } from "react-bootstrap"
+import { Card } from "react-bootstrap"
 import { useSelector } from "react-redux"
 import { useNavigate } from "react-router"
 import { userData } from "../../containers/User/userSlice"
@@ -75,7 +75,6 @@ const ReviewCard = props => {
                 style={{ borderRadius: '.5em' }}
             >
                 <MDBRow className="g-0">
-
                     <MDBCol
                         md="4"
                         className="text-center text-white reviewColData"
@@ -173,7 +172,6 @@ const ReviewCard = props => {
     } else {
         return (
             <div className="reviewsBox">
-
                 <Card id="reviewCardBox">
                     <Card.Img
                         className="reviewCardImg"

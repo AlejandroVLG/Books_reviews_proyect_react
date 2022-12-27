@@ -12,10 +12,8 @@ const EditBook = () => {
         const identification = useSelector(userData)
 
         const { id } = useParams()
-        
-        const navigate = useNavigate()
 
-        let editBookResponse = ""
+        const navigate = useNavigate()
 
         const [editedBookState, setEditedBookState] = useState({
             title: '',
@@ -25,7 +23,8 @@ const EditBook = () => {
             year: '',
             book_cover: '',
             author_wiki_url: '',
-            shop_url: ''
+            shop_url: '',
+            synopsis: ''
         })
 
         const handleChange = (e) => {
@@ -44,35 +43,73 @@ const EditBook = () => {
         const handleSubmit = async (e) => {
 
             e.preventDefault()
+            try {
+                await axios.put(`https://bookapi.up.railway.app/api/book/editBookById/${id}`, editedBookState, requirements)
 
-            editBookResponse = await axios.put(`https://bookapi.up.railway.app/api/book/editBookById/${id}`, editedBookState, requirements)
+                if (!editedBookState.isError) {
 
-            if (editBookResponse.status === 200 || editBookResponse.status === 201) {
+                    setEditedBookState({
+                        ...editedBookState,
+                        isError: false,
+                        message: 'Libro añadido correctamente'
+                    })
 
-                setEditedBookState({
-                    ...editedBookState,
-                    isError: false,
-                    successMsg: 'Libro editado correctamente'
-                })
-                setTimeout(() => {
-                    navigate("/books")
+                    setTimeout(() => {
+                        navigate("/books")
 
-                }, 1500)
+                    }, 1500)
+                } else if (
+                    editedBookState.title ||
+                    editedBookState.series ||
+                    editedBookState.author ||
+                    editedBookState.genre ||
+                    editedBookState.year ||
+                    editedBookState.book_cover ||
+                    editedBookState.author_wiki_url ||
+                    editedBookState.shop_url ||
+                    editedBookState.synopsis == ""
+                ) {
 
-            } else if (editBookResponse.status === 400 || editBookResponse.status === 500) {
+                    setEditedBookState({
+                        ...editedBookState,
+                        isError: true,
+                        message: 'Rellena todos los campos para continuar'
+                    })
+                    console.log(err)
 
-                setEditedBookState({
-                    ...editedBookState,
-                    isError: true,
-                    message: 'Ha habido un error, revisa los campos'
-                })
-            } else if (editBookResponse.status === 401) {
+                } else {
+                    setEditedBookState({
+                        ...editedBookState,
+                        isError: true,
+                        message: err.message
+                    })
+                }
+            } catch (error) {
+                if (
+                    editedBookState.title ||
+                    editedBookState.series ||
+                    editedBookState.author ||
+                    editedBookState.genre ||
+                    editedBookState.year ||
+                    editedBookState.book_cover ||
+                    editedBookState.author_wiki_url ||
+                    editedBookState.shop_url ||
+                    editedBookState.synopsis == ""
+                ) {
 
-                setEditedBookState({
-                    ...editedBookState,
-                    isError: true,
-                    message: 'Inicia sesión para continuar'
-                })
+                    setEditedBookState({
+                        ...editedBookState,
+                        isError: true,
+                        message: 'Rellena todos los campos para continuar'
+                    })
+
+                } else {
+                    setEditedBookState({
+                        ...editedBookState,
+                        isError: true,
+                        message: error.message
+                    })
+                }
             }
         }
         if (identification.token === "") {
@@ -264,7 +301,7 @@ const EditBook = () => {
                                         editedBookState.isError ?
                                             (<p style={{ color: "red" }}>{editedBookState.message}</p>)
                                             :
-                                            (<p style={{ color: "green" }}>{editedBookState.successMsg}</p>)
+                                            (<p style={{ color: "green" }}>{editedBookState.message}</p>)
                                     }
                                 </div>
                             </Form.Group>
