@@ -3,7 +3,7 @@ import axios from 'axios'
 import { Col, Form, Row } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router'
-import { userData } from '../User/userSlice'
+import { logOut, userData } from '../User/userSlice'
 import "./EditUser.scss"
 
 const EditUser = () => {
