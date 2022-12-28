@@ -25,25 +25,20 @@
 	box-shadow: 0em 0em 1em 0.01em rgba(255, 255, 255, 0.363);
 }
 
-.editBookInput:focus {
+.editProfileInput:focus {
 	border: 0.2em solid #0075FF;
 	outline: none;
 	box-shadow: 0.2em 0em 1.9em 0.3em rgba(163, 163, 163, 0.4);
 }
 
-.editBookSynopsis {
-	height: 10em;
-	background: rgb(194, 159, 138) !important;
-}
-
-.editBookBoxButton {
+.editProfileBoxButton {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	grid-column: span 2;
 }
 
-.editBookSendButtom {
+.editProfileSendButtom {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -61,6 +56,6 @@
 	box-shadow: 0em 0em 1em 0.01em rgb(247, 115, 115);
 }
 
-.editBookSendButtom:hover {
+.editProfileSendButtom:hover {
 	box-shadow: 0.2em 0em 1.9em 0.3em rgba(218, 218, 218, 0.274);
 }

@@ -48,7 +48,7 @@ const EditUser = () => {
 
         await axios.put(`https://bookapi.up.railway.app/api/user/editMyProfile/${id}`, editedUserState, requirements)
     }
-    
+
     if (identification.token === "") {
 
         return (
@@ -73,7 +73,7 @@ const EditUser = () => {
                                 onChange={handleChange}
                             />
                             <Form.Text className="text-muted">
-                                Modifica tu nombre
+                                Modificar nombre
                             </Form.Text>
                         </Form.Group >
                     </Col >
@@ -107,7 +107,7 @@ const EditUser = () => {
                                 onChange={handleChange}
                             />
                             <Form.Text className="text-muted">
-                                Modifica el correo electrónico
+                                Modificar correo electrónico
                             </Form.Text>
                         </Form.Group>
                     </Col>
@@ -127,7 +127,7 @@ const EditUser = () => {
                                 <option value="Prefiero no indicarlo">Prefiero no indicarlo</option>
                             </Form.Select>
                             <Form.Text className="text-muted">
-                                Modifica el género
+                                Modificar género
                             </Form.Text>
                         </Form.Group>
                     </Col>
@@ -144,7 +144,7 @@ const EditUser = () => {
                                 onChange={handleChange}
                             />
                             <Form.Text className="text-muted">
-                                Introduce una nueva contraseña
+                                Introducir nueva contraseña
                             </Form.Text>
                         </Form.Group>
                     </Col>
@@ -163,7 +163,7 @@ const EditUser = () => {
                                 onChange={handleChange}
                             />
                             <Form.Text className="text-muted">
-                                Modifica la fecha de nacimiento
+                                Modificar fecha de nacimiento
                             </Form.Text>
                         </Form.Group>
                     </Col>
@@ -423,7 +423,7 @@ const EditUser = () => {
                                 <option value="Zimbabwe">Zimbabwe</option>
                             </Form.Select>
                             <Form.Text className="text-muted">
-                                Selecciona el país donde resides actualmente
+                                Modificar país de residencia
                             </Form.Text>
                         </Form.Group>
                     </Col>
@@ -444,30 +444,114 @@ const EditUser = () => {
                             </Form.Text>
                         </Form.Group>
                     </Col>
-                    <Col xs={12} sm={12} md={12} lg={12} xl={12} xxl={12} >
-                        <Form.Group className="mb-3 " controlId="formBasicSynopsis">
+                    <Col xs={12} sm={12} md={6} lg={6} xl={6} xxl={6} >
+                        <Form.Group className="mb-3" controlId="formBasicFavouriteGenre">
                             <Form.Label className='editProfileLabel'>
-                                Sinopsis
+                                Género literario favorito
                             </Form.Label>
                             <Form.Control
-                                as="textarea"
-                                className='newBookInput editBookSynopsis'
+                                className='editProfileInput'
                                 type="text"
-                                name='synopsis'
+                                name='favourite_genre'
                                 placeholder='Escribe aquí'
                                 onChange={handleChange}
                             />
                             <Form.Text className="text-muted">
-                                Resumen del libro en Español
+                                Modificar género literario favorito
+                            </Form.Text>
+                        </Form.Group>
+                    </Col>
+                    <Col xs={12} sm={12} md={6} lg={6} xl={6} xxl={6} >
+                        <Form.Group className="mb-3" controlId="formBasicCurrentlyReading">
+                            <Form.Label className='editProfileLabel'>
+                                Lo que estes leyendo actualmente
+                            </Form.Label>
+                            <Form.Control
+                                className='editProfileInput'
+                                type="text"
+                                name='currently_reading'
+                                placeholder='Escribe aquí'
+                                onChange={handleChange}
+                            />
+                            <Form.Text className="text-muted">
+                                Modificar leyendo actualmente
+                            </Form.Text>
+                        </Form.Group>
+                    </Col>
+                    <Col xs={12} sm={12} md={6} lg={6} xl={6} xxl={6} >
+                        <Form.Group className="mb-3" controlId="formBasicFacebookAccount">
+                            <Form.Label className='editProfileLabel'>
+                                Cuenta de Facebook
+                            </Form.Label>
+                            <Form.Control
+                                className='editProfileInput'
+                                type="text"
+                                name='facebook_account'
+                                placeholder='Escribe aquí'
+                                onChange={handleChange}
+                            />
+                            <Form.Text className="text-muted">
+                                Modificar cuenta de Facebook
+                            </Form.Text>
+                        </Form.Group>
+                    </Col>
+                    <Col xs={12} sm={12} md={6} lg={6} xl={6} xxl={6} >
+                        <Form.Group className="mb-3" controlId="formBasicTwitterAccount">
+                            <Form.Label className='editProfileLabel'>
+                                Cuenta de Twitter
+                            </Form.Label>
+                            <Form.Control
+                                className='editProfileInput'
+                                type="text"
+                                name='twitter_account'
+                                placeholder='Escribe aquí'
+                                onChange={handleChange}
+                            />
+                            <Form.Text className="text-muted">
+                                Modificar cuenta de Twitter
+                            </Form.Text>
+                        </Form.Group>
+                    </Col>
+                    <Col xs={12} sm={12} md={6} lg={6} xl={6} xxl={6} >
+                        <Form.Group className="mb-3" controlId="formBasicInstagramAccount">
+                            <Form.Label className='editProfileLabel'>
+                                Cuenta de Instagram
+                            </Form.Label>
+                            <Form.Control
+                                className='editProfileInput'
+                                type="text"
+                                name='instagram_account'
+                                placeholder='Escribe aquí'
+                                onChange={handleChange}
+                            />
+                            <Form.Text className="text-muted">
+                                Modificar cuenta de Instagram
+                            </Form.Text>
+                        </Form.Group>
+                    </Col>
+                    <Col xs={12} sm={12} md={6} lg={6} xl={6} xxl={6} >
+                        <Form.Group className="mb-3" controlId="formBasicProfileImg">
+                            <Form.Label className='editProfileLabel'>
+                                Imagen de perfil
+                            </Form.Label>
+                            <Form.Control
+                                className='editProfileInput'
+                                type="text"
+                                name='profile_img'
+                                placeholder='Escribe aquí'
+                                onChange={handleChange}
+                            />
+                            <Form.Text className="text-muted">
+                                Modificar imagen de perfil
                             </Form.Text>
                         </Form.Group>
                     </Col>
                     <Col xs={12} sm={12} md={12} lg={12} xl={12} xxl={12} >
-                        <Form.Group className="mb-3 editBookBoxButton">
-                            <button className='editBookSendButtom' variant="primary" type="submit">
+                        <Form.Group className="mb-3 editProfileBoxButton">
+                            <button className='editProfileSendButtom' variant="primary" type="submit">
                                 Actualizar datos
                             </button>
-                            <div className='editBookMessage'>
+                            <div className='editProfileMessage'>
                                 {
                                     editedUserState.isError ?
                                         (<p style={{ color: "red" }}>{editedUserState.message}</p>)
@@ -476,7 +560,7 @@ const EditUser = () => {
                                 }
                             </div>
                         </Form.Group>
-                    </Col>
+                    </Col>    
                 </Row>
             </Form >
         )
