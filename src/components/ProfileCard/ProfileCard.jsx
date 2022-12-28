@@ -9,11 +9,62 @@ import {
     MDBCardText,
     MDBCardBody,
     MDBCardImage,
-    MDBTypography
+    MDBTypography,
+    MDBBtn
 } from 'mdb-react-ui-kit'
 import './ProfileCard.scss'
+import { useSelector } from "react-redux"
+import { userData } from "../../containers/User/userSlice"
+import { useNavigate } from "react-router"
+import axios from "axios"
+import { useState } from "react"
 
 const ProfileCard = props => {
+
+    let navigate = useNavigate()
+
+    const identification = useSelector(userData)
+
+    const [deletedProfileState, setDeletedProfileState] = useState()
+
+    const deleteId = props.data.id
+
+    let requirements = {
+        headers: {
+            "Authorization": `Bearer ${identification.token}`
+        }
+    }
+
+    const handleDeleteProfile = async () => {
+
+        try {
+            await axios.delete(`https://bookapi.up.railway.app/api/user/deleteUserById/${deleteId}`, requirements)
+
+            if (!deletedProfileState.isError) {
+
+                setDeletedProfileState({
+                    isError: false,
+                    message: `El usuario ${props.data.name} ha sido eliminado`
+                })
+                setTimeout(() => {
+                    navigate("/books")
+
+                }, 1000)
+
+            } else {
+                setDeletedProfileState({
+                    isError: true,
+                    message: `Ha habido un error eliminando el usuario`
+                })
+            }
+        } catch (error) {
+
+            setDeletedProfileState({
+                isError: true,
+                message: `Ha habido un error eliminando el usuario`
+            })
+        }
+    }
 
     return (
 
@@ -139,6 +190,20 @@ const ProfileCard = props => {
                             </MDBCardBody>
                         </MDBCol>
                     </MDBRow>
+                <MDBBtn
+                    className='mx-2 bookCardBtn2'
+                    color='dark'
+                    onClick={() => navigate(`/editMyProfile/${props.data.id}`)}
+                >
+                    Editar Perfil
+                </MDBBtn>
+                <MDBBtn
+                    className='mx-2 bookCardBtn3'
+                    color='dark'
+                    onClick={handleDeleteProfile}
+                >
+                    Eliminar Perfil
+                </MDBBtn>
                 </MDBCard>
             </MDBContainer>
         </motion.div>

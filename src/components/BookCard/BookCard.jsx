@@ -35,7 +35,7 @@ const BookCard = props => {
 
     //Only the SuperAdmin/Admin can delete a book
 
-    const handleDelete = async () => {
+    const handleDeleteBook = async () => {
         try {
             await axios.delete(`https://bookapi.up.railway.app/api/book/deleteBook/${deleteId}`, requirements)
 
@@ -205,7 +205,7 @@ const BookCard = props => {
                     <MDBBtn
                         className='mx-2 bookCardBtn3'
                         color='dark'
-                        onClick={handleDelete}
+                        onClick={handleDeleteBook}
                     >
                         Eliminar libro
                     </MDBBtn>

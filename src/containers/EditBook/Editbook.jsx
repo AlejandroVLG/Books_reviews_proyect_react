@@ -50,6 +50,7 @@ const EditBook = () => {
             synopsis: bookResponse.data.data.synopsis
         })
     }
+
     let requirements = {
         headers: {
             "Authorization": `Bearer ${identification.token}`,
@@ -64,6 +65,7 @@ const EditBook = () => {
     const handleSubmit = async (e) => {
 
         e.preventDefault()
+
         try {
             await axios.put(`https://bookapi.up.railway.app/api/book/editBookById/${id}`, editedBookState, requirements)
 
@@ -290,7 +292,8 @@ const EditBook = () => {
                         </Form.Group>
                     </Col>
                 </Row>
-            </Form >)
+            </Form >
+        )
     }
 }
 
