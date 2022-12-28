@@ -61,11 +61,11 @@ const EditUser = () => {
                     <Col xs={12} sm={12} md={6} lg={6} xl={6} xxl={6} >
                         <Form.Group className="mb-3" controlId="formBasicTitle" >
                             <Form.Label className='editBookLabel'>
-                                Título
+                                Nombre
                             </Form.Label >
                             <Form.Control
                                 className='editBookInput'
-                                type="text" name='title'
+                                type="text" name='name'
                                 placeholder='Escribe aquí'
                                 onChange={handleChange}
                             />
