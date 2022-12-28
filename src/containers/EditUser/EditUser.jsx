@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { Col, Form, Row } from 'react-bootstrap'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router'
 import { userData } from '../User/userSlice'
 import "./EditUser.scss"
@@ -12,13 +12,14 @@ const EditUser = () => {
 
     const { id } = useParams()
 
+    const dispatch = useDispatch()
+
     const navigate = useNavigate()
 
     const [editedUserState, setEditedUserState] = useState({
         name: '',
         last_name: '',
         nick_name: '',
-        email: '',
         password: '',
         gender: '',
         age: '',
@@ -45,33 +46,25 @@ const EditUser = () => {
         }
     }
 
-    const handleSubmit = async (e) => {
-
-        e.preventDefault()
-
-        await axios.put(`https://bookapi.up.railway.app/api/user/editMyProfile/${id}`, editedUserState, requirements)
-    }
-
     const showUserData = async () => {
 
-        const userResponse = await axios.get(`https://bookapi.up.railway.app/api/user/showUserById/${id}`)
+        const userResponse = await axios.get(`https://bookapi.up.railway.app/api/user/showUserById/${id}`, requirements)
 
-        setEditedBookState({
+        setEditedUserState({
             name: userResponse.data.data.name,
-            last_name: userResponse.data.data.last_name,
+            last_name: userResponse.data.data.last_name || "blank",
             nick_name: userResponse.data.data.nick_name,
-            email: userResponse.data.data.email,
             password: userResponse.data.data.password,
-            gender: userResponse.data.data.gender,
-            age: userResponse.data.data.age,
-            country: userResponse.data.data.country,
-            favourite_author: userResponse.data.data.favourite_author,
-            favourite_genre: userResponse.data.data.favourite_genre,
-            currently_reading: userResponse.data.data.currently_reading,
-            facebook_account: userResponse.data.data.facebook_account,
-            twitter_account: userResponse.data.data.twitter_account,
-            instagram_account: userResponse.data.data.instagram_account,
-            profile_img: userResponse.data.data.profile_img
+            gender: userResponse.data.data.gender || "blank",
+            age: userResponse.data.data.age || "blank",
+            country: userResponse.data.data.country || "blank",
+            favourite_author: userResponse.data.data.favourite_author || "blank",
+            favourite_genre: userResponse.data.data.favourite_genre || "blank",
+            currently_reading: userResponse.data.data.currently_reading || "blank",
+            facebook_account: userResponse.data.data.facebook_account || "blank",
+            twitter_account: userResponse.data.data.twitter_account || "blank",
+            instagram_account: userResponse.data.data.instagram_account || "blank",
+            profile_img: userResponse.data.data.profile_img || "../../../public/Img/male-silluette.jpg"
         })
     }
 
@@ -80,6 +73,39 @@ const EditUser = () => {
         showUserData()
 
     }, [])
+
+    const handleSubmit = async (e) => {
+        try {
+            e.preventDefault()
+
+            await axios.put(`https://bookapi.up.railway.app/api/user/editMyProfile`, editedUserState, requirements)
+
+            if (!editedUserState.isError) {
+
+                setEditedUserState({
+                    ...editedUserState,
+                    isError: false,
+                    message: 'El usuario ha sido modificado'
+                })
+
+            } else {
+                setEditedUserState({
+                    ...editedUserState,
+                    isError: true,
+                    message: "Ha habido un error"
+                })
+            }
+        } catch (error) {
+
+            console.log(error)
+
+            setEditedUserState({
+                ...editedUserState,
+                isError: true,
+                message: error.message
+            })
+        }
+    }
 
     if (identification.token === "") {
 
@@ -123,23 +149,6 @@ const EditUser = () => {
                             />
                             <Form.Text className="text-muted">
                                 Modificar apellidos
-                            </Form.Text>
-                        </Form.Group>
-                    </Col>
-                    <Col xs={12} sm={12} md={6} lg={6} xl={6} xxl={6} >
-                        <Form.Group className="mb-3" controlId="formBasicEmail">
-                            <Form.Label className='editProfileLabel'>
-                                Correo electrónico
-                            </Form.Label>
-                            <Form.Control
-                                className='editProfileInput'
-                                type="text"
-                                name='email'
-                                placeholder='Escribe aquí'
-                                onChange={handleChange}
-                            />
-                            <Form.Text className="text-muted">
-                                Modificar correo electrónico
                             </Form.Text>
                         </Form.Group>
                     </Col>
@@ -481,13 +490,27 @@ const EditUser = () => {
                             <Form.Label className='editProfileLabel'>
                                 Género literario favorito
                             </Form.Label>
-                            <Form.Control
+                            <Form.Select
                                 className='editProfileInput'
-                                type="text"
                                 name='favourite_genre'
                                 placeholder='Escribe aquí'
                                 onChange={handleChange}
-                            />
+                            >
+                                <option>Abrir el desplegable</option>
+                                <option value="Autobiografía">Autobiografía</option>
+                                <option value="Aventuras">Aventuras</option>
+                                <option value="Ciencia ficción">Ciencia ficción</option>
+                                <option value="Policíaca">Policíaca</option>
+                                <option value="Educativa">Educativa</option>
+                                <option value="Fantasía">Fantasía</option>
+                                <option value="Histórica">Histórica</option>
+                                <option value="Humor">Humor</option>
+                                <option value="Infantil">Infantil</option>
+                                <option value="Misterio">Misterio</option>
+                                <option value="Novela negra">Novela negra</option>
+                                <option value="Romance">Romance</option>
+                                <option value="Terror">Terror</option>
+                            </Form.Select>
                             <Form.Text className="text-muted">
                                 Modificar género literario favorito
                             </Form.Text>
@@ -496,7 +519,7 @@ const EditUser = () => {
                     <Col xs={12} sm={12} md={6} lg={6} xl={6} xxl={6} >
                         <Form.Group className="mb-3" controlId="formBasicCurrentlyReading">
                             <Form.Label className='editProfileLabel'>
-                                Lo que estes leyendo actualmente
+                                ¿Qué estás leyendo actualmente?
                             </Form.Label>
                             <Form.Control
                                 className='editProfileInput'
@@ -580,7 +603,13 @@ const EditUser = () => {
                     </Col>
                     <Col xs={12} sm={12} md={12} lg={12} xl={12} xxl={12} >
                         <Form.Group className="mb-3 editProfileBoxButton">
-                            <button className='editProfileSendButtom' variant="primary" type="submit">
+                            <button
+                                className='editProfileSendButtom'
+                                variant="primary"
+                                type="submit"
+                                onClick={e => { navigate("/login"); dispatch(logOut()) }}
+
+                            >
                                 Actualizar datos
                             </button>
                             <div className='editProfileMessage'>

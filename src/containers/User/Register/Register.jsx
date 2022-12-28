@@ -18,7 +18,8 @@ const Register = props => {
         name: "",
         nick_name: "",
         email: "",
-        password: ""
+        password: "",
+        profile_img: "../../../../public/Img/male-silluette.jpg"
       }
     )
 
