@@ -84,7 +84,7 @@ const NavigationBar = () => {
                             <Nav.Link
                                 eventKey={2}
                                 className="navBarLink2"
-                                onClick={e => { navigate("/"); dispatch(logOut()) }}
+                                onClick={e => { navigate("/login"); dispatch(logOut()) }}
                             >
                                 Cerrar sesión
                             </Nav.Link>

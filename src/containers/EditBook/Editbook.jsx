@@ -60,6 +60,7 @@ const EditBook = () => {
     useEffect(() => {
 
         showBookData()
+        
     }, [])
 
     const handleSubmit = async (e) => {

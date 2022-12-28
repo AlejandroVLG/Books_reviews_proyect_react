@@ -190,20 +190,20 @@ const ProfileCard = props => {
                             </MDBCardBody>
                         </MDBCol>
                     </MDBRow>
-                <MDBBtn
-                    className='mx-2 bookCardBtn2'
-                    color='dark'
-                    onClick={() => navigate(`/editMyProfile/${props.data.id}`)}
-                >
-                    Editar Perfil
-                </MDBBtn>
-                <MDBBtn
-                    className='mx-2 bookCardBtn3'
-                    color='dark'
-                    onClick={handleDeleteProfile}
-                >
-                    Eliminar Perfil
-                </MDBBtn>
+                    <MDBBtn
+                        className='mx-2 bookCardBtn2'
+                        color='dark'
+                        onClick={() => navigate(`/editMyProfile/${props.data.id}`)}
+                    >
+                        Editar Perfil
+                    </MDBBtn>
+                    <MDBBtn
+                        className='mx-2 bookCardBtn3'
+                        color='dark'
+                        onClick={e => { handleDeleteProfile; dispatch(logOut()) }}
+                    >
+                        Eliminar Perfil
+                    </MDBBtn>
                 </MDBCard>
             </MDBContainer>
         </motion.div>

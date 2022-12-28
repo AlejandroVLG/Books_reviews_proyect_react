@@ -26,7 +26,10 @@ const EditUser = () => {
         favourite_author: '',
         favourite_genre: '',
         currently_reading: '',
-        twitter_account: ''
+        facebook_account: '',
+        twitter_account: '',
+        instagram_account: '',
+        profile_img: ''
     })
 
     const handleChange = (e) => {
@@ -49,11 +52,40 @@ const EditUser = () => {
         await axios.put(`https://bookapi.up.railway.app/api/user/editMyProfile/${id}`, editedUserState, requirements)
     }
 
+    const showUserData = async () => {
+
+        const userResponse = await axios.get(`https://bookapi.up.railway.app/api/user/showUserById/${id}`)
+
+        setEditedBookState({
+            name: userResponse.data.data.name,
+            last_name: userResponse.data.data.last_name,
+            nick_name: userResponse.data.data.nick_name,
+            email: userResponse.data.data.email,
+            password: userResponse.data.data.password,
+            gender: userResponse.data.data.gender,
+            age: userResponse.data.data.age,
+            country: userResponse.data.data.country,
+            favourite_author: userResponse.data.data.favourite_author,
+            favourite_genre: userResponse.data.data.favourite_genre,
+            currently_reading: userResponse.data.data.currently_reading,
+            facebook_account: userResponse.data.data.facebook_account,
+            twitter_account: userResponse.data.data.twitter_account,
+            instagram_account: userResponse.data.data.instagram_account,
+            profile_img: userResponse.data.data.profile_img
+        })
+    }
+
+    useEffect(() => {
+
+        showUserData()
+
+    }, [])
+
     if (identification.token === "") {
 
         return (
             useEffect(() => {
-                navigate("/myProfile")
+                navigate("/login")
             }, [])
         )
     } else {
@@ -560,7 +592,7 @@ const EditUser = () => {
                                 }
                             </div>
                         </Form.Group>
-                    </Col>    
+                    </Col>
                 </Row>
             </Form >
         )
