@@ -120,7 +120,7 @@ const ProfileCard = props => {
                                         </MDBCardText>
                                     </MDBCol>
                                     <MDBCol size="6" className="mb-3">
-                                        <MDBTypography tag="h6">Edad</MDBTypography>
+                                        <MDBTypography tag="h6">Fecha de nacimiento</MDBTypography>
                                         <MDBCardText className="text-muted">
                                             {props.data.age}
                                         </MDBCardText>
