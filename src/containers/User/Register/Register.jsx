@@ -19,7 +19,7 @@ const Register = props => {
         nick_name: "",
         email: "",
         password: "",
-        profile_img: ""
+        profile_img: "../../../../public/Img/ProfileImg.jpg"
       }
     )
 
@@ -100,7 +100,6 @@ const Register = props => {
         {
           ...register,
           isError: false,
-          profile_img: "../../../../public/Img/ProfileImg.jpg",
           successMsg: "Registro completado correctamente"
         }
       )
@@ -110,8 +109,7 @@ const Register = props => {
           register.name,
           register.nick_name,
           register.email,
-          register.password,
-          register.profile_img
+          register.password
         )
       )
     }

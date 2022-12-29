@@ -87,6 +87,13 @@ const EditUser = () => {
                     isError: false,
                     message: 'El usuario ha sido modificado'
                 })
+                setTimeout(() => {
+
+                    dispatch(logOut())
+
+                    navigate("/books")
+
+                }, 1500)
 
             } else {
                 setEditedUserState({
@@ -607,8 +614,6 @@ const EditUser = () => {
                                 className='editProfileSendButtom'
                                 variant="primary"
                                 type="submit"
-                                onClick={e => { navigate("/books"); dispatch(logOut()) }}
-
                             >
                                 Actualizar datos
                             </button>

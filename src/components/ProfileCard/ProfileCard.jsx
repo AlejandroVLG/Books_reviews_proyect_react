@@ -29,8 +29,6 @@ const ProfileCard = props => {
 
     const [deletedProfileState, setDeletedProfileState] = useState({})
 
-    const deleteId = props.data.id
-
     let requirements = {
         headers: {
             "Authorization": `Bearer ${identification.token}`
@@ -194,6 +192,14 @@ const ProfileCard = props => {
                             </MDBCardBody>
                         </MDBCol>
                     </MDBRow>
+                    <div className='newBookMessage'>
+                        {
+                            deletedProfileState.isError ?
+                                (<p style={{ color: "red" }}>{deletedProfileState.message}</p>)
+                                :
+                                (<p style={{ color: "green" }}>{deletedProfileState.message}</p>)
+                        }
+                    </div>
                     <MDBBtn
                         className='mx-2 bookCardBtn2'
                         color='dark'
