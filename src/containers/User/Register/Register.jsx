@@ -19,7 +19,7 @@ const Register = props => {
         nick_name: "",
         email: "",
         password: "",
-        profile_img: "../../../../public/Img/male-silluette.jpg"
+        profile_img: ""
       }
     )
 
@@ -33,6 +33,7 @@ const Register = props => {
     }
 
     const userRegister = (event) => {
+
       event.preventDefault()
 
       if (! /^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(register.name)) {
@@ -99,6 +100,7 @@ const Register = props => {
         {
           ...register,
           isError: false,
+          profile_img: "../../../../public/Img/ProfileImg.jpg",
           successMsg: "Registro completado correctamente"
         }
       )
@@ -108,7 +110,8 @@ const Register = props => {
           register.name,
           register.nick_name,
           register.email,
-          register.password
+          register.password,
+          register.profile_img
         )
       )
     }

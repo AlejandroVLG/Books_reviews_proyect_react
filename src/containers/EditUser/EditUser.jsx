@@ -52,19 +52,19 @@ const EditUser = () => {
 
         setEditedUserState({
             name: userResponse.data.data.name,
-            last_name: userResponse.data.data.last_name || "Campo sin rellenar",
+            last_name: userResponse.data.data.last_name || "Campo sin información",
             nick_name: userResponse.data.data.nick_name,
             password: userResponse.data.data.password,
-            gender: userResponse.data.data.gender || "Campo sin rellenar",
-            age: userResponse.data.data.age || "Campo sin rellenar",
-            country: userResponse.data.data.country || "Campo sin rellenar",
-            favourite_author: userResponse.data.data.favourite_author || "Campo sin rellenar",
-            favourite_genre: userResponse.data.data.favourite_genre || "Campo sin rellenar",
-            currently_reading: userResponse.data.data.currently_reading || "Campo sin rellenar",
+            gender: userResponse.data.data.gender || "Campo sin información",
+            age: userResponse.data.data.age || "Campo sin información",
+            country: userResponse.data.data.country || "Campo sin información",
+            favourite_author: userResponse.data.data.favourite_author || "Campo sin información",
+            favourite_genre: userResponse.data.data.favourite_genre || "Campo sin información",
+            currently_reading: userResponse.data.data.currently_reading || "Campo sin información",
             facebook_account: userResponse.data.data.facebook_account || "blank",
             twitter_account: userResponse.data.data.twitter_account || "blank",
             instagram_account: userResponse.data.data.instagram_account || "blank",
-            profile_img: userResponse.data.data.profile_img || "../../../public/Img/male-silluette.jpg"
+            profile_img: userResponse.data.data.profile_img || "../../../public/Img/ProfileImg.jpg"
         })
     }
 
@@ -607,7 +607,7 @@ const EditUser = () => {
                                 className='editProfileSendButtom'
                                 variant="primary"
                                 type="submit"
-                                onClick={e => { navigate("/login"); dispatch(logOut()) }}
+                                onClick={e => { navigate("/books"); dispatch(logOut()) }}
 
                             >
                                 Actualizar datos

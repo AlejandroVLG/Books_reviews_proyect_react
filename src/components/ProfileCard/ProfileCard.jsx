@@ -13,8 +13,8 @@ import {
     MDBBtn
 } from 'mdb-react-ui-kit'
 import './ProfileCard.scss'
-import { useSelector } from "react-redux"
-import { userData } from "../../containers/User/userSlice"
+import { useDispatch, useSelector } from "react-redux"
+import { logOut, userData } from "../../containers/User/userSlice"
 import { useNavigate } from "react-router"
 import axios from "axios"
 import { useState } from "react"
@@ -23,9 +23,11 @@ const ProfileCard = props => {
 
     let navigate = useNavigate()
 
+    const dispatch = useDispatch()
+
     const identification = useSelector(userData)
 
-    const [deletedProfileState, setDeletedProfileState] = useState()
+    const [deletedProfileState, setDeletedProfileState] = useState({})
 
     const deleteId = props.data.id
 
@@ -38,15 +40,17 @@ const ProfileCard = props => {
     const handleDeleteProfile = async () => {
 
         try {
-            await axios.delete(`https://bookapi.up.railway.app/api/user/deleteUserById/${deleteId}`, requirements)
+            await axios.delete(`https://bookapi.up.railway.app/api/user/deleteMyProfile`, requirements)
 
             if (!deletedProfileState.isError) {
 
                 setDeletedProfileState({
                     isError: false,
-                    message: `El usuario ${props.data.name} ha sido eliminado`
+                    message: `El usuario ha sido eliminado`
                 })
                 setTimeout(() => {
+
+                    dispatch(logOut())
                     navigate("/books")
 
                 }, 1000)
@@ -200,7 +204,7 @@ const ProfileCard = props => {
                     <MDBBtn
                         className='mx-2 bookCardBtn3'
                         color='dark'
-                        onClick={e => { handleDeleteProfile; dispatch(logOut()) }}
+                        onClick={handleDeleteProfile}
                     >
                         Eliminar Perfil
                     </MDBBtn>
