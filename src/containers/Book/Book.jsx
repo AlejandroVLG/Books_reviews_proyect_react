@@ -21,7 +21,7 @@ const Book = () => {
             setbooksData({
                 books: response.data.data
             })
-            
+
         } catch (error) {
             console.log(error)
         }
@@ -62,11 +62,13 @@ const Book = () => {
                     onChange={handleChange}
                 />
             </div>
+            <div className="blankSpaceDiv" ></div>
             <div className="bookContentBox">
                 {results.length === 0 &&
                     <div>
-                        <Spinner />
                         <p className="loadingText">Cargando contenido</p>
+                        <Spinner />
+                        
                     </div>
                 }
                 {

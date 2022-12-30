@@ -5,17 +5,16 @@ import { Container } from "react-bootstrap"
 export default function Spinner() {
 
   return (
-    <Container>
-      <ClipLoader speedMultiplier={0.8} color="white" size={250} />
-
+    <Container >
       <PulseLoader
         color="white"
         cssOverride={{}}
         loading
         margin={12}
-        size={25}
-        speedMultiplier={0.5}
+        size={35}
+        speedMultiplier={0.7}
       />
+      
     </Container>
   )
 }
