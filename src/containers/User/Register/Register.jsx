@@ -106,8 +106,8 @@ const Register = () => {
           password: register.password,
           profile_img: register.profile_img
         }
-
       )
+
       if (!user) {
 
         setRegister(
@@ -118,6 +118,7 @@ const Register = () => {
           }
         )
       } else {
+
         setRegister(
           {
             ...register,
@@ -138,7 +139,6 @@ const Register = () => {
       }
 
     } catch (error) {
-      console.log(error)
 
       if (
         error.response.status == 400
@@ -151,7 +151,15 @@ const Register = () => {
               error.response.data.error.name ||
               error.response.data.error.nick_name ||
               error.response.data.error.email ||
-              error.response.data.error.password 
+              error.response.data.error.password
+          }
+        )
+      } else {
+        setRegister(
+          {
+            ...register,
+            isError: true,
+            registerMessage: error.message
           }
         )
       }
