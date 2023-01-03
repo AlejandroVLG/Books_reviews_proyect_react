@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit"
-import axios from "axios"
+import axios, { AxiosError } from "axios"
 import { useNavigate } from "react-router"
 
 export const userSlice = createSlice({
@@ -7,23 +7,18 @@ export const userSlice = createSlice({
     name: 'user',
     initialState: {
         token: "",
-        isRegister: false,
-        successMessage: "",
         infoData: {}
     },
     reducers: {
         register: (state, action) => {
             return {
-                ...state,
-                isRegister: true,
-                successMessage: "Te has registrado correctamente"
+                ...state
             }
         },
         login: (state, action) => {
             return {
                 ...state,
-                ...action.payload,
-                successMessage: "Te has identificado correctamente"
+                ...action.payload
             }
         },
         logout: (state, action) => {
@@ -35,18 +30,17 @@ export const userSlice = createSlice({
     }
 })
 
-export const registerUser = (name, nick_name, email, password) => async (dispatch) => {
+export const registerUser = (name, nick_name, email, password, profile_img) => async (dispatch) => {
 
     try {
-        const user = await axios.post('https://bookapi.up.railway.app/api/register',
-            {
-                name: name,
-                nick_name: nick_name,
-                email: email,
-                password: password
-            }
-        )
-        let response = user
+        const response =
+        {
+            name: name,
+            nick_name: nick_name,
+            email: email,
+            password: password,
+            profile_img: profile_img
+        }
 
         if (response.status === 200 || response.status === 201) {
             dispatch(register(response.data))
