@@ -52,7 +52,7 @@ const Login = () => {
           {
             ...credentials,
             isError: true,
-            message: "Contraseña incorrecta"
+            loginMessage: "Contraseña incorrecta"
           }
         )
         return
@@ -64,45 +64,81 @@ const Login = () => {
         {
           ...credentials,
           isError: true,
-          message: "La contraseña debe tener al menos 6 carácteres"
+          loginMessage: "La contraseña debe tener al menos 6 carácteres"
         }
       )
       return
     }
 
-    setCredentials(
-      {
-        ...credentials,
-        isError: false,
-        successMsg: "Te has identificado correctamente"
+    try {
+
+      let body = {
+        email: credentials.email,
+        password: credentials.password
       }
-    )
 
-    let body = {
-      email: credentials.email,
-      password: credentials.password
-    }
+      const userToken = await axios.post("https://bookapi.up.railway.app/api/login", body)
 
-    const userToken = await axios.post("https://bookapi.up.railway.app/api/login", body)
+      if (userToken.status === 200) {
 
-    if (userToken.status === 200) {
+        const identification = userToken.data
 
-      const identification = userToken.data
-
-      let requirements = {
-        headers: {
-          "Authorization": `Bearer ${identification.token}`
+        let requirements = {
+          headers: {
+            "Authorization": `Bearer ${identification.token}`
+          }
         }
-      }
 
-      const userInfoData = await axios.get('https://bookapi.up.railway.app/api/user/myProfile', requirements)
+        const userInfoData = await axios.get('https://bookapi.up.railway.app/api/user/myProfile', requirements)
 
-      dispatch(login(
-        {
+        dispatch(login(
+          {
             token: userToken.data.token,
             infoData: userInfoData.data
-        }
-    ))
+          }
+        ))
+      }
+      if (!userToken) {
+
+        setCredentials(
+          {
+            ...credentials,
+            isError: true,
+            loginMessage: "Request failed"
+          }
+        )
+      } else {
+
+        setCredentials(
+          {
+            ...credentials,
+            isError: false,
+            loginMessage: "Te has identificado correctamente"
+          }
+        )
+      }
+
+    } catch (error) {
+      console.log(error)
+      if (
+        error.response.status == 400
+      ) {
+        setCredentials(
+          {
+            ...credentials,
+            isError: true,
+            loginMessage: error.message
+          }
+        )
+      } else {
+        setCredentials(
+          {
+            ...credentials,
+            isError: true,
+            loginMessage: error.response.data.message
+          }
+        )
+      }
     }
   }
 
@@ -148,9 +184,9 @@ const Login = () => {
             <div className='loginMessage'>
               {
                 credentials.isError ?
-                  (<p style={{ color: "red" }}>{credentials.message}</p>)
+                  (<p style={{ color: "red" }}>{credentials.loginMessage}</p>)
                   :
-                  (<p style={{ color: "green" }}>{credentials.successMsg}</p>)
+                  (<p style={{ color: "green" }}>{credentials.loginMessage}</p>)
               }
               {credentials.isError === "" && <p><Spinner /></p>}
             </div>
