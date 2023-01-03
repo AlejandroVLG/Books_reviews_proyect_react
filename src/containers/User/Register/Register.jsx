@@ -1,15 +1,11 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Col, Form, Row } from 'react-bootstrap'
-import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import Spinner from '../../../components/Spinner/Spinner'
-import { registerUser } from '../userSlice'
 import "./Register.scss"
 
 const Register = () => {
-
-  const dispatch = useDispatch()
 
   const navigate = useNavigate()
 
@@ -125,16 +121,6 @@ const Register = () => {
             isError: false,
             registerMessage: "Registro completado correctamente"
           }
-        )
-
-        dispatch(registerUser
-          (
-            register.name,
-            register.nick_name,
-            register.email,
-            register.password,
-            register.profile_img
-          )
         )
       }
 
