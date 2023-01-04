@@ -31,11 +31,22 @@
 	box-shadow: 0.2em 0em 1.9em 0.3em rgba(163, 163, 163, 0.4);
 }
 
-.boxButton {
+.imgBox {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.imgInput{
+	width: 60% !important;
+}
+
+.buttonBox {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	grid-column: span 2;
 }
 
 .sendButtom {

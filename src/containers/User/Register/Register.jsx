@@ -15,7 +15,7 @@ const Register = () => {
       nick_name: "",
       email: "",
       password: "",
-      profile_img: "../../../../public/Img/ProfileImg.jpg"
+      profile_img: ""
     }
   )
 
@@ -100,7 +100,7 @@ const Register = () => {
           nick_name: register.nick_name,
           email: register.email,
           password: register.password,
-          profile_img: register.profile_img
+          profile_img: "../../../../public/Img/ProfileImg.jpg"
         }
       )
 
@@ -204,7 +204,6 @@ const Register = () => {
           </Form.Group>
         </Col>
         <Col xs={12} sm={12} md={6} lg={6} xl={6} xxl={6} >
-
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label className='registerLabel'>Correo electrónico</Form.Label>
             <Form.Control
@@ -220,7 +219,6 @@ const Register = () => {
           </Form.Group>
         </Col>
         <Col xs={12} sm={12} md={6} lg={6} xl={6} xxl={6} >
-
           <Form.Group className="mb-3" controlId="formBasicPassword">
             <Form.Label className='registerLabel'>Contraseña</Form.Label>
             <Form.Control
@@ -236,7 +234,41 @@ const Register = () => {
           </Form.Group>
         </Col>
         <Col xs={12} sm={12} md={12} lg={12} xl={12} xxl={12} >
-          <Form.Group className="mb-3 boxButton">
+          <Form.Group className="mb-3 imgBox" controlId="formBasicProfileImg">
+            <Form.Label className='registerLabel'>
+              Género literario
+            </Form.Label>
+            <Form.Select
+              aria-label="Default select example"
+              className='registerInput imgInput'
+              name='profile_img'
+              onChange={handleInput}>
+              <option>Abrir el desplegable</option>
+              <option value="../../../../public/Img/avatar1.jpg" className='avatar1'>Imagen 1</option>
+              <option value="../../../../public/Img/avatar2.jpg" className='avatar1'>Imagen 2</option>
+              <option value="../../../../public/Img/avatar3.jpg" className='avatar1'>Imagen 3</option>
+              <option value="../../../../public/Img/avatar4.jpg" className='avatar1'>Imagen 4</option>
+              <option value="../../../../public/Img/avatar5.jpg" className='avatar1'>Imagen 5</option>
+              <option value="../../../../public/Img/avatar6.jpg" className='avatar1'>Imagen 6</option>
+              <option value="../../../../public/Img/avatar7.jpg" className='avatar1'>Imagen 7</option>
+              <option value="../../../../public/Img/avatar8.jpg" className='avatar1'>Imagen 8</option>
+              <option value="../../../../public/Img/avatar9.jpg" className='avatar1'>Imagen 9</option>
+              <option value="../../../../public/Img/avatar10.jpg" className='avatar1'>Imagen 10</option>
+              <option value="../../../../public/Img/avatar11.jpg" className='avatar1'>Imagen 11</option>
+              <option value="../../../../public/Img/avatar12.jpg" className='avatar1'>Imagen 12</option>
+              <option value="../../../../public/Img/avatar13.jpg" className='avatar1'>Imagen 13</option>
+              <option value="../../../../public/Img/avatar14.jpg" className='avatar1'>Imagen 14</option>
+              <option value="../../../../public/Img/avatar15.jpg" className='avatar1'>Imagen 15</option>
+              <option value="../../../../public/Img/avatar16.jpg" className='avatar1'>Imagen 16</option>
+
+            </Form.Select>
+            <Form.Text className="text-muted">
+              Selecciona una imagen de perfil
+            </Form.Text>
+          </Form.Group>
+        </Col>
+        <Col xs={12} sm={12} md={12} lg={12} xl={12} xxl={12} >
+          <Form.Group className="mb-3 buttonBox">
             <button className='sendButtom' variant="primary" type="submit">
               Registrarse
             </button>
