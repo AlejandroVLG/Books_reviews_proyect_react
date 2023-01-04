@@ -597,11 +597,6 @@ const EditUser = () => {
                             </Form.Text>
                         </Form.Group>
                     </Col>
-                    <Col xs={12} sm={12} md={6} lg={6} xl={6} xxl={6} className="avatarImgBox" >
-                        <div className='avatarImg'>
-                            <img src={avatarImgState.profile_img} alt="avatar" className='avatarImg'/>
-                        </div>
-                    </Col>
                     <Col xs={12} sm={12} md={6} lg={6} xl={6} xxl={6} >
                         <Form.Group className="mb-3 imgBox" controlId="formBasicProfileImg">
                             <Form.Label className='editProfileLabel'>
@@ -634,6 +629,9 @@ const EditUser = () => {
                                 Selecciona una imagen de perfil
                             </Form.Text>
                         </Form.Group>
+                    </Col>
+                    <Col xs={12} sm={12} md={6} lg={6} xl={6} xxl={6} className="avatarImgBox" >
+                        <img src={avatarImgState.profile_img} className='avatarImg' />
                     </Col>
                     <Col xs={12} sm={12} md={12} lg={12} xl={12} xxl={12} >
                         <Form.Group className="mb-3 editProfileBoxButton">
