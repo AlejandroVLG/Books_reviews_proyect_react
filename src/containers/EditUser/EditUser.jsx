@@ -33,13 +33,19 @@ const EditUser = () => {
         profile_img: ''
     })
 
+    const [avatarImgState, setAvatarImgState] = useState("")
+
     const handleChange = (e) => {
         setEditedUserState({
             ...editedUserState,
             [e.target.name]: e.target.value
         })
+        setAvatarImgState({
+            ...avatarImgState,
+            [e.target.name]: e.target.value
+        })
     }
-
+    console.log(avatarImgState)
     let requirements = {
         headers: {
             "Authorization": `Bearer ${identification.token}`,
@@ -64,7 +70,7 @@ const EditUser = () => {
             facebook_account: userResponse.data.data.facebook_account || "blank",
             twitter_account: userResponse.data.data.twitter_account || "blank",
             instagram_account: userResponse.data.data.instagram_account || "blank",
-            profile_img: userResponse.data.data.profile_img || "../../../public/Img/ProfileImg.jpg"
+            profile_img: userResponse.data.data.profile_img
         })
     }
 
@@ -591,20 +597,41 @@ const EditUser = () => {
                             </Form.Text>
                         </Form.Group>
                     </Col>
+                    <Col xs={12} sm={12} md={6} lg={6} xl={6} xxl={6} className="avatarImgBox" >
+                        <div className='avatarImg'>
+                            <img src={avatarImgState.profile_img} alt="avatar" className='avatarImg'/>
+                        </div>
+                    </Col>
                     <Col xs={12} sm={12} md={6} lg={6} xl={6} xxl={6} >
-                        <Form.Group className="mb-3" controlId="formBasicProfileImg">
+                        <Form.Group className="mb-3 imgBox" controlId="formBasicProfileImg">
                             <Form.Label className='editProfileLabel'>
                                 Imagen de perfil
                             </Form.Label>
-                            <Form.Control
+                            <Form.Select
+                                aria-label="Default select example"
                                 className='editProfileInput'
-                                type="text"
                                 name='profile_img'
-                                placeholder='Escribe aquí'
-                                onChange={handleChange}
-                            />
+                                onChange={handleChange}>
+                                <option>Abrir el desplegable</option>
+                                <option value="../../../../public/Img/avatar1.jpg" className='avatar avatar1'>Imagen 1</option>
+                                <option value="../../../../public/Img/avatar2.jpg" className='avatar avatar2'>Imagen 2</option>
+                                <option value="../../../../public/Img/avatar3.jpg" className='avatar avatar3'>Imagen 3</option>
+                                <option value="../../../../public/Img/avatar4.jpg" className='avatar avatar4'>Imagen 4</option>
+                                <option value="../../../../public/Img/avatar5.jpg" className='avatar avatar5'>Imagen 5</option>
+                                <option value="../../../../public/Img/avatar6.jpg" className='avatar avatar6'>Imagen 6</option>
+                                <option value="../../../../public/Img/avatar7.jpg" className='avatar avatar7'>Imagen 7</option>
+                                <option value="../../../../public/Img/avatar8.jpg" className='avatar avatar8'>Imagen 8</option>
+                                <option value="../../../../public/Img/avatar9.jpg" className='avatar avatar9'>Imagen 9</option>
+                                <option value="../../../../public/Img/avatar10.jpg" className='avatar avatar10'>Imagen 10</option>
+                                <option value="../../../../public/Img/avatar11.jpg" className='avatar avatar11'>Imagen 11</option>
+                                <option value="../../../../public/Img/avatar12.jpg" className='avatar avatar12'>Imagen 12</option>
+                                <option value="../../../../public/Img/avatar13.jpg" className='avatar avatar13'>Imagen 13</option>
+                                <option value="../../../../public/Img/avatar14.jpg" className='avatar avatar14'>Imagen 14</option>
+                                <option value="../../../../public/Img/avatar15.jpg" className='avatar avatar15'>Imagen 15</option>
+                                <option value="../../../../public/Img/avatar16.jpg" className='avatar avatar16'>Imagen 16</option>
+                            </Form.Select>
                             <Form.Text className="text-muted">
-                                Modificar imagen de perfil
+                                Selecciona una imagen de perfil
                             </Form.Text>
                         </Form.Group>
                     </Col>
