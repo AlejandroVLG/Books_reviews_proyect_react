@@ -1,6 +1,6 @@
 .registerForm {
 	height: auto;
-	max-width: 90%;
+	max-width: 100%;
 	padding: 2.5em;
 	color: white;
 	margin: auto;
@@ -40,11 +40,12 @@
 
 .sendButtom {
 	display: flex;
+	margin-top: 3em;
 	justify-content: center;
 	align-items: center;
 	height: 2.8em;
 	line-height: 2.8em;
-	width: 40%;
+	width: 50%;
 	background: #000;
 	color: #fff;
 	font-weight: bold;

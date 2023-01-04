@@ -18,7 +18,7 @@ const NavigationBar = () => {
     if (!identification.token) {
 
         return (
-            <Navbar bg="dark" expand="lg" className="navBarBox">
+            <Navbar bg="dark" expand="sm" className="navBarBox">
                 <Container>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav collapsed">
@@ -51,7 +51,7 @@ const NavigationBar = () => {
     } else {
         return (
 
-            <Navbar bg="dark" expand="lg" className="navBarBox">
+            <Navbar bg="dark" expand="sm" className="navBarBox">
                 <Container >
                     <Navbar.Brand onClick={() => navigate("/myProfile")}>
                         <img
