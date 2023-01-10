@@ -57,15 +57,15 @@ const EditUser = () => {
 
         setEditedUserState({
             name: userResponse.data.data.name,
-            last_name: userResponse.data.data.last_name || "",
+            last_name: userResponse.data.data.last_name || "Info no disponible",
             nick_name: userResponse.data.data.nick_name,
             password: userResponse.data.data.password,
-            gender: userResponse.data.data.gender || "",
-            age: userResponse.data.data.age || "",
-            country: userResponse.data.data.country || "",
-            favourite_author: userResponse.data.data.favourite_author || "",
-            favourite_genre: userResponse.data.data.favourite_genre || "",
-            currently_reading: userResponse.data.data.currently_reading || "",
+            gender: userResponse.data.data.gender || "Info no disponible",
+            age: userResponse.data.data.age || "Info no disponible",
+            country: userResponse.data.data.country || "Info no disponible",
+            favourite_author: userResponse.data.data.favourite_author || "Info no disponible",
+            favourite_genre: userResponse.data.data.favourite_genre || "Info no disponible",
+            currently_reading: userResponse.data.data.currently_reading || "Info no disponible",
             facebook_account: userResponse.data.data.facebook_account || "blank",
             twitter_account: userResponse.data.data.twitter_account || "blank",
             instagram_account: userResponse.data.data.instagram_account || "blank",
@@ -108,8 +108,6 @@ const EditUser = () => {
                 })
             }
         } catch (error) {
-
-            console.log(error)
 
             setEditedUserState({
                 ...editedUserState,
