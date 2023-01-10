@@ -18,6 +18,7 @@ import { logOut, userData } from "../../containers/User/userSlice"
 import { useNavigate } from "react-router"
 import axios from "axios"
 import { useState } from "react"
+import { Button, Col, Row } from "react-bootstrap"
 
 const ProfileCard = props => {
 
@@ -201,20 +202,28 @@ const ProfileCard = props => {
                                             (<p style={{ color: "green" }}>{deletedProfileState.message}</p>)
                                     }
                                 </div>
-                                <MDBBtn
-                                    className='mx-2 myProfileBtn'
-                                    color='dark'
-                                    onClick={() => navigate(`/editMyProfile/${props.data.id}`)}
-                                >
-                                    Editar Perfil
-                                </MDBBtn>
-                                <MDBBtn
-                                    className='mx-2 myProfileBtn'
-                                    color='dark'
-                                    onClick={handleDeleteProfile}
-                                >
-                                    Eliminar Perfil
-                                </MDBBtn>
+                                <Row>
+                                    <Col className="buttonsCol" xs={12} sm={12} md={12} lg={6} xl={6} xxl={6}>
+                                        <Button
+                                            className='myProfileBtn'
+                                            variant="dark"
+                                            onClick={() => navigate(`/editMyProfile/${props.data.id}`)}
+                                        >
+                                            Editar Perfil
+                                        </Button>
+
+                                    </Col>
+                                    <Col className="buttonsCol" xs={12} sm={12} md={12} lg={6} xl={6} xxl={6}>
+                                        <Button
+                                            className='myProfileBtn'
+                                            variant="dark"
+                                            onClick={handleDeleteProfile}
+                                        >
+                                            Eliminar Perfil
+                                        </Button>
+                                    </Col>
+                                </Row>
+
                             </MDBCardBody>
                         </MDBCol>
                     </MDBRow>

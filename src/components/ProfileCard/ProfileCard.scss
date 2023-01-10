@@ -65,7 +65,15 @@
     box-shadow: 0em 0em 0.1em 0.05em rgba(1, 1, 1, 0.49);
 }
 
-.myProfileBtn:hover{
+.myProfileEditBtn {
+    margin-bottom: 1em;
+}
+
+.myProfileBtn {
+    border: 0em !important;
+}
+
+.myProfileBtn:hover {
     color: black !important;
     background: white !important;
     border: white;
