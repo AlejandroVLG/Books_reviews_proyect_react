@@ -45,7 +45,6 @@ const EditUser = () => {
             [e.target.name]: e.target.value
         })
     }
-    console.log(avatarImgState)
     let requirements = {
         headers: {
             "Authorization": `Bearer ${identification.token}`,
@@ -58,15 +57,15 @@ const EditUser = () => {
 
         setEditedUserState({
             name: userResponse.data.data.name,
-            last_name: userResponse.data.data.last_name || "Campo sin información",
+            last_name: userResponse.data.data.last_name || "",
             nick_name: userResponse.data.data.nick_name,
             password: userResponse.data.data.password,
-            gender: userResponse.data.data.gender || "Campo sin información",
-            age: userResponse.data.data.age || "Campo sin información",
-            country: userResponse.data.data.country || "Campo sin información",
-            favourite_author: userResponse.data.data.favourite_author || "Campo sin información",
-            favourite_genre: userResponse.data.data.favourite_genre || "Campo sin información",
-            currently_reading: userResponse.data.data.currently_reading || "Campo sin información",
+            gender: userResponse.data.data.gender || "",
+            age: userResponse.data.data.age || "",
+            country: userResponse.data.data.country || "",
+            favourite_author: userResponse.data.data.favourite_author || "",
+            favourite_genre: userResponse.data.data.favourite_genre || "",
+            currently_reading: userResponse.data.data.currently_reading || "",
             facebook_account: userResponse.data.data.facebook_account || "blank",
             twitter_account: userResponse.data.data.twitter_account || "blank",
             instagram_account: userResponse.data.data.instagram_account || "blank",
@@ -122,11 +121,7 @@ const EditUser = () => {
 
     if (identification.token === "") {
 
-        return (
-            useEffect(() => {
-                navigate("/login")
-            }, [])
-        )
+        return (navigate("/login"))
     } else {
 
         return (

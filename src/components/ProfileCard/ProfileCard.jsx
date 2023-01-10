@@ -71,7 +71,7 @@ const ProfileCard = props => {
     return (
 
         <motion.div
-            className="vh-100 mainBox"
+            className="vh-100% mainBox"
             style={{
                 background: 'linear-gradient(109.6deg, rgb(36, 45, 57) 11.2%, rgb(16, 37, 60) 51.2%, rgb(0, 0, 0) 98.6%)'
             }}
@@ -79,13 +79,13 @@ const ProfileCard = props => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0, type: 'spring', stiffness: 30 }}
         >
-            <MDBContainer fluid className="py-5 h-100 cardContainer">
+            <MDBContainer fluid className="py-5 cardContainer">
                 <MDBCard className="mb-3 cardProfile " style={{ borderRadius: '.5em' }}>
                     <MDBRow className="g-0">
                         <MDBCol
                             md="4"
-                            className="gradient-custom text-center text-white"
-                            style={{ borderTopLeftRadius: '.5em', borderBottomLeftRadius: '.5em' }}
+                            className="gradient-custom text-center text-white cardLeftCol"
+                            style={{ borderRadius: '.5em' }}
                         >
                             <MDBCardImage
                                 src={props.data.profile_img}
@@ -105,8 +105,12 @@ const ProfileCard = props => {
                             <MDBTypography tag="h6">{props.data.country}</MDBTypography>
                             <br />
                         </MDBCol>
-                        <MDBCol md="8" className="infoProfileBox">
-                            <MDBCardBody className="p-4">
+                        <MDBCol
+                            md="8"
+                            className="infoProfileBox cardRightCol"
+                            style={{ borderRadius: '.5em' }}
+                        >
+                            <MDBCardBody className="p-4" >
                                 <MDBTypography
                                     className='dataHead'
                                     tag="h6"
@@ -189,31 +193,31 @@ const ProfileCard = props => {
                                         <Icon className='socialIcon' icon="ant-design:instagram-outlined" />
                                     </a>
                                 </div>
+                                <div className='myProfileMessage'>
+                                    {
+                                        deletedProfileState.isError ?
+                                            (<p style={{ color: "red" }}>{deletedProfileState.message}</p>)
+                                            :
+                                            (<p style={{ color: "green" }}>{deletedProfileState.message}</p>)
+                                    }
+                                </div>
+                                <MDBBtn
+                                    className='mx-2 myProfileBtn'
+                                    color='dark'
+                                    onClick={() => navigate(`/editMyProfile/${props.data.id}`)}
+                                >
+                                    Editar Perfil
+                                </MDBBtn>
+                                <MDBBtn
+                                    className='mx-2 myProfileBtn'
+                                    color='dark'
+                                    onClick={handleDeleteProfile}
+                                >
+                                    Eliminar Perfil
+                                </MDBBtn>
                             </MDBCardBody>
                         </MDBCol>
                     </MDBRow>
-                    <div className='newBookMessage'>
-                        {
-                            deletedProfileState.isError ?
-                                (<p style={{ color: "red" }}>{deletedProfileState.message}</p>)
-                                :
-                                (<p style={{ color: "green" }}>{deletedProfileState.message}</p>)
-                        }
-                    </div>
-                    <MDBBtn
-                        className='mx-2 bookCardBtn2'
-                        color='dark'
-                        onClick={() => navigate(`/editMyProfile/${props.data.id}`)}
-                    >
-                        Editar Perfil
-                    </MDBBtn>
-                    <MDBBtn
-                        className='mx-2 bookCardBtn3'
-                        color='dark'
-                        onClick={handleDeleteProfile}
-                    >
-                        Eliminar Perfil
-                    </MDBBtn>
                 </MDBCard>
             </MDBContainer>
         </motion.div>
