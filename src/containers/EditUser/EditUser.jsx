@@ -114,7 +114,21 @@ const EditUser = () => {
             setEditedUserState({
                 ...editedUserState,
                 isError: true,
-                message: error.message
+                message:
+                    error.response.data.message.name ||
+                    error.response.data.message.last_name ||
+                    error.response.data.message.nick_name ||
+                    error.response.data.message.password ||
+                    error.response.data.message.gender ||
+                    error.response.data.message.age ||
+                    error.response.data.message.country ||
+                    error.response.data.message.favourite_author ||
+                    error.response.data.message.favourite_genre ||
+                    error.response.data.message.currently_reading ||
+                    error.response.data.message.facebook_account ||
+                    error.response.data.message.twitter_account ||
+                    error.response.data.message.instagram_account ||
+                    error.response.data.message.profile_img
             })
         }
     }
