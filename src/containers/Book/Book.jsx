@@ -4,8 +4,12 @@ import { MDBCol, MDBContainer, MDBRow } from "mdb-react-ui-kit"
 import BookCard from "../../components/BookCard/BookCard"
 import Spinner from "../../components/Spinner/Spinner"
 import "./Book.scss"
+import { useDispatch } from "react-redux"
+import { login } from "../User/userSlice"
 
 const Book = () => {
+
+    const dispatch = useDispatch()
 
     const [booksData, setbooksData] = useState({
         books: []
@@ -21,6 +25,11 @@ const Book = () => {
             setbooksData({
                 books: response.data.data
             })
+            dispatch(login(
+                {
+                    bookData: response.data
+                }
+            ))
 
         } catch (error) {
             console.log(error)
@@ -68,7 +77,7 @@ const Book = () => {
                     <div>
                         <p className="loadingText">Cargando contenido</p>
                         <Spinner />
-                        
+
                     </div>
                 }
                 {
