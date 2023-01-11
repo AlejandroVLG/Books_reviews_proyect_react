@@ -94,7 +94,18 @@ const EditBook = () => {
             setEditedBookState({
                 ...editedBookState,
                 isError: true,
-                message: error.message
+                message:
+                    error.response.data.message.title ||
+                    error.response.data.message.series ||
+                    error.response.data.message.author ||
+                    error.response.data.message.genre ||
+                    error.response.data.message.gender ||
+                    error.response.data.message.year ||
+                    error.response.data.message.book_cover ||
+                    error.response.data.message.author_wiki_url ||
+                    error.response.data.message.shop_url ||
+                    error.response.data.message.synopsis ||
+                    error.response.data.message
             })
         }
     }

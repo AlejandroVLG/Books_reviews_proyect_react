@@ -64,7 +64,7 @@ const BookCard = props => {
             })
         }
     }
-
+    console.log(identification)
     if (identification.infoData) {
 
         for (const book of identification.bookData.data) {

@@ -126,7 +126,8 @@ const EditUser = () => {
                     error.response.data.message.facebook_account ||
                     error.response.data.message.twitter_account ||
                     error.response.data.message.instagram_account ||
-                    error.response.data.message.profile_img
+                    error.response.data.message.profile_img ||
+                    error.response.data.message
             })
         }
     }

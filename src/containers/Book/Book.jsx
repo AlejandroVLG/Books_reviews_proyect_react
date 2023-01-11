@@ -92,8 +92,7 @@ const Book = () => {
                                 </MDBRow>
                             </MDBContainer>
                         </div>
-                    )
-                    )
+                    ))
                 }
             </div>
         </div>
