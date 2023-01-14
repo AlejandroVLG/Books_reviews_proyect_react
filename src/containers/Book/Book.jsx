@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react"
 import axios from "axios"
 import { MDBCol, MDBContainer, MDBRow } from "mdb-react-ui-kit"
-import BookCard from "../../components/BookCard/BookCard"
 import Spinner from "../../components/Spinner/Spinner"
-import "./Book.scss"
+import FlipCard from "../../components/FlipCard/FlipCard"
 import { useDispatch } from "react-redux"
 import { login } from "../User/userSlice"
+import "./Book.scss"
 
 const Book = () => {
 
@@ -61,18 +61,19 @@ const Book = () => {
     }, [])
 
     return (
-        <div className="bookMainBox">
-            <div className="searchBarDiv">
-                <input
-                    className="form-control searchBar"
-                    type="text"
-                    value={search}
-                    placeholder="Búsqueda por título, autor, género, saga o fecha de publicación"
-                    onChange={handleChange}
-                />
-            </div>
-            <div className="blankSpaceDiv" ></div>
-            <div className="bookContentBox">
+        <MDBContainer fluid>
+            <MDBRow >
+                <MDBCol>
+                    <input
+                        className="form-control searchBar"
+                        type="text"
+                        value={search}
+                        placeholder="Búsqueda por título, autor, género, saga o fecha de publicación"
+                        onChange={handleChange}
+                    />
+                </MDBCol>
+            </MDBRow>
+            <MDBRow>
                 {results.length === 0 &&
                     <div>
                         <p className="loadingText">Cargando contenido</p>
@@ -80,22 +81,18 @@ const Book = () => {
 
                     </div>
                 }
+            </MDBRow>
+            <MDBRow className="row-cols-1 row-cols-md-4 g-4">
                 {
                     results.map((books, i) =>
                     (
-                        <div key={i}>
-                            <MDBContainer className="py-1 h-100 bookCardContainer">
-                                <MDBRow className="justify-content-center align-items-center h-100">
-                                    <MDBCol lg="12" className="mb-2 mb-lg-0 colCard" >
-                                        <BookCard data={books} key={i} />
-                                    </MDBCol>
-                                </MDBRow>
-                            </MDBContainer>
-                        </div>
+                        <MDBCol className="mb-2 mb-lg-0 colCard" xs={12} sm={12} md={12} lg={3} xl={3} xxl={2}>
+                            <FlipCard books={books} key={i} />
+                        </MDBCol>
                     ))
                 }
-            </div>
-        </div>
+            </MDBRow>
+        </MDBContainer>
     )
 }
 

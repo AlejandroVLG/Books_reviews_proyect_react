@@ -69,7 +69,7 @@ const Register = () => {
 
     if (register.password.length >= 6) {
 
-      if (! /^.{4,12}$/g.test(register.password)) {
+      if (! /^.{4,16}$/g.test(register.password)) {
 
         setRegister(
           {
