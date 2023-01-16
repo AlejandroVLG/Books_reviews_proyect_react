@@ -9,6 +9,15 @@
     box-shadow: 0 0 0.4em 0.2em rgba(255, 255, 255, 0.534);
 }
 
+.bookSpinner{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
 .loadingText {
     color: white;
     font-size: xx-large;

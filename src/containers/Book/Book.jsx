@@ -75,7 +75,7 @@ const Book = () => {
             </MDBRow>
             <MDBRow>
                 {results.length === 0 &&
-                    <div>
+                    <div className="bookSpinner">
                         <p className="loadingText">Cargando contenido</p>
                         <Spinner />
 
