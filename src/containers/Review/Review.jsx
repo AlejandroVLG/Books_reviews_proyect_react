@@ -27,11 +27,17 @@ const Review = () => {
 
     const showReviews = async () => {
 
-        const response = await axios.get(`https://bookapi.up.railway.app/api/review/searchReviewByBookId/${id}`, requirements)
+        try {
 
-        setReviewsData({
-            reviews: response.data.data
-        })
+            const response = await axios.get(`https://bookapi.up.railway.app/api/review/searchReviewByBookId/${id}`, requirements)
+
+            setReviewsData({
+                reviews: response.data.data
+            })
+        } catch (error) {
+
+            console.log(error)
+        }
     }
 
     useEffect(() => {
