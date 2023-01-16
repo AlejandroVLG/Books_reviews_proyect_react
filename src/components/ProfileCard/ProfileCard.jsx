@@ -203,7 +203,7 @@ const ProfileCard = props => {
                                     }
                                 </div>
                                 <Row>
-                                    <Col className="buttonsCol" xs={12} sm={12} md={12} lg={6} xl={6} xxl={6}>
+                                    <Col xs={12} sm={12} md={12} lg={6} xl={6} xxl={6}>
                                         <Button
                                             className='myProfileBtn'
                                             variant="dark"
@@ -213,7 +213,7 @@ const ProfileCard = props => {
                                         </Button>
 
                                     </Col>
-                                    <Col className="buttonsCol" xs={12} sm={12} md={12} lg={6} xl={6} xxl={6}>
+                                    <Col xs={12} sm={12} md={12} lg={6} xl={6} xxl={6}>
                                         <Button
                                             className='myProfileBtn'
                                             variant="dark"

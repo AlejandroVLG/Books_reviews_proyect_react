@@ -92,7 +92,8 @@ const NewBook = () => {
                 bookState.year ||
                 bookState.book_cover ||
                 bookState.author_wiki_url ||
-                bookState.shop_url == ""
+                bookState.shop_url ||
+                bookState.synopsis == ""
             ) {
                 setBookState({
                     ...bookState,
@@ -188,7 +189,7 @@ const NewBook = () => {
                             <option value="Terror">Terror</option>
                         </Form.Select>
                         <Form.Text className="text-muted">
-                            Selecciona uno de entre los géneros indicados
+                            Selecciona uno entre los géneros indicados
                         </Form.Text>
                     </Form.Group>
                 </Col>

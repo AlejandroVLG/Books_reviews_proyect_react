@@ -82,11 +82,14 @@ const Book = () => {
                     </div>
                 }
             </MDBRow>
-            <MDBRow className="row-cols-1 row-cols-md-4 g-4">
+            <MDBRow className="bookCardsRowContainer row-cols-1 row-cols-md-4 g-4">
                 {
                     results.map((books, i) =>
                     (
-                        <MDBCol className="mb-2 mb-lg-0 colCard" xs={12} sm={12} md={12} lg={3} xl={3} xxl={2}>
+                        <MDBCol
+                            className="mb-2 mb-lg-0 colCard"
+                            sm={7} md={6} lg={5} xl={4} xxl={3}
+                            key={i}>
                             <FlipCard books={books} key={i} />
                         </MDBCol>
                     ))

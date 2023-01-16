@@ -14,6 +14,9 @@
     position: relative;
     user-select: none;
     cursor: pointer;
+    box-shadow: 0 0 0.4em 0.1em rgba(255, 255, 255, 0.537);
+    border-radius: 0.4em;
+    margin-bottom: 0.5em;
 }
 
 .frontCard,
@@ -22,12 +25,39 @@
     width: 100%;
     position: absolute;
     backface-visibility: hidden;
-    text-shadow: 1px 1px 15px rgba(0, 0, 0, 0.9);
+    border-radius: 0.4em;
 }
 
 .backCard {
-    background-color: rgb(189, 147, 69);
     transform: rotateY(180deg);
+    background-color: #fff;
+}
+
+.bookCardBody {
+    height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    margin-top: 2em;
+    color: white !important;
+    background: linear-gradient(#200122, #6f0000);
+
+}
+
+.cardSynopsis {
+    font-size: x-small;
+}
+
+.bookCardBtn {
+    border: 0em !important;
+    margin-bottom: 1em;
+}
+
+.bookCardBtn:hover {
+    color: black !important;
+    background: #fff !important;
+    border: #fff;
+    box-shadow: 0em 0em 0.3em 0.1em #fff;
 }
 
 .flip-exit {
@@ -57,7 +87,7 @@
     transform: rotateY(0deg);
 }
 
-.linksBookCardRow{
+.linksBookCardRow {
     display: flex;
     align-items: center;
     justify-content: center;
