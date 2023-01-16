@@ -49,7 +49,7 @@ const EditReview = () => {
                 setEditedReviewState({
                     ...editedReviewState,
                     isError: false,
-                    resultMessage: 'Libro añadido correctamente'
+                    resultMessage: 'Reseña modificada correctamente'
                 })
 
                 setTimeout(() => {

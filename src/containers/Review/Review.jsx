@@ -38,6 +38,8 @@ const Review = () => {
         showReviews()
     }, [])
 
+    console.log(reviewData.reviews)
+
     return (
 
         <MDBContainer fluid>
@@ -49,15 +51,21 @@ const Review = () => {
                             <Spinner />
                         </div>
                     }
+
+                </MDBCol>
+            </MDBRow>
+            <MDBRow>
+                <MDBCol>
                     {
-                        reviewData.reviews.map((reviews, i) =>
+                        reviewData.reviews.map((review, i) =>
                         (
                             <div className="reviewsBox" key={i}>
-                                <ReviewCard key={i} data={reviews} />
+                                <ReviewCard key={i} data={review} />
                             </div>
                         )
                         )
                     }
+
                 </MDBCol>
             </MDBRow>
 
