@@ -111,7 +111,39 @@ const BookCard = ({ onClick, books }) => {
 
                     <div className="backCard">
                         <MDBCardBody className="bookCardBody">
-                            <MDBCardTitle>{books.title}</MDBCardTitle>
+                            <MDBCardTitle>
+                                <Row>
+                                    <div className='BookMessage'>
+                                        {
+                                            deleteDataState.isError ?
+                                                (<p style={{ color: "red" }}>{deleteDataState.message}</p>)
+                                                :
+                                                (<p style={{ color: "green" }}>{deleteDataState.message}</p>)
+                                        }
+                                    </div>
+                                    <Col className="iconEditCol" xs={12} sm={12} md={12} lg={6} xl={6} xxl={6}>
+                                        <button
+                                            className='bookCardBtn'
+                                            variant="dark"
+                                            onClick={() => navigate(`/editMyProfile/${books.id}`)}
+                                        >
+                                            <img className="editIcon" src="../../../public/Img/editIcon.jpeg" alt="editIcon" />
+                                        </button>
+
+                                    </Col>
+                                    <Col className="iconDelCol" xs={12} sm={12} md={12} lg={6} xl={6} xxl={6}>
+                                        <button
+                                            className='bookCardBtn'
+                                            variant="dark"
+                                            onClick={handleDeleteBook}
+                                        >
+                                            <img className="deleteIcon" src="../../../public/Img/deleteIcon.png" alt="editIcon" />
+                                        </button>
+
+                                    </Col>
+                                </Row>
+                                {books.title}
+                            </MDBCardTitle>
                             <MDBListGroup flush>
                                 <MDBListGroupItem>
                                     <MDBTypography tag="h7" className="text-muted">
@@ -143,21 +175,13 @@ const BookCard = ({ onClick, books }) => {
                                 </MDBListGroupItem>
                             </MDBListGroup>
                             <Row>
-                                <div className='BookMessage'>
-                                    {
-                                        deleteDataState.isError ?
-                                            (<p style={{ color: "red" }}>{deleteDataState.message}</p>)
-                                            :
-                                            (<p style={{ color: "green" }}>{deleteDataState.message}</p>)
-                                    }
-                                </div>
                                 <Col xs={12} sm={12} md={12} lg={6} xl={6} xxl={6}>
                                     <Button
                                         className='bookCardBtn'
                                         variant="dark"
-                                        onClick={() => navigate(`/editMyProfile/${books.id}`)}
+                                        onClick={() => navigate(`/reviews/${books.id}`)}
                                     >
-                                        Editar Libro
+                                        Ver reseña
                                     </Button>
 
                                 </Col>
@@ -165,12 +189,13 @@ const BookCard = ({ onClick, books }) => {
                                     <Button
                                         className='bookCardBtn'
                                         variant="dark"
-                                        onClick={handleDeleteBook}
+                                        onClick={() => navigate(`/newReview/${books.id}`)}
                                     >
-                                        Eliminar Libro
+                                        Añadir reseña
                                     </Button>
                                 </Col>
                             </Row>
+
                         </MDBCardBody>
                     </div>
                 </div>

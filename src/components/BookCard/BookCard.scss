@@ -34,13 +34,15 @@
 }
 
 .bookCardBody {
-    height: 100vh;
+    height: 100%;
+    border-radius: 0.4em;
+    border: 0.05em solid black;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     flex-direction: column;
-    margin-top: 2em;
     color: white !important;
-    background: linear-gradient(#200122, #6f0000);
+    text-shadow: 0em 0em 0.5em #fff;
+    background: linear-gradient(#200122, #450101);
 
 }
 
@@ -49,15 +51,35 @@
 }
 
 .bookCardBtn {
-    border: 0em !important;
-    margin-bottom: 1em;
+    border-radius: 0.3em;
+    box-shadow: 0em 0em 0.3em 0.1em rgba(255, 255, 255, 0.516);
 }
 
 .bookCardBtn:hover {
     color: black !important;
-    background: #fff !important;
-    border: #fff;
-    box-shadow: 0em 0em 0.3em 0.1em #fff;
+    box-shadow: 0em 0em 0.3em 0.1em rgba(0, 0, 0, 0.576);
+}
+
+.iconEditCol{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.iconDelCol{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.editIcon{
+    border-radius: 0.3em;
+    height: 2em;
+    width: 2em;
+}
+
+.deleteIcon{
+    border-radius: 0.3em;
+    height: 2em;
+    width: 2em;
 }
 
 .flip-exit {
