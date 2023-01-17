@@ -31,6 +31,15 @@ const NewBook = () => {
         })
     }
 
+    const clearValidationMessageHandler = () => {
+
+        setTimeout(() => {
+            setBookState({
+                message: ""
+            })
+        }, 1000);
+    }
+
     let requirements = {
         headers: {
             "Authorization": `Bearer ${identification.token}`
@@ -124,6 +133,7 @@ const NewBook = () => {
                             type="text" name='title'
                             placeholder='Escribe aquí'
                             onChange={handleChange}
+                            onClick={clearValidationMessageHandler}
                         />
                         <Form.Text className="text-muted">
                             Título oficial del libro en España
@@ -141,6 +151,7 @@ const NewBook = () => {
                             name='series'
                             placeholder='Escribe aquí'
                             onChange={handleChange}
+                            onClick={clearValidationMessageHandler}
                         />
                         <Form.Text className="text-muted">
                             Indica la saga a la que pertenece
@@ -157,6 +168,7 @@ const NewBook = () => {
                             type="text" name='author'
                             placeholder='Escribe aquí'
                             onChange={handleChange}
+                            onClick={clearValidationMessageHandler}
                         />
                         <Form.Text className="text-muted">
                             Autor del libro
@@ -172,6 +184,7 @@ const NewBook = () => {
                             aria-label="Default select example"
                             className='newBookInput'
                             name='genre'
+                            onClick={clearValidationMessageHandler}
                             onChange={handleChange}>
                             <option>Abrir el desplegable</option>
                             <option value="Autobiografía">Autobiografía</option>
@@ -206,6 +219,7 @@ const NewBook = () => {
                             name='year'
                             placeholder='Escribe aquí'
                             onChange={handleChange}
+                            onClick={clearValidationMessageHandler}
                         />
                         <Form.Text className="text-muted">
                             Fecha de publicación de la edición Española
@@ -223,6 +237,7 @@ const NewBook = () => {
                             name='book_cover'
                             placeholder='Escribe aquí'
                             onChange={handleChange}
+                            onClick={clearValidationMessageHandler}
                         />
                         <Form.Text className="text-muted">
                             Imagen oficial de la cubierta
@@ -240,6 +255,7 @@ const NewBook = () => {
                             name='author_wiki_url'
                             placeholder='Escribe aquí'
                             onChange={handleChange}
+                            onClick={clearValidationMessageHandler}
                         />
                         <Form.Text className="text-muted">
                             Enlace de la wikipidia oficial del autor
@@ -257,6 +273,7 @@ const NewBook = () => {
                             name='shop_url'
                             placeholder='Escribe aquí'
                             onChange={handleChange}
+                            onClick={clearValidationMessageHandler}
                         />
                         <Form.Text className="text-muted">
                             Enlace de compra en amazon
@@ -275,6 +292,7 @@ const NewBook = () => {
                             name='synopsis'
                             placeholder='Escribe aquí'
                             onChange={handleChange}
+                            onClick={clearValidationMessageHandler}
                         />
                         <Form.Text className="text-muted">
                             Resumen del libro en Español

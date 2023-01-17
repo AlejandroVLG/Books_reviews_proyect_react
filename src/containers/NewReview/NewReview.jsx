@@ -18,7 +18,8 @@ const NewReview = () => {
         book_id: id,
         review_title: '',
         score: '',
-        message: ''
+        message: '',
+        resultMessage: ""
     })
 
     const handleChange = (e) => {
@@ -26,6 +27,17 @@ const NewReview = () => {
             ...reviewState,
             [e.target.name]: e.target.value
         })
+    }
+
+    const clearValidationMessageHandler = () => {
+
+        setTimeout(() => {
+            setReviewState(
+                {
+                    resultMessage: ""
+                }
+            )
+        }, 1000);
     }
 
     let requirements = {
@@ -104,6 +116,7 @@ const NewReview = () => {
                             name='review_title'
                             placeholder='Escribe aquí'
                             onChange={handleChange}
+                            onClick={clearValidationMessageHandler}
                         />
                         <Form.Text className="text-muted">
                             Elige un título para tu reseña
@@ -118,6 +131,7 @@ const NewReview = () => {
                             aria-label="Default select example"
                             className='newReviewInput'
                             name='score'
+                            onClick={clearValidationMessageHandler}
                             onChange={handleChange}>
                             <option>Abrir el desplegable</option>
                             <option value="1">1</option>
@@ -147,6 +161,7 @@ const NewReview = () => {
                             name='message'
                             placeholder='Escribe aquí'
                             onChange={handleChange}
+                            onClick={clearValidationMessageHandler}
                         />
                         <Form.Text className="text-muted">
                             Redacta una reseña con tú valoración

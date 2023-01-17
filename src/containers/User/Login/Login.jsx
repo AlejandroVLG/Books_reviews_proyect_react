@@ -33,7 +33,7 @@ const Login = () => {
     )
   }
 
-  const clearMessageHandler = () => {
+  const clearValidationMessageHandler = () => {
 
     if (credentials.isError === true) {
 
@@ -171,7 +171,7 @@ const Login = () => {
               name='email'
               placeholder='Escribe aquí'
               onChange={updateCredentials}
-              onClick={clearMessageHandler}
+              onClick={clearValidationMessageHandler}
             />
             <Form.Text className="text-muted">
               Introduce tu E-mail
@@ -187,7 +187,7 @@ const Login = () => {
               name='password'
               placeholder='Escribe aquí'
               onChange={updateCredentials}
-              onClick={clearMessageHandler}
+              onClick={clearValidationMessageHandler}
             />
             <Form.Text className="text-muted">
               Introduce tu contraseña

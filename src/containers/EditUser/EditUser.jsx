@@ -45,6 +45,16 @@ const EditUser = () => {
             [e.target.name]: e.target.value
         })
     }
+
+    const clearValidationMessageHandler = () => {
+
+        setTimeout(() => {
+            setEditedUserState({
+                message: ""
+            })
+        }, 1000);
+    }
+
     let requirements = {
         headers: {
             "Authorization": `Bearer ${identification.token}`,
@@ -150,6 +160,7 @@ const EditUser = () => {
                                 type="text" name='name'
                                 placeholder='Escribe aquí'
                                 onChange={handleChange}
+                                onClick={clearValidationMessageHandler}
                             />
                             <Form.Text className="text-muted">
                                 Modificar nombre
@@ -167,6 +178,7 @@ const EditUser = () => {
                                 name='last_name'
                                 placeholder='Escribe aquí'
                                 onChange={handleChange}
+                                onClick={clearValidationMessageHandler}
                             />
                             <Form.Text className="text-muted">
                                 Modificar apellidos
@@ -182,6 +194,7 @@ const EditUser = () => {
                                 aria-label="Default select example"
                                 className='editProfileInput'
                                 name='gender'
+                                onClick={clearValidationMessageHandler}
                                 onChange={handleChange}>
                                 <option>Abrir el desplegable</option>
                                 <option value="Hombre">Hombre</option>
@@ -204,6 +217,7 @@ const EditUser = () => {
                                 name='password'
                                 placeholder='Escribe aquí'
                                 onChange={handleChange}
+                                onClick={clearValidationMessageHandler}
                             />
                             <Form.Text className="text-muted">
                                 Introducir nueva contraseña
@@ -223,6 +237,7 @@ const EditUser = () => {
                                 name='age'
                                 placeholder='Escribe aquí'
                                 onChange={handleChange}
+                                onClick={clearValidationMessageHandler}
                             />
                             <Form.Text className="text-muted">
                                 Modificar fecha de nacimiento
@@ -237,6 +252,7 @@ const EditUser = () => {
                             <Form.Select
                                 className='editProfileInput'
                                 name='country'
+                                onClick={clearValidationMessageHandler}
                                 onChange={handleChange}>
                                 <option>Abrir el desplegable</option>
                                 <option value="Afghanistan">Afghanistan</option>
@@ -500,6 +516,7 @@ const EditUser = () => {
                                 name='favourite_author'
                                 placeholder='Escribe aquí'
                                 onChange={handleChange}
+                                onClick={clearValidationMessageHandler}
                             />
                             <Form.Text className="text-muted">
                                 Modificar autor favorito
@@ -516,6 +533,7 @@ const EditUser = () => {
                                 name='favourite_genre'
                                 placeholder='Escribe aquí'
                                 onChange={handleChange}
+                                onClick={clearValidationMessageHandler}
                             >
                                 <option>Abrir el desplegable</option>
                                 <option value="Autobiografía">Autobiografía</option>
@@ -548,6 +566,7 @@ const EditUser = () => {
                                 name='currently_reading'
                                 placeholder='Escribe aquí'
                                 onChange={handleChange}
+                                onClick={clearValidationMessageHandler}
                             />
                             <Form.Text className="text-muted">
                                 Modificar leyendo actualmente
@@ -565,6 +584,7 @@ const EditUser = () => {
                                 name='facebook_account'
                                 placeholder='Escribe aquí'
                                 onChange={handleChange}
+                                onClick={clearValidationMessageHandler}
                             />
                             <Form.Text className="text-muted">
                                 Modificar cuenta de Facebook
@@ -582,6 +602,7 @@ const EditUser = () => {
                                 name='twitter_account'
                                 placeholder='Escribe aquí'
                                 onChange={handleChange}
+                                onClick={clearValidationMessageHandler}
                             />
                             <Form.Text className="text-muted">
                                 Modificar cuenta de Twitter
@@ -599,6 +620,7 @@ const EditUser = () => {
                                 name='instagram_account'
                                 placeholder='Escribe aquí'
                                 onChange={handleChange}
+                                onClick={clearValidationMessageHandler}
                             />
                             <Form.Text className="text-muted">
                                 Modificar cuenta de Instagram
@@ -614,6 +636,7 @@ const EditUser = () => {
                                 aria-label="Default select example"
                                 className='editProfileInput'
                                 name='profile_img'
+                                onClick={clearValidationMessageHandler}
                                 onChange={handleChange}>
                                 <option>Abrir el desplegable</option>
                                 <option value="../../../../public/Img/avatar1.jpg" className='avatar avatar1'>Imagen 1</option>

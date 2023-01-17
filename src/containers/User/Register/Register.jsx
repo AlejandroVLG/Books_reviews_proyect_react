@@ -29,7 +29,7 @@ const Register = () => {
     )
   }
 
-  const clearMessageHandler = () => {
+  const clearValidationMessageHandler = () => {
 
     if (register.isError === true) {
 
@@ -193,7 +193,7 @@ const Register = () => {
               name='name'
               placeholder='Introduce tu nombre'
               onChange={handleInput}
-              onClick={clearMessageHandler}
+              onClick={clearValidationMessageHandler}
             />
             <Form.Text className="text-muted">
               Puede contener letras, espacios y signos de acentuación.
@@ -209,7 +209,7 @@ const Register = () => {
               name='nick_name'
               placeholder='Introduce un apodo'
               onChange={handleInput}
-              onClick={clearMessageHandler}
+              onClick={clearValidationMessageHandler}
             />
             <Form.Text className="text-muted">
               De 4 a 16 carácteres con letras, números, guión o guión bajo.
@@ -225,7 +225,7 @@ const Register = () => {
               name='email'
               placeholder='Introduce un email de contacto'
               onChange={handleInput}
-              onClick={clearMessageHandler}
+              onClick={clearValidationMessageHandler}
             />
             <Form.Text className="text-muted">
               Formato de E-mail válido obligatorio.
@@ -241,7 +241,7 @@ const Register = () => {
               name='password'
               placeholder='Password'
               onChange={handleInput}
-              onClick={clearMessageHandler}
+              onClick={clearValidationMessageHandler}
             />
             <Form.Text className="text-muted">
               Debe contener mínimo de 6 carácteres.

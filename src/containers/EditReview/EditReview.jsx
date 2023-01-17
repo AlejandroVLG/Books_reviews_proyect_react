@@ -28,6 +28,15 @@ const EditReview = () => {
         })
     }
 
+    const clearValidationMessageHandler = () => {
+
+        setTimeout(() => {
+            setEditedReviewState({
+                resultMessage: ""
+            })
+        }, 1000);
+    }
+
     let requirements = {
         headers: {
             "Authorization": `Bearer ${identification.token}`,
@@ -119,6 +128,7 @@ const EditReview = () => {
                                 name='review_title'
                                 placeholder='Escribe aquí'
                                 onChange={handleChange}
+                                onClick={clearValidationMessageHandler}
                             />
                             <Form.Text className="text-muted">
                                 Modifica el título de tu reseña
@@ -132,6 +142,7 @@ const EditReview = () => {
                                 aria-label="Default select example"
                                 className='editReviewInput'
                                 name='score'
+                                onClick={clearValidationMessageHandler}
                                 onChange={handleChange}>
                                 <option>Abrir el desplegable</option>
                                 <option value="1">1</option>
@@ -162,6 +173,7 @@ const EditReview = () => {
                                 name='message'
                                 placeholder='Escribe aquí'
                                 onChange={handleChange}
+                                onClick={clearValidationMessageHandler}
                             />
                             <Form.Text className="text-muted">
                                 Redacta una nueva reseña

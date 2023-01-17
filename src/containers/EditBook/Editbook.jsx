@@ -34,6 +34,15 @@ const EditBook = () => {
         })
     }
 
+    const clearValidationMessageHandler = () => {
+
+        setTimeout(() => {
+            setEditedBookState({
+                message: ""
+            })
+        }, 1000);
+    }
+
     const showBookData = async () => {
 
         const bookResponse = await axios.get(`https://bookapi.up.railway.app/api/book/showBookById/${id}`)
@@ -131,6 +140,7 @@ const EditBook = () => {
                                 type="text" name='title'
                                 placeholder='Escribe aquí'
                                 onChange={handleChange}
+                                onClick={clearValidationMessageHandler}
                             />
                             <Form.Text className="text-muted">
                                 Título oficial del libro en España
@@ -148,6 +158,7 @@ const EditBook = () => {
                                 name='series'
                                 placeholder='Escribe aquí'
                                 onChange={handleChange}
+                                onClick={clearValidationMessageHandler}
                             />
                             <Form.Text className="text-muted">
                                 Indica la saga a la que pertenece
@@ -164,6 +175,7 @@ const EditBook = () => {
                                 type="text" name='author'
                                 placeholder='Escribe aquí'
                                 onChange={handleChange}
+                                onClick={clearValidationMessageHandler}
                             />
                             <Form.Text className="text-muted">
                                 Autor del libro
@@ -179,6 +191,7 @@ const EditBook = () => {
                                 aria-label="Default select example"
                                 className='editBookInput'
                                 name='genre'
+                                onClick={clearValidationMessageHandler}
                                 onChange={handleChange}>
                                 <option>Abrir el desplegable</option>
                                 <option value="Autobiografía">Autobiografía</option>
@@ -213,6 +226,7 @@ const EditBook = () => {
                                 name='year'
                                 placeholder='Escribe aquí'
                                 onChange={handleChange}
+                                onClick={clearValidationMessageHandler}
                             />
                             <Form.Text className="text-muted">
                                 Fecha de publicación de la edición Española
@@ -230,6 +244,7 @@ const EditBook = () => {
                                 name='book_cover'
                                 placeholder='Escribe aquí'
                                 onChange={handleChange}
+                                onClick={clearValidationMessageHandler}
                             />
                             <Form.Text className="text-muted">
                                 Imagen oficial de la cubierta
@@ -247,6 +262,7 @@ const EditBook = () => {
                                 name='author_wiki_url'
                                 placeholder='Escribe aquí'
                                 onChange={handleChange}
+                                onClick={clearValidationMessageHandler}
                             />
                             <Form.Text className="text-muted">
                                 Enlace de la wikipidia oficial del autor
@@ -264,6 +280,7 @@ const EditBook = () => {
                                 name='shop_url'
                                 placeholder='Escribe aquí'
                                 onChange={handleChange}
+                                onClick={clearValidationMessageHandler}
                             />
                             <Form.Text className="text-muted">
                                 Enlace de compra en amazon
@@ -282,6 +299,7 @@ const EditBook = () => {
                                 name='synopsis'
                                 placeholder='Escribe aquí'
                                 onChange={handleChange}
+                                onClick={clearValidationMessageHandler}
                             />
                             <Form.Text className="text-muted">
                                 Resumen del libro en Español
