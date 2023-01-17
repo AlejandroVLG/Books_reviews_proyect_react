@@ -1,5 +1,10 @@
-import axios from "axios"
 import React from "react"
+import { useState } from "react"
+import { useNavigate } from "react-router"
+import { useSelector } from "react-redux"
+import { userData } from "../../containers/User/userSlice"
+import { Button, Col, Modal, Row } from "react-bootstrap"
+import { Icon } from '@iconify/react'
 import {
     MDBCard,
     MDBCardImage,
@@ -8,19 +13,14 @@ import {
     MDBCardText,
     MDBCol,
     MDBRow,
-    MDBBtn,
     MDBCardSubTitle,
     MDBTypography,
     MDBListGroup,
-    MDBListGroupItem
+    MDBListGroupItem,
+    MDBBtn
 } from 'mdb-react-ui-kit'
-import { useSelector } from "react-redux"
-import { useNavigate } from "react-router"
-import { userData } from "../../containers/User/userSlice"
-import { Icon } from '@iconify/react'
-import { useState } from "react"
+import axios from "axios"
 import './BookCard.scss'
-import { Button, Col, Row } from "react-bootstrap"
 
 const BookCard = ({ onClick, books }) => {
 
@@ -32,11 +32,17 @@ const BookCard = ({ onClick, books }) => {
 
     const [deleteDataState, setDeleteDataState] = useState({})
 
+    const [showModalState, setShowModalState] = useState()
+
     let requirements = {
         headers: {
             "Authorization": `Bearer ${identification.token}`
         }
     }
+
+    const handleOpen = () => setShowModalState(true)
+
+    const handleClose = () => setShowModalState(false)
 
     const handleDeleteBook = async () => {
         try {
@@ -73,7 +79,6 @@ const BookCard = ({ onClick, books }) => {
         if (identification.infoData.id === 1) {
 
             return (
-
                 <div className="cardContainer" onClick={onClick}>
                     <MDBCard className="frontCard" >
                         <MDBCardImage className="cardImg" position='top' alt='...' src={books.book_cover} />
@@ -110,6 +115,24 @@ const BookCard = ({ onClick, books }) => {
                     </MDBCard >
 
                     <div className="backCard">
+                        <>
+                            <Modal show={showModalState} onHide={handleClose} >
+                                <div className="bookModalBox">
+                                    <Modal.Header closeButton>
+                                        <Modal.Title>AVISO</Modal.Title>
+                                    </Modal.Header>
+                                    <Modal.Body className="modalBookBody">¿Seguro que quieres eliminar este libro?</Modal.Body>
+                                    <Modal.Footer className="modalBookFooter">
+                                        <Button className="modalButton" variant="danger" onClick={handleDeleteBook}>
+                                            Si
+                                        </Button>
+                                        <Button className="modalButton" variant="dark" onClick={handleClose}>
+                                            No
+                                        </Button>
+                                    </Modal.Footer>
+                                </div>
+                            </Modal>
+                        </>
                         <MDBCardBody className="bookCardBody">
                             <MDBCardTitle>
                                 <Row>
@@ -135,7 +158,7 @@ const BookCard = ({ onClick, books }) => {
                                         <button
                                             className='bookCardBtn'
                                             variant="dark"
-                                            onClick={handleDeleteBook}
+                                            onClick={handleOpen}
                                         >
                                             <img className="deleteIcon" src="../../../public/Img/deleteIcon.png" alt="editIcon" />
                                         </button>
