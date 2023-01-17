@@ -75,7 +75,7 @@ const BookCard = ({ onClick, books }) => {
             return (
 
                 <div className="cardContainer" onClick={onClick}>
-                    <MDBCard MDBCard className="frontCard" >
+                    <MDBCard className="frontCard" >
                         <MDBCardImage className="cardImg" position='top' alt='...' src={books.book_cover} />
                         <MDBCardBody>
                             <MDBCardTitle>{books.author}</MDBCardTitle>
@@ -144,27 +144,27 @@ const BookCard = ({ onClick, books }) => {
                                 </Row>
                                 {books.title}
                             </MDBCardTitle>
-                            <MDBListGroup flush>
+                            <MDBListGroup >
                                 <MDBListGroupItem>
-                                    <MDBTypography tag="h7" className="text-muted">
+                                    <MDBTypography tag="h6" className="text-muted">
                                         Saga
                                     </MDBTypography>
                                     <MDBCardText>{books.series}</MDBCardText>
                                 </MDBListGroupItem>
                                 <MDBListGroupItem>
-                                    <MDBTypography tag="h7" className="text-muted">
+                                    <MDBTypography tag="h6" className="text-muted">
                                         Fecha publicación
                                     </MDBTypography>
                                     <MDBCardText>{books.year}</MDBCardText>
                                 </MDBListGroupItem>
                                 <MDBListGroupItem>
-                                    <MDBTypography tag="h7" className="text-muted">
+                                    <MDBTypography tag="h6" className="text-muted">
                                         Género
                                     </MDBTypography>
                                     <MDBCardText>{books.genre}</MDBCardText>
                                 </MDBListGroupItem>
                                 <MDBListGroupItem>
-                                    <MDBTypography tag="h7" className="text-muted">
+                                    <MDBTypography tag="h6" className="text-muted">
                                         Sinopsis
                                     </MDBTypography>
                                     <br />
@@ -204,7 +204,7 @@ const BookCard = ({ onClick, books }) => {
 
             return (
                 <div className="cardContainer" onClick={onClick}>
-                    <MDBCard MDBCard className="frontCard" >
+                    <MDBCard className="frontCard" >
                         <MDBCardImage className="cardImg" position='top' alt='...' src={books.book_cover} />
                         <MDBCardBody>
                             <MDBCardTitle>{books.author}</MDBCardTitle>
@@ -241,27 +241,27 @@ const BookCard = ({ onClick, books }) => {
                     <div className="backCard">
                         <MDBCardBody className="bookCardBody">
                             <MDBCardTitle>{books.title}</MDBCardTitle>
-                            <MDBListGroup flush>
+                            <MDBListGroup >
                                 <MDBListGroupItem>
-                                    <MDBTypography tag="h7" className="text-muted">
+                                    <MDBTypography tag="h6" className="text-muted">
                                         Saga
                                     </MDBTypography>
                                     <MDBCardText>{books.series}</MDBCardText>
                                 </MDBListGroupItem>
                                 <MDBListGroupItem>
-                                    <MDBTypography tag="h7" className="text-muted">
+                                    <MDBTypography tag="h6" className="text-muted">
                                         Fecha publicación
                                     </MDBTypography>
                                     <MDBCardText>{books.year}</MDBCardText>
                                 </MDBListGroupItem>
                                 <MDBListGroupItem>
-                                    <MDBTypography tag="h7" className="text-muted">
+                                    <MDBTypography tag="h6" className="text-muted">
                                         Género
                                     </MDBTypography>
                                     <MDBCardText>{books.genre}</MDBCardText>
                                 </MDBListGroupItem>
                                 <MDBListGroupItem>
-                                    <MDBTypography tag="h7" className="text-muted">
+                                    <MDBTypography tag="h6" className="text-muted">
                                         Sinopsis
                                     </MDBTypography>
                                     <br />
@@ -280,7 +280,7 @@ const BookCard = ({ onClick, books }) => {
 
         return (
             <div className="cardContainer" onClick={onClick}>
-                <MDBCard MDBCard className="frontCard" >
+                <MDBCard className="frontCard" >
                     <MDBCardImage className="cardImg" position='top' alt='...' src={books.book_cover} />
                     <MDBCardBody>
                         <MDBCardTitle>{books.author}</MDBCardTitle>
@@ -317,27 +317,27 @@ const BookCard = ({ onClick, books }) => {
                 <div className="backCard">
                     <MDBCardBody className="bookCardBody">
                         <MDBCardTitle>{books.title}</MDBCardTitle>
-                        <MDBListGroup flush>
+                        <MDBListGroup >
                             <MDBListGroupItem>
-                                <MDBTypography tag="h7" className="text-muted">
+                                <MDBTypography tag="h6" className="text-muted">
                                     Saga
                                 </MDBTypography>
                                 <MDBCardText>{books.series}</MDBCardText>
                             </MDBListGroupItem>
                             <MDBListGroupItem>
-                                <MDBTypography tag="h7" className="text-muted">
+                                <MDBTypography tag="h6" className="text-muted">
                                     Fecha publicación
                                 </MDBTypography>
                                 <MDBCardText>{books.year}</MDBCardText>
                             </MDBListGroupItem>
                             <MDBListGroupItem>
-                                <MDBTypography tag="h7" className="text-muted">
+                                <MDBTypography tag="h6" className="text-muted">
                                     Género
                                 </MDBTypography>
                                 <MDBCardText>{books.genre}</MDBCardText>
                             </MDBListGroupItem>
                             <MDBListGroupItem>
-                                <MDBTypography tag="h7" className="text-muted">
+                                <MDBTypography tag="h6" className="text-muted">
                                     Sinopsis
                                 </MDBTypography>
                                 <br />

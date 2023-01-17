@@ -1,18 +1,20 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useForceUpdate } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from "react-redux"
 import { login, userData, } from "../userSlice"
 import { Col, Container, Form, Row } from 'react-bootstrap'
 import Spinner from '../../../components/Spinner/Spinner'
-import "./Login.scss"
 import axios from 'axios'
+import "./Login.scss"
+import { useCallback } from 'react'
 
 const Login = () => {
 
   const [credentials, setCredentials] = useState(
     {
       email: '',
-      password: ''
+      password: '',
+      loginMessage: ""
     }
   )
 
@@ -29,6 +31,20 @@ const Login = () => {
         [e.target.name]: e.target.value
       }
     )
+  }
+
+  const clearMessageHandler = () => {
+
+    if (credentials.isError === true) {
+
+      setTimeout(() => {
+
+        setCredentials({
+          ...credentials,
+          loginMessage: ""
+        })
+      }, 600)
+    }
   }
 
   useEffect(() => {
@@ -104,7 +120,7 @@ const Login = () => {
           {
             ...credentials,
             isError: true,
-            loginMessage: "Request failed"
+            loginMessage: "Error en la solicitud"
           }
         )
       } else {
@@ -155,6 +171,7 @@ const Login = () => {
               name='email'
               placeholder='Escribe aquí'
               onChange={updateCredentials}
+              onClick={clearMessageHandler}
             />
             <Form.Text className="text-muted">
               Introduce tu E-mail
@@ -170,6 +187,7 @@ const Login = () => {
               name='password'
               placeholder='Escribe aquí'
               onChange={updateCredentials}
+              onClick={clearMessageHandler}
             />
             <Form.Text className="text-muted">
               Introduce tu contraseña

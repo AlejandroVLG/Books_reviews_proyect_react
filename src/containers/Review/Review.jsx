@@ -44,8 +44,6 @@ const Review = () => {
         showReviews()
     }, [])
 
-    console.log(reviewData.reviews)
-
     return (
 
         <MDBContainer fluid>
@@ -57,7 +55,6 @@ const Review = () => {
                             <Spinner />
                         </div>
                     }
-
                 </MDBCol>
             </MDBRow>
             <MDBRow>
@@ -71,10 +68,8 @@ const Review = () => {
                         )
                         )
                     }
-
                 </MDBCol>
             </MDBRow>
-
         </MDBContainer>
     )
 }

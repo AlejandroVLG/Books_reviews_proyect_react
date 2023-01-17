@@ -15,7 +15,8 @@ const Register = () => {
       nick_name: "",
       email: "",
       password: "",
-      profile_img: ""
+      profile_img: "",
+      registerMessage: ""
     }
   )
 
@@ -26,6 +27,20 @@ const Register = () => {
         [e.target.name]: e.target.value
       }
     )
+  }
+
+  const clearMessageHandler = () => {
+
+    if (register.isError === true) {
+
+      setTimeout(() => {
+
+        setRegister({
+          ...register,
+          registerMessage: ""
+        })
+      }, 600)
+    }
   }
 
   const userRegister = async (event) => {
@@ -155,18 +170,13 @@ const Register = () => {
 
   useEffect(() => {
 
-    if (register.isError === true) {
-
-      setTimeout(() => {
-        navigate("/register")
-
-      }, 1000)
-    } else if (register.registerMessage == "Registro completado correctamente") {
+    if (register.registerMessage == "Registro completado correctamente") {
 
       setTimeout(() => {
         navigate("/login")
 
       }, 1000)
+
     }
   })
 
@@ -183,6 +193,7 @@ const Register = () => {
               name='name'
               placeholder='Introduce tu nombre'
               onChange={handleInput}
+              onClick={clearMessageHandler}
             />
             <Form.Text className="text-muted">
               Puede contener letras, espacios y signos de acentuación.
@@ -198,6 +209,7 @@ const Register = () => {
               name='nick_name'
               placeholder='Introduce un apodo'
               onChange={handleInput}
+              onClick={clearMessageHandler}
             />
             <Form.Text className="text-muted">
               De 4 a 16 carácteres con letras, números, guión o guión bajo.
@@ -213,6 +225,7 @@ const Register = () => {
               name='email'
               placeholder='Introduce un email de contacto'
               onChange={handleInput}
+              onClick={clearMessageHandler}
             />
             <Form.Text className="text-muted">
               Formato de E-mail válido obligatorio.
@@ -228,6 +241,7 @@ const Register = () => {
               name='password'
               placeholder='Password'
               onChange={handleInput}
+              onClick={clearMessageHandler}
             />
             <Form.Text className="text-muted">
               Debe contener mínimo de 6 carácteres.
@@ -246,7 +260,7 @@ const Register = () => {
                   :
                   (<p style={{ color: "green" }}>{register.registerMessage}</p>)
               }
-              {register.isError === "" && <p><Spinner /></p>}
+              {register.isError === "" && <div><Spinner /></div>}
             </div>
           </Form.Group>
         </Col>
