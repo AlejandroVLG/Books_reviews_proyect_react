@@ -117,16 +117,16 @@ const BookCard = ({ onClick, books }) => {
                     <div className="backCard">
                         <>
                             <Modal show={showModalState} onHide={handleClose} >
-                                <div className="bookModalBox">
+                                <div className="deleteModalBox">
                                     <Modal.Header closeButton>
                                         <Modal.Title>AVISO</Modal.Title>
                                     </Modal.Header>
-                                    <Modal.Body className="modalBookBody">¿Seguro que quieres eliminar este libro?</Modal.Body>
-                                    <Modal.Footer className="modalBookFooter">
-                                        <Button className="modalButton" variant="danger" onClick={handleDeleteBook}>
+                                    <Modal.Body className="deleteModalBody">¿Seguro que quieres eliminar este libro?</Modal.Body>
+                                    <Modal.Footer className="deleteModalFooter">
+                                        <Button className="deleteModalButton" variant="danger" onClick={handleDeleteBook}>
                                             Si
                                         </Button>
-                                        <Button className="modalButton" variant="dark" onClick={handleClose}>
+                                        <Button className="deleteModalButton" variant="dark" onClick={handleClose}>
                                             No
                                         </Button>
                                     </Modal.Footer>

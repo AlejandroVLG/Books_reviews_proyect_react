@@ -18,7 +18,7 @@ import { logOut, userData } from "../../containers/User/userSlice"
 import { useNavigate } from "react-router"
 import axios from "axios"
 import { useState } from "react"
-import { Button, Col, Row } from "react-bootstrap"
+import { Button, Col, Modal, Row } from "react-bootstrap"
 
 const ProfileCard = props => {
 
@@ -30,11 +30,17 @@ const ProfileCard = props => {
 
     const [deletedProfileState, setDeletedProfileState] = useState({})
 
+    const [showModalState, setShowModalState] = useState()
+
     let requirements = {
         headers: {
             "Authorization": `Bearer ${identification.token}`
         }
     }
+
+    const handleOpen = () => setShowModalState(true)
+
+    const handleClose = () => setShowModalState(false)
 
     const handleDeleteProfile = async () => {
 
@@ -79,7 +85,24 @@ const ProfileCard = props => {
             initial={{ y: 500, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0, type: 'spring', stiffness: 30 }}
-        >
+        ><>
+                <Modal show={showModalState} onHide={handleClose} >
+                    <div className="deleteModalBox">
+                        <Modal.Header closeButton>
+                            <Modal.Title>AVISO</Modal.Title>
+                        </Modal.Header>
+                        <Modal.Body className="deleteModalBody">¿Seguro que quieres eliminar tu cuenta?</Modal.Body>
+                        <Modal.Footer className="deleteModalFooter">
+                            <Button className="deleteModalButton" variant="danger" onClick={handleDeleteProfile}>
+                                Si
+                            </Button>
+                            <Button className="deleteModalButton" variant="dark" onClick={handleClose}>
+                                No
+                            </Button>
+                        </Modal.Footer>
+                    </div>
+                </Modal>
+            </>
             <MDBContainer fluid className="py-5 cardContainer">
                 <MDBCard className="mb-3 cardProfile " style={{ borderRadius: '.5em' }}>
                     <MDBRow className="g-0">
@@ -217,7 +240,7 @@ const ProfileCard = props => {
                                         <Button
                                             className='myProfileBtn'
                                             variant="dark"
-                                            onClick={handleDeleteProfile}
+                                            onClick={handleOpen}
                                         >
                                             Eliminar Perfil
                                         </Button>

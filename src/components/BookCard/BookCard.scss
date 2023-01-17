@@ -115,25 +115,25 @@
     justify-content: center;
 }
 
-.bookModalBox {
+.deleteModalBox {
     border: 0.05em solid black;
     border-radius: 0.3em;
     background: linear-gradient(#e65c00, #F9D423);
     box-shadow: 0em 0em 0.3em 0.2em rgba(255, 255, 255, 0.617);
 }
 
-.modalBookBody {
+.deleteModalBody {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.modalBookFooter {
+.deleteModalFooter {
     display: flex;
     align-items: center;
     justify-content: space-around !important;
 }
 
-.modalButton {
+.deleteModalButton {
     box-shadow: 0em 0em 0.2em 0.1em rgba(0, 0, 0, 0.533);
 }
