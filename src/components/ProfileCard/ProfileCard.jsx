@@ -18,7 +18,6 @@ import {
 } from 'mdb-react-ui-kit'
 import axios from "axios"
 import './ProfileCard.scss'
-import { useEffect } from "react"
 
 const ProfileCard = props => {
 
@@ -85,7 +84,8 @@ const ProfileCard = props => {
             initial={{ y: 500, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0, type: 'spring', stiffness: 30 }}
-        ><>
+        >
+            <>
                 <Modal show={showModalState} onHide={handleClose} >
                     <div className="deleteModalBox">
                         <Modal.Header closeButton>
@@ -205,7 +205,7 @@ const ProfileCard = props => {
                                     <a
                                         className='socialIconsBox'
                                         target='_blank'
-                                        href={props.data.facebook_account} 
+                                        href={props.data.facebook_account}
                                     >
                                         <Icon className='socialIcon' icon="akar-icons:facebook-fill" />
                                     </a>
@@ -246,7 +246,6 @@ const ProfileCard = props => {
                                         </Button>
                                     </Col>
                                 </Row>
-
                             </MDBCardBody>
                         </MDBCol>
                     </MDBRow>

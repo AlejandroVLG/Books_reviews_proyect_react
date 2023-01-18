@@ -1,6 +1,7 @@
 import React from "react"
 import { useNavigate } from "react-router"
 import { motion } from "framer-motion"
+import { Icon } from "@iconify/react"
 import {
     MDBCol,
     MDBContainer,
@@ -12,14 +13,12 @@ import {
     MDBBtn
 } from 'mdb-react-ui-kit'
 import './ModalHome.scss'
-import { Icon } from "@iconify/react"
 
 const ModalHome = () => {
 
     let navigate = useNavigate()
 
     return (
-
         <div className="modalHome">
             <motion.div
                 className="motionDiv"

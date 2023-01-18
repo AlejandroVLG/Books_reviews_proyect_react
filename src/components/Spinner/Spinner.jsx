@@ -1,4 +1,3 @@
-import ClipLoader from "react-spinners/ClipLoader"
 import PulseLoader from "react-spinners/PulseLoader"
 import { Container } from "react-bootstrap"
 
@@ -14,7 +13,6 @@ export default function Spinner() {
         size={35}
         speedMultiplier={0.7}
       />
-      
     </Container>
   )
 }

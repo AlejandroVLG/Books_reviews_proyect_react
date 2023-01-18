@@ -1,15 +1,15 @@
 import React from "react"
-import Container from 'react-bootstrap/Container'
-import Nav from 'react-bootstrap/Nav'
-import Navbar from 'react-bootstrap/Navbar'
 import { useNavigate } from "react-router-dom"
 import { useDispatch, useSelector } from 'react-redux'
 import { logOut, userData } from '../../containers/User/userSlice'
+import Container from 'react-bootstrap/Container'
+import Nav from 'react-bootstrap/Nav'
+import Navbar from 'react-bootstrap/Navbar'
 import "./NavigationBar.scss"
 
 const NavigationBar = () => {
 
-    let navigate = useNavigate()
+    const navigate = useNavigate()
 
     const identification = useSelector(userData)
 

@@ -1,10 +1,10 @@
 import React from 'react'
+import { useNavigate } from 'react-router'
 import { useEffect } from 'react'
 import { useSelector } from 'react-redux'
-import { useNavigate } from 'react-router'
+import { userData } from '../User/userSlice'
 import ProfileCard from '../../components/ProfileCard/ProfileCard'
 import Spinner from '../../components/Spinner/Spinner'
-import { userData } from '../User/userSlice'
 import "./MyProfile.scss"
 
 const MyProfile = () => {

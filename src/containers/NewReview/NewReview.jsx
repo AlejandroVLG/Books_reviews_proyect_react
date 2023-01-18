@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react"
-import axios from "axios"
-import { Col, Form, Row } from "react-bootstrap"
-import { useSelector } from "react-redux"
+import React, { useState } from "react"
 import { useNavigate, useParams } from "react-router"
+import { useSelector } from "react-redux"
 import { userData } from "../User/userSlice"
+import { Col, Form, Row } from "react-bootstrap"
+import axios from "axios"
 import "./NewReview.scss"
 
 const NewReview = () => {

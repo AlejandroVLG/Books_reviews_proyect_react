@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useForceUpdate } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from "react-redux"
 import { login, userData, } from "../userSlice"
@@ -6,7 +6,6 @@ import { Col, Container, Form, Row } from 'react-bootstrap'
 import Spinner from '../../../components/Spinner/Spinner'
 import axios from 'axios'
 import "./Login.scss"
-import { useCallback } from 'react'
 
 const Login = () => {
 

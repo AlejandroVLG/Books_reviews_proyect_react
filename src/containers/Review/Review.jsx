@@ -1,15 +1,14 @@
 import axios from "axios"
 import React, { useEffect, useState } from "react"
-import ReviewCard from "../../components/ReviewCard/ReviewCard"
+import { useParams } from "react-router"
 import { userData } from "../User/userSlice"
 import { useSelector } from "react-redux"
-import { useParams } from "react-router"
+import ReviewCard from "../../components/ReviewCard/ReviewCard"
 import Spinner from "../../components/Spinner/Spinner"
-import "./Review.scss"
 import { MDBCol, MDBContainer, MDBRow } from "mdb-react-ui-kit"
+import "./Review.scss"
 
 const Review = () => {
-
 
     const { id } = useParams()
 
@@ -65,8 +64,7 @@ const Review = () => {
                             <div className="reviewsBox" key={i}>
                                 <ReviewCard key={i} data={review} />
                             </div>
-                        )
-                        )
+                        ))
                     }
                 </MDBCol>
             </MDBRow>

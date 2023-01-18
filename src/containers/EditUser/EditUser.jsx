@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router'
+import { useDispatch, useSelector } from 'react-redux'
 import { logOut, userData } from '../User/userSlice'
 import { Col, Form, Row } from 'react-bootstrap'
 import axios from 'axios'

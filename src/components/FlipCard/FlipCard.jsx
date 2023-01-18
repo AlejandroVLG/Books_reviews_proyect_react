@@ -1,6 +1,6 @@
 import React, { useState } from "react"
-import { CSSTransition } from "react-transition-group"
 import BookCard from "../BookCard/BookCard"
+import { CSSTransition } from "react-transition-group"
 import "./FlipCard.scss"
 
 const FlipCard = ({ books }) => {

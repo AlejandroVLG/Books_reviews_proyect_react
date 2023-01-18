@@ -1,7 +1,7 @@
 import { Route, Routes, BrowserRouter } from 'react-router-dom'
 import Header from './components/Header/Header'
-import NavigationBar from './components/NavigationBar/NavigationBar'
 import Home from './containers/Home/Home'
+import NavigationBar from './components/NavigationBar/NavigationBar'
 import Book from './containers/Book/Book'
 import NewBook from './containers/NewBook/NewBook'
 import EditBook from './containers/EditBook/Editbook'
@@ -19,7 +19,6 @@ function App() {
   return (
 
     <div className="App">
-
       <BrowserRouter>
         <Header />
         <NavigationBar />
@@ -37,7 +36,6 @@ function App() {
           <Route path="/editReview/:id" element={<EditReview />} />
         </Routes>
       </BrowserRouter>
-
     </div>
   )
 }

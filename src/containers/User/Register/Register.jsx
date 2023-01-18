@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { Col, Form, Row } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
+import { Col, Form, Row } from 'react-bootstrap'
 import Spinner from '../../../components/Spinner/Spinner'
 import "./Register.scss"
 
