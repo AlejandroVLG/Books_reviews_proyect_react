@@ -39,7 +39,9 @@ Para las animaciones he utilizado framer motion y para los estilos mdb-react y b
 
 ### Vista frontal de todos los libros añadidos
 <img src="/public/Img/Libros_frontal.png" style="border-radius:0.1em;"/>
+
 ---
+
 <img src="/public/Img/Barra_busqueda.png" style="border-radius:0.1em;"/>
 
 >Cada libro se compone de una parte frontal con enlaces a una tienda y a la wikipedia del escritor, además si se hace click en la imagen, esta gira para dar mayor información del libro. La barra de busqueda que se encuentra en la parte superior permite filtrar búsquedas por título, autor, género, saga o fecha de publicación.
