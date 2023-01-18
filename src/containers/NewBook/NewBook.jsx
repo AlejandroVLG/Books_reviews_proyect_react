@@ -33,11 +33,15 @@ const NewBook = () => {
 
     const clearValidationMessageHandler = () => {
 
-        setTimeout(() => {
-            setBookState({
-                message: ""
-            })
-        }, 1000);
+        if (bookState.isError === true) {
+            
+            setTimeout(() => {
+                setBookState({
+                    ...bookState,
+                    message: ""
+                })
+            }, 1000);
+        }
     }
 
     let requirements = {

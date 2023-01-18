@@ -16,8 +16,7 @@ import {
     MDBCardSubTitle,
     MDBTypography,
     MDBListGroup,
-    MDBListGroupItem,
-    MDBBtn
+    MDBListGroupItem
 } from 'mdb-react-ui-kit'
 import axios from "axios"
 import './BookCard.scss'
