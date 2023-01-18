@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import axios from 'axios'
-import { Col, Form, Row } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router'
 import { logOut, userData } from '../User/userSlice'
+import { Col, Form, Row } from 'react-bootstrap'
+import axios from 'axios'
 import "./EditUser.scss"
 
 const EditUser = () => {
@@ -32,8 +32,33 @@ const EditUser = () => {
         instagram_account: '',
         profile_img: ''
     })
-
     const [avatarImgState, setAvatarImgState] = useState("")
+
+    const showUserData = async () => {
+
+        let oldDataResponse = await axios.get(`https://bookapi.up.railway.app/api/user/showUserById/${id}`, requirements)
+
+        setEditedUserState({
+            name: oldDataResponse.data.data.name,
+            last_name: oldDataResponse.data.data.last_name || "Info no disponible",
+            nick_name: oldDataResponse.data.data.nick_name,
+            password: oldDataResponse.data.data.password,
+            gender: oldDataResponse.data.data.gender || "Info no disponible",
+            age: oldDataResponse.data.data.age || "Info no disponible",
+            country: oldDataResponse.data.data.country || "Info no disponible",
+            favourite_author: oldDataResponse.data.data.favourite_author || "Info no disponible",
+            favourite_genre: oldDataResponse.data.data.favourite_genre || "Info no disponible",
+            currently_reading: oldDataResponse.data.data.currently_reading || "Info no disponible",
+            facebook_account: oldDataResponse.data.data.facebook_account || "blank",
+            twitter_account: oldDataResponse.data.data.twitter_account || "blank",
+            instagram_account: oldDataResponse.data.data.instagram_account || "blank",
+            profile_img: oldDataResponse.data.data.profile_img,
+        })
+    }
+
+    useEffect(() => {
+        showUserData()
+    }, [])
 
     const handleChange = (e) => {
         setEditedUserState({
@@ -61,34 +86,6 @@ const EditUser = () => {
         }
     }
 
-    const showUserData = async () => {
-
-        const userResponse = await axios.get(`https://bookapi.up.railway.app/api/user/showUserById/${id}`, requirements)
-
-        setEditedUserState({
-            name: userResponse.data.data.name,
-            last_name: userResponse.data.data.last_name || "Info no disponible",
-            nick_name: userResponse.data.data.nick_name,
-            password: userResponse.data.data.password,
-            gender: userResponse.data.data.gender || "Info no disponible",
-            age: userResponse.data.data.age || "Info no disponible",
-            country: userResponse.data.data.country || "Info no disponible",
-            favourite_author: userResponse.data.data.favourite_author || "Info no disponible",
-            favourite_genre: userResponse.data.data.favourite_genre || "Info no disponible",
-            currently_reading: userResponse.data.data.currently_reading || "Info no disponible",
-            facebook_account: userResponse.data.data.facebook_account || "blank",
-            twitter_account: userResponse.data.data.twitter_account || "blank",
-            instagram_account: userResponse.data.data.instagram_account || "blank",
-            profile_img: userResponse.data.data.profile_img
-        })
-    }
-
-    useEffect(() => {
-
-        showUserData()
-
-    }, [])
-
     const handleSubmit = async (e) => {
         try {
             e.preventDefault()
@@ -105,9 +102,7 @@ const EditUser = () => {
                 setTimeout(() => {
 
                     dispatch(logOut())
-
                     navigate("/books")
-
                 }, 1500)
 
             } else {

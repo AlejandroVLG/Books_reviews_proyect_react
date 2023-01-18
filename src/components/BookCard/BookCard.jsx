@@ -148,7 +148,7 @@ const BookCard = ({ onClick, books }) => {
                                         <button
                                             className='bookCardBtn'
                                             variant="dark"
-                                            onClick={() => navigate(`/editMyProfile/${books.id}`)}
+                                            onClick={() => navigate(`/editBook/${books.id}`)}
                                         >
                                             <img className="editIcon" src="../../../public/Img/editIcon.jpeg" alt="editIcon" />
                                         </button>

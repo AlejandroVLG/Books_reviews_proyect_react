@@ -1,6 +1,11 @@
 import React from "react"
+import { useNavigate } from "react-router"
+import { useState } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { logOut, userData } from "../../containers/User/userSlice"
 import { Icon } from '@iconify/react'
 import { motion } from 'framer-motion'
+import { Button, Col, Modal, Row } from "react-bootstrap"
 import {
     MDBCol,
     MDBContainer,
@@ -9,20 +14,15 @@ import {
     MDBCardText,
     MDBCardBody,
     MDBCardImage,
-    MDBTypography,
-    MDBBtn
+    MDBTypography
 } from 'mdb-react-ui-kit'
-import './ProfileCard.scss'
-import { useDispatch, useSelector } from "react-redux"
-import { logOut, userData } from "../../containers/User/userSlice"
-import { useNavigate } from "react-router"
 import axios from "axios"
-import { useState } from "react"
-import { Button, Col, Modal, Row } from "react-bootstrap"
+import './ProfileCard.scss'
+import { useEffect } from "react"
 
 const ProfileCard = props => {
 
-    let navigate = useNavigate()
+    const navigate = useNavigate()
 
     const dispatch = useDispatch()
 
@@ -56,8 +56,8 @@ const ProfileCard = props => {
                 setTimeout(() => {
 
                     dispatch(logOut())
-                    navigate("/books")
 
+                    navigate('/books')
                 }, 1000)
 
             } else {
@@ -205,7 +205,7 @@ const ProfileCard = props => {
                                     <a
                                         className='socialIconsBox'
                                         target='_blank'
-                                        href={props.data.facebook_account}
+                                        href={props.data.facebook_account} 
                                     >
                                         <Icon className='socialIcon' icon="akar-icons:facebook-fill" />
                                     </a>
