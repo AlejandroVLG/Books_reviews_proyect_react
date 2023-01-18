@@ -78,8 +78,15 @@ Para las animaciones he utilizado framer motion y para los estilos mdb-react y b
 
 ---
 
-### Añadir una reseña
+### Vista de reseñas
 <img src="/public/Img/Reseña.png" style="border-radius:0.1em;"/>
+
+>Cualquier usuario registrado puede añadir reseñas, pero únicamente el usuario que haya creado la reseña podrá editarla o eliminarla.
+
+---
+
+### Añadir una nueva reseña
+<img src="/public/Img/Nueva_reseña.png" style="border-radius:0.1em;"/>
 
 >Cualquier usuario registrado puede añadir reseñas, pero únicamente el usuario que haya creado la reseña podrá editarla o eliminarla.
 
