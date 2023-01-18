@@ -79,7 +79,7 @@ Para las animaciones he utilizado framer motion y para los estilos mdb-react y b
 ---
 
 ### Añadir una reseña
-<img src="/public/Img/Reseñas.png" style="border-radius:0.1em;"/>
+<img src="/public/Img/Reseña.png" style="border-radius:0.1em;"/>
 
 >Cualquier usuario registrado puede añadir reseñas, pero únicamente el usuario que haya creado la reseña podrá editarla o eliminarla.
 
@@ -87,7 +87,7 @@ Para las animaciones he utilizado framer motion y para los estilos mdb-react y b
 
 ### Vista del perfil de usuario
 <img src="/public/Img/Perfil_usuario.png" style="border-radius:0.1em;"/>
-<img src="/public/Img/Eliminar_perfil.png.png" style="border-radius:0.1em;"/>
+<img src="/public/Img/Eliminar_perfil.png" style="border-radius:0.1em;"/>
 
 >Perfil del usuario, con opción de modificarlo o eliminarlo y ventana de seguridad para confirmar.
 
