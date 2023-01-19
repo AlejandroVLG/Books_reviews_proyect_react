@@ -3,7 +3,7 @@ import { useSelector } from "react-redux"
 import { useNavigate } from "react-router"
 import { userData } from "../../containers/User/userSlice"
 import { useState } from "react"
-import { Card } from "react-bootstrap"
+import { Button, Card, Modal } from "react-bootstrap"
 import {
     MDBBtn,
     MDBCard,
@@ -26,6 +26,8 @@ const ReviewCard = props => {
 
     const [reviewErrorState, setReviewErrorState] = useState({})
 
+    const [showModalState, setShowModalState] = useState()
+
     const deleteId = props.data.id
 
     let requirements = {
@@ -34,7 +36,11 @@ const ReviewCard = props => {
         }
     }
 
-    const handleDelete = async () => {
+    const handleOpen = () => setShowModalState(true)
+
+    const handleClose = () => setShowModalState(false)
+
+    const handleDeleteReview = async () => {
         try {
             await axios.delete(`https://bookapi.up.railway.app/api/review/deleteReview/${deleteId}`, requirements)
 
@@ -74,6 +80,24 @@ const ReviewCard = props => {
                 className="mb-10 mainReviewCard"
                 style={{ borderRadius: '.5em' }}
             >
+                <>
+                    <Modal show={showModalState} onHide={handleClose} >
+                        <div className="deleteModalBox">
+                            <Modal.Header closeButton>
+                                <Modal.Title>AVISO</Modal.Title>
+                            </Modal.Header>
+                            <Modal.Body className="deleteModalBody">¿Seguro que quieres eliminar esta reseña?</Modal.Body>
+                            <Modal.Footer className="deleteModalFooter">
+                                <Button className="deleteModalButton" variant="danger" onClick={handleDeleteReview}>
+                                    Sí
+                                </Button>
+                                <Button className="deleteModalButton" variant="dark" onClick={handleClose}>
+                                    No
+                                </Button>
+                            </Modal.Footer>
+                        </div>
+                    </Modal>
+                </>
                 <MDBRow className="g-0">
                     <MDBCol
                         md="4"
@@ -103,24 +127,24 @@ const ReviewCard = props => {
                         <br />
                         <hr className="mt-0 mb-6" />
                         <br />
-                        <MDBBtn
+                        <Button
                             className='mx-2 reviewCardBtn'
-                            color='dark'
+                            variant='dark'
                             onClick={() => navigate(`/editReview/${props.data.id}`)}
                         >
                             Editar reseña
-                        </MDBBtn>
+                        </Button>
 
                         <br /><br />
                         <hr className="mt-0 mb-3" />
                         <br />
-                        <MDBBtn
+                        <Button
                             className='mx-2 reviewCardBtn'
-                            color='dark'
-                            onClick={handleDelete}
+                            variant="dark"
+                            onClick={handleOpen}
                         >
                             Eliminar reseña
-                        </MDBBtn>
+                        </Button>
                         <br /><br />
                     </MDBCol>
                     <MDBCol md="8">

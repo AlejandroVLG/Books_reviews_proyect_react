@@ -94,7 +94,7 @@ const ProfileCard = props => {
                         <Modal.Body className="deleteModalBody">¿Seguro que quieres eliminar tu cuenta?</Modal.Body>
                         <Modal.Footer className="deleteModalFooter">
                             <Button className="deleteModalButton" variant="danger" onClick={handleDeleteProfile}>
-                                Si
+                                Sí
                             </Button>
                             <Button className="deleteModalButton" variant="dark" onClick={handleClose}>
                                 No

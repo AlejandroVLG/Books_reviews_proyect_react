@@ -123,7 +123,7 @@ const BookCard = ({ onClick, books }) => {
                                     <Modal.Body className="deleteModalBody">¿Seguro que quieres eliminar este libro?</Modal.Body>
                                     <Modal.Footer className="deleteModalFooter">
                                         <Button className="deleteModalButton" variant="danger" onClick={handleDeleteBook}>
-                                            Si
+                                            Sí
                                         </Button>
                                         <Button className="deleteModalButton" variant="dark" onClick={handleClose}>
                                             No
