@@ -5,7 +5,7 @@
 # <center>Web reseñas de libros </center>
 
 El proyecto ha sido realizada usando HTML, SASS y JavaScript, React y Redux. 
-Para las animaciones he utilizado framer motion y para los estilos mdb-react y bootstrap-react. La web también consta de un back-end que es parte de este mismo proyecto (añado el enlace al final).
+Para las animaciones he utilizado framer motion y para los estilos y mdb-react y bootstrap-react, con lo que además es totalmente resposive. La web también consta de un back-end realizado en PHP/Laravel que es parte de este mismo proyecto (añado el enlace al final).
 
 
 ---
