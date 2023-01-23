@@ -160,9 +160,9 @@ const Login = () => {
   return (
 
     <Container className='loginBox'>
-      <Row>
+      <Row className='rowLoginForm'>
         <Col xs={12} sm={12} md={6} lg={6} xl={6} xxl={6} >
-          <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Group className="mb-1 formGroupEmail" controlId="formBasicEmail">
             <Form.Label className='loginLabel'>Correo electrónico</Form.Label>
             <Form.Control
               className='loginInput'
@@ -178,7 +178,7 @@ const Login = () => {
           </Form.Group>
         </Col>
         <Col xs={12} sm={12} md={6} lg={6} xl={6} xxl={6} >
-          <Form.Group className="mb-3" controlId="formBasicPassword">
+          <Form.Group className="mb-1" controlId="formBasicPassword">
             <Form.Label className='loginLabel'>Contraseña</Form.Label>
             <Form.Control
               className='loginInput'

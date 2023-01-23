@@ -61,9 +61,10 @@ const Book = () => {
     }, [])
 
     return (
-        <MDBContainer fluid>
+        <MDBContainer fluid className="mainBookContainer">
             <MDBRow>
                 <MDBCol className="searchBarCol">
+                    <div className="blankBox"></div>
                     <p className="textSearchBar">
                         Realiza una búsqueda por título, género, saga o fecha
                     </p>
@@ -72,7 +73,7 @@ const Book = () => {
                             className="form-control"
                             type="text"
                             value={search}
-                            placeholder="Búsqueda por título, autor, género, saga o fecha de publicación"
+                            placeholder="Buscar libro"
                             onChange={handleChange}
                         />
                     </div>
@@ -81,6 +82,7 @@ const Book = () => {
             <MDBRow>
                 {results.length === 0 &&
                     <div className="bookSpinner">
+                        <div className="blankBox"></div>
                         <p className="loadingText">Cargando contenido</p>
                         <Spinner />
 

@@ -183,7 +183,7 @@ const Register = () => {
   return (
 
     <Form className='registerForm' onSubmit={userRegister}>
-      <Row>
+      <Row className='rowRegisterForm'>
         <Col xs={12} sm={12} md={6} lg={6} xl={6} xxl={6} >
           <Form.Group className="mb-3" controlId="formBasicName">
             <Form.Label className='registerLabel'>Nombre</Form.Label>

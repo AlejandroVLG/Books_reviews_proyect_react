@@ -4,7 +4,8 @@ import { Container } from "react-bootstrap"
 export default function Spinner() {
 
   return (
-    <Container >
+    <Container>
+      <div className="blankSpinnerBox"></div>
       <PulseLoader
         color="white"
         cssOverride={{}}
@@ -12,6 +13,7 @@ export default function Spinner() {
         margin={12}
         size={35}
         speedMultiplier={0.7}
+        className="spinner"
       />
     </Container>
   )
