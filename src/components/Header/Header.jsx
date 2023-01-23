@@ -7,7 +7,7 @@ const Header = () => {
     <div className='header'>
       <img
         className='headerImg'
-        src="../../../Img/Vector1.jpg"
+        src="../../../public/Img/Vector1.jpg"
         alt="headerImage"
       />
     </div>
