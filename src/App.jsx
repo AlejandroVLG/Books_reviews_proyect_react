@@ -23,7 +23,7 @@ function App() {
         <Header />
         <NavigationBar />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/books" element={<Book />} />
           <Route path="/newBook" element={<NewBook />} />
           <Route path="/editBook/:id" element={<EditBook />} />

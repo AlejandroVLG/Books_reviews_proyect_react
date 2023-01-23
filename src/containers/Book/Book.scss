@@ -1,16 +1,35 @@
-.bookCardsRowContainer{
+.bookCardsRowContainer {
+    height: 61.8vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.searchBarCol {
+    margin-top: 2em !important;
+    width: 100vw;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-.searchBar {
-    margin-top: 0.7em;
-    margin-bottom: 2em;
-    box-shadow: 0 0 0.4em 0.2em rgba(255, 255, 255, 0.534);
+    flex-direction: column;
 }
 
-.bookSpinner{
-    height: 100vh;
+.searchBar {
+    width: 60%;
+    margin-top: 0.7em;
+    margin-bottom: 2em;
+    border-radius: 0.4em;
+    box-shadow: 0 0 0.4em 0.1em rgba(255, 255, 255, 0.483);
+}
+
+.textSearchBar {
+    color: rgb(173, 173, 173);
+    font-size: large;
+}
+
+.bookSpinner {
+    height: 100%;
     width: 100%;
     display: flex;
     align-items: center;

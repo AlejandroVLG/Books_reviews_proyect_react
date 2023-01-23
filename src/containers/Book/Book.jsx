@@ -6,6 +6,7 @@ import { MDBCol, MDBContainer, MDBRow } from "mdb-react-ui-kit"
 import Spinner from "../../components/Spinner/Spinner"
 import axios from "axios"
 import "./Book.scss"
+import { Form } from "react-bootstrap"
 
 const Book = () => {
 
@@ -62,15 +63,20 @@ const Book = () => {
 
     return (
         <MDBContainer fluid>
-            <MDBRow >
-                <MDBCol>
-                    <input
-                        className="form-control searchBar"
-                        type="text"
-                        value={search}
-                        placeholder="Búsqueda por título, autor, género, saga o fecha de publicación"
-                        onChange={handleChange}
-                    />
+            <MDBRow>
+                <MDBCol className="searchBarCol">
+                    <p className="textSearchBar">
+                        Realiza una búsqueda por título, género, saga o fecha
+                    </p>
+                    <div className="searchBar">
+                        <input
+                            className="form-control"
+                            type="text"
+                            value={search}
+                            placeholder="Búsqueda por título, autor, género, saga o fecha de publicación"
+                            onChange={handleChange}
+                        />
+                    </div>
                 </MDBCol>
             </MDBRow>
             <MDBRow>
