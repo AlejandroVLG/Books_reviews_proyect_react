@@ -647,7 +647,7 @@ const EditUser = () => {
                                 <option value="../../Img/avatar11.jpg" className='avatar avatar11'>Imagen 11</option>
                                 <option value="../../Img/avatar12.jpg" className='avatar avatar12'>Imagen 12</option>
                                 <option value="../../Img/avatar13.jpg" className='avatar avatar13'>Imagen 13</option>
-                                <option value="../../Img/avatar14.jpg" className='avatar avatar14'>Imagen 14</option>
+                                <option value="../../Img/avatar14.png" className='avatar avatar14'>Imagen 14</option>
                                 <option value="../../Img/avatar15.jpg" className='avatar avatar15'>Imagen 15</option>
                                 <option value="../../Img/avatar16.jpg" className='avatar avatar16'>Imagen 16</option>
                             </Form.Select>
