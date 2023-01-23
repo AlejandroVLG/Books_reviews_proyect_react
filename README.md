@@ -1,4 +1,4 @@
-<img src="src/img/geeks.png" style="width:900px; border-radius:0.1em;"/>
+<img src="./src/Img/geeks.png" style="width:900px; border-radius:0.1em;"/>
 
 ---
 
@@ -19,7 +19,7 @@ Para las animaciones he utilizado framer motion y para los estilos y mdb-react y
 
 ---
 ## Vista principal
-<img src="src/Img/geeks.png" style="border-radius:0.1em;"/>
+<img src="./src/Img/Home.png" style="border-radius:0.1em;"/>
 
 >Vista de inicio donde se da información del proyecto y se especifica su finalidad.
 
