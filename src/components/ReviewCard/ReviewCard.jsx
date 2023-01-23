@@ -5,7 +5,6 @@ import { userData } from "../../containers/User/userSlice"
 import { useState } from "react"
 import { Button, Card, Modal } from "react-bootstrap"
 import {
-    MDBBtn,
     MDBCard,
     MDBCardBody,
     MDBCardImage,

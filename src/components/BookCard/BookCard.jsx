@@ -149,7 +149,7 @@ const BookCard = ({ onClick, books }) => {
                                             variant="dark"
                                             onClick={() => navigate(`/editBook/${books.id}`)}
                                         >
-                                            <img className="editIcon" src="../../../public/Img/editIcon.jpeg" alt="editIcon" />
+                                            <img className="editIcon" src="../../Img/editIcon.jpeg" alt="editIcon" />
                                         </button>
 
                                     </Col>
@@ -159,7 +159,7 @@ const BookCard = ({ onClick, books }) => {
                                             variant="dark"
                                             onClick={handleOpen}
                                         >
-                                            <img className="deleteIcon" src="../../../public/Img/deleteIcon.png" alt="editIcon" />
+                                            <img className="deleteIcon" src="../../Img/deleteIcon.png" alt="editIcon" />
                                         </button>
 
                                     </Col>

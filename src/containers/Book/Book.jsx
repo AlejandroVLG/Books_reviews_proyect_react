@@ -6,7 +6,6 @@ import { MDBCol, MDBContainer, MDBRow } from "mdb-react-ui-kit"
 import Spinner from "../../components/Spinner/Spinner"
 import axios from "axios"
 import "./Book.scss"
-import { Form } from "react-bootstrap"
 
 const Book = () => {
 

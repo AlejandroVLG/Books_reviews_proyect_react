@@ -1,4 +1,4 @@
-<img src="/public/Img/geeks.png" style="width:900px; border-radius:0.1em;"/>
+<img src="/src/img/geeks.png" style="width:900px; border-radius:0.1em;"/>
 
 ---
 
@@ -19,82 +19,82 @@ Para las animaciones he utilizado framer motion y para los estilos y mdb-react y
 
 ---
 ## Vista principal
-<img src="/public/Img/Home.png" style="border-radius:0.1em;"/>
+<img src="/src/img/Home.png" style="border-radius:0.1em;"/>
 
 >Vista de inicio donde se da información del proyecto y se especifica su finalidad.
 
 ---
 
 ### Inicio de sesión
-<img src="/public/Img/Login_validacion.png" style="border-radius:0.1em;"/>
+<img src="/src/img/Login_validacion.png" style="border-radius:0.1em;"/>
 
 ---
 
 ### Nuevo usuario
-<img src="/public/Img/Registro.png" style="border-radius:0.1em;"/>
+<img src="/src/img/Registro.png" style="border-radius:0.1em;"/>
 
 >Todos los formularios ya sea para crear un registro nuevo, editarlo o eliminarlo, constan de un sistema de validaciones.
 
 ---
 
 ### Vista frontal de todos los libros añadidos
-<img src="/public/Img/Libros_frontal.png" style="border-radius:0.1em;"/>
+<img src="/src/img/Libros_frontal.png" style="border-radius:0.1em;"/>
 
 ---
 
-<img src="/public/Img/Barra_busqueda.png" style="border-radius:0.1em;"/>
+<img src="/src/img/Barra_busqueda.png" style="border-radius:0.1em;"/>
 
 >Cada libro se compone de una parte frontal con enlaces a una tienda y a la wikipedia del escritor, además si se hace click en la imagen, esta gira para dar mayor información del libro. La barra de busqueda que se encuentra en la parte superior permite filtrar búsquedas por título, autor, género, saga o fecha de publicación.
 
 ---
 
 ### Vista trasera de uno de los libros
-<img src="/public/Img/Parte_trasera.png" style="border-radius:0.1em;"/>
+<img src="/src/img/Parte_trasera.png" style="border-radius:0.1em;"/>
 
 >La vista trasera de la cada libro incluye información adicional además de la opción de ver reseñas existentes de ese libro o crear una nueva si has iniciado sesión con una cuenta registrada, además permite únicamente a un Admin o al SuperAdmin de la web, eliminar o modificar libros existentes.
 
 ---
 
 ### Editar o eliminar un libro
-<img src="/public/Img/Boton_edit.png" style="border-radius:0.1em;"/>
-<img src="/public/Img/Boton_delete.png" style="border-radius:0.1em;"/>
-<img src="/public/Img/Ventana_eliminar.png" style="border-radius:0.1em;"/>
+<img src="/src/img/Boton_edit.png" style="border-radius:0.1em;"/>
+<img src="/src/img/Boton_delete.png" style="border-radius:0.1em;"/>
+<img src="/src/img/Ventana_eliminar.png" style="border-radius:0.1em;"/>
 
 >Botones para eliminar o modificar un libro existente, solo visible y accesible para el administrador o el SuperAdmin con una ventana de seguridad para confirmar que se quiere eliminar el libro.
 
 ---
 
 ### Añadir un nuevo libro
-<img src="/public/Img/Nuevo_libro.png" style="border-radius:0.1em;"/>
+<img src="/src/img/Nuevo_libro.png" style="border-radius:0.1em;"/>
 
 >Cualquier usuario registrado puede añadir libros nuevos en la biblioteca, quizás en un futuro esta opción cambie y solo pueda añadir libros el administrador o el SuperAdmin.
 
 ---
 
 ### Formulario de edición de libros
-<img src="/public/Img/Editar_libro.png" style="border-radius:0.1em;"/>
+<img src="/src/img/Editar_libro.png" style="border-radius:0.1em;"/>
 
 >Formulario con sus validaciones correspondientes para editar un libro existente, solo accesible para un administrador o el SuperAdmin.
 
 ---
 
 ### Vista de reseñas
-<img src="/public/Img/Reseña.png" style="border-radius:0.1em;"/>
+<img src="/src/img/Reseña.png" style="border-radius:0.1em;"/>
 
 >Vista de las reseñas del libro seleccionado con opción de modificarlas o eliminarlas.
 
 ---
 
 ### Añadir una nueva reseña
-<img src="/public/Img/Nueva_reseña.png" style="border-radius:0.1em;"/>
+<img src="/src/img/Nueva_reseña.png" style="border-radius:0.1em;"/>
 
 >Cualquier usuario registrado puede añadir reseñas, pero únicamente el usuario que haya creado la reseña podrá editarla o eliminarla.
 
 ---
 
 ### Vista del perfil de usuario
-<img src="/public/Img/Perfil_usuario.png" style="border-radius:0.1em;"/>
-<img src="/public/Img/Eliminar_perfil.png" style="border-radius:0.1em;"/>
+<img src="/src/img/Perfil_usuario.png" style="border-radius:0.1em;"/>
+<img src="/src/img/Eliminar_perfil.png" style="border-radius:0.1em;"/>
 
 >Perfil del usuario, con opción de modificarlo o eliminarlo y ventana de seguridad para confirmar.
 
@@ -102,7 +102,7 @@ Para las animaciones he utilizado framer motion y para los estilos y mdb-react y
 
 ### Modificar datos del perfil
 
-<img src="/public/Img/Modificar_usuario.png" style="border-radius:0.1em;"/>
+<img src="/src/img/Modificar_usuario.png" style="border-radius:0.1em;"/>
 
 >Vista para modificar los datos de un usuario existente con opción de modificar la imagen por defecto del perfil a elegir entre más de 15 avatares precargados.
 
