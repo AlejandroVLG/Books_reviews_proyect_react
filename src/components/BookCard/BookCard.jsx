@@ -45,7 +45,7 @@ const BookCard = ({ onClick, books }) => {
 
     const handleDeleteBook = async () => {
         try {
-            await axios.delete(`https://bookapi.up.railway.app/api/book/deleteBook/${deleteId}`, requirements)
+            await axios.delete(`http://127.0.0.1:8000/api/book/deleteBook/${deleteId}`, requirements)
 
             if (!deleteDataState.isError) {
 
@@ -198,23 +198,21 @@ const BookCard = ({ onClick, books }) => {
                             </MDBListGroup>
                             <Row>
                                 <Col xs={12} sm={12} md={12} lg={6} xl={6} xxl={6}>
-                                    <Button
-                                        className='bookCardBtn'
-                                        variant="dark"
+                                    <button
+                                        className='botonEfectoNeumorfismo'
                                         onClick={() => navigate(`/reviews/${books.id}`)}
                                     >
                                         Ver reseña
-                                    </Button>
+                                    </button>
 
                                 </Col>
                                 <Col xs={12} sm={12} md={12} lg={6} xl={6} xxl={6}>
-                                    <Button
-                                        className='bookCardBtn'
-                                        variant="dark"
+                                    <button
+                                        className='botonEfectoNeumorfismo'
                                         onClick={() => navigate(`/newReview/${books.id}`)}
                                     >
                                         Añadir reseña
-                                    </Button>
+                                    </button>
                                 </Col>
                             </Row>
 

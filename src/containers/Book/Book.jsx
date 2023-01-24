@@ -20,7 +20,7 @@ const Book = () => {
     const showBooks = async () => {
 
         try {
-            const response = await axios.get('https://bookapi.up.railway.app/api/book/showAllBooks')
+            const response = await axios.get('http://127.0.0.1:8000/api/book/showAllBooks')
 
             setbooksData({
                 books: response.data.data
@@ -62,8 +62,8 @@ const Book = () => {
 
     return (
         <MDBContainer fluid className="mainBookContainer">
-            <MDBRow>
-                <MDBCol className="searchBarCol">
+            <MDBRow className="booksRow">
+                <MDBCol md={8} lg={7} xl={6} xxl={6} className="searchBarCol">
                     <div className="blankBox"></div>
                     <p className="textSearchBar">
                         Realiza una búsqueda por título, género, saga o fecha
@@ -77,6 +77,7 @@ const Book = () => {
                             onChange={handleChange}
                         />
                     </div>
+                    <div className="blankBox"></div>
                 </MDBCol>
             </MDBRow>
             <MDBRow>
@@ -95,7 +96,7 @@ const Book = () => {
                     (
                         <MDBCol
                             className="mb-2 mb-lg-0 colCard"
-                            sm={7} md={6} lg={5} xl={4} xxl={3}
+                            md={6} lg={5} xl={4} xxl={3}
                             key={i}>
                             <FlipCard books={books} key={i} />
                         </MDBCol>

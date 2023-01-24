@@ -6,7 +6,7 @@
 }
 
 .blankBox {
-    height: 3em;
+    height: 1em;
     width: 100%;
 }
 
@@ -14,6 +14,17 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    justify-content: center;
+}
+
+.colCard{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.booksRow{
+    display: flex;
     justify-content: center;
 }
 
@@ -26,7 +37,7 @@
 }
 
 .searchBar {
-    width: 60%;
+    width: 100%;
     border-radius: 0.4em;
     box-shadow: 0 0 0.4em 0.1em rgba(255, 255, 255, 0.483);
 }

@@ -44,7 +44,7 @@ const ProfileCard = props => {
     const handleDeleteProfile = async () => {
 
         try {
-            await axios.delete(`https://bookapi.up.railway.app/api/user/deleteMyProfile`, requirements)
+            await axios.delete(`http://127.0.0.1:8000/api/user/deleteMyProfile`, requirements)
 
             if (!deletedProfileState.isError) {
 

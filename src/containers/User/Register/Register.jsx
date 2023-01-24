@@ -109,7 +109,7 @@ const Register = () => {
 
     try {
 
-      const user = await axios.post('https://bookapi.up.railway.app/api/register',
+      const user = await axios.post('http://127.0.0.1:8000/api/register',
         {
           name: register.name,
           nick_name: register.nick_name,
