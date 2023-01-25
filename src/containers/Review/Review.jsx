@@ -1,8 +1,6 @@
 import axios from "axios"
 import React, { useEffect, useState } from "react"
 import { useParams } from "react-router"
-import { userData } from "../User/userSlice"
-import { useSelector } from "react-redux"
 import ReviewCard from "../../components/ReviewCard/ReviewCard"
 import Spinner from "../../components/Spinner/Spinner"
 import { MDBCol, MDBContainer, MDBRow } from "mdb-react-ui-kit"
@@ -12,23 +10,15 @@ const Review = () => {
 
     const { id } = useParams()
 
-    const identification = useSelector(userData)
-
     const [reviewData, setReviewsData] = useState({
         reviews: []
     })
-
-    let requirements = {
-        headers: {
-            "Authorization": `Bearer ${identification.token}`
-        }
-    }
 
     const showReviews = async () => {
 
         try {
 
-            const response = await axios.get(`http://127.0.0.1:8000/api/review/searchReviewByBookId/${id}`, requirements)
+            const response = await axios.get(`http://127.0.0.1:8000/api/review/searchReviewByBookId/${id}`)
 
             setReviewsData({
                 reviews: response.data.data

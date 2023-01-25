@@ -194,30 +194,103 @@ const ReviewCard = props => {
         )
     } else {
         return (
-            <div className="reviewsBox">
-                <Card id="reviewCardBox">
-                    <Card.Img
-                        className="reviewCardImg"
-                        variant="top"
-                        src={props.data.book_cover}
-                    />
-                    <Card.Body className="reviewCardData">
-                        <Card.Title>{props.data.title}</Card.Title>
-                        <Card.Title>{props.data.review_title}</Card.Title>
-                        <Card.Text>{props.data.message}</Card.Text>
-                    </Card.Body>
-                    <Card.Footer>
-                        <div >
-                            <small className="text-muted" id="scoreBox">
-                                <div>
-                                    <strong>Puntuación: </strong>
-                                    {props.data.score}
-                                </div>
-                            </small>
+            <MDBCard
+                fluid
+                className="mb-10 mainReviewCard"
+                style={{ borderRadius: '.5em' }}
+            >
+                <>
+                    <Modal show={showModalState} onHide={handleClose} >
+                        <div className="deleteModalBox">
+                            <Modal.Header closeButton>
+                                <Modal.Title>AVISO</Modal.Title>
+                            </Modal.Header>
+                            <Modal.Body className="deleteModalBody">¿Seguro que quieres eliminar esta reseña?</Modal.Body>
+                            <Modal.Footer className="deleteModalFooter">
+                                <Button className="deleteModalButton" variant="danger" onClick={handleDeleteReview}>
+                                    Sí
+                                </Button>
+                                <Button className="deleteModalButton" variant="dark" onClick={handleClose}>
+                                    No
+                                </Button>
+                            </Modal.Footer>
+                            <div>
+                                {
+                                    reviewErrorState.isError ?
+                                        (<p style={{ color: "red", fonWeight: "bold" }}>{reviewErrorState.message}</p>)
+                                        :
+                                        (<p style={{ color: "rgb(30, 186, 30)", fonWeight: "bold" }}>{reviewErrorState.message}</p>)
+                                }
+                            </div>
                         </div>
-                    </Card.Footer>
-                </Card>
-            </div>
+                    </Modal>
+                </>
+                <MDBRow className="g-0">
+                    <MDBCol
+                        md="4"
+                        className="text-center text-white reviewColData"
+                        style={{ borderRadius: '.5em', borderBottomLeftRadius: '.5em' }}
+                    >
+                        <MDBCardImage
+                            fluid
+                            className="my-5 reviewCardImg"
+                            src={props.data.book_cover}
+                            alt="Avatar"
+                            style={{ width: '12em' }}
+                        />
+                        <hr className="mt-0 mb-3" />
+                        <br />
+                        <MDBTypography className="bookTitleReview" tag="h3">
+                            {props.data.title}
+                        </MDBTypography>
+                        <br />
+                        <hr className="mt-0 mb-6" />
+                    </MDBCol>
+                    <MDBCol md="8">
+
+                        <MDBCardBody className="p-4">
+                            <br />
+                            <MDBCardText className="text-muted">
+                                {props.data.synopsis}
+                            </MDBCardText>
+                            <br />
+                            <MDBRow className="pt-1">
+
+                                <MDBCol size="6" className="mb-3">
+                                    <MDBTypography tag="h5">Título de la reseña</MDBTypography>
+                                    <hr className="mt-0 mb-4 bodyHr" />
+                                    <MDBCardText className="text-muted">
+                                        {props.data.review_title}
+                                    </MDBCardText>
+                                </MDBCol>
+                                <MDBCol size="6" className="mb-3">
+                                    <MDBTypography tag="h5">Puntuación</MDBTypography>
+                                    <hr className="mt-0 mb-4 bodyHr" />
+                                    <MDBCardText tag="h1">
+                                        {props.data.score}
+                                    </MDBCardText>
+                                </MDBCol>
+
+                            </MDBRow>
+
+                            <br />
+                            <MDBTypography className='dataHead' tag="h6">
+                                Reseña
+                            </MDBTypography>
+                            <br />
+                            <hr className="mt-0 mb-4 bodyHr" />
+
+                            <MDBRow className="pt-1">
+                                <MDBCol size="12" className="mb-3">
+                                    <MDBCardText className="text-muted">
+                                        {props.data.message}
+                                    </MDBCardText>
+                                </MDBCol>
+                            </MDBRow>
+                        </MDBCardBody>
+                    </MDBCol>
+                </MDBRow>
+            </MDBCard>
         )
     }
 }
