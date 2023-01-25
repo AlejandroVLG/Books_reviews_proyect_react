@@ -202,8 +202,8 @@ const BookCard = ({ onClick, books }) => {
                                     </MDBCardText>
                                 </MDBListGroupItem>
                             </MDBListGroup>
-                            <Row>
-                                <Col xs={12} sm={12} md={12} lg={6} xl={6} xxl={6}>
+                            <MDBRow>
+                                <MDBCol xs={12} sm={12} md={12} lg={6} xl={6} xxl={6}>
                                     <button
                                         className='butonCoolEffect'
                                         onClick={() => navigate(`/reviews/${books.id}`)}
@@ -211,16 +211,16 @@ const BookCard = ({ onClick, books }) => {
                                         Ver <br /> reseñas
                                     </button>
 
-                                </Col>
-                                <Col xs={12} sm={12} md={12} lg={6} xl={6} xxl={6}>
+                                </MDBCol>
+                                <MDBCol xs={12} sm={12} md={12} lg={6} xl={6} xxl={6}>
                                     <button
                                         className='butonCoolEffect'
                                         onClick={() => navigate(`/newReview/${books.id}`)}
                                     >
                                         Añadir reseña
                                     </button>
-                                </Col>
-                            </Row>
+                                </MDBCol>
+                            </MDBRow>
                         </MDBCardBody>
                     </div>
                 </div>
@@ -296,25 +296,30 @@ const BookCard = ({ onClick, books }) => {
                                     </MDBCardText>
                                 </MDBListGroupItem>
                             </MDBListGroup>
-                            <Row>
-                                <Col xs={12} sm={12} md={12} lg={6} xl={6} xxl={6}>
+                            <MDBRow>
+                                <MDBCardTitle>
+                                    <MDBTypography tag="h6" className="text-muted">
+                                        Reseñas
+                                    </MDBTypography>
+                                </MDBCardTitle>
+                                <MDBCol >
                                     <button
                                         className='butonCoolEffect'
                                         onClick={() => navigate(`/reviews/${books.id}`)}
                                     >
-                                        Ver <br /> reseñas
+                                        Ver
                                     </button>
 
-                                </Col>
-                                <Col xs={12} sm={12} md={12} lg={6} xl={6} xxl={6}>
+                                </MDBCol>
+                                <MDBCol >
                                     <button
                                         className='butonCoolEffect'
                                         onClick={() => navigate(`/newReview/${books.id}`)}
                                     >
-                                        Añadir reseña
+                                        Nueva
                                     </button>
-                                </Col>
-                            </Row>
+                                </MDBCol>
+                            </MDBRow>
                         </MDBCardBody>
                     </div>
                 </div>
@@ -391,25 +396,26 @@ const BookCard = ({ onClick, books }) => {
                                 </MDBCardText>
                             </MDBListGroupItem>
                         </MDBListGroup>
-                        <Row>
-                            <Col xs={12} sm={12} md={12} lg={6} xl={6} xxl={6}>
+                        <MDBRow>
+                            <MDBCol xs={12} sm={12} md={12} lg={6} xl={6} xxl={6}>
+
                                 <button
                                     className='butonCoolEffect'
                                     onClick={() => navigate(`/reviews/${books.id}`)}
                                 >
-                                    Ver <br /> reseñas
+                                    Reseñas
                                 </button>
 
-                            </Col>
-                            <Col xs={12} sm={12} md={12} lg={6} xl={6} xxl={6}>
+                            </MDBCol>
+                            <MDBCol xs={12} sm={12} md={12} lg={6} xl={6} xxl={6}>
                                 <button
                                     className='butonCoolEffect'
                                     onClick={() => navigate(`/newReview/${books.id}`)}
                                 >
-                                    Añadir reseña
+                                    Nueva
                                 </button>
-                            </Col>
-                        </Row>
+                            </MDBCol>
+                        </MDBRow>
                     </MDBCardBody>
                 </div>
             </div>

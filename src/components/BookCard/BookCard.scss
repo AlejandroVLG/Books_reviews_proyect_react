@@ -12,6 +12,7 @@
 }
 
 .cardContainer {
+    height: fit-content;
     transform-style: preserve-3d;
     position: relative;
     user-select: none;
@@ -34,6 +35,10 @@
 
 .backCard {
     transform: rotateY(180deg);
+
+    @media screen and (max-width: 350px) {
+        height: fit-content;
+    }
 }
 
 .bookCardBody {

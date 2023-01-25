@@ -29,7 +29,7 @@ const MyProfile = () => {
     } else {
 
       return (
-        <div className='myProfile'>
+        <div>
 
           {myProfile.length === 0 && <p><Spinner /></p>}
           {

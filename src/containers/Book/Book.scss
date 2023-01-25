@@ -1,11 +1,11 @@
 .mainBookContainer {
     height: 100%;
-    min-height: 62vh;
+    min-height: 66vh;
     margin: 0;
     padding: 0;
 
     @media screen and (max-width: 768px) {
-        min-height: 93vh;
+        min-height: 95vh;
     }
 }
 
@@ -69,16 +69,7 @@
     font-size: xx-large;
     cursor: progress;
 
-    @media screen and (max-width: 576px) {
-        font-size: small;
-    }
     @media screen and (max-width: 768px) {
-        font-size: large;
-    }
-    @media screen and (max-width: 992px) {
-        font-size: large;
-    }
-    @media screen and (max-width: 1200px) {
-        font-size: x-large;
+        font-size: small;
     }
 }

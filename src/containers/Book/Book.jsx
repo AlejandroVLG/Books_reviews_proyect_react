@@ -86,7 +86,6 @@ const Book = () => {
                         <div className="blankBox"></div>
                         <p className="loadingText">Cargando...</p>
                         <Spinner />
-
                     </div>
                 }
             </MDBRow>
