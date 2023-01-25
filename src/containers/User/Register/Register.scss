@@ -5,6 +5,10 @@
 	padding: 2.5em;
 	color: white;
 	margin: auto;
+
+	@media screen and (max-width: 768px) {
+		min-height: 93vh;
+	}
 }
 
 .registerLabel {

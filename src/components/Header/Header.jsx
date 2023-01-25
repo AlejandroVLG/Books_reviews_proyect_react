@@ -4,7 +4,7 @@ import "./Header.scss"
 const Header = () => {
   return (
 
-    <div className='header'>
+    <div  Container className='header' sm={0} md={12} lg={6} xl={6} xxl={6}>
       <img
         className='headerImg'
         src="../../Img/Vector1.jpg"

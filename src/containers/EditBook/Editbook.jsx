@@ -309,7 +309,7 @@ const EditBook = () => {
                     <Col xs={12} sm={12} md={12} lg={12} xl={12} xxl={12} >
                         <Form.Group className="mb-3 editBookBoxButton">
                             <button className='editBookSendButtom' variant="primary" type="submit">
-                                Actualizar datos
+                                Actualizar
                             </button>
                             <div className='editBookMessage'>
                                 {

@@ -75,7 +75,8 @@
 }
 
 .myProfileBtn {
-    @include buttonPneumorphism()
+    @include buttonPneumorphism();
+    margin-bottom: 1.5em;  
 }
 
 .myProfileBtn:hover {

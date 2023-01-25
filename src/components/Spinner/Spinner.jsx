@@ -1,20 +1,20 @@
-import PulseLoader from "react-spinners/PulseLoader"
-import { Container } from "react-bootstrap"
+import React from "react"
+import { Rings } from "react-loader-spinner"
 
 export default function Spinner() {
 
   return (
-    <Container>
-      <div className="blankSpinnerBox"></div>
-      <PulseLoader
+    <div >
+      <Rings
+        height="220"
+        width="220"
         color="white"
-        cssOverride={{}}
-        loading
-        margin={12}
-        size={35}
-        speedMultiplier={0.7}
-        className="spinner"
+        radius="6"
+        wrapperStyle={{}}
+        wrapperClass=""
+        visible={true}
+        ariaLabel="rings-loading"
       />
-    </Container>
+    </div>
   )
 }

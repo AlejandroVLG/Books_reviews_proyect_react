@@ -84,7 +84,7 @@ const Book = () => {
                 {results.length === 0 &&
                     <div className="bookSpinner">
                         <div className="blankBox"></div>
-                        <p className="loadingText">Cargando contenido</p>
+                        <p className="loadingText">Cargando...</p>
                         <Spinner />
 
                     </div>

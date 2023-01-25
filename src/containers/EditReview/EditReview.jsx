@@ -185,7 +185,7 @@ const EditReview = () => {
                                 variant="primary"
                                 type="submit"
                             >
-                                Actualizar datos
+                                Actualizar
                             </button>
                             <div className='editMessage'>
                                 {
