@@ -227,23 +227,21 @@ const ProfileCard = props => {
                                 </div>
                                 <Row>
                                     <Col xs={12} sm={12} md={12} lg={6} xl={6} xxl={6}>
-                                        <Button
+                                        <button
                                             className='myProfileBtn'
-                                            variant="dark"
                                             onClick={() => navigate(`/editMyProfile/${props.data.id}`)}
                                         >
                                             Editar Perfil
-                                        </Button>
+                                        </button>
 
                                     </Col>
                                     <Col xs={12} sm={12} md={12} lg={6} xl={6} xxl={6}>
-                                        <Button
+                                        <button
                                             className='myProfileBtn'
-                                            variant="dark"
                                             onClick={handleOpen}
                                         >
                                             Eliminar Perfil
-                                        </Button>
+                                        </button>
                                     </Col>
                                 </Row>
                             </MDBCardBody>

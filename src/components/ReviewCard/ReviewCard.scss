@@ -7,29 +7,30 @@
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-@mixin botonNeumorfismo() {
-    background-color: transparent;
+@mixin buttonPneumorphism () {
+    background: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
     font-weight: bold;
-    color: rgb(97, 96, 96);
+    color: rgb(0, 0, 0);
     font-size: 1em;
-    padding: 1em 1.5em;
-    border: 0.15em solid #eee;
+    padding: 0.5em 1em;
+    border: 0.1em solid rgb(33, 123, 120);
     border-radius: 0.5em;
     cursor: pointer;
     transition: all 1s ease;
-    box-shadow: 0.5em 0.5em 1em #ccc, -0.5em -0.5em 1em #fff;
+    box-shadow: 0.5em 0.5em 1em rgb(69, 141, 135), -0.5em -0.5em 1em rgba(85, 192, 188, 0.559);
 }
 
 .mainReviewCard {
     height: auto;
     width: 95%;
-    background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+    background: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
     box-shadow: 0em 0em 0.4em 0.05em rgb(255, 255, 255);
 }
 
 .reviewCardImg {
+    border: 0.01em solid white;
     border-radius: 0.4em;
-    box-shadow: 0em 0em 0.2em 0.2em rgba(0, 0, 0, 0.653);
+    box-shadow: 0em 0em 0.3em 0.2em rgba(0, 0, 0, 0.653);
     max-height: 18em;
     min-height: 18em;
 }
@@ -45,11 +46,15 @@
 }
 
 .reviewCardBtn {
-    border: 0.08em solid white !important;
-    box-shadow: 0em 0em 0.3em 0.1em rgb(0, 0, 0);
+    @include buttonPneumorphism()
 }
 
 .reviewCardBtn:hover{
-    box-shadow: 0em 0em 0.3em 0.1em rgb(133, 12, 12);
+    box-shadow: 0em 0em 0.3em 0.1em black;
+    transition: all 1s ease;
+}
 
+.reviewCardBtn:focus{
+    box-shadow: 0em 0em 0.3em 0.1em black;
+    transition: all 1s ease;
 }

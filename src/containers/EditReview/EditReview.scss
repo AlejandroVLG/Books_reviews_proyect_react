@@ -1,8 +1,9 @@
 .mainEditReviewBox {
-	width: 100%;
+	height: 100%;
+	width: 100vw;
+	min-height: 62vh;
 	height: auto;
 	box-sizing: border-box;
-	background: #e5e5e5;
 }
 
 .editReviewFormBox {
@@ -19,7 +20,7 @@
 }
 
 .editReviewLabel {
-	color: rgb(247, 115, 115);
+	color: white;
 	display: block;
 	font-weight: 700;
 	padding: 0.6em;
@@ -29,7 +30,6 @@
 
 .editReviewInput {
 	width: 100%;
-	background: rgb(194, 159, 138) !important;
 	border-radius: 0.2em;
 	height: 2.80em;
 	line-height: 2.80em;
@@ -57,18 +57,21 @@
 	align-items: center;
 	height: 2.8em;
 	line-height: 2.8em;
-	width: 30%;
+	width: 40%;
 	background: #000;
-	color: #fff;
+	color: white;
 	font-weight: bold;
 	border: none;
-	border-radius: 0.2em;
+	border-radius: 0.5em;
 	cursor: pointer;
 	transition: .1s ease all;
+	border: 0.1em solid rgba(247, 115, 115, 0.647);
+	box-shadow: 0em 0em 1em 0.01em rgb(247, 115, 115);
 }
 
 .editReviewSendButtom:hover {
-	box-shadow: 0.2em 0em 1.9em 0.3em rgba(163,163,163, 1);
+	box-shadow: 0.2em 0em 1.9em 0.3em rgba(218, 218, 218, 0.274);
+	transition: all 1s ease;
 }
 
 .textArea{

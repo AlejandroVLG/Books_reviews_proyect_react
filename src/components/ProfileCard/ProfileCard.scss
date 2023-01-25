@@ -7,6 +7,19 @@
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+@mixin buttonPneumorphism() {
+    background-color: transparent;
+    font-weight: bold;
+    color: rgb(97, 96, 96);
+    font-size: 1em;
+    padding: 0.5em 1em;
+    border: 0.1em solid #eee;
+    border-radius: 0.5em;
+    cursor: pointer;
+    transition: all 1s ease;
+    box-shadow: 0.5em 0.5em 1em #ccc, -0.5em -0.5em 1em #fff;
+}
+
 .mainBox {
     width: 100%;
     height: 100%;
@@ -32,7 +45,7 @@
 
 .infoProfileBox {
     border-radius: 0 0.4em 0.4em 0;
-    background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
+    background: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
 }
 
 .dataHead {
@@ -56,26 +69,21 @@
 }
 
 .socialIcon:hover {
-    background-color: rgba(2, 2, 2, 0.228);
-    box-shadow: 0em 0em 0.1em 0.05em white
+    border: 0.1em solid white;
+    box-shadow: 0em 0em 0.2em 0.05em rgba(1, 1, 1, 0.335);
+    transition: all 1s ease;
 }
 
 .myProfileBtn {
-    border: black !important;
-    box-shadow: 0em 0em 0.1em 0.05em rgba(1, 1, 1, 0.49);
-}
-
-.myProfileEditBtn {
-    margin-bottom: 1em;
-}
-
-.myProfileBtn {
-    border: 0em !important;
-    margin-bottom: 1em;
+    @include buttonPneumorphism()
 }
 
 .myProfileBtn:hover {
-    color: black !important;
-    background: white !important;
     box-shadow: 0em 0em 0.3em 0.1em black;
+    transition: all 0.5s ease;
+}
+
+.myProfileBtn:focus {
+    box-shadow: 0em 0em 0.3em 0.1em black;
+    transition: all 0.5s ease;
 }

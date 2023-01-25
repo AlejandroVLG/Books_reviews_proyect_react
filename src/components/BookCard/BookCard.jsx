@@ -82,7 +82,7 @@ const BookCard = ({ onClick, books }) => {
                     <MDBCard className="frontCard" >
                         <MDBCardImage className="cardImg" position='top' alt='...' src={books.book_cover} />
                         <MDBCardBody>
-                            <MDBCardTitle>{books.author}</MDBCardTitle>
+                            <MDBCardTitle>{books.title}</MDBCardTitle>
                             <br />
                             <hr className="mt-0 mb-3" />
                             <MDBCardText>
@@ -94,17 +94,18 @@ const BookCard = ({ onClick, books }) => {
                                         href={books.author_wiki_url}
                                         target="_blank"
                                     >
-                                        <Icon className="Icons" icon="mdi:wikipedia" />
+                                        <Icon className="linkIcons" icon="mdi:wikipedia" />
                                     </a>
                                     <p>Wikipedia del autor</p>
                                 </MDBCol>
-                                <MDBCol size="6" className="mb-1">
+                                <MDBCol size="6" className="mb-1" >
                                     <a
                                         tag='a'
                                         href={books.shop_url}
                                         target="_blank"
+
                                     >
-                                        <Icon className="Icons" icon="ri:amazon-fill"></Icon>
+                                        <Icon className="linkIcons" icon="ri:amazon-fill"></Icon>
                                     </a>
                                     <p>Enlace de compra</p>
                                 </MDBCol>
@@ -129,12 +130,6 @@ const BookCard = ({ onClick, books }) => {
                                             No
                                         </Button>
                                     </Modal.Footer>
-                                </div>
-                            </Modal>
-                        </>
-                        <MDBCardBody className="bookCardBody">
-                            <MDBCardTitle>
-                                <Row>
                                     <div className='BookMessage'>
                                         {
                                             deleteDataState.isError ?
@@ -143,7 +138,13 @@ const BookCard = ({ onClick, books }) => {
                                                 (<p style={{ color: "green" }}>{deleteDataState.message}</p>)
                                         }
                                     </div>
-                                    <Col className="iconEditCol" xs={12} sm={12} md={12} lg={6} xl={6} xxl={6}>
+                                </div>
+                            </Modal>
+                        </>
+                        <MDBCardBody className="bookCardBody">
+                            <MDBCardTitle>
+                                <MDBRow xl={12}>
+                                    <MDBCol xl={6}>
                                         <button
                                             className='bookCardBtn'
                                             variant="dark"
@@ -152,8 +153,8 @@ const BookCard = ({ onClick, books }) => {
                                             <img className="editIcon" src="../../Img/editIcon.jpeg" alt="editIcon" />
                                         </button>
 
-                                    </Col>
-                                    <Col className="iconDelCol" xs={12} sm={12} md={12} lg={6} xl={6} xxl={6}>
+                                    </MDBCol>
+                                    <MDBCol xl={6}>
                                         <button
                                             className='bookCardBtn'
                                             variant="dark"
@@ -162,11 +163,16 @@ const BookCard = ({ onClick, books }) => {
                                             <img className="deleteIcon" src="../../Img/deleteIcon.png" alt="editIcon" />
                                         </button>
 
-                                    </Col>
-                                </Row>
-                                {books.title}
+                                    </MDBCol>
+                                </MDBRow>
                             </MDBCardTitle>
-                            <MDBListGroup >
+                            <MDBListGroup>
+                                <MDBListGroupItem>
+                                    <MDBTypography tag="h6" className="text-muted">
+                                        Autor
+                                    </MDBTypography>
+                                    <MDBCardText >{books.author}</MDBCardText>
+                                </MDBListGroupItem>
                                 <MDBListGroupItem>
                                     <MDBTypography tag="h6" className="text-muted">
                                         Saga
@@ -199,16 +205,16 @@ const BookCard = ({ onClick, books }) => {
                             <Row>
                                 <Col xs={12} sm={12} md={12} lg={6} xl={6} xxl={6}>
                                     <button
-                                        className='botonEfectoNeumorfismo'
+                                        className='butonCoolEffect'
                                         onClick={() => navigate(`/reviews/${books.id}`)}
                                     >
-                                        Ver reseña
+                                        Ver <br /> reseñas
                                     </button>
 
                                 </Col>
                                 <Col xs={12} sm={12} md={12} lg={6} xl={6} xxl={6}>
                                     <button
-                                        className='botonEfectoNeumorfismo'
+                                        className='butonCoolEffect'
                                         onClick={() => navigate(`/newReview/${books.id}`)}
                                     >
                                         Añadir reseña
@@ -239,7 +245,7 @@ const BookCard = ({ onClick, books }) => {
                                         href={books.author_wiki_url}
                                         target="_blank"
                                     >
-                                        <Icon className="Icons" icon="mdi:wikipedia" />
+                                        <Icon className="linkIcons" icon="mdi:wikipedia" />
                                     </a>
                                     <p>Wikipedia del autor</p>
                                 </MDBCol>
@@ -249,7 +255,7 @@ const BookCard = ({ onClick, books }) => {
                                         href={books.shop_url}
                                         target="_blank"
                                     >
-                                        <Icon className="Icons" icon="ri:amazon-fill"></Icon>
+                                        <Icon className="linkIcons" icon="ri:amazon-fill"></Icon>
                                     </a>
                                     <p>Enlace de compra</p>
                                 </MDBCol>
@@ -315,7 +321,7 @@ const BookCard = ({ onClick, books }) => {
                                     href={books.author_wiki_url}
                                     target="_blank"
                                 >
-                                    <Icon className="Icons" icon="mdi:wikipedia" />
+                                    <Icon className="linkIcons" icon="mdi:wikipedia" />
                                 </a>
                                 <p>Wikipedia del autor</p>
                             </MDBCol>
@@ -325,7 +331,7 @@ const BookCard = ({ onClick, books }) => {
                                     href={books.shop_url}
                                     target="_blank"
                                 >
-                                    <Icon className="Icons" icon="ri:amazon-fill"></Icon>
+                                    <Icon className="linkIcons" icon="ri:amazon-fill"></Icon>
                                 </a>
                                 <p>Enlace de compra</p>
                             </MDBCol>

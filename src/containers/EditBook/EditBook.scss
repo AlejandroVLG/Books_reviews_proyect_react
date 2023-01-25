@@ -1,4 +1,7 @@
 .editBookForm {
+	height: 100%;
+	width: 100vw;
+	min-height: 62vh;
 	color: white;
 	margin: auto;
 	padding: 2.5em;
@@ -16,12 +19,10 @@
 
 .editBookInput {
 	width: 100%;
-	background: rgb(194, 159, 138) !important;
 	border-radius: 0.2em;
 	height: 2.80em;
 	line-height: 2.80em;
 	padding: 0 2.5em 0 0.6em;
-	border: 0.1em solid black !important;
 	box-shadow: 0em 0em 1em 0.01em rgba(255, 255, 255, 0.363);
 }
 
@@ -33,7 +34,6 @@
 
 .editBookSynopsis {
 	height: 10em;
-	background: rgb(194, 159, 138) !important;
 }
 
 .editBookBoxButton {
@@ -63,4 +63,5 @@
 
 .editBookSendButtom:hover {
 	box-shadow: 0.2em 0em 1.9em 0.3em rgba(218, 218, 218, 0.274);
+	transition: all 1s ease;
 }

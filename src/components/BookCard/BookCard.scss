@@ -1,21 +1,10 @@
-.gradient-custom {
-    /* fallback for old browsers */
-    background: #f6a465;
-
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: -webkit-linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1));
-
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background: linear-gradient(to right bottom, rgb(246, 164, 101), rgb(116, 32, 9))
-}
-
-@mixin botonNeumorfismo() {
+@mixin buttonPneumorphism () {
     background-color: transparent;
     font-weight: bold;
     color: rgb(97, 96, 96);
     font-size: 1em;
-    padding: 1em 1.5em;
-    border: 0.15em solid #eee;
+    padding: 0.5em 1em;
+    border: 0.1em solid #eee;
     border-radius: 0.5em;
     cursor: pointer;
     transition: all 1s ease;
@@ -27,13 +16,15 @@
     position: relative;
     user-select: none;
     cursor: pointer;
-    box-shadow: 0 0 0.4em 0.1em rgba(255, 255, 255, 0.537);
+    box-shadow: 0 0 0.4em 0.1em rgb(4, 4, 4);
+    border: 0.1em solid black;
     border-radius: 0.4em;
     margin-bottom: 0.5em;
 }
 
 .frontCard,
 .backCard {
+    background: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
     height: 100%;
     width: 100%;
     position: absolute;
@@ -43,35 +34,34 @@
 
 .backCard {
     transform: rotateY(180deg);
-    background-color: #fff;
 }
 
 .bookCardBody {
+    background: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
     height: 100%;
     border-radius: 0.4em;
     border: 0.05em solid black;
     display: flex;
     justify-content: space-around;
     flex-direction: column;
+    align-items: center;
     text-shadow: 0em 0em 0.5em #fff;
-    background: #fff;
-
 }
 
 .cardSynopsis {
     font-size: x-small;
 }
 
-.botonEfectoNeumorfismo {
-    @include botonNeumorfismo()
+.butonCoolEffect {
+    @include buttonPneumorphism()
 }
 
-.botonEfectoNeumorfismo:hover {
-    box-shadow: 0.5em 0.5em 1em #fff, -0.5em -0.5em 1em #ccc;
+.butonCoolEffect:hover {
+    box-shadow: 0em 0em 0.3em 0.1em black;
 }
 
-.botonEfectoNeumorfismo:active {
-    box-shadow: 0.2em 0.2em 1em #fff, -0.2em -0.2em 1em #ccc;
+.butonCoolEffect:focus {
+    box-shadow: 0em 0em 0.3em 0.1em black;
 }
 
 .bookCardBtn {
@@ -81,18 +71,9 @@
 }
 
 .bookCardBtn:hover {
-    color: black !important;
+    border: 0.1em solid white;
     box-shadow: 0em 0em 0.3em 0.1em rgb(88, 6, 6);
-}
-
-.iconEditCol {
-    display: flex;
-    justify-content: space-around;
-}
-
-.iconDelCol {
-    display: flex;
-    justify-content: space-around;
+    transition: all 1s ease;
 }
 
 .editIcon {
@@ -107,13 +88,22 @@
     width: 2em;
 }
 
+.linkIcons:hover {
+    border-radius: 0.3em;
+    gap: 2em;
+    height: 1.5em;
+    width: 1.5em;
+    transition: all 1s ease;
+    box-shadow: 0em 0em 0.3em 0.05em rgb(127, 127, 127);
+}
+
 .flip-exit {
     transform: rotateY(0deg);
 }
 
 .flip-exit-active {
     transform: rotateY(180deg);
-    transition: transform 400ms;
+    transition: transform 500ms;
 }
 
 .flip-exit-done {
@@ -126,7 +116,7 @@
 
 .flip-enter-active {
     transform: rotateY(0deg);
-    transition: transform 400ms;
+    transition: transform 500ms;
     transition-timing-function: cubic-bezier(.57, .21, .69, 1.25);
 }
 

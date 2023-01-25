@@ -94,6 +94,14 @@ const ReviewCard = props => {
                                     No
                                 </Button>
                             </Modal.Footer>
+                            <div>
+                                {
+                                    reviewErrorState.isError ?
+                                        (<p style={{ color: "red", fonWeight: "bold" }}>{reviewErrorState.message}</p>)
+                                        :
+                                        (<p style={{ color: "rgb(30, 186, 30)", fonWeight: "bold" }}>{reviewErrorState.message}</p>)
+                                }
+                            </div>
                         </div>
                     </Modal>
                 </>
@@ -101,7 +109,7 @@ const ReviewCard = props => {
                     <MDBCol
                         md="4"
                         className="text-center text-white reviewColData"
-                        style={{ borderTopLeftRadius: '.5em', borderBottomLeftRadius: '.5em' }}
+                        style={{ borderRadius: '.5em', borderBottomLeftRadius: '.5em' }}
                     >
                         <MDBCardImage
                             fluid
@@ -110,14 +118,6 @@ const ReviewCard = props => {
                             alt="Avatar"
                             style={{ width: '12em' }}
                         />
-                        <div>
-                            {
-                                reviewErrorState.isError ?
-                                    (<p style={{ color: "red", fonWeight: "bold" }}>{reviewErrorState.message}</p>)
-                                    :
-                                    (<p style={{ color: "rgb(30, 186, 30)", fonWeight: "bold" }}>{reviewErrorState.message}</p>)
-                            }
-                        </div>
                         <hr className="mt-0 mb-3" />
                         <br />
                         <MDBTypography className="bookTitleReview" tag="h3">
@@ -126,24 +126,24 @@ const ReviewCard = props => {
                         <br />
                         <hr className="mt-0 mb-6" />
                         <br />
-                        <Button
+                        <button
                             className='mx-2 reviewCardBtn'
                             variant='dark'
                             onClick={() => navigate(`/editReview/${props.data.id}`)}
                         >
                             Editar reseña
-                        </Button>
+                        </button>
 
                         <br /><br />
                         <hr className="mt-0 mb-3" />
                         <br />
-                        <Button
+                        <button
                             className='mx-2 reviewCardBtn'
                             variant="dark"
                             onClick={handleOpen}
                         >
                             Eliminar reseña
-                        </Button>
+                        </button>
                         <br /><br />
                     </MDBCol>
                     <MDBCol md="8">
