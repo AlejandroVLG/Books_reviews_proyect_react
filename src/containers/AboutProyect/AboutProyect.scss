@@ -1,8 +1,3 @@
 .aboutProyectContainer {
-    height: 63vh;
-    width: 100%;
-
-    @media screen and (max-width: 768px) {
-        min-height: 95vh;
-    }
+    width: 100vw;
 }
