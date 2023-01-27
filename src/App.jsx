@@ -1,5 +1,6 @@
 import { Route, Routes, BrowserRouter } from 'react-router-dom'
 import Header from './components/Header/Header'
+import Home from './containers/Home/Home'
 import NavigationBar from './components/NavigationBar/NavigationBar'
 import Book from './containers/Book/Book'
 import NewBook from './containers/NewBook/NewBook'
@@ -23,8 +24,8 @@ function App() {
         <Header />
         <NavigationBar />
         <Routes>
-{/*           <Route path="/Books_reviews_proyect_react/" element={< />} />
- */}          <Route path="/about" element={<AboutTheProyect />} />
+          <Route path="/Books_reviews_proyect_react/" element={< Home/>} />
+          <Route path="/about" element={<AboutTheProyect />} />
           <Route path="/books" element={<Book />} />
           <Route path="/newBook" element={<NewBook />} />
           <Route path="/editBook/:id" element={<EditBook />} />

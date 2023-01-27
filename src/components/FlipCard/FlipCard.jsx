@@ -1,9 +1,9 @@
 import React, { useState } from "react"
-import BookCard from "../BookCard/BookCard"
 import { CSSTransition } from "react-transition-group"
+import AboutCard from "../AboutCard/AboutCard"
 import "./FlipCard.scss"
 
-const FlipCard = ({ books }) => {
+const FlipCard = () => {
 
     const [showState, setShowState] = useState(true)
 
@@ -14,8 +14,7 @@ const FlipCard = ({ books }) => {
                 timeout={300}
                 classNames="flip"
             >
-                <BookCard
-                    books={books}
+                <AboutCard
                     onClick={() => {
                         setShowState((e) => !e)
                     }} />

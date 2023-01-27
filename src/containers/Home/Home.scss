@@ -1,24 +1,8 @@
 .homeMainBox {
-    height: 61.8vh;
+    height: 63vh;
     width: 100%;
-    background-image: url(../../Img/vector3paisaje.jpeg);
-    background-size: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
-.homeContentBox {
-    height: 100%;
-    width: 100%;
-    background-color: bisque;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.homeImg{
-    height: 100%;
-    width: 100%;
+    @media screen and (max-width: 768px) {
+        min-height: 95vh;
+    }
 }

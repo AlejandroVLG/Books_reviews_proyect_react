@@ -3,7 +3,7 @@ import { useState } from "react"
 import { useNavigate } from "react-router"
 import { useSelector } from "react-redux"
 import { userData } from "../../containers/User/userSlice"
-import { Button, Col, Modal, Row } from "react-bootstrap"
+import { Button, Modal } from "react-bootstrap"
 import { Icon } from '@iconify/react'
 import {
     MDBCard,

@@ -24,7 +24,12 @@ const NavigationBar = () => {
                     <Navbar.Collapse id="basic-navbar-nav collapsed">
                         <Nav className="me-auto interiorNav">
                             <Nav.Link
-                                eventKey={1}
+                                className="navBarLink navBarLink2"
+                                onClick={() => navigate("/Books_reviews_proyect_react/")}
+                            >
+                                Princial
+                            </Nav.Link>
+                            <Nav.Link
                                 className="navBarLink navBarLink2"
                                 onClick={() => navigate("/login")}
                             >
@@ -38,14 +43,12 @@ const NavigationBar = () => {
                             </Nav.Link>
                             <Nav.Link
                                 className="navBarLink2"
-                                eventKey={2}
                                 onClick={() => navigate("/register")}
                             >
                                 Registrarse
                             </Nav.Link>
                             <Nav.Link
                                 className="navBarLink2"
-                                eventKey={2}
                                 onClick={() => navigate("/about")}
                             >
                                 Sobre el proyecto
@@ -72,7 +75,6 @@ const NavigationBar = () => {
                     <Navbar.Collapse id="basic-navbar-nav collapsed">
                         <Nav className="me-auto interiorNav">
                             <Nav.Link
-                                eventKey={1}
                                 className="navBarLink navBarLink2"
                                 onClick={() => navigate("/myProfile")}
                             >
@@ -91,7 +93,6 @@ const NavigationBar = () => {
                                 Añadir libro
                             </Nav.Link>
                             <Nav.Link
-                                eventKey={2}
                                 className="navBarLink2"
                                 onClick={e => { navigate("/login"); dispatch(logOut()) }}
                             >
