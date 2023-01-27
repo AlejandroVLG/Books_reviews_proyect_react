@@ -24,6 +24,7 @@ const NavigationBar = () => {
                     <Navbar.Collapse id="basic-navbar-nav collapsed">
                         <Nav className="me-auto interiorNav">
                             <Nav.Link
+                                eventKey={1}
                                 className="navBarLink navBarLink2"
                                 onClick={() => navigate("/login")}
                             >
@@ -41,6 +42,13 @@ const NavigationBar = () => {
                                 onClick={() => navigate("/register")}
                             >
                                 Registrarse
+                            </Nav.Link>
+                            <Nav.Link
+                                className="navBarLink2"
+                                eventKey={2}
+                                onClick={() => navigate("/about")}
+                            >
+                                Sobre el proyecto
                             </Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
@@ -64,6 +72,7 @@ const NavigationBar = () => {
                     <Navbar.Collapse id="basic-navbar-nav collapsed">
                         <Nav className="me-auto interiorNav">
                             <Nav.Link
+                                eventKey={1}
                                 className="navBarLink navBarLink2"
                                 onClick={() => navigate("/myProfile")}
                             >
