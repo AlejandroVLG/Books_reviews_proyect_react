@@ -1,8 +1,106 @@
 .homeMainBox {
-    height: 63vh;
+    height: 150vh;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(-20deg, #ad8eda77 0%, #95954771 100%);
 
     @media screen and (max-width: 768px) {
         min-height: 95vh;
     }
+}
+
+.borderHomeDiv {
+    height: 140vh;
+    width: 97%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    border: double 0.5em rgb(0, 0, 0);
+    border-radius: 0.2em;
+    margin-top: 1.5em;
+    background: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
+}
+
+.homeImages {
+    height: 30em;
+    width: 96%;
+    display: flex;
+    border: 0.01em solid white;
+    box-shadow: 0em 0em 0.2em 0.1em black;
+
+    @media screen and (max-width: 1150px) {
+        display: none;
+    }
+}
+
+.homeImages img {
+    width: 0px;
+    flex-grow: 1;
+    object-fit: cover;
+    opacity: 0.8;
+    transition: 0.8s ease;
+}
+
+.homeImages img:hover {
+    cursor: pointer;
+    width: 11.5%;
+    opacity: 1;
+    filter: contrast(120%);
+}
+
+.homeImages2 {
+    height: 30em;
+    width: 93%;
+    display: flex;
+    margin-top: 2em;
+    border: 0.01em solid white;
+    border-radius: 0.1em;
+    box-shadow: 0em 0em 0.3em 0.2em black;
+
+    @media screen and (min-width: 1150px) {
+        display: none;
+    }
+}
+
+.homeImages2 img {
+    width: 0px;
+    flex-grow: 1;
+    object-fit: cover;
+    opacity: 0.8;
+    transition: 0.8s ease;
+}
+
+.homeImages2 img:hover {
+    cursor: pointer;
+    width: 24%;
+    opacity: 1;
+    filter: contrast(120%);
+}
+
+.homeTextDiv {
+    padding: 0.2em;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    background: #fbfcdb;
+    border: 0.1em solid black;
+    border-radius: 0.2em;
+}
+
+.homeTextStyles {
+    font-family: Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+
+    @media screen and (max-width: 768px) {
+        font-size: small;
+    }
+}
+
+.homeTextStyles h1 {
+
+    @media screen and (max-width: 768px) {
+        font-size: x-large;
+    }
+    
 }

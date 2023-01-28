@@ -1,3 +1,48 @@
-.aboutProyectContainer {
+.aboutCardContainer {
+    margin-top: 2em;
+    height: 100%;
     width: 100vw;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.aboutCard {
+    width: 80%;
+    cursor: pointer;
+    box-shadow: 0em 0em 0.3em 0.1em rgb(164, 163, 163);
+
+}
+
+.aboutCardBody {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
+}
+
+.iconImage {
+    font-size: 3.5em;
+    background-color: #fff;
+    box-shadow: 0em 0em 0.2em 0.04em rgba(0, 0, 0, 0.745);
+    border: 0.04em solid black;
+    padding: 0.06em;
+    margin-bottom: 0.1em;
+    border-radius: 3em;
+
+    @media screen and (max-width: 768px) {
+        font-size: 1.5em;
+	}
+}
+
+.iconImage:hover{
+    padding: 0em;
+    box-shadow: 0em 0em 0.2em 0.04em rgb(250, 250, 250);
+    transition: all 1s ease ;
+}
+
+.iconImage:focus{
+    padding: 0em;
+    box-shadow: 0em 0em 0.2em 0.04em rgb(250, 250, 250);
+    transition: all 1s ease ;
 }
