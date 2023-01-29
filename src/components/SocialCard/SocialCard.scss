@@ -11,21 +11,23 @@
 }
 
 .socialCardContainer {
-    height: 11.5em;
-    width: 20em;
+    height: 20em;
+    width: 11.9em;
     transform-style: preserve-3d;
     position: relative;
     user-select: none;
     cursor: pointer;
-    box-shadow: 0 0 0.4em 0.1em rgb(4, 4, 4);
-    border: 0.1em solid black;
     border-radius: 0.4em;
     margin-bottom: 0.5em;
 
-    @media screen and (max-width: 550px) {
-        height: 8.5em;
-        width: 14.5em;
+    @media screen and (max-width: 850px) {
+        height: 14.5em;
+        width: 8.6em;
     }
+}
+
+.socialCardContainer:hover {
+    transition: all 1s ease;
 }
 
 .frontCard,
@@ -40,12 +42,12 @@
 }
 
 .frontCard {
-    background-image: url("../../../public//Img//frontCard.jpg");
+    background-image: url("../../../public/Img/frontCard.png");
     background-size: cover;
 }
 
 .backCard {
-    background-image: url("../../../public//Img//backCard.jpg");
+    background-image: url("../../../public/Img/backCard.png");
     background-size: cover;
     transform: rotateY(180deg);
     display: flex;
@@ -65,19 +67,7 @@
     transition: all 1s ease;
 }
 
-.backCard:hover {
-    border: 0.1em solid white;
-    box-shadow: 0.5em 0.5em 1em rgb(148, 143, 255), -0.5em -0.5em 1em rgba(97, 101, 139, 0.68);
-    transition: all 1s ease;
-}
-
 .frontCard:focus {
-    border: 0.1em solid white;
-    box-shadow: 0.5em 0.5em 1em rgb(148, 143, 255), -0.5em -0.5em 1em rgba(97, 101, 139, 0.68);
-    transition: all 1s ease;
-}
-
-.backCard:focus {
     border: 0.1em solid white;
     box-shadow: 0.5em 0.5em 1em rgb(148, 143, 255), -0.5em -0.5em 1em rgba(97, 101, 139, 0.68);
     transition: all 1s ease;

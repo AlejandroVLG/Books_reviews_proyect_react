@@ -1,5 +1,5 @@
 .homeMainBox {
-    height: 190vh;
+    height: 85em;
     width: 100%;
     display: flex;
     align-items: center;
@@ -13,11 +13,12 @@
 }
 
 .borderHomeDiv {
-    height: 180vh;
+    height: 80em;
     width: 97%;
+    gap: 0.5em;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-around;
     flex-direction: column;
     border: double 0.5em #fff;
     border-radius: 0.2em;
@@ -29,15 +30,18 @@
     width: 80%;
     display: flex;
     align-items: center;
-    background: #fbfcdb;
+    background: #feffed;
+    margin-top: 1em;
     border: ridge 0.4em rgb(38, 26, 116);
     border-radius: 0.2em;
     box-shadow: 0em 0em 0.2em 0.1em black;
     cursor: pointer;
 }
 
-.homeTextStyles {
+.homeTextP {
     font-family: Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+    padding-left: 1em;
+    padding-right: 1em;
 
     @media screen and (max-width: 768px) {
         font-size: small;
@@ -49,7 +53,6 @@
     @media screen and (max-width: 768px) {
         font-size: x-large;
     }
-
 }
 
 .homeImages {
@@ -88,6 +91,11 @@
     border-radius: 0.1em;
     box-shadow: 0em 0em 0.3em 0.2em black;
 
+
+    @media screen and (max-width: 750px) {
+        display: none;
+    }
+
     @media screen and (min-width: 1150px) {
         display: none;
     }
@@ -103,14 +111,48 @@
 
 .homeImages2 img:hover {
     cursor: pointer;
-    width: 24%;
+    width: 1%;
     opacity: 1;
     filter: contrast(120%);
 }
 
-.flipCardDiv{
+.homeImages3 {
+    height: 30em;
+    width: 93%;
+    display: flex;
+    margin-top: 2em;
+    border: 0.01em solid white;
+    border-radius: 0.1em;
+    box-shadow: 0em 0em 0.3em 0.2em black;
+
+    @media screen and (min-width: 0px) {
+        display: none;
+    }
+
+    @media screen and (max-width: 750px) {
+        display: flex;
+    }
+}
+
+.homeImages3 img {
+    width: 0px;
+    flex-grow: 1;
+    object-fit: cover;
+    opacity: 0.8;
+    transition: 0.8s ease;
+}
+
+.homeImages3 img:hover {
+    cursor: pointer;
+    width: 32%;
+    opacity: 1;
+    filter: contrast(120%);
+}
+
+.flipCardDiv {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
