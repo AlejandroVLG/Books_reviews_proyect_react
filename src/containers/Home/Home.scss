@@ -1,9 +1,11 @@
 .homeMainBox {
-    height: 150vh;
+    height: 190vh;
     width: 100%;
     display: flex;
-    justify-content: center;
-    background: linear-gradient(-20deg, #ad8eda77 0%, #95954771 100%);
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    background: linear-gradient(to right, #0f0c29, #381515, #0f0c29);
 
     @media screen and (max-width: 768px) {
         min-height: 95vh;
@@ -11,16 +13,43 @@
 }
 
 .borderHomeDiv {
-    height: 140vh;
+    height: 180vh;
     width: 97%;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
     flex-direction: column;
-    border: double 0.5em rgb(0, 0, 0);
+    border: double 0.5em #fff;
     border-radius: 0.2em;
-    margin-top: 1.5em;
-    background: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
+    background: linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%);
+}
+
+.homeTextDiv {
+    padding: 0.2em;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    background: #fbfcdb;
+    border: ridge 0.4em rgb(38, 26, 116);
+    border-radius: 0.2em;
+    box-shadow: 0em 0em 0.2em 0.1em black;
+    cursor: pointer;
+}
+
+.homeTextStyles {
+    font-family: Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+
+    @media screen and (max-width: 768px) {
+        font-size: small;
+    }
+}
+
+.homeTextStyles h1 {
+
+    @media screen and (max-width: 768px) {
+        font-size: x-large;
+    }
+
 }
 
 .homeImages {
@@ -79,28 +108,9 @@
     filter: contrast(120%);
 }
 
-.homeTextDiv {
-    padding: 0.2em;
-    width: 80%;
+.flipCardDiv{
+    width: 100%;
     display: flex;
     align-items: center;
-    background: #fbfcdb;
-    border: 0.1em solid black;
-    border-radius: 0.2em;
-}
-
-.homeTextStyles {
-    font-family: Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
-
-    @media screen and (max-width: 768px) {
-        font-size: small;
-    }
-}
-
-.homeTextStyles h1 {
-
-    @media screen and (max-width: 768px) {
-        font-size: x-large;
-    }
-    
+    justify-content: center;
 }

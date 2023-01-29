@@ -1,0 +1,111 @@
+@mixin buttonPneumorphism () {
+    font-weight: bold;
+    color: rgb(97, 96, 96);
+    font-size: 1em;
+    padding: 0.5em 1em;
+    border: 0.05em solid #fff;
+    border-radius: 0.5em;
+    cursor: pointer;
+    transition: all 1s ease;
+    box-shadow: 0.5em 0.5em 1em rgba(97, 99, 122, 0.68), -0.5em -0.5em 1em rgb(148, 143, 255);
+}
+
+.socialCardContainer {
+    height: 11.5em;
+    width: 20em;
+    transform-style: preserve-3d;
+    position: relative;
+    user-select: none;
+    cursor: pointer;
+    box-shadow: 0 0 0.4em 0.1em rgb(4, 4, 4);
+    border: 0.1em solid black;
+    border-radius: 0.4em;
+    margin-bottom: 0.5em;
+
+    @media screen and (max-width: 550px) {
+        height: 8.5em;
+        width: 14.5em;
+    }
+}
+
+.frontCard,
+.backCard {
+    @include buttonPneumorphism();
+    background: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    border-radius: 0.4em;
+}
+
+.frontCard {
+    background-image: url("../../../public//Img//frontCard.jpg");
+    background-size: cover;
+}
+
+.backCard {
+    background-image: url("../../../public//Img//backCard.jpg");
+    background-size: cover;
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 2em;
+
+    @media screen and (max-width: 350px) {
+        height: fit-content;
+    }
+}
+
+.frontCard:hover {
+    border: 0.1em solid black;
+    box-shadow: 0.5em 0.5em 1em rgb(148, 143, 255), -0.5em -0.5em 1em rgba(97, 101, 139, 0.68);
+    transition: all 1s ease;
+}
+
+.backCard:hover {
+    border: 0.1em solid white;
+    box-shadow: 0.5em 0.5em 1em rgb(148, 143, 255), -0.5em -0.5em 1em rgba(97, 101, 139, 0.68);
+    transition: all 1s ease;
+}
+
+.frontCard:focus {
+    border: 0.1em solid white;
+    box-shadow: 0.5em 0.5em 1em rgb(148, 143, 255), -0.5em -0.5em 1em rgba(97, 101, 139, 0.68);
+    transition: all 1s ease;
+}
+
+.backCard:focus {
+    border: 0.1em solid white;
+    box-shadow: 0.5em 0.5em 1em rgb(148, 143, 255), -0.5em -0.5em 1em rgba(97, 101, 139, 0.68);
+    transition: all 1s ease;
+}
+
+.flip-exit {
+    transform: rotateY(0deg);
+}
+
+.flip-exit-active {
+    transform: rotateY(180deg);
+    transition: transform 500ms;
+}
+
+.flip-exit-done {
+    transform: rotateY(180deg);
+}
+
+.flip-enter {
+    transform: rotateY(180deg);
+}
+
+.flip-enter-active {
+    transform: rotateY(0deg);
+    transition: transform 500ms;
+    transition-timing-function: cubic-bezier(.57, .21, .69, 1.25);
+}
+
+.flip-enter-done {
+    transform: rotateY(0deg);
+}

@@ -46,6 +46,7 @@
     border-radius: 0.3em;
     background: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
     box-shadow: 0em 0em 0.2em 0.1em rgba(255, 255, 255, 0.574);
+    cursor: pointer;
 
     @media screen and (min-width: 992px) {
         display: none;

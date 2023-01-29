@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { CSSTransition } from "react-transition-group"
-import AboutCard from "../AboutCard/AboutCard"
+import SocialCard from "../SocialCard/SocialCard"
 import "./FlipCard.scss"
 
 const FlipCard = () => {
@@ -14,7 +14,7 @@ const FlipCard = () => {
                 timeout={300}
                 classNames="flip"
             >
-                <AboutCard
+                <SocialCard
                     onClick={() => {
                         setShowState((e) => !e)
                     }} />
