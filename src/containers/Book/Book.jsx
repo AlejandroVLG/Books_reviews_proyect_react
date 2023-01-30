@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react"
 import { useDispatch } from "react-redux"
 import { login } from "../User/userSlice"
-import FlipCard from "../../components/FlipCard/FlipCard"
 import { MDBCol, MDBContainer, MDBRow } from "mdb-react-ui-kit"
 import Spinner from "../../components/Spinner/Spinner"
 import axios from "axios"
 import "./Book.scss"
+import BookCard from "../../components/BookCard/BookCard"
 
 const Book = () => {
 
@@ -95,9 +95,9 @@ const Book = () => {
                     (
                         <MDBCol
                             className="mb-2 mb-lg-0 colCard"
-                            md={6} lg={5} xl={4} xxl={3}
+                            md={12} lg={12} xl={12} xxl={12}
                             key={i}>
-                            <FlipCard books={books} key={i} />
+                            <BookCard books={books} key={i} />
                         </MDBCol>
                     ))
                 }

@@ -6,7 +6,8 @@ import {
     MDBCard,
     MDBCardText,
     MDBCardBody,
-    MDBTypography
+    MDBTypography,
+    MDBIcon
 } from 'mdb-react-ui-kit'
 import "./AboutProyect.scss"
 
@@ -24,24 +25,28 @@ const AboutTheProyect = () => {
                             </MDBTypography>
                             <hr className="mt-0 mb-5" />
                             <MDBRow className="pt-1">
+                                <MDBCol className="mb-3"
+                                    sm={12} md={6} lg={4} xl={4} xxl={4}>
+                                    <MDBTypography className="text-muted h5">
+                                        Lenguajes utilizados
+                                    </MDBTypography>
+                                    <MDBTypography className='mb-0 abouIconsDiv' >
+                                        <Icon icon="logos:html-5" className="iconImage"></Icon>
+                                        <Icon icon="logos:javascript" className="iconImage"></Icon>
+                                        <Icon icon="vscode-icons:file-type-sass" className="iconImage"></Icon>
+                                    </MDBTypography>
+                                </MDBCol>
                                 <MDBCol
                                     sm={12} md={6} lg={4} xl={4} xxl={4}
                                     className="mb-3">
-                                    <MDBTypography tag="h6">
+                                    <MDBTypography className="text-muted h5" >
                                         Coding school
                                     </MDBTypography>
                                     <MDBCardText>GeeksHubs Academy</MDBCardText>
                                 </MDBCol>
                                 <MDBCol className="mb-3"
-                                    sm={12} md={6} lg={4} xl={4} xxl={4}>
-                                    <MDBTypography tag="h6">
-                                        Lenguajes utilizados
-                                    </MDBTypography>
-                                    <MDBCardText tag="h5">HTML CSS JS</MDBCardText>
-                                </MDBCol>
-                                <MDBCol className="mb-3"
                                     sm={12} md={12} lg={4} xl={4} xxl={4}>
-                                    <MDBTypography tag="h6">
+                                    <MDBTypography className="text-muted h5">
                                         Librearías utilizadas
                                     </MDBTypography>
                                     <MDBCardText tag="h5">
@@ -54,7 +59,7 @@ const AboutTheProyect = () => {
                                 </MDBCol>
                             </MDBRow>
                             <MDBCol className="mb-3">
-                                <MDBTypography>
+                                <MDBTypography className="h4">
                                     SOBRE EL PROYECTO
                                 </MDBTypography>
                                 <hr className="mt-0 mb-4" />
@@ -106,7 +111,7 @@ const AboutTheProyect = () => {
                                 >
                                     <Icon icon="ri:github-fill" className="iconImage"></Icon>
                                 </a>
-                                <p>Cuenta Github</p>
+                                <p>Perfil Github</p>
                             </MDBCol>
                             <MDBCol className="mb-3"
                                 sm={12} md={12} lg={6} xl={6} xxl={6}>

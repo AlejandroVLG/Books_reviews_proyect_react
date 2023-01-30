@@ -3,11 +3,12 @@
     color: rgb(97, 96, 96);
     font-size: 1em;
     padding: 0.5em 1em;
-    border: 0.05em solid #fff;
+    border-top: 0.05em solid #fff;
+    border-left: 0.05em solid #fff;
     border-radius: 0.5em;
     cursor: pointer;
     transition: all 1s ease;
-    box-shadow: 0.5em 0.5em 1em rgba(97, 99, 122, 0.68), -0.5em -0.5em 1em rgb(148, 143, 255);
+    box-shadow: 0.5em 0.5em 1em rgba(97, 99, 122, 0.68), -0.3em -0.3em 1em rgb(148, 143, 255);
 }
 
 .socialCardContainer {
@@ -51,10 +52,12 @@
     background-size: cover;
     transform: rotateY(180deg);
     display: flex;
+    border: 0.05em solid black;
     align-items: center;
     justify-content: center;
     flex-direction: row;
     gap: 2em;
+    box-shadow: 0 0 0.3em 0.1em rgb(148, 143, 255);
 
     @media screen and (max-width: 350px) {
         height: fit-content;
@@ -62,15 +65,49 @@
 }
 
 .frontCard:hover {
-    border: 0.1em solid black;
-    box-shadow: 0.5em 0.5em 1em rgb(148, 143, 255), -0.5em -0.5em 1em rgba(97, 101, 139, 0.68);
+    border-top: 0em solid black;
+    border-left: 0em solid black;
+    border-bottom: 0.05em solid #fff;
+    border-right: 0.05em solid #fff;
+    box-shadow: 0.3em 0.3em 1em rgb(148, 143, 255), -0.3em -0.5em 1em rgba(97, 101, 139, 0.68);
     transition: all 1s ease;
 }
 
 .frontCard:focus {
-    border: 0.1em solid white;
-    box-shadow: 0.5em 0.5em 1em rgb(148, 143, 255), -0.5em -0.5em 1em rgba(97, 101, 139, 0.68);
+    border-top: 0em solid black;
+    border-left: 0em solid black;
+    border-bottom: 0.05em solid #fff;
+    border-right: 0.05em solid #fff;
+    box-shadow: 0.3em 0.3em 1em rgb(148, 143, 255), -0.5em -0.5em 1em rgba(97, 101, 139, 0.68);
     transition: all 1s ease;
+}
+
+.socialIcon {
+    background-color: #FF4A3A !important;
+}
+
+.socialIconGitHub {
+    position: relative;
+    right: 2.4em;
+    top: 6em;
+
+    @media screen and (max-width: 850px) {
+        font-size: 0.6em;
+        right: 2.5em;
+        top: 7em;
+    }
+}
+
+.socialIconLinkedin {
+    position: relative;
+    right: 6.4em;
+    top: 3.1em;
+
+    @media screen and (max-width: 850px) {
+        font-size: 0.6em;
+        right: 7.8em;
+        top: 3.6em;
+    }
 }
 
 .flip-exit {

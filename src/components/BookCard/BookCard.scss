@@ -4,81 +4,87 @@
     color: rgb(97, 96, 96);
     font-size: 1em;
     padding: 0.5em 1em;
-    border: 0.1em solid #eee;
+    border: 0.1em solid transparent;
     border-radius: 0.5em;
     cursor: pointer;
     transition: all 1s ease;
-    box-shadow: 0.5em 0.5em 1em #ccc, -0.5em -0.5em 1em #fff;
+    box-shadow: 0.5em 0.5em 1em #a7545a, -0.5em -0.5em 1em #d5858b;
 }
 
-.cardContainer {
-    height: fit-content;
-    transform-style: preserve-3d;
-    position: relative;
-    user-select: none;
-    cursor: pointer;
-    box-shadow: 0 0 0.4em 0.1em rgb(4, 4, 4);
+.bookCardImg {
+    width: 14em;
     border: 0.1em solid black;
-    border-radius: 0.4em;
-    margin-bottom: 0.5em;
-}
+    border-radius: 0.3em;
+    box-shadow: 0 0 0.3em 0.1em black;
 
-.frontCard,
-.backCard {
-    background: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    backface-visibility: hidden;
-    border-radius: 0.4em;
-}
+    @media screen and (max-width: 1200px) {
+        width: 12em;
+    }
 
-.backCard {
-    transform: rotateY(180deg);
+    @media screen and (max-width: 1000px) {
+        width: 10em;
+    }
 
-    @media screen and (max-width: 350px) {
-        height: fit-content;
+    @media screen and (max-width: 991.98px) {
+        width: 8em;
+    }
+
+    @media screen and (max-width: 767.98px) {
+        width: 13em;
     }
 }
 
 .bookCardBody {
-    background: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
-    height: 100%;
-    border-radius: 0.4em;
-    border: 0.05em solid black;
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-    align-items: center;
-    text-shadow: 0em 0em 0.5em #fff;
+    @media screen and (max-width: 991.98px) {
+        font-size: smaller;
+    }
+
+    @media screen and (max-width: 767.98px) {
+        font-size: small;
+    }
 }
 
-.cardSynopsis {
-    font-size: x-small;
-}
+.Icons {
+    width: 3em;
 
-.butonCoolEffect {
-    @include buttonPneumorphism()
-}
-
-.butonCoolEffect:hover {
-    box-shadow: 0em 0em 0.3em 0.1em black;
-}
-
-.butonCoolEffect:focus {
-    box-shadow: 0em 0em 0.3em 0.1em black;
+    @media screen and (max-width: 991.98px) {
+        width: 2em;
+    }
 }
 
 .bookCardBtn {
-    border: 0.1em solid black;
-    border-radius: 0.3em;
-    box-shadow: 0em 0em 0.3em 0.01em black;
+    @include buttonPneumorphism();
+    color: black;
+    background-color: #FF7573;
 }
 
 .bookCardBtn:hover {
-    border: 0.1em solid white;
-    box-shadow: 0em 0em 0.3em 0.1em rgb(88, 6, 6);
+    border-top: 0em solid #954e52;
+    border-left: 0em solid #954e52;
+    border-bottom: 0.05em solid #d5858b;
+    border-right: 0.05em solid #d5858b;
+    box-shadow: 0.5em 0.5em 1em #d5858b, -0.5em -0.5em 1em #954e52;
+    scale: 1.1;
     transition: all 1s ease;
+}
+
+.bookCardBtn:active {
+    border-top: 0em solid #954e52;
+    border-left: 0em solid #954e52;
+    border-bottom: 0.05em solid #d5858b;
+    border-right: 0.05em solid #d5858b;
+    box-shadow: inset 0.2em 0.2em 1em #d5858b, inset -0.2em -0.2em 1em #954e52;
+    transition: all 1s ease;
+}
+
+.iconEditCol {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.iconDelCol {
+    display: flex;
+    justify-content: flex-end;
 }
 
 .editIcon {
@@ -91,69 +97,55 @@
     border-radius: 0.3em;
     height: 2em;
     width: 2em;
-}
-
-.linkIcons:hover {
-    border-radius: 0.3em;
-    gap: 2em;
-    height: 1.5em;
-    width: 1.5em;
-    transition: all 1s ease;
-    box-shadow: 0em 0em 0.3em 0.05em rgb(127, 127, 127);
-}
-
-.flip-exit {
-    transform: rotateY(0deg);
-}
-
-.flip-exit-active {
-    transform: rotateY(180deg);
-    transition: transform 500ms;
-}
-
-.flip-exit-done {
-    transform: rotateY(180deg);
-}
-
-.flip-enter {
-    transform: rotateY(180deg);
-}
-
-.flip-enter-active {
-    transform: rotateY(0deg);
-    transition: transform 500ms;
-    transition-timing-function: cubic-bezier(.57, .21, .69, 1.25);
-}
-
-.flip-enter-done {
-    transform: rotateY(0deg);
-}
-
-.linksBookCardRow {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.deleteModalBox {
+.bookModalBox {
     border: 0.05em solid black;
     border-radius: 0.3em;
     background: linear-gradient(#e65c00, #F9D423);
     box-shadow: 0em 0em 0.3em 0.2em rgba(255, 255, 255, 0.617);
 }
 
-.deleteModalBody {
+.modalBookBody {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.deleteModalFooter {
+.modalBookFooter {
     display: flex;
     align-items: center;
     justify-content: space-around !important;
 }
 
-.deleteModalButton {
+.bookBtnDiv{
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+}
+
+.bookCardAdminBtn{
+    @include buttonPneumorphism();
+    box-shadow: 0.5em 0.5em 1em #aaaaaa, -0.5em -0.5em 1em #FFFFFF;
+
+}
+
+.bookCardAdminBtn:hover {
+    border: 0.1em solid #905260;
+    box-shadow: 0.5em 0.5em 1em #fff, -0.5em -0.5em 1em #aaaaaa;
+    scale: 1.1;
+    transition: all 1s ease;
+}
+
+.bookCardAdminBtn:active {
+    border: 0.1em solid #905260;
+    box-shadow: inset 0.2em 0.2em 1em #FFFFFF, inset -0.2em -0.2em 1em #aaaaaa;
+    transition: all 1s ease;
+}
+
+.modalButton {
     box-shadow: 0em 0em 0.2em 0.1em rgba(0, 0, 0, 0.533);
 }

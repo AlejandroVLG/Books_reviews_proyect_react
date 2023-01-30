@@ -21,28 +21,38 @@
     background: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
 }
 
+.abouIconsDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1em;
+    gap: 2em;
+}
+
 .iconImage {
-    font-size: 3.5em;
+    height: 4em;
+    width: 4em;
     background-color: #fff;
-    box-shadow: 0em 0em 0.2em 0.04em rgba(0, 0, 0, 0.745);
-    border: 0.04em solid black;
-    padding: 0.06em;
-    margin-bottom: 0.1em;
-    border-radius: 3em;
+    box-shadow: 0em 0em 0.4em 0.1em rgba(0, 0, 0, 0.604);
+    border: 0.02em solid black;
+    border-radius: 0.3em;
+    padding: 0.2em;
 
     @media screen and (max-width: 768px) {
-        font-size: 1.5em;
-	}
+        height: 2.5em;
+        width: 2.5em;
+    }
 }
 
-.iconImage:hover{
+.iconImage:hover {
     padding: 0em;
-    box-shadow: 0em 0em 0.2em 0.04em rgb(250, 250, 250);
-    transition: all 1s ease ;
+    box-shadow: 0em 0em 0.2em 0.1em rgba(0, 0, 0, 0.604);
+    border: 0.02em solid white;
+    transition: all 1s ease;
 }
 
-.iconImage:focus{
+.iconImage:focus {
     padding: 0em;
     box-shadow: 0em 0em 0.2em 0.04em rgb(250, 250, 250);
-    transition: all 1s ease ;
+    transition: all 1s ease;
 }
