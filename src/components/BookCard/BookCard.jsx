@@ -35,8 +35,8 @@ const BookCard = ({ books }) => {
         }
     }
 
+    // delete book modal handlers 
     const handleOpen = () => setShowModalState(true)
-
     const handleClose = () => setShowModalState(false)
 
     const handleDeleteBook = async () => {
@@ -79,13 +79,13 @@ const BookCard = ({ books }) => {
                 <MDBRow className="g-0">
                     <MDBCol
                         md="5"
-                        className="bookColData"
+                        className="cardImageCol"
                         style={{ borderRadius: '.5em' }}
                     >
                         <MDBCardImage
                             src={books.book_cover}
                             alt="Avatar"
-                            className="mb-0 bookCardImg"
+                            className="mb-0 cardImg"
                         />
                     </MDBCol>
                     <MDBCol
@@ -196,13 +196,13 @@ const BookCard = ({ books }) => {
                     <MDBRow className="g-0">
                         <MDBCol
                             md="5"
-                            className="gradient-custom bookColData"
+                            className="gradient-custom cardImageCol"
                             style={{ borderRadius: '.5em' }}
                         >
                             <MDBCardImage
                                 src={books.book_cover}
                                 alt="Avatar"
-                                className="mt-4 mb-0 bookCardImg"
+                                className="mt-4 mb-0 cardImg"
                                 fluid
                             />
                         </MDBCol>
@@ -326,13 +326,13 @@ const BookCard = ({ books }) => {
                     <MDBRow className="g-0">
                         <MDBCol
                             md="5"
-                            className="gradient-custom bookColData"
+                            className="gradient-custom cardImageCol"
                             style={{ borderRadius: '.5em' }}
                         >
                             <MDBCardImage
                                 src={books.book_cover}
                                 alt="Avatar"
-                                className="mt-4 mb-0 bookCardImg"
+                                className="mt-4 mb-0 cardImg"
                                 fluid
                             />
                         </MDBCol>

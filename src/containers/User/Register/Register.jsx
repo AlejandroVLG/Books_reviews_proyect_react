@@ -29,6 +29,7 @@ const Register = () => {
     )
   }
 
+  // clearing function for validations messages
   const clearValidationMessageHandler = () => {
 
     if (register.isError === true) {

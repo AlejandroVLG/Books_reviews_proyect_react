@@ -14,7 +14,7 @@ const Book = () => {
     const [booksData, setbooksData] = useState({
         books: []
     })
-
+    
     const [search, setSearch] = useState("")
 
     const showBooks = async () => {
@@ -46,6 +46,8 @@ const Book = () => {
         results = booksData.books
 
     } else {
+
+        // search bar funcionality 
         results = booksData.books.filter((data) =>
 
             data.title.toLowerCase().includes(search.toLocaleLowerCase()) ||

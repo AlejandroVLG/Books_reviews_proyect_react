@@ -32,6 +32,7 @@ const Login = () => {
     )
   }
 
+  // clearing function for validations messages
   const clearValidationMessageHandler = () => {
 
     if (credentials.isError === true) {

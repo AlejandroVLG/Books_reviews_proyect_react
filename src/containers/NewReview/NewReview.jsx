@@ -29,6 +29,7 @@ const NewReview = () => {
         })
     }
 
+    // clearing function for validations messages
     const clearValidationMessageHandler = () => {
 
         setTimeout(() => {

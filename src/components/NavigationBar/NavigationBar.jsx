@@ -1,4 +1,5 @@
 import React from "react"
+import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { useDispatch, useSelector } from 'react-redux'
 import { logOut, userData } from '../../containers/User/userSlice'
@@ -6,17 +7,17 @@ import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import "./NavigationBar.scss"
-import { useState } from "react"
 
 const NavigationBar = () => {
 
     const navigate = useNavigate()
 
+    const dispatch = useDispatch()
+
+    // state used when nav collapse
     const [activeViewState, setActiveViewState] = useState("")
 
     const identification = useSelector(userData)
-
-    const dispatch = useDispatch()
 
     if (!identification.token) {
 

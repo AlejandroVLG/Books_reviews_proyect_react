@@ -3,7 +3,7 @@ import { useSelector } from "react-redux"
 import { useNavigate } from "react-router"
 import { userData } from "../../containers/User/userSlice"
 import { useState } from "react"
-import { Button, Card, Modal } from "react-bootstrap"
+import { Button, Modal } from "react-bootstrap"
 import {
     MDBCard,
     MDBCardBody,
@@ -35,8 +35,8 @@ const ReviewCard = props => {
         }
     }
 
+    // delete review modal handlers 
     const handleOpen = () => setShowModalState(true)
-
     const handleClose = () => setShowModalState(false)
 
     const handleDeleteReview = async () => {

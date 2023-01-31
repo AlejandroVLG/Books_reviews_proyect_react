@@ -31,6 +31,7 @@ const NewBook = () => {
         })
     }
 
+    // clearing function for validations messages
     const clearValidationMessageHandler = () => {
 
         if (bookState.isError === true) {

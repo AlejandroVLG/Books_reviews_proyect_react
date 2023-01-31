@@ -6,8 +6,7 @@ import {
     MDBCard,
     MDBCardText,
     MDBCardBody,
-    MDBTypography,
-    MDBIcon
+    MDBTypography
 } from 'mdb-react-ui-kit'
 import "./AboutProyect.scss"
 

@@ -32,6 +32,8 @@ const EditUser = () => {
         instagram_account: '',
         profile_img: ''
     })
+
+    // avatar image state
     const [avatarImgState, setAvatarImgState] = useState("")
 
     const showUserData = async () => {
@@ -71,6 +73,7 @@ const EditUser = () => {
         })
     }
 
+    // clearing function for validations messages
     const clearValidationMessageHandler = () => {
 
         setTimeout(() => {

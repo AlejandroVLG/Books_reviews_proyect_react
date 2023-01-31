@@ -37,8 +37,8 @@ const ProfileCard = props => {
         }
     }
 
+    // delete profile modal handlers 
     const handleOpen = () => setShowModalState(true)
-
     const handleClose = () => setShowModalState(false)
 
     const handleDeleteProfile = async () => {

@@ -28,6 +28,7 @@ const EditReview = () => {
         })
     }
 
+    // clearing function for validations messages
     const clearValidationMessageHandler = () => {
 
         setTimeout(() => {
@@ -76,7 +77,6 @@ const EditReview = () => {
                     isError: true,
                     resultMessage: 'Rellena todos los campos para continuar'
                 })
-                console.log(err)
 
             } else {
                 setEditedReviewState({
