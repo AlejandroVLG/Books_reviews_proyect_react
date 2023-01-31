@@ -62,8 +62,8 @@ const Book = () => {
 
     return (
         <MDBContainer fluid className="mainBookContainer">
-            <MDBRow className="booksRow">
-                <MDBCol md={8} lg={7} xl={6} xxl={6} className="searchBarCol">
+            <MDBRow className="bookSearchBarContainer">
+                <MDBCol md={9} lg={8} xl={6} xxl={7} className="searchBarCol">
                     <div className="blankBox"></div>
                     <p className="textSearchBar">
                         Realiza una búsqueda por título, género, saga o fecha
@@ -80,7 +80,7 @@ const Book = () => {
                     <div className="blankBox"></div>
                 </MDBCol>
             </MDBRow>
-            <MDBRow>
+            <MDBRow className="spinnerContainer">
                 {results.length === 0 &&
                     <div className="bookSpinner">
                         <div className="blankBox"></div>
@@ -89,14 +89,15 @@ const Book = () => {
                     </div>
                 }
             </MDBRow>
-            <MDBRow className="bookCardsRowContainer row-cols-1 row-cols-md-4 g-4">
+            <MDBRow>
                 {
                     results.map((books, i) =>
                     (
                         <MDBCol
-                            className="mb-2 mb-lg-0 colCard"
-                            md={12} lg={12} xl={12} xxl={12}
-                            key={i}>
+                            md={12} lg={12} xl={6} xxl={4}
+                            key={i}
+                            className="mb-3 booksContainer"
+                        >
                             <BookCard books={books} key={i} />
                         </MDBCol>
                     ))

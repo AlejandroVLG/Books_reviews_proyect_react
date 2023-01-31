@@ -3,33 +3,22 @@
     min-height: 66vh;
     margin: 0;
     padding: 0;
-
-    @media screen and (max-width: 768px) {
-        min-height: 95vh;
-    }
 }
 
 .blankBox {
     height: 2em;
-    width: 100%;
+    width: 100vw;
 }
 
-.bookCardsRowContainer {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
+.spinnerContainer {
+    width: 100vw;
+    margin-bottom: 1em;
 }
 
-.colCard {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.booksRow {
+.bookSearchBarContainer {
     display: flex;
     justify-content: center;
+    width: 100vw;
 }
 
 .searchBarCol {
@@ -49,10 +38,6 @@
 .textSearchBar {
     color: rgb(173, 173, 173);
     font-size: large;
-
-    @media screen and (max-width: 768px) {
-        font-size: small;
-    }
 }
 
 .bookSpinner {
@@ -68,8 +53,35 @@
     color: white;
     font-size: xx-large;
     cursor: progress;
+}
 
-    @media screen and (max-width: 768px) {
+.booksContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (max-width: 1400px) {}
+
+
+@media screen and (max-width: 1200px) {
+}
+
+@media screen and (max-width: 991.98px) {
+
+}
+
+@media screen and (max-width: 767.98px) {
+
+    .loadingText {
         font-size: small;
+    }
+
+    .textSearchBar {
+        font-size: small;
+    }
+
+    .mainBookContainer {
+        min-height: 95vh;
     }
 }

@@ -8,19 +8,26 @@ const Home = () => {
         <div className="homeMainBox">
             <div className="borderHomeDiv">
                 <div className="homeTextDiv">
-                    <p className="homeTextP">
+                    <div className="homeTextP">
                         <h1>Bienvenido a mi web de reseñas liteararias</h1>
                         <hr />
-                        En esta web encontrarás un catálogo con algunos de los libros que he leido junto con una reseña en 
-                        la que doy mi opinión personal. Además de poder servir como referencia para quien busque opiniones de 
-                        un libro determinado o quisiera dejar la suya propia, para poder hacerlo únicamente necesitarías darte de 
-                        alta en la web en la sección "registrarse", y podrás añadir tu sensaciones de cualquier libro del catálogo.
+                        <p>
+                            En esta web encontrarás un catálogo con algunos de los libros que he leido junto con una reseña en
+                            la que doy mi opinión personal. Además de poder servir como referencia para quien busque opiniones de
+                            un libro determinado o quisiera dejar la suya propia, para poder hacerlo únicamente necesitarías darte de
+                            alta en la web en la sección "registrarse", y podrás añadir tu sensaciones de cualquier libro del catálogo.
+                        </p>
+
                         <hr />
-                        En la imagen hay una pequeña selección del tipo de libros que se pueden encontrar.
+                        <p>
+                            En la imagen hay una pequeña selección del tipo de libros que se pueden encontrar.
+                        </p>
                         <hr />
-                        Las reseñas que se encuentran en esta página son de carácter amateur y pueden distar mucho tanto de tu opinión personal,
-                        como de opiniones más profesionales.
-                    </p>
+                        <p>
+                            Las reseñas que se encuentran en esta página son de carácter amateur y pueden distar mucho tanto de tu opinión personal,
+                            como de opiniones más profesionales.
+                        </p>
+                    </div>
                 </div>
                 <section className="homeImages">
                     <img src="https://m.media-amazon.com/images/I/81S+HqepWwL.jpg" alt="elantris" />
