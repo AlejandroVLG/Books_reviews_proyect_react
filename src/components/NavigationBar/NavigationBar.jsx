@@ -12,7 +12,7 @@ const NavigationBar = () => {
 
     const navigate = useNavigate()
 
-    const [activeViewState, setActiveViewState] = useState()
+    const [activeViewState, setActiveViewState] = useState("")
 
     const identification = useSelector(userData)
 

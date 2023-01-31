@@ -21,7 +21,7 @@ const AboutTheProyect = () => {
                         <MDBCardBody className="p-4 ">
 
                             <MDBTypography className='dataHead'>
-                                Proyecto final Alejandro Laguía García
+                                Proyecto final de Alejandro Laguía García
                             </MDBTypography>
                             <hr className="mt-0 mb-5" />
                             <MDBRow className="pt-1">

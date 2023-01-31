@@ -141,7 +141,7 @@ const BookCard = ({ books }) => {
                     <hr className="mt-0 mb-4 bodyHr" />
                     <MDBRow className="pt-1">
                         <MDBCol size="12" className="mb-3">
-                            <MDBCardText className="text-muted">
+                            <MDBCardText className="text-muted overflow-scroll synopsisText">
                                 {books.synopsis}
                             </MDBCardText>
                         </MDBCol>
