@@ -637,22 +637,22 @@ const EditUser = () => {
                                 onClick={clearValidationMessageHandler}
                                 onChange={handleChange}>
                                 <option>Abrir el desplegable</option>
-                                <option value="../../..public/Img/avatar1.jpg" className='avatar avatar1'>Imagen 1</option>
-                                <option value="../../..public/Img/avatar2.jpg" className='avatar avatar2'>Imagen 2</option>
-                                <option value="../../..public/Img/avatar3.jpg" className='avatar avatar3'>Imagen 3</option>
-                                <option value="../../..public/Img/avatar4.jpg" className='avatar avatar4'>Imagen 4</option>
-                                <option value="../../..public/Img/avatar5.jpg" className='avatar avatar5'>Imagen 5</option>
-                                <option value="../../..public/Img/avatar6.jpg" className='avatar avatar6'>Imagen 6</option>
-                                <option value="../../..public/Img/avatar7.jpg" className='avatar avatar7'>Imagen 7</option>
-                                <option value="../../..public/Img/avatar8.jpg" className='avatar avatar8'>Imagen 8</option>
-                                <option value="../../..public/Img/avatar9.jpg" className='avatar avatar9'>Imagen 9</option>
-                                <option value="../../..public/Img/avatar10.jpg" className='avatar avatar10'>Imagen 10</option>
-                                <option value="../../..public/Img/avatar11.jpg" className='avatar avatar11'>Imagen 11</option>
-                                <option value="../../..public/Img/avatar12.jpg" className='avatar avatar12'>Imagen 12</option>
-                                <option value="../../..public/Img/avatar13.jpg" className='avatar avatar13'>Imagen 13</option>
-                                <option value="../../..public/Img/avatar14.png" className='avatar avatar14'>Imagen 14</option>
-                                <option value="../../..public/Img/avatar15.jpg" className='avatar avatar15'>Imagen 15</option>
-                                <option value="../../..public/Img/avatar16.jpg" className='avatar avatar16'>Imagen 16</option>
+                                <option value="public/Img/avatar1.jpg" className='avatar avatar1'>Imagen 1</option>
+                                <option value="public/Img/avatar2.jpg" className='avatar avatar2'>Imagen 2</option>
+                                <option value="public/Img/avatar3.jpg" className='avatar avatar3'>Imagen 3</option>
+                                <option value="public/Img/avatar4.jpg" className='avatar avatar4'>Imagen 4</option>
+                                <option value="public/Img/avatar5.jpg" className='avatar avatar5'>Imagen 5</option>
+                                <option value="public/Img/avatar6.jpg" className='avatar avatar6'>Imagen 6</option>
+                                <option value="public/Img/avatar7.jpg" className='avatar avatar7'>Imagen 7</option>
+                                <option value="public/Img/avatar8.jpg" className='avatar avatar8'>Imagen 8</option>
+                                <option value="public/Img/avatar9.jpg" className='avatar avatar9'>Imagen 9</option>
+                                <option value="public/Img/avatar10.jpg" className='avatar avatar10'>Imagen 10</option>
+                                <option value="public/Img/avatar11.jpg" className='avatar avatar11'>Imagen 11</option>
+                                <option value="public/Img/avatar12.jpg" className='avatar avatar12'>Imagen 12</option>
+                                <option value="public/Img/avatar13.jpg" className='avatar avatar13'>Imagen 13</option>
+                                <option value="public/Img/avatar14.png" className='avatar avatar14'>Imagen 14</option>
+                                <option value="public/Img/avatar15.jpg" className='avatar avatar15'>Imagen 15</option>
+                                <option value="public/Img/avatar16.jpg" className='avatar avatar16'>Imagen 16</option>
                             </Form.Select>
                             <Form.Text className="text-muted">
                                 Selecciona una imagen de perfil
