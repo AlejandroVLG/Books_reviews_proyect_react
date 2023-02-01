@@ -15,18 +15,6 @@
     border-left: 0.1em solid white;
 }
 
-.navBarLink2 {
-    color: white !important;
-}
-
-.navBarLink2:hover {
-    color: rgb(52, 130, 135) !important;
-}
-
-.collapsed {
-    background-color: white !important;
-}
-
 .navBarImg {
     height: 2em;
     width: 2em;
@@ -36,13 +24,8 @@
 }
 
 .collapseDiv {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    margin-left: 4em;
-    padding-top: 0.4em;
-    padding-left: 0.5em;
-    padding-right: 0.5em;
+    width: 60%;
+    padding: 0.3em;
     border-radius: 0.3em;
     background: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
     box-shadow: 0em 0em 0.2em 0.1em rgba(255, 255, 255, 0.574);
@@ -54,6 +37,7 @@
 }
 
 .collapseText {
+    font-size: large;
     font-weight: bold;
     font-family: Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
 }

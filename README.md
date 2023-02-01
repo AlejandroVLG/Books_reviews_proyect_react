@@ -1,4 +1,4 @@
-<img src="./src/Img/geeks.png" style="width:900px; border-radius:0.1em;"/>
+<img src="./public/Img/geeks.png" style="width:900px; border-radius:0.1em;"/>
 
 ---
 
@@ -19,88 +19,81 @@ Para las animaciones he utilizado framer motion y para los estilos y mdb-react y
 
 ---
 ## Vista principal
-<img src="./src/Img/Home.png" style="border-radius:0.1em;"/>
+<img src="/public/Img/Home.png" style="border-radius:0.2em;border: 0.1em transparent;box-shadow: 0em 0em 0.1em 0.1em black; margin-bottom: 0.3em; margin-bottom: 0.3em;"/>
+<img src="/public/Img/homeFrontCard.png" style="border-radius:0.2em;border: 0.1em transparent;box-shadow: 0em 0em 0.1em 0.1em black; margin-bottom: 0.3em;"/>
+<img src="/public/Img/homeBackCard.png" style="border-radius:0.2em;border: 0.1em transparent;box-shadow: 0em 0em 0.1em 0.1em black; margin-bottom: 0.3em;"/>
 
->Vista de inicio donde se da información del proyecto y se especifica su finalidad.
+>Vista de inicio donde se da información del proyecto, una galería con un ejemplo de libros que puedes encontrar y una tarjeta de identificación.
 
 ---
 
 ### Inicio de sesión
-<img src="./src/Img/Login_validacion.png" style="border-radius:0.1em;"/>
+<img src="/public/Img/Login_validacion.png" style="border-radius:0.2em;border: 0.1em transparent;box-shadow: 0em 0em 0.1em 0.1em black; margin-bottom: 0.3em;"/>
 
 ---
 
 ### Nuevo usuario
-<img src="./src/Img/Registro.png" style="border-radius:0.1em;"/>
+<img src="/public/Img/Registro.png" style="border-radius:0.2em;border: 0.1em transparent;box-shadow: 0em 0em 0.1em 0.1em black; margin-bottom: 0.3em;"/>
 
 >Todos los formularios ya sea para crear un registro nuevo, editarlo o eliminarlo, constan de un sistema de validaciones.
 
 ---
 
-### Vista frontal de todos los libros añadidos
-<img src="./src/Img/Libros_frontal.png" style="border-radius:0.1em;"/>
+### Vista sin autentificar
+<img src="/public/Img/booksNoAuth.png" style="border-radius:0.2em;border: 0.1em transparent;box-shadow: 0em 0em 0.1em 0.1em black; margin-bottom: 0.3em;"/>
 
->Cada libro se compone de una vista frontal con un enlace de compra y otro a la wikipedia del autor, además si se hace click en la imagen esta gira para dar mayor información del libro.
-
----
-
-<img src="./src/Img/Barra_busqueda.png" style="border-radius:0.1em;"/>
-
-<<<<<<< HEAD
->Cada libro se compone de una vista frontal con un  a una tienda y a la wikipedia del escritor, además si se hace click en la imagen, esta gira para dar mayor información del libro. La barra de busqueda que se encuentra en la parte superior permite filtrar búsquedas por título, autor, género, saga o fecha de publicación.
-=======
-> La barra de busqueda que se encuentra en la parte superior permite filtrar búsquedas por título, autor, género, saga o fecha de publicación.
->>>>>>> cdc37a9dd66711f747c2f7829f35eb2672d08dc5
+>Vista de los libros con la barra de búsqueda cuando no ha iniciado sesión un usuario.
 
 ---
+### Vista autentificado
+<img src="/public/Img/booksAuth.png" style="border-radius:0.2em;border: 0.1em transparent;box-shadow: 0em 0em 0.1em 0.1em black; margin-bottom: 0.3em;"/>
 
-### Vista trasera de uno de los libros
-<img src="./src/Img/Parte_trasera.png" style="border-radius:0.1em;"/>
-
->La vista trasera de la cada libro incluye información adicional además de la opción de ver reseñas existentes de ese libro o crear una nueva si has iniciado sesión con una cuenta registrada, además permite únicamente a un Admin o al SuperAdmin de la web, eliminar o modificar libros existentes.
+>Vista de los libros con la barra de búsqueda cuando no ha iniciado sesión un usuario.
 
 ---
 
 ### Editar o eliminar un libro
-<img src="./src/Img/Boton_edit.png" style="border-radius:0.1em;"/>
-<img src="./src/Img/Boton_delete.png" style="border-radius:0.1em;"/>
-<img src="./src/Img/Ventana_eliminar.png" style="border-radius:0.1em;"/>
+<div style="display: flex;align-items: center;justify-content: center; flex-direction: row; gap: 1em;margin-bottom: width: 100%">
+    <img src="/public/Img/editCardButton.png" style="border-radius:0.2em;border: 0.1em transparent;box-shadow: 0em 0em 0.1em 0.1em black; 0.3em; width: 45%"/>
+    <img src="/public/Img/deleteCardButton.png" style="border-radius:0.2em;border: 0.1em transparent;box-shadow: 0em 0em 0.1em 0.1em black; width: 45%"/>
+</div>
+<img src="/public/Img/Ventana_eliminar.png" style="border-radius:0.2em;border: 0.1em transparent;box-shadow: 0em 0em 0.1em 0.1em black; margin-bottom: 0.3em;margin-top: 0.3em;"/>
 
 >Botones para eliminar o modificar un libro existente, solo visible y accesible para el administrador o el SuperAdmin con una ventana de seguridad para confirmar que se quiere eliminar el libro.
 
 ---
 
 ### Añadir un nuevo libro
-<img src="./src/Img/Nuevo_libro.png" style="border-radius:0.1em;"/>
+<img src="/public/Img/Nuevo_libro.png" style="border-radius:0.2em;border: 0.1em transparent;box-shadow: 0em 0em 0.1em 0.1em black; margin-bottom: 0.3em;"/>
 
 >Cualquier usuario registrado puede añadir libros nuevos en la biblioteca, quizás en un futuro esta opción cambie y solo pueda añadir libros el administrador o el SuperAdmin.
 
 ---
 
 ### Formulario de edición de libros
-<img src="./src/Img/Editar_libro.png" style="border-radius:0.1em;"/>
+<img src="/public/Img/Editar_libro.png" style="border-radius:0.2em;border: 0.1em transparent;box-shadow: 0em 0em 0.1em 0.1em black; margin-bottom: 0.3em;"/>
 
 >Formulario con sus validaciones correspondientes para editar un libro existente, solo accesible para un administrador o el SuperAdmin.
 
 ---
 
 ### Vista de reseñas
-<img src="./src/Img/Reseña.png" style="border-radius:0.1em;"/>
+<img src="/public/Img/Reseña.png" style="border-radius:0.2em;border: 0.1em transparent;box-shadow: 0em 0em 0.1em 0.1em black; margin-bottom: 0.3em;"/>
 
 >Vista de las reseñas del libro seleccionado con opción de modificarlas o eliminarlas.
 
 ---
 
 ### Añadir una nueva reseña
-<img src="./src/Img/Nueva_reseña.png" style="border-radius:0.1em;"/>
+<img src="/public/Img/Nueva_reseña.png" style="border-radius:0.2em;border: 0.1em transparent;box-shadow: 0em 0em 0.1em 0.1em black; margin-bottom: 0.3em;"/>
 
 >Cualquier usuario registrado puede añadir reseñas, pero únicamente el usuario que haya creado la reseña podrá editarla o eliminarla.
 
 ---
 
 ### Vista del perfil de usuario
-<img src="./src/Img/Perfil_usuario.png" style="border-radius:0.1em;"/>
-<img src="./src/Img/Eliminar_perfil.png" style="border-radius:0.1em;"/>
+<img src="/public/Img/Perfil_usuario.png" style="border-radius:0.2em;border: 0.1em transparent;box-shadow: 0em 0em 0.1em 0.1em black; margin-bottom: 0.3em;"/>
+<img src="/public/Img/Eliminar_perfil.png" style="border-radius:0.2em;border: 0.1em transparent;box-shadow: 0em 0em 0.1em 0.1em black; margin-bottom: 0.3em;"/>
 
 >Perfil del usuario, con opción de modificarlo o eliminarlo y ventana de seguridad para confirmar.
 
@@ -108,9 +101,16 @@ Para las animaciones he utilizado framer motion y para los estilos y mdb-react y
 
 ### Modificar datos del perfil
 
-<img src="./src/Img/Modificar_usuario.png" style="border-radius:0.1em;"/>
+<img src="/public/Img/Modificar_usuario.png" style="border-radius:0.2em;border: 0.1em transparent;box-shadow: 0em 0em 0.1em 0.1em black; margin-bottom: 0.3em;"/>
 
 >Vista para modificar los datos de un usuario existente con opción de modificar la imagen por defecto del perfil a elegir entre más de 15 avatares precargados.
+
+---
+### Sobre el proyecto
+
+<img src="/public/Img/about.png" style="border-radius:0.2em;border: 0.1em transparent;box-shadow: 0em 0em 0.1em 0.1em black; margin-bottom: 0.3em;"/>
+
+>Vista con las tecnologías que he utilizado, información del proyecto y enlaces a mi GitHub y Linkedin.
 
 ---
 

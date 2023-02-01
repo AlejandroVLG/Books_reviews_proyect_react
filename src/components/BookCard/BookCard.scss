@@ -81,6 +81,11 @@
 }
 
 .synopsisText {
+    background: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
+    padding: 0.3em;
+    border-radius: 0.2em;
+    border: 0.1em solid transparent;
+    box-shadow: 0 0 0.1em 0.1em black;
     height: 8em;
 }
 
@@ -94,12 +99,12 @@
 
 .adminButton:hover{
     box-shadow: 0 0 0.2em 0.2em rgb(190, 36, 36);
-    transition: 0.5s ease;
+    transition: 0.8s all;
 }
 
 .adminButton:active{
     box-shadow: 0 0 0.2em 0.2em rgb(190, 36, 36);
-    transition: 0.5s ease;
+    transition: 0.8s all;
 }
 
 .bookCardEditBtnImg {
@@ -121,6 +126,9 @@
     .mainBookCard {
         width: 80%;
     }
+    .cardImg{
+        width: 80%;
+    }
 }
 
 @media screen and (max-width: 991.98px) {
@@ -140,12 +148,12 @@
         width: 95%;
     }
 
-    .bookCardImg {
-        height: 80%;
-        width: 80%;
-    }
-
     .bookCardBody {
         font-size: small;
+    }
+
+    .cardImg{
+        margin-top: 1em;
+        width: 40%;
     }
 }

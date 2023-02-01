@@ -141,7 +141,7 @@ const BookCard = ({ books }) => {
                     <hr className="mt-0 mb-4 bodyHr" />
                     <MDBRow className="pt-1">
                         <MDBCol size="12" className="mb-3">
-                            <MDBCardText className="text-muted overflow-scroll synopsisText">
+                            <MDBCardText className="text-muted overflow-auto synopsisText">
                                 {books.synopsis}
                             </MDBCardText>
                         </MDBCol>
@@ -196,7 +196,7 @@ const BookCard = ({ books }) => {
                     <MDBRow className="g-0">
                         <MDBCol
                             md="5"
-                            className="gradient-custom cardImageCol"
+                            className="cardImageCol"
                             style={{ borderRadius: '.5em' }}
                         >
                             <MDBCardImage
@@ -320,20 +320,19 @@ const BookCard = ({ books }) => {
 
             return (
                 <MDBCard
-                    className="mb-10 mainBookCard"
+                    className="mainBookCard"
                     style={{ borderRadius: '.5em' }}
                 >
                     <MDBRow className="g-0">
                         <MDBCol
                             md="5"
-                            className="gradient-custom cardImageCol"
+                            className="cardImageCol"
                             style={{ borderRadius: '.5em' }}
                         >
                             <MDBCardImage
                                 src={books.book_cover}
                                 alt="Avatar"
-                                className="mt-4 mb-0 cardImg"
-                                fluid
+                                className="mb-0 cardImg"
                             />
                         </MDBCol>
                         <MDBCol
@@ -389,8 +388,8 @@ const BookCard = ({ books }) => {
                         <hr className="mt-0 mb-4 bodyHr" />
                         <MDBRow className="pt-1">
                             <MDBCol size="12" className="mb-3">
-                                <MDBCardText className="text-muted overflow-scroll synopsisText">
-                                     {books.synopsis}
+                                <MDBCardText className="text-muted overflow-auto synopsisText">
+                                    {books.synopsis}
                                 </MDBCardText>
                             </MDBCol>
                         </MDBRow>
