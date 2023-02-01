@@ -11,10 +11,33 @@
     box-shadow: 0.5em 0.5em 1em #FFFFFF, -0.5em -0.5em 1em #aaaaaa;
 }
 
+.bookModalBox {
+    border: 0.05em solid black;
+    border-radius: 0.3em;
+    background: linear-gradient(#e65c00, #F9D423);
+    box-shadow: 0em 0em 0.3em 0.2em rgba(255, 255, 255, 0.617);
+}
+
+.modalBookBody {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modalButton {
+    box-shadow: 0em 0em 0.2em 0.1em rgba(0, 0, 0, 0.533);
+}
+
+.modalBookFooter {
+    display: flex;
+    align-items: center;
+    justify-content: space-around !important;
+}
+
 .mainBookCard {
     background: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
     font-family: Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
-    box-shadow: 0 0 0.2em 0.1em rgb(155, 155, 155);
+    box-shadow: 0 0 0.1em 0.2em rgb(255, 255, 255);
     cursor: pointer;
 }
 
@@ -26,6 +49,7 @@
 
 .cardImg {
     width: 95%;
+    max-height: 23em;
     border: 0.1em solid black;
     border-radius: 0.3em;
     box-shadow: 0 0 0.2em 0.1em black;
@@ -50,81 +74,48 @@
     transition: all 1s ease;
 }
 
-.iconEditCol {
-    display: flex;
-    justify-content: flex-start;
-}
-
-.iconDelCol {
-    display: flex;
-    justify-content: flex-end;
-}
-
-.editIcon {
-    border-radius: 0.3em;
-    height: 2em;
-    width: 2em;
-}
-
-.deleteIcon {
-    border-radius: 0.3em;
-    height: 2em;
-    width: 2em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.bookModalBox {
-    border: 0.05em solid black;
-    border-radius: 0.3em;
-    background: linear-gradient(#e65c00, #F9D423);
-    box-shadow: 0em 0em 0.3em 0.2em rgba(255, 255, 255, 0.617);
-}
-
-.modalBookBody {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.modalButton {
-    box-shadow: 0em 0em 0.2em 0.1em rgba(0, 0, 0, 0.533);
-}
-
-.modalBookFooter {
-    display: flex;
-    align-items: center;
-    justify-content: space-around !important;
-}
-
 .bookBtnDiv {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.bookCardAdminBtn {
-    @include buttonPneumorphism();
-    box-shadow: 0.5em 0.5em 1em #aaaaaa, -0.5em -0.5em 1em #FFFFFF;
-}
-
-.bookCardAdminBtn:hover {
-    border: 0.1em solid #905260;
-    box-shadow: 0.5em 0.5em 1em #fff, -0.5em -0.5em 1em #aaaaaa;
-    scale: 1.1;
-    transition: all 1s ease;
-}
-
-.bookCardAdminBtn:active {
-    border: 0.1em solid #905260;
-    box-shadow: inset 0.2em 0.2em 1em #FFFFFF, inset -0.2em -0.2em 1em #aaaaaa;
-    transition: all 1s ease;
-}
-
-.synopsisText{
+.synopsisText {
     height: 8em;
 }
+
+.adminButton {
+    border: 0;
+    height: 3.5em;
+    width: 3.5em;
+    border-radius: 5em;
+    box-shadow: 0 0 0.2em 0.1em black;
+}
+
+.adminButton:hover{
+    box-shadow: 0 0 0.2em 0.2em rgb(190, 36, 36);
+    transition: 0.5s ease;
+}
+
+.adminButton:active{
+    box-shadow: 0 0 0.2em 0.2em rgb(190, 36, 36);
+    transition: 0.5s ease;
+}
+
+.bookCardEditBtnImg {
+    height: 2.48em;
+    width: 2.49em;
+    scale: 1.37;
+    border-radius: 5em;
+}
+
+.bookCardDeleteImg {
+    height: 2.48em;
+    width: 2.55em;
+    scale: 1.37;
+    border-radius: 5em;
+}
+
 @media screen and (max-width: 1200px) {
 
     .mainBookCard {

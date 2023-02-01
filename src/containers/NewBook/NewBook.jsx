@@ -56,7 +56,7 @@ const NewBook = () => {
         e.preventDefault()
 
         try {
-            await axios.post("http://127.0.0.1:8000/api/book/createBook", bookState, requirements)
+            await axios.post("https://bookapi.up.railway.app/api/book/createBook", bookState, requirements)
 
             if (!bookState.isError) {
 

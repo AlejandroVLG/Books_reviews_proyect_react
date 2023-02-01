@@ -41,7 +41,7 @@ const BookCard = ({ books }) => {
 
     const handleDeleteBook = async () => {
         try {
-            await axios.delete(`http://127.0.0.1:8000/api/book/deleteBook/${deleteId}`, requirements)
+            await axios.delete(`https://bookapi.up.railway.app/api/book/deleteBook/${deleteId}`, requirements)
 
             if (!deleteDataState.isError) {
 
@@ -94,7 +94,7 @@ const BookCard = ({ books }) => {
                         style={{ borderRadius: '.5em' }}
                     >
                         <br />
-                        <MDBTypography tag="h1">{books.title}</MDBTypography>
+                        <MDBTypography tag="h2">{books.title}</MDBTypography>
                         <MDBCardBody className="p-0 bookCardBody">
                             <br />
                             <MDBTypography className='dataHead' tag="h6">
@@ -214,24 +214,24 @@ const BookCard = ({ books }) => {
                             <MDBRow className="bookBtnDiv">
                                 <MDBCol className="my-3 mx-0">
                                     <button
-                                        className='mx-2 bookCardAdminBtn'
+                                        className='mx-2 adminButton'
                                         color='dark'
                                         onClick={() => navigate(`/editBook/${books.id}`)}
                                     >
-                                        Editar libro
+                                        <img className="bookCardEditBtnImg" src="../../../public/Img/editButton.png" alt="editBtn" />
                                     </button>
                                 </MDBCol>
                                 <MDBCol className="my-3 mx-0">
                                     <button
-                                        className='mx-2 bookCardAdminBtn'
+                                        className='mx-2 adminButton'
                                         color='dark'
                                         onClick={handleOpen}
                                     >
-                                        Eliminar libro
+                                        <img className="bookCardDeleteImg" src="../../../public/Img/deleteButton.png" alt="deleteBtn" />
                                     </button>
                                 </MDBCol>
                             </MDBRow>
-                            <MDBTypography tag="h1">{books.title}</MDBTypography>
+                            <MDBTypography tag="h2">{books.title}</MDBTypography>
                             <br />
                             <MDBCardBody className="p-0 bookCardBody">
                                 <br />
@@ -279,7 +279,7 @@ const BookCard = ({ books }) => {
                         <hr className="mt-0 mb-4 bodyHr" />
                         <MDBRow className="pt-1">
                             <MDBCol size="12" className="mb-3">
-                                <MDBCardText className="text-muted">
+                                <MDBCardText className="text-muted overflow-scroll synopsisText">
                                     {books.synopsis}
                                 </MDBCardText>
                             </MDBCol>
@@ -342,7 +342,7 @@ const BookCard = ({ books }) => {
                             style={{ borderRadius: '.5em' }}
                         >
                             <br />
-                            <MDBTypography tag="h1">{books.title}</MDBTypography>
+                            <MDBTypography tag="h2">{books.title}</MDBTypography>
                             <MDBCardBody className="p-0 bookCardBody">
                                 <br />
                                 <MDBTypography className='dataHead' tag="h6">
@@ -389,8 +389,8 @@ const BookCard = ({ books }) => {
                         <hr className="mt-0 mb-4 bodyHr" />
                         <MDBRow className="pt-1">
                             <MDBCol size="12" className="mb-3">
-                                <MDBCardText className="text-muted">
-                                    {books.synopsis}
+                                <MDBCardText className="text-muted overflow-scroll synopsisText">
+                                     {books.synopsis}
                                 </MDBCardText>
                             </MDBCol>
                         </MDBRow>

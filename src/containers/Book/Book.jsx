@@ -20,7 +20,7 @@ const Book = () => {
     const showBooks = async () => {
 
         try {
-            const response = await axios.get('http://127.0.0.1:8000/api/book/showAllBooks')
+            const response = await axios.get('https://bookapi.up.railway.app/api/book/showAllBooks')
 
             setbooksData({
                 books: response.data.data

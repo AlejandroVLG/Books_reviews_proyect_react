@@ -93,7 +93,7 @@ const Login = () => {
         password: credentials.password
       }
 
-      const userToken = await axios.post("http://127.0.0.1:8000/api/login", body)
+      const userToken = await axios.post("https://bookapi.up.railway.app/api/login", body)
 
       if (userToken.status === 200) {
 
@@ -105,7 +105,7 @@ const Login = () => {
           }
         }
 
-        const userInfoData = await axios.get('http://127.0.0.1:8000/api/user/myProfile', requirements)
+        const userInfoData = await axios.get('https://bookapi.up.railway.app/api/user/myProfile', requirements)
 
         dispatch(login(
           {

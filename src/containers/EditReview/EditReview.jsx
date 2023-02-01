@@ -50,7 +50,7 @@ const EditReview = () => {
 
         try {
             await axios.put(
-                `http://127.0.0.1:8000/api/review/editReviewById/${id}`,
+                `https://bookapi.up.railway.app/api/review/editReviewById/${id}`,
                 editedReviewState,
                 requirements
             )

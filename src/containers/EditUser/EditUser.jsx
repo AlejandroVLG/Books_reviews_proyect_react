@@ -38,7 +38,7 @@ const EditUser = () => {
 
     const showUserData = async () => {
 
-        let oldDataResponse = await axios.get(`http://127.0.0.1:8000/api/user/showUserById/${id}`, requirements)
+        let oldDataResponse = await axios.get(`https://bookapi.up.railway.app/api/user/showUserById/${id}`, requirements)
 
         setEditedUserState({
             name: oldDataResponse.data.data.name,
@@ -93,7 +93,7 @@ const EditUser = () => {
         try {
             e.preventDefault()
 
-            await axios.put(`http://127.0.0.1:8000/api/user/editMyProfile`, editedUserState, requirements)
+            await axios.put(`https://bookapi.up.railway.app/api/user/editMyProfile`, editedUserState, requirements)
 
             if (!editedUserState.isError) {
 

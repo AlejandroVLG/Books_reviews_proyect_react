@@ -46,7 +46,7 @@ const EditBook = () => {
 
     const showBookData = async () => {
 
-        const bookResponse = await axios.get(`http://127.0.0.1:8000/api/book/showBookById/${id}`)
+        const bookResponse = await axios.get(`https://bookapi.up.railway.app/api/book/showBookById/${id}`)
 
         setEditedBookState({
             title: bookResponse.data.data.title,
@@ -78,7 +78,7 @@ const EditBook = () => {
         e.preventDefault()
 
         try {
-            await axios.put(`http://127.0.0.1:8000/api/book/editBookById/${id}`, editedBookState, requirements)
+            await axios.put(`https://bookapi.up.railway.app/api/book/editBookById/${id}`, editedBookState, requirements)
 
             if (!editedBookState.isError) {
 

@@ -51,7 +51,7 @@ const NewReview = () => {
         e.preventDefault()
 
         try {
-            await axios.post("http://127.0.0.1:8000/api/review/createReview", reviewState, requirements)
+            await axios.post("https://bookapi.up.railway.app/api/review/createReview", reviewState, requirements)
 
             if (!reviewState.isError) {
 

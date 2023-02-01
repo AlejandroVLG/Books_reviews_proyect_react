@@ -41,7 +41,7 @@ const ReviewCard = props => {
 
     const handleDeleteReview = async () => {
         try {
-            await axios.delete(`http://127.0.0.1:8000/api/review/deleteReview/${deleteId}`, requirements)
+            await axios.delete(`https://bookapi.up.railway.app/api/review/deleteReview/${deleteId}`, requirements)
 
             if (!reviewErrorState.isError) {
 
