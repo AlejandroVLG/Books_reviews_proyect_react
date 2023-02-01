@@ -15,6 +15,8 @@ import {
     MDBTypography
 } from 'mdb-react-ui-kit'
 import axios from "axios"
+import editBtn from "../../../public/Img/editButton.png"
+import deleteBtn from "../../../public/Img/deleteButton.png"
 import './BookCard.scss'
 
 const BookCard = ({ books }) => {
@@ -218,7 +220,7 @@ const BookCard = ({ books }) => {
                                         color='dark'
                                         onClick={() => navigate(`/editBook/${books.id}`)}
                                     >
-                                        <img className="bookCardEditBtnImg" src="public/Img/editButton.png" alt="editBtn" />
+                                        <img className="bookCardEditBtnImg" src={editBtn} alt="editBtn" />
                                     </button>
                                 </MDBCol>
                                 <MDBCol className="my-3 mx-0">
@@ -227,7 +229,7 @@ const BookCard = ({ books }) => {
                                         color='dark'
                                         onClick={handleOpen}
                                     >
-                                        <img className="bookCardDeleteImg" src="public/Img/deleteButton.png" alt="deleteBtn" />
+                                        <img className="bookCardDeleteImg" src={deleteBtn} alt="deleteBtn" />
                                     </button>
                                 </MDBCol>
                             </MDBRow>

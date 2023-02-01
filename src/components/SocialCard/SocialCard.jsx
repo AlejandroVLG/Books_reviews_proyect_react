@@ -1,12 +1,22 @@
-import { Icon } from "@iconify/react"
 import React from "react"
+import { Icon } from "@iconify/react"
+import frontCard from "../../../public/Img/frontCard.png"
+import backCard from "../../../public/Img/backCard.png"
 import "./SocialCard.scss"
 
 const SocialCard = ({ onClick }) => {
+
     return (
         <div className="socialCardContainer" onClick={onClick}>
-            <div className="frontCard"></div>
-            <div className="backCard">
+            <div
+                className="frontCard"
+                style={{ backgroundImage: `url(${frontCard})` }}
+            >
+            </div>
+            <div
+                className="backCard"
+                style={{ backgroundImage: `url(${backCard})` }}
+            >
                 <a
                     tag='a'
                     href="https://github.com/Alexdck"

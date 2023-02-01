@@ -4,6 +4,23 @@ import { useDispatch, useSelector } from 'react-redux'
 import { logOut, userData } from '../User/userSlice'
 import { Col, Form, Row } from 'react-bootstrap'
 import axios from 'axios'
+import avatar1 from "../../../public/Img/avatar1.jpg"
+import avatar2 from "../../../public/Img/avatar2.jpg"
+import avatar3 from "../../../public/Img/avatar3.jpg"
+import avatar4 from "../../../public/Img/avatar4.jpg"
+import avatar5 from "../../../public/Img/avatar5.jpg"
+import avatar6 from "../../../public/Img/avatar6.jpg"
+import avatar7 from "../../../public/Img/avatar7.jpg"
+import avatar8 from "../../../public/Img/avatar8.jpg"
+import avatar9 from "../../../public/Img/avatar9.jpg"
+import avatar10 from "../../../public/Img/avatar10.jpg"
+import avatar11 from "../../../public/Img/avatar11.jpg"
+import avatar12 from "../../../public/Img/avatar12.jpg"
+import avatar13 from "../../../public/Img/avatar13.jpg"
+import avatar14 from "../../../public/Img/avatar14.png"
+import avatar15 from "../../../public/Img/avatar15.jpg"
+import avatar16 from "../../../public/Img/avatar16.jpg"
+import avatarDefault from "../../../public/Img/avatarDefault.png"
 import "./EditUser.scss"
 
 const EditUser = () => {
@@ -637,22 +654,22 @@ const EditUser = () => {
                                 onClick={clearValidationMessageHandler}
                                 onChange={handleChange}>
                                 <option>Abrir el desplegable</option>
-                                <option value="public/Img/avatar1.jpg" className='avatar avatar1'>Imagen 1</option>
-                                <option value="public/Img/avatar2.jpg" className='avatar avatar2'>Imagen 2</option>
-                                <option value="public/Img/avatar3.jpg" className='avatar avatar3'>Imagen 3</option>
-                                <option value="public/Img/avatar4.jpg" className='avatar avatar4'>Imagen 4</option>
-                                <option value="public/Img/avatar5.jpg" className='avatar avatar5'>Imagen 5</option>
-                                <option value="public/Img/avatar6.jpg" className='avatar avatar6'>Imagen 6</option>
-                                <option value="public/Img/avatar7.jpg" className='avatar avatar7'>Imagen 7</option>
-                                <option value="public/Img/avatar8.jpg" className='avatar avatar8'>Imagen 8</option>
-                                <option value="public/Img/avatar9.jpg" className='avatar avatar9'>Imagen 9</option>
-                                <option value="public/Img/avatar10.jpg" className='avatar avatar10'>Imagen 10</option>
-                                <option value="public/Img/avatar11.jpg" className='avatar avatar11'>Imagen 11</option>
-                                <option value="public/Img/avatar12.jpg" className='avatar avatar12'>Imagen 12</option>
-                                <option value="public/Img/avatar13.jpg" className='avatar avatar13'>Imagen 13</option>
-                                <option value="public/Img/avatar14.png" className='avatar avatar14'>Imagen 14</option>
-                                <option value="public/Img/avatar15.jpg" className='avatar avatar15'>Imagen 15</option>
-                                <option value="public/Img/avatar16.jpg" className='avatar avatar16'>Imagen 16</option>
+                                <option value={avatar1} className='avatar avatar1'>Imagen 1</option>
+                                <option value={avatar2} className='avatar avatar2'>Imagen 2</option>
+                                <option value={avatar3} className='avatar avatar3'>Imagen 3</option>
+                                <option value={avatar4} className='avatar avatar4'>Imagen 4</option>
+                                <option value={avatar5} className='avatar avatar5'>Imagen 5</option>
+                                <option value={avatar6} className='avatar avatar6'>Imagen 6</option>
+                                <option value={avatar7} className='avatar avatar7'>Imagen 7</option>
+                                <option value={avatar8} className='avatar avatar8'>Imagen 8</option>
+                                <option value={avatar9} className='avatar avatar9'>Imagen 9</option>
+                                <option value={avatar10} className='avatar avatar10'>Imagen 10</option>
+                                <option value={avatar11} className='avatar avatar11'>Imagen 11</option>
+                                <option value={avatar12} className='avatar avatar12'>Imagen 12</option>
+                                <option value={avatar13} className='avatar avatar13'>Imagen 13</option>
+                                <option value={avatar14} className='avatar avatar14'>Imagen 14</option>
+                                <option value={avatar15} className='avatar avatar15'>Imagen 15</option>
+                                <option value={avatar16} className='avatar avatar16'>Imagen 16</option>
                             </Form.Select>
                             <Form.Text className="text-muted">
                                 Selecciona una imagen de perfil
@@ -660,7 +677,10 @@ const EditUser = () => {
                         </Form.Group>
                     </Col>
                     <Col xs={12} sm={12} md={6} lg={6} xl={6} xxl={6} className="avatarImgBox" >
-                        <img src={avatarImgState.profile_img} className='avatarImg' />
+                        <img
+                            src={avatarImgState.profile_img}
+                            className='avatarImg'
+                            style={{ backgroundImage: `url(${avatarDefault})`, backgroundColor: "rgb(133, 132, 132)" }} />
                     </Col>
                     <Col xs={12} sm={12} md={12} lg={12} xl={12} xxl={12} >
                         <Form.Group className="mb-3 editProfileBoxButton">
