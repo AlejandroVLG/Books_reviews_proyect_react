@@ -19,7 +19,7 @@ Para las animaciones he utilizado framer motion y para los estilos y mdb-react y
 
 ---
 ## Vista principal
-<img src="./public/Img/Home.png" style="border-radius:0.2em;border: 0.1em transparent;box-shadow: 0em 0em 0.1em 0.1em black; margin-bottom: 0.3em;"/>
+<img src="./public/Img/home.png" style="border-radius:0.2em;border: 0.1em transparent;box-shadow: 0em 0em 0.1em 0.1em black; margin-bottom: 0.3em;"/>
 <img src="./public/Img/homeFrontCard.png" style="border-radius:0.2em;border: 0.1em transparent;box-shadow: 0em 0em 0.1em 0.1em black; margin-bottom: 0.3em;"/>
 <img src="./public/Img/homeBackCard.png" style="border-radius:0.2em;border: 0.1em transparent;box-shadow: 0em 0em 0.1em 0.1em black; margin-bottom: 0.3em;"/>
 
