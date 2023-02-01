@@ -218,7 +218,7 @@ const BookCard = ({ books }) => {
                                         color='dark'
                                         onClick={() => navigate(`/editBook/${books.id}`)}
                                     >
-                                        <img className="bookCardEditBtnImg" src="../../../public/Img/editButton.png" alt="editBtn" />
+                                        <img className="bookCardEditBtnImg" src="../../.../public/Img/editButton.png" alt="editBtn" />
                                     </button>
                                 </MDBCol>
                                 <MDBCol className="my-3 mx-0">
@@ -227,7 +227,7 @@ const BookCard = ({ books }) => {
                                         color='dark'
                                         onClick={handleOpen}
                                     >
-                                        <img className="bookCardDeleteImg" src="../../../public/Img/deleteButton.png" alt="deleteBtn" />
+                                        <img className="bookCardDeleteImg" src="../../.../public/Img/deleteButton.png" alt="deleteBtn" />
                                     </button>
                                 </MDBCol>
                             </MDBRow>
