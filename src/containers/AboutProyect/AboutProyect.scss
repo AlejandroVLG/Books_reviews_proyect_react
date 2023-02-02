@@ -57,11 +57,6 @@
     border: 0.02em solid black;
     border-radius: 0.3em;
     padding: 0.2em;
-
-    @media screen and (max-width: 768px) {
-        height: 2.5em;
-        width: 2.5em;
-    }
 }
 
 .iconImage:hover {
@@ -99,7 +94,7 @@
 
 .mainLinkDiv {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 1em;
 }
 
@@ -114,10 +109,6 @@
 .linkText {
     font-size: 100%;
 }
-
-@media screen and (max-width: 1700px) {}
-
-@media screen and (max-width: 1200px) {}
 
 @media screen and (max-width: 991.98px) {
 
@@ -151,7 +142,18 @@
     }
 }
 
+@media screen and (max-width: 700px) {
+    .mainLinkDiv{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media screen and (max-width: 460px) {
+
+    .aboutCard {
+        width: 95%;
+    }
+
 
     .aboutPHeader {
         font-size: 120%;
