@@ -14,6 +14,8 @@ const Review = () => {
         reviews: []
     })
 
+    const [dataState, setDataState] = useState("")
+
     const showReviews = async () => {
 
         try {
@@ -30,6 +32,13 @@ const Review = () => {
     }
 
     useEffect(() => {
+
+        setDataState("Cargando contenido")
+
+        setTimeout(() => {
+            setDataState("No hay reseñas publicadas")
+        }, 2500);
+
         showReviews()
     }, [])
 
@@ -37,10 +46,10 @@ const Review = () => {
 
         <MDBContainer fluid>
             <MDBRow>
-                <MDBCol>
+                <MDBCol on >
                     {reviewData.reviews.length === 0 &&
                         <div className="reviewsSpinner">
-                            <p className="loadingText">Cargando contenido</p>
+                            <p className="loadingText">{dataState}</p>
                             <Spinner />
                         </div>
                     }

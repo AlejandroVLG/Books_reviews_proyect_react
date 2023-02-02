@@ -15,7 +15,7 @@ const NavigationBar = () => {
     const dispatch = useDispatch()
 
     // state used when nav collapse
-    const [activeViewState, setActiveViewState] = useState("")
+    const [activeViewState, setActiveViewState] = useState("Inicio")
 
     const identification = useSelector(userData)
 
