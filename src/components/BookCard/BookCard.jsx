@@ -221,8 +221,8 @@ const BookCard = ({ books }) => {
                             className="bookInfoBox"
                             style={{ borderRadius: '.5em' }}
                         >
-                            <MDBRow className="bookBtnDiv">
-                                <MDBCol className="my-3 mx-0">
+                            <MDBRow className="bookBtnDiv ">
+                                <MDBCol className="my-3 mx-0 d-flex justify-content-center" md="6">
                                     <div
                                         className='mx-2 adminButton'
                                         onClick={() => navigate(`/editBook/${books.id}`)}
@@ -230,7 +230,7 @@ const BookCard = ({ books }) => {
                                     >
                                     </div>
                                 </MDBCol>
-                                <MDBCol className="my-3 mx-0">
+                                <MDBCol className="my-3 mx-0 d-flex justify-content-center" md="6">
                                     <div
                                         className='mx-2 adminButton'
                                         onClick={handleOpen}

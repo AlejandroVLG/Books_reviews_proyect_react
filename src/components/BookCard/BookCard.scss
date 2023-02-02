@@ -77,7 +77,8 @@
 .bookBtnDiv {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    flex-direction: row;
 }
 
 .synopsisText {
@@ -99,13 +100,15 @@
 }
 
 .adminButton:hover {
-    box-shadow: 0 0 0.2em 0.2em rgb(190, 36, 36);
-    transition: 0.8s ease;
+    scale: 1.2;
+    box-shadow: 0 0 0.1em 0.2em rgb(190, 36, 36);
+    transition: 1s ease all;
 }
 
 .adminButton:active {
+    scale: 1.2;
     box-shadow: 0 0 0.2em 0.2em rgb(190, 36, 36);
-    transition: 0.8s ease;
+    transition: 1s ease;
 }
 
 .bookCardDeleteImg {
