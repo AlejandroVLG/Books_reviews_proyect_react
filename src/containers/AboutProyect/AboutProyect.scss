@@ -20,6 +20,27 @@
     background: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
 }
 
+.bodyTopDiv {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+}
+
+.bodyDiv1 {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+.bodyDiv2 {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+
+.bodyDiv3 {
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
+}
+
 .abouIconsDiv {
     display: flex;
     align-items: center;
@@ -29,8 +50,8 @@
 }
 
 .iconImage {
-    height: 4em;
-    width: 4em;
+    height: 3em;
+    width: 3em;
     background-color: #fff;
     box-shadow: 0em 0em 0.4em 0.1em rgba(0, 0, 0, 0.604);
     border: 0.02em solid black;
@@ -54,4 +75,116 @@
     padding: 0em;
     box-shadow: 0em 0em 0.2em 0.04em rgb(250, 250, 250);
     transition: all 1s ease;
+}
+
+.aboutPHeader {
+    font-size: 160%;
+}
+
+.titleMuted {
+    font-size: 120%;
+}
+
+.topBodyText {
+    font-size: 110%;
+}
+
+.aboutTextHeader {
+    font-size: 140%;
+}
+
+.aboutText {
+    font-size: 100%;
+}
+
+.mainLinkDiv {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+}
+
+.linkDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.linkText {
+    font-size: 100%;
+}
+
+@media screen and (max-width: 1700px) {}
+
+@media screen and (max-width: 1200px) {}
+
+@media screen and (max-width: 991.98px) {
+
+    .aboutPHeader {
+        font-size: 140%;
+    }
+
+    .titleMuted {
+        font-size: 100%;
+    }
+
+    .topBodyText {
+        font-size: 90%;
+    }
+
+    .aboutTextHeader {
+        font-size: 120%;
+    }
+
+    .aboutText {
+        font-size: 80%;
+    }
+
+    .linkText {
+        font-size: 80%;
+    }
+
+    .iconImage {
+        height: 2em;
+        width: 2em;
+    }
+}
+
+@media screen and (max-width: 460px) {
+
+    .aboutPHeader {
+        font-size: 120%;
+    }
+
+    .titleMuted {
+        font-size: 80%;
+    }
+
+    .topBodyText {
+        font-size: 70%;
+    }
+
+    .aboutTextHeader {
+        font-size: 100%;
+    }
+
+    .aboutText {
+        font-size: 60%;
+    }
+
+    .linkText {
+        font-size: 60%;
+    }
+
+    .iconImage {
+        height: 1.5em;
+        width: 1.5em;
+    }
+
+    .abouIconsDiv {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3em;
+    }
 }

@@ -19,50 +19,46 @@ const AboutTheProyect = () => {
                     <MDBCol>
                         <MDBCardBody className="p-4 ">
 
-                            <MDBTypography className='dataHead'>
+                            <MDBTypography className='aboutPHeader'>
                                 Proyecto final de Alejandro Laguía García
                             </MDBTypography>
                             <hr className="mt-0 mb-5" />
-                            <MDBRow className="pt-1">
-                                <MDBCol className="mb-3"
-                                    sm={12} md={6} lg={4} xl={4} xxl={4}>
-                                    <MDBTypography className="text-muted h5">
-                                        Lenguajes utilizados
-                                    </MDBTypography>
-                                    <MDBTypography className='mb-0 abouIconsDiv' >
-                                        <Icon icon="logos:html-5" className="iconImage"></Icon>
-                                        <Icon icon="logos:javascript" className="iconImage"></Icon>
-                                        <Icon icon="vscode-icons:file-type-sass" className="iconImage"></Icon>
-                                    </MDBTypography>
-                                </MDBCol>
-                                <MDBCol
-                                    sm={12} md={6} lg={4} xl={4} xxl={4}
-                                    className="mb-3">
-                                    <MDBTypography className="text-muted h5" >
-                                        Coding school
-                                    </MDBTypography>
-                                    <MDBCardText>GeeksHubs Academy</MDBCardText>
-                                </MDBCol>
-                                <MDBCol className="mb-3"
-                                    sm={12} md={12} lg={4} xl={4} xxl={4}>
-                                    <MDBTypography className="text-muted h5">
+                            <div className="bodyTopDiv">
+                                <div className="bodyDiv1">
+                                    <MDBTypography className="text-muted titleMuted">
                                         Librearías utilizadas
                                     </MDBTypography>
-                                    <MDBCardText tag="h5">
+                                    <MDBCardText className="topBodyText">
                                         React Redux Bootstrap
                                         <br />
                                         Framer-motion Axios
                                         <br />
                                         Jsonwebtoken MDB SASS
                                     </MDBCardText>
-                                </MDBCol>
-                            </MDBRow>
+                                </div>
+                                <div className="bodyDiv2">
+                                    <MDBTypography className="text-muted titleMuted">
+                                        Lenguajes utilizados
+                                    </MDBTypography>
+                                    <MDBTypography className='abouIconsDiv' >
+                                        <Icon icon="logos:html-5" className="iconImage"></Icon>
+                                        <Icon icon="logos:javascript" className="iconImage"></Icon>
+                                        <Icon icon="vscode-icons:file-type-sass" className="iconImage"></Icon>
+                                    </MDBTypography>
+                                </div>
+                                <div className="bodyDiv3">
+                                    <MDBTypography className="text-muted titleMuted" >
+                                        Coding school
+                                    </MDBTypography>
+                                    <MDBCardText className="topBodyText">GeeksHubs Academy</MDBCardText>
+                                </div>
+                            </div>
                             <MDBCol className="mb-3">
-                                <MDBTypography className="h4">
+                                <MDBTypography className="aboutTextHeader">
                                     SOBRE EL PROYECTO
                                 </MDBTypography>
                                 <hr className="mt-0 mb-4" />
-                                <MDBCardText >
+                                <MDBCardText className="aboutText">
                                     Aplicación creada con el fin usarla como catálogo de reseñas personal.
                                     Adicionalmente la web permite el registro de nuevos usuarios por si
                                     en un futuro decido que sea púbica, los nuevos usuarios que se registraran
@@ -73,9 +69,9 @@ const AboutTheProyect = () => {
                                     github pages.
                                 </MDBCardText>
                             </MDBCol>
-                            <MDBRow>
-                                <MDBCol className="mb-3"
-                                    sm={12} md={12} lg={6} xl={6} xxl={6}>
+                            <hr className="mt-6 mb-4" />
+                            <div className="mainLinkDiv">
+                                <div className="linkDiv">
                                     <a
                                         tag='a'
                                         href="https://github.com/Alexdck/Books_reviews_proyect_react"
@@ -83,11 +79,9 @@ const AboutTheProyect = () => {
                                     >
                                         <Icon icon="ri:github-fill" className="iconImage"></Icon>
                                     </a>
-                                    <p>Proyecto Front-end</p>
-                                </MDBCol>
-
-                                <MDBCol className="mb-3"
-                                    sm={12} md={12} lg={6} xl={6} xxl={6}>
+                                    <p className="linkText">Proyecto Front-end</p>
+                                </div>
+                                <div className="linkDiv">
                                     <a
                                         tag='a'
                                         href="https://github.com/Alexdck/Books_reviews_proyect"
@@ -95,35 +89,30 @@ const AboutTheProyect = () => {
                                     >
                                         <Icon icon="ri:github-fill" className="iconImage"></Icon>
                                     </a>
-                                    <p>Proyecto Back-end</p>
-                                </MDBCol>
-                            </MDBRow>
-                            <hr className="mt-6 mb-4" />
+                                    <p className="linkText">Proyecto Back-end</p>
+                                </div>
+                                <div className="linkDiv">
+                                    <a
+                                        tag='a'
+                                        href="https://github.com/Alexdck"
+                                        target="_blank"
+                                    >
+                                        <Icon icon="ri:github-fill" className="iconImage"></Icon>
+                                    </a>
+                                    <p className="linkText">Perfil Github</p>
+                                </div>
+                                <div className="linkDiv">
+                                    <a
+                                        tag='a'
+                                        href="https://www.linkedin.com/in/alejandrolaguia/"
+                                        target="_blank"
+                                    >
+                                        <Icon icon="ri:linkedin-fill" className="iconImage"></Icon>
+                                    </a>
+                                    <p className="linkText">Perfil LinkedIN</p>
+                                </div>
+                            </div>
                         </MDBCardBody>
-                        <MDBRow>
-                            <MDBCol className="mb-3"
-                                sm={12} md={12} lg={6} xl={6} xxl={6}>
-                                <a
-                                    tag='a'
-                                    href="https://github.com/Alexdck"
-                                    target="_blank"
-                                >
-                                    <Icon icon="ri:github-fill" className="iconImage"></Icon>
-                                </a>
-                                <p>Perfil Github</p>
-                            </MDBCol>
-                            <MDBCol className="mb-3"
-                                sm={12} md={12} lg={6} xl={6} xxl={6}>
-                                <a
-                                    tag='a'
-                                    href="https://www.linkedin.com/in/alejandrolaguia/"
-                                    target="_blank"
-                                >
-                                    <Icon icon="ri:linkedin-fill" className="iconImage"></Icon>
-                                </a>
-                                <p>Perfil LinkedIN</p>
-                            </MDBCol>
-                        </MDBRow>
                     </MDBCol>
                 </MDBRow>
             </MDBCard>
