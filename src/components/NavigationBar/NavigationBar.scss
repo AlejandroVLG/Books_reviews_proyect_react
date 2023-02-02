@@ -34,10 +34,19 @@
     @media screen and (min-width: 992px) {
         display: none;
     }
+
+    @media screen and (max-width: 390px) {
+        width: 40%;
+        font-size: 80%;
+    }
 }
 
 .collapseText {
     font-size: large;
     font-weight: bold;
     font-family: Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+
+    @media screen and (max-width: 390px) {
+        font-size: 90%;
+    }
 }

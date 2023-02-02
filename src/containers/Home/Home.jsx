@@ -9,9 +9,9 @@ const Home = () => {
             <div className="borderHomeDiv">
                 <div className="homeTextDiv">
                     <div className="homeTextP">
-                        <h1>Bienvenido a mi web de reseñas liteararias</h1>
+                        <p className="pHeader">Bienvenido a mi web de reseñas liteararias</p>
                         <hr />
-                        <p>
+                        <p className="pBody">
                             En esta web encontrarás un catálogo con algunos de los libros que he leido junto con una reseña en
                             la que doy mi opinión personal. Además de poder servir como referencia para quien busque opiniones de
                             un libro determinado o quisiera dejar la suya propia, para poder hacerlo únicamente necesitarías darte de
@@ -19,11 +19,11 @@ const Home = () => {
                         </p>
 
                         <hr />
-                        <p>
+                        <p className="pBody">
                             En la imagen hay una pequeña selección del tipo de libros que se pueden encontrar.
                         </p>
                         <hr />
-                        <p>
+                        <p className="pBody">
                             Las reseñas que se encuentran en esta página son de carácter amateur y pueden distar mucho tanto de tu opinión personal,
                             como de opiniones más profesionales.
                         </p>

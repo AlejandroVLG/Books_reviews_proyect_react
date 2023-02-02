@@ -96,38 +96,38 @@ const BookCard = ({ books }) => {
                         style={{ borderRadius: '.5em' }}
                     >
                         <br />
-                        <MDBTypography tag="h2">{books.title}</MDBTypography>
+                        <MDBTypography className="bookTitle">{books.title}</MDBTypography>
                         <MDBCardBody className="p-0 bookCardBody">
                             <br />
-                            <MDBTypography className='dataHead' tag="h6">
+                            <MDBTypography className='pTitle'>
                                 Información
                             </MDBTypography>
                             <hr className="mt-3 mb-4" />
-                            <MDBRow className="pt-1">
+                            <MDBRow className="pt-1 informationBody">
                                 <MDBCol size="6" className="mb-3">
-                                    <MDBTypography tag="h5">Autor</MDBTypography>
-                                    <MDBCardText className="text-muted">
+                                    <MDBTypography className="bodyTypography">Autor</MDBTypography>
+                                    <MDBCardText className="text-muted mutedText">
                                         {books.author}
                                     </MDBCardText>
                                 </MDBCol>
                                 <MDBCol size="6" className="mb-3">
-                                    <MDBTypography tag="h5">Género</MDBTypography>
-                                    <MDBCardText className="text-muted">
+                                    <MDBTypography className="bodyTypography">Género</MDBTypography>
+                                    <MDBCardText className="text-muted mutedText">
                                         {books.genre}
                                     </MDBCardText>
                                 </MDBCol>
                                 <MDBCol size="12" className="mb-3">
-                                    <MDBTypography tag="h5">Saga</MDBTypography>
-                                    <MDBCardText className="text-muted">
+                                    <MDBTypography className="bodyTypography">Saga</MDBTypography>
+                                    <MDBCardText className="text-muted mutedText">
                                         {books.series}
                                     </MDBCardText>
                                 </MDBCol>
                                 <MDBCol size="12" className="mb-0">
                                     <hr className="mt-0 mb-4" />
-                                    <MDBTypography tag="h5">
+                                    <MDBTypography className="bodyTypography">
                                         Fecha de publicación
                                     </MDBTypography>
-                                    <MDBCardText className="text-muted">
+                                    <MDBCardText className="text-muted mutedText">
                                         {books.year}
                                     </MDBCardText>
                                 </MDBCol>
@@ -135,12 +135,10 @@ const BookCard = ({ books }) => {
                             <br />
                         </MDBCardBody>
                     </MDBCol>
-
-                    <MDBTypography className='dataHead mt-3' md="12" tag="h6">
+                    <hr className="mt-0 mb-4 bodyHr" />
+                    <MDBTypography className='pTitle mt-3' md="12">
                         Sinopsis
                     </MDBTypography>
-                    <br />
-                    <hr className="mt-0 mb-4 bodyHr" />
                     <MDBRow className="pt-1">
                         <MDBCol size="12" className="mb-3">
                             <MDBCardText className="text-muted overflow-auto synopsisText">
@@ -221,8 +219,8 @@ const BookCard = ({ books }) => {
                             className="bookInfoBox"
                             style={{ borderRadius: '.5em' }}
                         >
-                            <MDBRow className="bookBtnDiv ">
-                                <MDBCol className="my-3 mx-0 d-flex justify-content-center" md="6">
+                            <MDBRow className="bookBtnDiv d-flex flex-direction: column">
+                                <MDBCol className="my-3 mx-0 d-flex justify-content-center" >
                                     <div
                                         className='mx-2 adminButton'
                                         onClick={() => navigate(`/editBook/${books.id}`)}
@@ -230,7 +228,7 @@ const BookCard = ({ books }) => {
                                     >
                                     </div>
                                 </MDBCol>
-                                <MDBCol className="my-3 mx-0 d-flex justify-content-center" md="6">
+                                <MDBCol className="my-3 mx-0 d-flex justify-content-center" >
                                     <div
                                         className='mx-2 adminButton'
                                         onClick={handleOpen}
@@ -239,39 +237,39 @@ const BookCard = ({ books }) => {
                                     </div>
                                 </MDBCol>
                             </MDBRow>
-                            <MDBTypography tag="h2">{books.title}</MDBTypography>
+                            <MDBTypography className="bookTitle">{books.title}</MDBTypography>
                             <br />
                             <MDBCardBody className="p-0 bookCardBody">
                                 <br />
-                                <MDBTypography className='dataHead' tag="h6">
+                                <MDBTypography className='pTitle'>
                                     Información
                                 </MDBTypography>
                                 <hr className="mt-3 mb-4" />
                                 <MDBRow className="pt-1">
                                     <MDBCol size="6" className="mb-3">
-                                        <MDBTypography tag="h5">Autor</MDBTypography>
-                                        <MDBCardText className="text-muted">
+                                        <MDBTypography className="bodyTypography">Autor</MDBTypography>
+                                        <MDBCardText className="text-muted mutedText">
                                             {books.author}
                                         </MDBCardText>
                                     </MDBCol>
                                     <MDBCol size="6" className="mb-3">
-                                        <MDBTypography tag="h5">Género</MDBTypography>
-                                        <MDBCardText className="text-muted">
+                                        <MDBTypography className="bodyTypography">Género</MDBTypography>
+                                        <MDBCardText className="text-muted mutedText">
                                             {books.genre}
                                         </MDBCardText>
                                     </MDBCol>
                                     <MDBCol size="12" className="mb-3">
-                                        <MDBTypography tag="h5">Saga</MDBTypography>
-                                        <MDBCardText className="text-muted">
+                                        <MDBTypography className="bodyTypography">Saga</MDBTypography>
+                                        <MDBCardText className="text-muted mutedText">
                                             {books.series}
                                         </MDBCardText>
                                     </MDBCol>
                                     <MDBCol size="12" className="mb-0">
                                         <hr className="mt-0 mb-4" />
-                                        <MDBTypography tag="h5">
+                                        <MDBTypography className="bodyTypography">
                                             Fecha de publicación
                                         </MDBTypography>
-                                        <MDBCardText className="text-muted">
+                                        <MDBCardText className="text-muted mutedText">
                                             {books.year}
                                         </MDBCardText>
                                     </MDBCol>
@@ -279,15 +277,13 @@ const BookCard = ({ books }) => {
                                 <br />
                             </MDBCardBody>
                         </MDBCol>
-
-                        <MDBTypography className='dataHead mt-3' md="12" tag="h6">
+                        <hr className="mt-0 mb-4 bodyHr" />
+                        <MDBTypography className='pTitle mt-3' md="12">
                             Sinopsis
                         </MDBTypography>
-                        <br />
-                        <hr className="mt-0 mb-4 bodyHr" />
                         <MDBRow className="pt-1">
                             <MDBCol size="12" className="mb-3">
-                                <MDBCardText className="text-muted overflow-scroll synopsisText">
+                                <MDBCardText className="text-muted overflow-auto synopsisText">
                                     {books.synopsis}
                                 </MDBCardText>
                             </MDBCol>
@@ -349,38 +345,38 @@ const BookCard = ({ books }) => {
                             style={{ borderRadius: '.5em' }}
                         >
                             <br />
-                            <MDBTypography tag="h2">{books.title}</MDBTypography>
+                            <MDBTypography className="bookTitle">{books.title}</MDBTypography>
                             <MDBCardBody className="p-0 bookCardBody">
                                 <br />
-                                <MDBTypography className='dataHead' tag="h6">
+                                <MDBTypography className='pTitle'>
                                     Información
                                 </MDBTypography>
                                 <hr className="mt-3 mb-4" />
                                 <MDBRow className="pt-1">
                                     <MDBCol size="6" className="mb-3">
-                                        <MDBTypography tag="h5">Autor</MDBTypography>
-                                        <MDBCardText className="text-muted">
+                                        <MDBTypography className="bodyTypography">Autor</MDBTypography>
+                                        <MDBCardText className="text-muted mutedText">
                                             {books.author}
                                         </MDBCardText>
                                     </MDBCol>
                                     <MDBCol size="6" className="mb-3">
-                                        <MDBTypography tag="h5">Género</MDBTypography>
-                                        <MDBCardText className="text-muted">
+                                        <MDBTypography className="bodyTypography">Género</MDBTypography>
+                                        <MDBCardText className="text-muted mutedText">
                                             {books.genre}
                                         </MDBCardText>
                                     </MDBCol>
                                     <MDBCol size="12" className="mb-3">
-                                        <MDBTypography tag="h5">Saga</MDBTypography>
-                                        <MDBCardText className="text-muted">
+                                        <MDBTypography className="bodyTypography">Saga</MDBTypography>
+                                        <MDBCardText className="text-muted mutedText">
                                             {books.series}
                                         </MDBCardText>
                                     </MDBCol>
                                     <MDBCol size="12" className="mb-0">
                                         <hr className="mt-0 mb-4" />
-                                        <MDBTypography tag="h5">
+                                        <MDBTypography className="bodyTypography">
                                             Fecha de publicación
                                         </MDBTypography>
-                                        <MDBCardText className="text-muted">
+                                        <MDBCardText className="text-muted mutedText">
                                             {books.year}
                                         </MDBCardText>
                                     </MDBCol>
@@ -388,12 +384,10 @@ const BookCard = ({ books }) => {
                                 <br />
                             </MDBCardBody>
                         </MDBCol>
-
-                        <MDBTypography className='dataHead mt-3' md="12" tag="h6">
+                        <hr className="mt-0 mb-4 bodyHr" />
+                        <MDBTypography className='pTitle mt-3' md="12">
                             Sinopsis
                         </MDBTypography>
-                        <br />
-                        <hr className="mt-0 mb-4 bodyHr" />
                         <MDBRow className="pt-1">
                             <MDBCol size="12" className="mb-3">
                                 <MDBCardText className="text-muted overflow-auto synopsisText">

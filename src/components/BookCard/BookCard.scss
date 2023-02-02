@@ -55,6 +55,35 @@
     box-shadow: 0 0 0.2em 0.1em black;
 }
 
+.bookTitle {
+    font-weight: bold;
+    font-size: 170%;
+
+}
+
+.pTitle {
+    font-weight: bold;
+    font-size: 140%;
+}
+
+.bodyTypography {
+    font-size: 110%;
+}
+
+.mutedText {
+    font-size: 100%;
+}
+
+.synopsisText {
+    background: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
+    padding: 0.3em;
+    border-radius: 0.2em;
+    border: 0.1em solid transparent;
+    box-shadow: 0 0 0.1em 0.1em black;
+    font-size: 100%;
+    height: 8em;
+}
+
 .icons {
     width: 3em;
 }
@@ -79,15 +108,6 @@
     align-items: center;
     justify-content: center;
     flex-direction: row;
-}
-
-.synopsisText {
-    background: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
-    padding: 0.3em;
-    border-radius: 0.2em;
-    border: 0.1em solid transparent;
-    box-shadow: 0 0 0.1em 0.1em black;
-    height: 8em;
 }
 
 .adminButton {
@@ -118,6 +138,21 @@
     border-radius: 5em;
 }
 
+@media screen and (max-width: 1700px) {
+
+    .bookTitle {
+        font-size: 160%;
+    }
+
+    .synopsisText {
+        font-size: 90%;
+    }
+
+    .icons {
+        width: 2.5em;
+    }
+}
+
 @media screen and (max-width: 1200px) {
 
     .mainBookCard {
@@ -125,14 +160,54 @@
     }
 
     .cardImg {
-        width: 80%;
+        width: 70%;
+    }
+
+    .bookTitle {
+        font-size: 160%;
+    }
+
+    .pTitle {
+        font-size: 140%;
+    }
+
+    .bodyTypography {
+        font-size: 120%;
+    }
+
+    .mutedText {
+        font-size: 110%;
+    }
+
+    .icons {
+        width: 2em;
     }
 }
 
 @media screen and (max-width: 991.98px) {
 
-    .bookCardBody {
-        font-size: smaller;
+    .mainBookCard {
+        width: 90%;
+    }
+
+    .cardImg {
+        width: 70%;
+    }
+
+    .bookTitle {
+        font-size: 160%;
+    }
+
+    .pTitle {
+        font-size: 140%;
+    }
+
+    .bodyTypography {
+        font-size: 120%;
+    }
+
+    .mutedText {
+        font-size: 110%;
     }
 
     .icons {
@@ -146,12 +221,55 @@
         width: 95%;
     }
 
-    .bookCardBody {
-        font-size: small;
-    }
-
     .cardImg {
         margin-top: 1em;
         width: 40%;
+    }
+
+    .bookTitle {
+        font-size: 160%;
+    }
+
+    .pTitle {
+        font-size: 140%;
+    }
+
+    .bodyTypography {
+        font-size: 120%;
+    }
+
+    .mutedText {
+        font-size: 110%;
+    }
+
+    .icons {
+        width: 2em;
+    }
+}
+
+@media screen and (max-width: 390px) {
+
+    .bookTitle {
+        font-size: 130%;
+    }
+
+    .pTitle {
+        font-size: 110%;
+    }
+
+    .bodyTypography {
+        font-size: 100%;
+    }
+
+    .mutedText {
+        font-size: 90%;
+    }
+
+    .synopsisText {
+        font-size: 60%;
+    }
+
+    .icons {
+        width: 1.5em;
     }
 }

@@ -6,10 +6,6 @@
     justify-content: space-around;
     flex-direction: column;
     background: linear-gradient(to right, #0f0c29, #381515, #0f0c29);
-
-    @media screen and (max-width: 768px) {
-        min-height: 95vh;
-    }
 }
 
 .borderHomeDiv {
@@ -42,17 +38,14 @@
     font-family: Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
     padding-left: 1em;
     padding-right: 1em;
-
-    @media screen and (max-width: 768px) {
-        font-size: small;
-    }
 }
 
-.homeTextStyles h1 {
+.pHeader {
+    font-size: 160%;
+}
 
-    @media screen and (max-width: 768px) {
-        font-size: x-large;
-    }
+.pBody {
+    font-size: 110%;
 }
 
 .homeImages {
@@ -77,7 +70,7 @@
 
 .homeImages img:hover {
     cursor: pointer;
-    width: 5%;
+    width: 6%;
     opacity: 1;
     filter: contrast(120%);
 }
@@ -110,7 +103,7 @@
 
 .homeImages2 img:hover {
     cursor: pointer;
-    width: 1%;
+    width: 23%;
     opacity: 1;
     filter: contrast(120%);
 }
@@ -143,7 +136,7 @@
 
 .homeImages3 img:hover {
     cursor: pointer;
-    width: 32%;
+    width: 25%;
     opacity: 1;
     filter: contrast(120%);
 }
@@ -155,3 +148,45 @@
     justify-content: center;
 }
 
+@media screen and (max-width: 1700px) {}
+
+@media screen and (max-width: 1200px) {}
+
+@media screen and (max-width: 991.98px) {
+
+    .pHeader{
+        font-size: 140%;
+    }
+
+    .pBody{
+        font-size: 90%;
+    }
+}
+
+@media screen and (max-width: 767.98px) {
+
+    .pHeader{
+        font-size: 120%;
+    }
+
+    .pBody{
+        font-size: 75%;
+    }
+    .homeImages3{
+        height: 25em;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    .pHeader{
+        font-size: 90%;
+    }
+
+    .pBody{
+        font-size: 65%;
+    }
+
+    .homeImages3{
+        height: 20em;
+    }
+}
