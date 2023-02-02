@@ -176,12 +176,20 @@ const BookCard = ({ books }) => {
                             <Modal.Header closeButton>
                                 <Modal.Title>AVISO</Modal.Title>
                             </Modal.Header>
-                            <Modal.Body className="modalBookBody">¿Seguro que quieres eliminar este libro?</Modal.Body>
+                            <Modal.Body className="modalBookBody">
+                                ¿Seguro que quieres eliminar este libro?
+                            </Modal.Body>
                             <Modal.Footer className="modalBookFooter">
-                                <Button className="modalButton" variant="danger" onClick={handleDeleteBook}>
+                                <Button
+                                    className="modalButton"
+                                    variant="danger"
+                                    onClick={handleDeleteBook}>
                                     Si
                                 </Button>
-                                <Button className="modalButton" variant="dark" onClick={handleClose}>
+                                <Button
+                                    className="modalButton"
+                                    variant="dark"
+                                    onClick={handleClose}>
                                     No
                                 </Button>
                             </Modal.Footer>
@@ -215,22 +223,20 @@ const BookCard = ({ books }) => {
                         >
                             <MDBRow className="bookBtnDiv">
                                 <MDBCol className="my-3 mx-0">
-                                    <button
+                                    <div
                                         className='mx-2 adminButton'
-                                        color='dark'
                                         onClick={() => navigate(`/editBook/${books.id}`)}
+                                        style={{ backgroundImage: `url(${editBtn})` }}
                                     >
-                                        <img className="bookCardEditBtnImg" src={editBtn} alt="editBtn" />
-                                    </button>
+                                    </div>
                                 </MDBCol>
                                 <MDBCol className="my-3 mx-0">
-                                    <button
+                                    <div
                                         className='mx-2 adminButton'
-                                        color='dark'
                                         onClick={handleOpen}
+                                        style={{ backgroundImage: `url(${deleteBtn})` }}
                                     >
-                                        <img className="bookCardDeleteImg" src={deleteBtn} alt="deleteBtn" />
-                                    </button>
+                                    </div>
                                 </MDBCol>
                             </MDBRow>
                             <MDBTypography tag="h2">{books.title}</MDBTypography>

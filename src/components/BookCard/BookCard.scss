@@ -90,28 +90,22 @@
 }
 
 .adminButton {
-    border: 0;
-    height: 3.5em;
-    width: 3.5em;
-    border-radius: 5em;
-    box-shadow: 0 0 0.2em 0.1em black;
+    height: 3em;
+    width: 3em;
+    background: rgb(247, 247, 247);
+    background-size: cover;
+    border-radius: 0.2em;
+    box-shadow: 0 0 0.1em 0.1em rgb(150, 150, 150);
 }
 
-.adminButton:hover{
+.adminButton:hover {
     box-shadow: 0 0 0.2em 0.2em rgb(190, 36, 36);
-    transition: 0.8s all;
+    transition: 0.8s ease;
 }
 
-.adminButton:active{
+.adminButton:active {
     box-shadow: 0 0 0.2em 0.2em rgb(190, 36, 36);
-    transition: 0.8s all;
-}
-
-.bookCardEditBtnImg {
-    height: 2.48em;
-    width: 2.49em;
-    scale: 1.37;
-    border-radius: 5em;
+    transition: 0.8s ease;
 }
 
 .bookCardDeleteImg {
@@ -126,7 +120,8 @@
     .mainBookCard {
         width: 80%;
     }
-    .cardImg{
+
+    .cardImg {
         width: 80%;
     }
 }
@@ -152,7 +147,7 @@
         font-size: small;
     }
 
-    .cardImg{
+    .cardImg {
         margin-top: 1em;
         width: 40%;
     }
