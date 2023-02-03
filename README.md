@@ -1,8 +1,5 @@
-<img src="public/Img/geeks.png" style="border-radius:0.2em;border: 0.1em transparent;box-shadow: 0em 0em 0.1em 0.2em black; margin-bottom: 0.3em; margin-bottom: 0.3em; padding: 0.4em; width: 100%; "/>
 
----
-
-# <center>Web reseñas de libros </center>
+# <center>Mi web personal de reseñas liteararias</center>
 
 El proyecto ha sido realizada usando HTML, SASS y JavaScript, React y Redux. 
 Para las animaciones he utilizado framer motion y para los estilos y mdb-react y bootstrap-react, con lo que además es totalmente resposive. La web también consta de un back-end realizado en PHP/Laravel que es parte de este mismo proyecto (añado el enlace al final).
@@ -29,7 +26,6 @@ Para las animaciones he utilizado framer motion y para los estilos y mdb-react y
 
 ### Inicio de sesión
 <img src="public/Img/Login_validacion.png" style="border-radius:0.2em;border: 0.1em transparent;box-shadow: 0em 0em 0.1em 0.1em black; margin-bottom: 0.3em;"/>
-
 ---
 
 ### Nuevo usuario
@@ -112,13 +108,16 @@ Para las animaciones he utilizado framer motion y para los estilos y mdb-react y
 
 >Vista con las tecnologías que he utilizado, información del proyecto y enlaces a mi GitHub y Linkedin.
 
----
+</br>
 
+<div style="display:flex; aling-items: center; justify-content:center;">
+    <img src="public/Img/geeks.png" style="border-radius:0.2em;border: 0.1em transparent;box-shadow: 0em 0em 0.1em 0.2em black; margin-bottom: 0.3em; margin-bottom: 0.3em; padding: 0.4em; width: 50%; "/>
+</div>
 
 ## 🌐 Socials:
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/alejandrolaguia/) 
 
-## Repositorio del back-end asociado a este proyecto
+### Repositorio del back-end asociado a este proyecto
 
 https://github.com/Alexdck/Books_reviews_proyect
 
